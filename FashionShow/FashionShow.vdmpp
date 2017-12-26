@@ -3,6 +3,7 @@ types
  public String = seq of char;
  public Price = real 
  	inv p == p >= 0;
+ public Models = set of Model;
 values
 
 instance variables
@@ -14,7 +15,7 @@ instance variables
 	public audience: set of User;
 	public PrimpingSessions: set of PrimpingSession;
 	public expositionItems: map Designer to Designer`Item;
-	public models: map Designer to Designer`Models  
+	public models: map Designer to Models  
 	
 operations
 	public FashionShow: String * String * String * Price * set of Designer ==> FashionShow 
@@ -25,6 +26,7 @@ operations
 		theme := t;
 		price := pr;
 		designers := de;
+		return self;
 	);
 
 

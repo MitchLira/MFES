@@ -1,14 +1,22 @@
 class Designer
 types
--- TODO Define types here
 values
 -- TODO Define values here
 instance variables
--- TODO Define instance variables here
+	public name: FashionShow`String;
+	public models: set of Model;
+	
+	
 operations
--- TODO Define operations here
+ 	public Designer: FashionShow`String ==> Designer 
+	Designer(n) == 
+	(
+		name := n;
+		return self;
+	);
 functions
 -- TODO Define functiones here
 traces
 -- TODO Define Combinatorial Test Traces here
 end Designer
+
