@@ -3,7 +3,7 @@ types
 	public Age = int
 	 inv i ==  i <= 65 and  i >= 18;
 	public Height = real 
-		inv r == r <= 2.00 and r >= 1.60;
+		inv r == r <= 2.10 and r >= 1.60;
 values
 -- TODO Define values here
 instance variables

@@ -12,20 +12,24 @@ instance variables
 	public theme: String;
 	public price: Price; 
 	public designers: set of Designer;
-	public audience: set of User;
+	public maxSpectators: int ;
+	public audience: seq of User;
+	inv len audience >=0 and len audience <= maxSpectators;
 	public primpingSessions: set of PrimpingSession;
 	public expositionItems: map Designer to set of Item;
 	public models: map Designer to Models  
 	
 operations
-	public FashionShow: String * String * String * Price * set of Designer ==> FashionShow 
-	FashionShow(d, p, t, pr, de) == 
+	public FashionShow: String * String * String * Price * set of Designer * int ==> FashionShow 
+	FashionShow(d, p, t, pr, de, maxS) == 
 	(
 		date := d;
 		place := p;
 		theme := t;
 		price := pr;
 		designers := de;
+		primpingSessions := {};
+		maxSpectators := maxS;
 		return self;
 	);
 

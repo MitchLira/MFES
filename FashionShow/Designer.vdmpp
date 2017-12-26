@@ -12,6 +12,8 @@ operations
 	Designer(n) == 
 	(
 		name := n;
+		models := {};
+		items := {};
 		return self;
 	);
 functions

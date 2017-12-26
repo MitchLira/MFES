@@ -7,7 +7,7 @@ values
 -- TODO Define values here
 instance variables
 	public name: FashionShow`String;
-	public reference: Ref;
+	public reference: Ref; --TODO pôr reference unica
 	public price: FashionShow`Price;
 	public size: Size;
 operations
