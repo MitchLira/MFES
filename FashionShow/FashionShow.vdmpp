@@ -13,8 +13,8 @@ instance variables
 	public price: Price; 
 	public designers: set of Designer;
 	public audience: set of User;
-	public PrimpingSessions: set of PrimpingSession;
-	public expositionItems: map Designer to Designer`Item;
+	public primpingSessions: set of PrimpingSession;
+	public expositionItems: map Designer to set of Item;
 	public models: map Designer to Models  
 	
 operations

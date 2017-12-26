@@ -5,8 +5,8 @@ values
 instance variables
 	public name: FashionShow`String;
 	public models: set of Model;
-	
-	
+	public items: set of Item;
+
 operations
  	public Designer: FashionShow`String ==> Designer 
 	Designer(n) == 
