@@ -13,12 +13,14 @@ instance variables
 	public price: Price; 
 	public designers: set of Designer;
 	public maxSpectators: int ;
-	public audience: seq of User;
-	inv len audience >=0 and len audience <= maxSpectators;
+	public audience: set of User;
 	public primpingSessions: set of PrimpingSession;
 	public expositionItems: map Designer to set of Item;
-	public models: map Designer to Models  
-	
+	public models: map Designer to Models;  
+
+	inv card audience >=0 and card audience <= maxSpectators;
+	inv forall session in set primpingSessions & session.attendees subset audience;
+	inv forall session in set primpingSessions & (session.maxAttendees <= maxSpectators and (card session.attendees) <= (card audience));
 operations
 	public FashionShow: String * String * String * Price * set of Designer * int ==> FashionShow 
 	FashionShow(d, p, t, pr, de, maxS) == 

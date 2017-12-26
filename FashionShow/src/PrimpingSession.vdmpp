@@ -4,9 +4,24 @@ types
 values
 -- TODO Define values here
 instance variables
--- TODO Define instance variables here
+	public name: FashionShow`String;
+	public place: FashionShow`String;
+	public date: FashionShow`String;
+	public attendees: set of User;
+	public maxAttendees: int;
+	
+	inv card attendees >= 0 or card attendees <= maxAttendees;
+	inv maxAttendees >= 0;
 operations
--- TODO Define operations here
+public PrimpingSession: FashionShow`String * FashionShow`String * FashionShow`String * int ==> PrimpingSession 
+	PrimpingSession(n, p, d, m) == 
+	(
+		name := n;
+		place := p;
+		date := d;
+		maxAttendees := m;
+		return self;
+	);
 functions
 -- TODO Define functiones here
 traces
