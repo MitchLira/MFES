@@ -20,6 +20,7 @@ public PrimpingSession: FashionShow`String * FashionShow`String * FashionShow`St
 		place := p;
 		date := d;
 		maxAttendees := m;
+		attendees := {};
 		return self;
 	);
 functions
