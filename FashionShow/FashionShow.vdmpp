@@ -1,12 +1,33 @@
 class FashionShow
 types
--- TODO Define types here
+ public String = seq of char;
+ public Price = real 
+ 	inv p == p >= 0;
 values
--- TODO Define values here
+
 instance variables
--- TODO Define instance variables here
+	public date: String;
+	public place: String;
+	public theme: String;
+	public price: Price; 
+	public designers: set of Designer;
+	public audience: set of User;
+	public PrimpingSessions: set of PrimpingSession;
+	public expositionItems: map Designer to Designer`Item;
+	public models: map Designer to Designer`Models  
+	
 operations
--- TODO Define operations here
+	public FashionShow: String * String * String * Price * set of Designer ==> FashionShow 
+	FashionShow(d, p, t, pr, de) == 
+	(
+		date := d;
+		place := p;
+		theme := t;
+		price := pr;
+		designers := de;
+	);
+
+
 functions
 -- TODO Define functiones here
 traces
