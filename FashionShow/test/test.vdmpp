@@ -1,8 +1,4 @@
-class test
-types
--- TODO Define types here
-values
--- TODO Define values here
+class Test is subclass of MyTestCase
 instance variables
 	site: Site := new Site();
 
@@ -31,13 +27,17 @@ instance variables
 	it7: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<S>);
 	it8: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<M>);
 	
-
-
-	
 operations
--- TODO Define operations here
-functions
--- TODO Define functiones here
-traces
--- TODO Define Combinatorial Test Traces here
-end test
+public static main: () ==> ()
+	main() == (
+	IO`println("Running tests...");
+  new Test().testExample(); 
+  IO`println("Finished running tests");
+	);
+public testExample: () ==> ()
+  testExample() == (
+  	assertEqual(it5, it6);
+  	-- fazer aqui os teste!!!
+ );
+
+end Test
