@@ -1,0 +1,25 @@
+class User
+types
+	public Budget = real
+		inv r == r >= 0.0;
+values
+-- TODO Define values here
+instance variables
+	public name: FashionShow`String;
+	public static id : int := 0;
+	public budget: Budget;
+operations
+	public User: FashionShow`String * Age * Height * FashionShow`String ==> User 
+	User(n, a, h, n) == 
+	(
+		name := n;
+		age := a;
+		height := h;
+		nationality := n;
+		return self;
+	);
+functions
+-- TODO Define functiones here
+traces
+-- TODO Define Combinatorial Test Traces here
+end User

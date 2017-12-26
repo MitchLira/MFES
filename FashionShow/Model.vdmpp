@@ -1,0 +1,28 @@
+class Model
+types
+	public Age = int
+	 inv i ==  i <= 65 and  i >= 18;
+	public Height = real 
+		inv r == r <= 2.00 and r >= 1.60;
+values
+-- TODO Define values here
+instance variables
+ public name:  FashionShow`String;
+ public age: Age;
+ public height: Height; 
+ public nationality: FashionShow`String;
+operations
+	public Model: FashionShow`String * Age * Height * FashionShow`String ==> Model 
+	Model(n, a, h, n) == 
+	(
+		name := n;
+		age := a;
+		height := h;
+		nationality := n;
+		return self;
+	);
+functions
+-- TODO Define functiones here
+traces
+-- TODO Define Combinatorial Test Traces here
+end Model
