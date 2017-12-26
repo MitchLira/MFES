@@ -13,12 +13,12 @@ instance variables
  public nationality: FashionShow`String;
 operations
 	public Model: FashionShow`String * Age * Height * FashionShow`String ==> Model 
-	Model(n, a, h, n) == 
+	Model(n, a, h, na) == 
 	(
 		name := n;
 		age := a;
 		height := h;
-		nationality := n;
+		nationality := na;
 		return self;
 	);
 functions
