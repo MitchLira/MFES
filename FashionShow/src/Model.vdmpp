@@ -4,6 +4,7 @@ types
 	 inv i ==  i <= 65 and  i >= 18;
 	public Height = real 
 		inv r == r <= 2.10 and r >= 1.60;
+	public Gender = <Female>|<Male>;
 values
 -- TODO Define values here
 instance variables
@@ -11,18 +12,87 @@ instance variables
  public age: Age;
  public height: Height; 
  public nationality: FashionShow`String;
+ public shows: set of FashionShow;
+ public gender: Gender;
+ 
+ inv card shows >= 0;
+ 
 operations
-	public Model: FashionShow`String * Age * Height * FashionShow`String ==> Model 
-	Model(n, a, h, na) == 
+	public Model: FashionShow`String * Age * Height * FashionShow`String * Gender ==> Model 
+	Model(n, a, h, na, g) == 
 	(
 		name := n;
 		age := a;
 		height := h;
 		nationality := na;
+		shows := {};
+		gender := g;
 		return self;
 	);
+	
+	public getName: () ==> FashionShow`String
+		getName() == return name
+		post RESULT = name;
+		
+	public getAge: () ==> Age
+		getAge() == return age
+		post RESULT = age;
+		
+	public getHeight: () ==> Height
+		getHeight() == return height
+		post RESULT = height;
+	
+	public getNationality: () ==> FashionShow`String
+		getNationality() == return nationality
+		post RESULT = nationality;
+	
+	public getShows: () ==> set of FashionShow
+		getShows() == return shows
+		post RESULT = shows;
+		
+	public getGender: () ==> Gender
+		getGender() == return gender
+		post RESULT = gender;
+		
+	public setName: FashionShow`String ==> ()
+		setName(newName) == (
+	 	name := newName;
+		);
+		
+	public setAge: Age ==> ()
+		setAge(newAge) == (
+	 	age := newAge;
+		);
+	
+	public setHeight: Height ==> ()
+		setHeight(newHeight) == (
+	 	height := newHeight;
+		);
+	
+	public setNationality: FashionShow`String ==> ()
+		setNationality(newNationality) == (
+	 	nationality := newNationality;
+		);
+	
+	public setGender: Gender ==> ()
+		setGender(newGender) == (
+			gender := newGender;
+		);
+	
+	public addShow: FashionShow ==> ()
+		addShow(newShow) == (
+	 			shows := shows union {newShow}
+	)
+	pre newShow not in set shows 
+		and forall s in set shows & newShow.date <> s.date;
+	
+	public remShow: FashionShow ==> ()
+		remShow(oldShow) == (
+			shows := shows \ {oldShow}
+		)
+		pre oldShow in set shows;
+		
 functions
 -- TODO Define functiones here
-traces
--- TODO Define Combinatorial Test Traces here
+
 end Model
