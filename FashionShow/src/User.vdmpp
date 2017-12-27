@@ -43,7 +43,7 @@ class User
 			setBoughtItems(item) == boughtItems := boughtItems union {item};
 		
 	functions
-	-- TODO Define functiones here
+		
 	traces
 	-- TODO Define Combinatorial Test Traces here
 end User

@@ -1,0 +1,38 @@
+class UserTest is subclass of MyTestCase
+	instance variables
+		u1: User := new User("mitchLira", "Miguel Lira");
+		u2: User := new User("miriniri", "Miriam Gonçalves");
+		u3: User := new User("pBabo", "Paulo Babo");
+		u1Expected: FashionShow`String;
+		
+	operations
+		public testSetGetName: () ==> ()
+			testSetGetName() == (
+				IO`println("\t\t test set Name in User");
+				let u4 = new User("mitchLira", "Miguel Lira") in (
+					u4.setName(u1.name);
+					assertEqual(u4.getName(), u1.getName());
+				);
+			);
+			
+		public testSetGetBudget: () ==> ()
+			testSetGetBudget() == (
+				IO`println("\t\t test set Budget in User");
+				assertEqual(0, u3.getBudget());
+				u3.setBudget(100);
+				assertEqual(100, u3.getBudget());
+			);
+			
+		public testSetGetBoughtItems: () ==> ()
+			testSetGetBoughtItems() == (
+				IO`println("\t\t test set Bought Items in User");
+				assertEqual({}, u3.getBoughtItems());
+			);
+		
+		public testAll: () ==> ()
+			testAll() == (
+				testSetGetName();
+				testSetGetBudget();
+				testSetGetBoughtItems();
+			);
+end UserTest
