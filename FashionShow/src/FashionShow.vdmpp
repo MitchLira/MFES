@@ -1,43 +1,43 @@
 class FashionShow
-	types
-	 public String = seq of char;
-	 public Price = real 
-	 	inv p == p >= 0;
-	 public Models = set of Model;
-	values
-	
-	instance variables
-		public date: String;
-		public place: String;
-		public theme: String;
-		public price: Price; 
-		public designers: set of Designer;
-		public maxSpectators: int ;
-		public audience: set of User;
-		public primpingSessions: set of PrimpingSession;
-		public expositionItems: map Designer to set of Item;
-		public models: map Designer to Models;  
-	
-		inv card audience >=0 and card audience <= maxSpectators;
-		inv forall session in set primpingSessions & session.attendees subset audience;
-		inv forall session in set primpingSessions & (session.maxAttendees <= maxSpectators and (card session.attendees) <= (card audience));
-	operations
-		public FashionShow: String * String * String * Price * set of Designer * int ==> FashionShow 
-		FashionShow(d, p, t, pr, de, maxS) == 
-		(
-			date := d;
-			place := p;
-			theme := t;
-			price := pr;
-			designers := de;
-			primpingSessions := {};
-			maxSpectators := maxS;
-			return self;
-		);
-	
-	
-	functions
-	-- TODO Define functiones here
-	traces
-	-- TODO Define Combinatorial Test Traces here
+types
+ public String = seq of char;
+ public Price = real 
+ 	inv p == p >= 0;
+ public Models = set of Model;
+values
+
+instance variables
+	public date: String;
+	public place: String;
+	public theme: String;
+	public price: Price; 
+	public designers: set of Designer;
+	public maxSpectators: int ;
+	public audience: set of User;
+	public primpingSessions: set of PrimpingSession;
+	public expositionItems: map Designer to set of Item;
+	public models: map Designer to Models;  
+
+	inv card audience >=0 and card audience <= maxSpectators;
+	inv forall session in set primpingSessions & session.attendees subset audience;
+	inv forall session in set primpingSessions & (session.maxAttendees <= maxSpectators and (card session.attendees) <= (card audience));
+operations
+	public FashionShow: String * String * String * Price * set of Designer * int ==> FashionShow 
+	FashionShow(d, p, t, pr, de, maxS) == 
+	(
+		date := d;
+		place := p;
+		theme := t;
+		price := pr;
+		designers := de;
+		primpingSessions := {};
+		maxSpectators := maxS;
+		return self;
+	);
+
+
+functions
+-- TODO Define functiones here
+traces
+-- TODO Define Combinatorial Test Traces here
 end FashionShow

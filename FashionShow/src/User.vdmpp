@@ -9,7 +9,6 @@ class User
 	instance variables
 		public username: Username;
 		public name: FashionShow`String;
-		public static id : int := 0;
 		public budget: Budget;
 		public boughtItems: set of Item;
 	operations
@@ -22,6 +21,27 @@ class User
 			boughtItems:= {};
 			return self;
 		);
+		
+		public getUsername: () ==> FashionShow`String
+			getUsername() == return username;
+		public setUsername: (FashionShow`String) ==> ()
+			setUsername(usrnm) == username := usrnm;
+		
+		public getName: () ==> FashionShow`String
+			getName() == return name;
+		public setName: (FashionShow`String) ==> ()
+			setName(nm) == name := nm;
+			
+		public getBudget: () ==> Budget
+			getBudget() == return budget;
+		public setBudget: (Budget) ==> ()
+			setBudget(bd) == budget := bd;
+			
+		public getBoughtItems: () ==> set of Item
+			getBoughtItems() == return boughtItems;
+		public setBoughtItems: (Item) ==> ()
+			setBoughtItems(item) == boughtItems := boughtItems union {item};
+		
 	functions
 	-- TODO Define functiones here
 	traces
