@@ -1,12 +1,10 @@
 class Designer
 	types
-	values
-	-- TODO Define values here
 	instance variables
 		public name: FashionShow`String;
 		public models: set of Model;
 		public items: set of Item;
-	
+	values
 	operations
 	 	public Designer: FashionShow`String ==> Designer 
 		Designer(n) == 
@@ -16,8 +14,88 @@ class Designer
 			items := {};
 			return self;
 		);
+		public getName: () ==> FashionShow`String
+			getName() == return name
+			pre name <> ""
+			post RESULT = name;
+		
+		public getModels: () ==> set of Model
+			getModels() == return models
+			pre models <> {}
+			post RESULT = models;
+			
+		public getItems: () ==> set of Item
+			getItems() == return items
+			pre items <> {}
+			post RESULT = items;
+	 
+	 public itemAlreadyAdded : Item ==> bool
+	 	itemAlreadyAdded(item) == (
+	 		if(item in set items) then 
+	 			return true
+	 		else 
+	 			return false;
+	 	);
+	 
+
+	 public addModel: Model ==> ()
+	 	addModel(model) == 
+	 	if (not modelAlreadyInShow(model)) then 
+	 		models := models union {model};
+	 
+	 public addModels: set of Model ==> ()
+	 	addModels(newModels) ==
+	 	for all m in set newModels do (
+	 		if (not modelAlreadyInShow(m)) then
+	 			models := models union {m};
+	 	);
+	 	 
+	 public remModel: Model ==> ()
+	  remModel(model) ==
+	  	if (modelAlreadyInShow(model)) then
+	  		models := models \ {model};
+	 
+	 public remModels: set of Model ==> ()
+	  remModels(oldModels) ==
+	   for all model in set oldModels do (
+	    if(modelAlreadyInShow(model)) then
+	  		models := models \ {model};
+	  	);
+	 
+	 public modelAlreadyInShow : Model ==> bool
+			modelAlreadyInShow(model) == (
+				if (model in set models) then
+					return true
+				else 
+				  return false;
+	 );
+	  	
+	 public addItem: Item ==> ()
+	  addItem(item) ==
+	  if(not itemAlreadyAdded(item)) then
+	  	items := items union {item};
+	 
+	 public addItems: set of Item ==> ()
+	 	addItems(newItems) ==
+	 	for all i in set newItems do (
+	 		if (not itemAlreadyAdded(i)) then
+	 			items := items union {i};
+	 		);
+	 		
+	 public remItem: Item ==> ()
+	  remItem(item) ==
+	   if(itemAlreadyAdded(item)) then
+	   	items := items \ {item};
+	 
+	 public remItems: set of Item ==> ()
+	 	remItems(oldItems) ==
+	 		for all i in set oldItems do (
+	 			if(itemAlreadyAdded(i)) then
+	 				items := items \ {i}
+	 		);
+	 		  	
 	functions
-	-- TODO Define functiones here
+		
 	traces
 	-- TODO Define Combinatorial Test Traces here
 end Designer
