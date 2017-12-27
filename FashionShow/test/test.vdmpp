@@ -5,6 +5,11 @@ instance variables
 	d1: Designer := new Designer("Miguel Lira");
 	d2: Designer := new Designer("Miriam Gonçalves");
 	d3: Designer := new Designer("Paulo Sérgio");
+	d4: Designer := new Designer("Coco Chanel");
+	d5: Designer := new Designer("Ralph Lauren");
+	d6: Designer := new Designer("Karl Lagerfeld");
+	d7: Designer := new Designer("Donatella Versace");
+	
 	
 	u1: User := new User("zequinhaBombeiro","José Esteves");
 	u2: User := new User("digas","Diogo Coelho");
@@ -31,13 +36,8 @@ operations
 public static main: () ==> ()
 	main() == (
 	IO`println("Running tests...");
-  new Test().testExample(); 
+  new TestDesignerClass().testAll();
   IO`println("Finished running tests");
 	);
-public testExample: () ==> ()
-  testExample() == (
-  	assertEqual(it5, it6);
-  	-- fazer aqui os teste!!!
- );
 
 end Test

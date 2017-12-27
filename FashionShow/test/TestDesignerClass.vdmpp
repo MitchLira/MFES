@@ -1,0 +1,53 @@
+class TestDesignerClass is subclass of MyTestCase
+instance variables
+	-- items
+	it1: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<XL>);
+	it2: Item := new Item("Oculos de Sol Gucci","123ggg4hk",220.50,<S>);
+	it3: Item := new Item("Calcinha Branca","1c34ff445",220.50,<M>);
+	it4: Item := new Item("Camisola Sarja Preta Versace","3213fff23",220.50,<L>);
+	it5: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<XS>);
+	it6: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<XS>);
+	it7: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<S>);
+	it8: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<M>);
+	
+	-- models
+	m1: Model:= new Model("Adriana Lima", 36, 1.78, "Brasil");
+	m2: Model:= new Model("Sara Sampaio", 26, 1.72, "Portugal");
+	m3: Model:= new Model("Karlie Kloss", 25, 1.88, "U.S.A");
+	m4: Model:= new Model("Gigi Hadid", 22, 1.79, "U.S.A");
+	m5: Model:= new Model("Candice Swanepoel", 29, 1.77, "Africa do Sul");
+	m6: Model:= new Model("Lily Aldridge", 32, 1.75, "U.S.A");
+	m7: Model:= new Model("Ashley Graham", 30, 1.75, "U.S.A");
+	
+
+operations
+	public testSetGetModels: () ==> ()
+	testSetGetModels() == (
+    IO`println("\t\t test set Models 1");
+    let d1 = new Designer("Coco Chanel") in (
+    	d1.setModels({m1,m2,m3});
+    	assertEqual(d1.getModels(), {m1,m2,m3});
+    	d1.setModels({});
+    	assertEqual(d1.getModels(), {});
+    );
+	);
+	
+	public testSetGetItems: () ==> ()
+	testSetGetItems() == (
+    IO`println("\t\t test set Items 1");
+    let d2 = new Designer("Ralph Lauren") in (
+    	d2.setItems({it1,it2});
+    	assertEqual(d2.getItems(), {it1,it2});
+    	d2.setItems({});
+    	assertEqual(d2.getItems(), {});
+    );
+	);
+	
+	-- Entry point that runs all tests with valid inputs
+  public testAll: () ==> ()
+  testAll() == (
+  		testSetGetModels();
+  		testSetGetItems();
+  );
+	
+end TestDesignerClass
