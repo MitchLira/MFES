@@ -1,14 +1,11 @@
 class TestModelClass
-types
--- TODO Define types here
 values
 -- TODO Define values here
 instance variables
 -- TODO Define instance variables here
 operations
--- TODO Define operations here
-functions
--- TODO Define functiones here
-traces
--- TODO Define Combinatorial Test Traces here
+	-- Entry point that runs all tests with valid inputs
+  public testAll: () ==> ()
+  testAll() == (
+  );
 end TestModelClass
