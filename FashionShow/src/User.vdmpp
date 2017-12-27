@@ -1,29 +1,29 @@
 class User
-types
-	public Budget = real
-		inv r == r >= 0.0;
-	public Username = FashionShow`String;
-	
-values
--- TODO Define values here
-instance variables
-	public username: Username;
-	public name: FashionShow`String;
-	public static id : int := 0;
-	public budget: Budget;
-	public boughtItems: set of Item;
-operations
-	public User: Username * FashionShow`String ==> User 
-	User(u,n) == 
-	(
-		username := u;
-		name := n;
-		budget := 0.0;
-		boughtItems:= {};
-		return self;
-	);
-functions
--- TODO Define functiones here
-traces
--- TODO Define Combinatorial Test Traces here
+	types
+		public Budget = real
+			inv r == r >= 0.0;
+		public Username = FashionShow`String;
+		
+	values
+	-- TODO Define values here
+	instance variables
+		public username: Username;
+		public name: FashionShow`String;
+		public static id : int := 0;
+		public budget: Budget;
+		public boughtItems: set of Item;
+	operations
+		public User: Username * FashionShow`String ==> User 
+		User(u,n) == 
+		(
+			username := u;
+			name := n;
+			budget := 0.0;
+			boughtItems:= {};
+			return self;
+		);
+	functions
+	-- TODO Define functiones here
+	traces
+	-- TODO Define Combinatorial Test Traces here
 end User
