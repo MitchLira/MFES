@@ -36,31 +36,38 @@ class Designer
 	 		else 
 	 			return false;
 	 	);
-	 
-
+	
 	 public addModel: Model ==> ()
-	 	addModel(model) == 
+	 	addModel(model) == (
 	 	if (not modelAlreadyInShow(model)) then 
-	 		models := models union {model};
+	 		models := models union {model}
+	 )
+	 pre model not in set models;
 	 
 	 public addModels: set of Model ==> ()
-	 	addModels(newModels) ==
-	 	for all m in set newModels do (
+	 	addModels(newModels) == (
+	  for all m in set newModels do (
 	 		if (not modelAlreadyInShow(m)) then
 	 			models := models union {m};
-	 	);
+	 		)
+	 	)
+	 	pre not (newModels subset models);
 	 	 
 	 public remModel: Model ==> ()
-	  remModel(model) ==
+	  remModel(model) == (
 	  	if (modelAlreadyInShow(model)) then
-	  		models := models \ {model};
+	  		models := models \ {model}
+	 )
+	 pre model in set models;
 	 
 	 public remModels: set of Model ==> ()
-	  remModels(oldModels) ==
+	  remModels(oldModels) == (
 	   for all model in set oldModels do (
 	    if(modelAlreadyInShow(model)) then
 	  		models := models \ {model};
-	  	);
+	  	)
+	 )
+	 pre oldModels subset models;
 	 
 	 public modelAlreadyInShow : Model ==> bool
 			modelAlreadyInShow(model) == (
@@ -71,31 +78,37 @@ class Designer
 	 );
 	  	
 	 public addItem: Item ==> ()
-	  addItem(item) ==
+	  addItem(item) == (
 	  if(not itemAlreadyAdded(item)) then
-	  	items := items union {item};
+	  	items := items union {item}
+	 )
+	 pre not (item in set items);
 	 
 	 public addItems: set of Item ==> ()
-	 	addItems(newItems) ==
+	 	addItems(newItems) == (
 	 	for all i in set newItems do (
 	 		if (not itemAlreadyAdded(i)) then
 	 			items := items union {i};
-	 		);
+	 		)
+	 )
+	 pre not (newItems subset items);
 	 		
 	 public remItem: Item ==> ()
 	  remItem(item) ==
 	   if(itemAlreadyAdded(item)) then
-	   	items := items \ {item};
+	   	items := items \ {item}
+	 pre item in set items;
 	 
 	 public remItems: set of Item ==> ()
 	 	remItems(oldItems) ==
 	 		for all i in set oldItems do (
 	 			if(itemAlreadyAdded(i)) then
 	 				items := items \ {i}
-	 		);
-	 		  	
+	 		)
+	 pre oldItems subset items;
+	 
 	functions
-		
+	
 	traces
 	-- TODO Define Combinatorial Test Traces here
 end Designer
