@@ -34,7 +34,7 @@ operations
 	
 	public testSetGetItems: () ==> ()
 	testSetGetItems() == (
-    IO`println("\t\t test set Items 1");
+    IO`println("\t\t test get Items");
     let d2 = new Designer("Ralph Lauren") in (
     	d2.setItems({it1,it2});
     	assertEqual(d2.getItems(), {it1,it2});
@@ -43,11 +43,31 @@ operations
     );
 	);
 	
+	public testGetName: () ==> ()
+	testGetName() == (
+    IO`println("\t\t test get Name");
+    let d3 = new Designer("Donatella Versace") in (
+    	assertEqual(d3.getName(), "Donatella Versace");
+    );
+	);
+	
+	public testAddModel: () ==> ()
+	testAddModel() == (
+		IO`println("\t\t test add Model");
+  	let d1 = new Designer("Coco Chanel") in (
+    d1.setModels({m1,m2,m3});
+    assertEqual(d1.getModels(), {m1,m2,m3});
+    d1.addModel(m4);
+    assertEqual(d1.getModels(),{m1,m2,m3,m4});
+		);
+	);
+	
 	-- Entry point that runs all tests with valid inputs
   public testAll: () ==> ()
   testAll() == (
   		testSetGetModels();
   		testSetGetItems();
+  		testGetName();
   );
 	
 end TestDesignerClass
