@@ -1,30 +1,30 @@
 class PrimpingSession
-types
--- TODO Define types here
-values
--- TODO Define values here
-instance variables
-	public name: FashionShow`String;
-	public place: FashionShow`String;
-	public date: FashionShow`String;
-	public attendees: set of User;
-	public maxAttendees: int;
-	
-	inv card attendees >= 0 or card attendees <= maxAttendees;
-	inv maxAttendees >= 0;
-operations
-public PrimpingSession: FashionShow`String * FashionShow`String * FashionShow`String * int ==> PrimpingSession 
-	PrimpingSession(n, p, d, m) == 
-	(
-		name := n;
-		place := p;
-		date := d;
-		maxAttendees := m;
-		attendees := {};
-		return self;
-	);
-functions
--- TODO Define functiones here
-traces
--- TODO Define Combinatorial Test Traces here
+	types
+	-- TODO Define types here
+	values
+	-- TODO Define values here
+	instance variables
+		public name: FashionShow`String;
+		public place: FashionShow`String;
+		public date: FashionShow`String;
+		public attendees: set of User;
+		public maxAttendees: int;
+		
+		inv card attendees >= 0 or card attendees <= maxAttendees;
+		inv maxAttendees >= 0;
+	operations
+	public PrimpingSession: FashionShow`String * FashionShow`String * FashionShow`String * int ==> PrimpingSession 
+		PrimpingSession(n, p, d, m) == 
+		(
+			name := n;
+			place := p;
+			date := d;
+			maxAttendees := m;
+			attendees := {};
+			return self;
+		);
+	functions
+	-- TODO Define functiones here
+	traces
+	-- TODO Define Combinatorial Test Traces here
 end PrimpingSession
