@@ -77,6 +77,13 @@ operations
 	public setGender: Gender ==> ()
 		setGender(newGender) == (
 			gender := newGender;
+		)
+	pre newGender = <Female> or
+	    newGender = <Male>;
+	
+	public setShows: set of FashionShow ==> ()
+		setShows(newShows) == (
+	 	shows := newShows;
 		);
 	
 	public addShow: FashionShow ==> ()
