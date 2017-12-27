@@ -53,38 +53,13 @@ operations
 	public getGender: () ==> Gender
 		getGender() == return gender
 		post RESULT = gender;
-		
-	public setName: FashionShow`String ==> ()
-		setName(newName) == (
-	 	name := newName;
-		);
-		
-	public setAge: Age ==> ()
-		setAge(newAge) == (
-	 	age := newAge;
-		);
-	
-	public setHeight: Height ==> ()
-		setHeight(newHeight) == (
-	 	height := newHeight;
-		);
-	
-	public setNationality: FashionShow`String ==> ()
-		setNationality(newNationality) == (
-	 	nationality := newNationality;
-		);
-	
-	public setGender: Gender ==> ()
-		setGender(newGender) == (
-			gender := newGender;
-		)
-	pre newGender = <Female> or
-	    newGender = <Male>;
-	
+
 	public setShows: set of FashionShow ==> ()
 		setShows(newShows) == (
 	 	shows := newShows;
-		);
+		)
+	pre shows = {}
+	post shows = newShows;
 	
 	public addShow: FashionShow ==> ()
 		addShow(newShow) == (
@@ -97,7 +72,8 @@ operations
 		remShow(oldShow) == (
 			shows := shows \ {oldShow}
 		)
-		pre oldShow in set shows;
+		pre oldShow in set shows
+		and shows <> {};
 		
 functions
 -- TODO Define functiones here
