@@ -50,8 +50,7 @@ operations
 		addModel(model) == (
 	 		if (not modelAlreadyInShow(model)) then 
 	 			models := models union {model}
-		)
-	pre model not in set models;
+		);
 	 
 	public addModels: set of Model ==> ()
 		addModels(newModels) == (
@@ -59,15 +58,14 @@ operations
 	 			if (not modelAlreadyInShow(m)) then
 	 				models := models union {m};
 			)
-	 	)
-	pre not (newModels subset models);
+	 	);
 	 	 
 	public remModel: Model ==> ()
 		remModel(model) == (
 	  	if (modelAlreadyInShow(model)) then
 	  		models := models \ {model}
 	 	)
-	pre model in set models;
+	pre models <> {};
 	 
 	public remModels: set of Model ==> ()
 		remModels(oldModels) == (
@@ -76,7 +74,7 @@ operations
 	  			models := models \ {model};
 	  	)
 		)
-	pre oldModels subset models;
+	pre models <> {};
 	 
 	public modelAlreadyInShow : Model ==> bool
 		modelAlreadyInShow(model) == (
@@ -90,8 +88,7 @@ operations
 		addItem(item) == (
 	  	if(not itemAlreadyAdded(item)) then
 	  		items := items union {item}
-		)
-	pre not (item in set items);
+		);
 	 
 	public addItems: set of Item ==> ()
 		addItems(newItems) == (
@@ -99,22 +96,19 @@ operations
 	 			if (not itemAlreadyAdded(i)) then
 	 				items := items union {i};
 	 		)
-	 	)
-	pre not (newItems subset items);
+	 	);
  		
 	public remItem: Item ==> ()
 		remItem(item) ==
 	  	if(itemAlreadyAdded(item)) then
-	   		items := items \ {item}
-	pre item in set items;
+	   		items := items \ {item};
 	 
 	public remItems: set of Item ==> ()
 		remItems(oldItems) ==
 	 		for all i in set oldItems do (
 	 			if(itemAlreadyAdded(i)) then
 	 				items := items \ {i}
-	 		)
-	pre oldItems subset items;
+	 		);
 	 
 functions
 	
