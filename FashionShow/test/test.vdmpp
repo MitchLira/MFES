@@ -38,6 +38,7 @@ public static main: () ==> ()
 	main() == (
 	IO`println("Running tests...");
   new TestDesignerClass().testAll();
+  new TestModelClass().testAll();
   IO`println("Finished running tests");
 	);
 

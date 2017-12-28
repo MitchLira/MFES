@@ -1,11 +1,73 @@
-class TestModelClass
-values
--- TODO Define values here
+class TestModelClass is subclass of MyTestCase
 instance variables
--- TODO Define instance variables here
+	--designers
+	d1: Designer := new Designer("Oscar de La Renta");
+	d2: Designer := new Designer("Donna Karen");
+	d3: Designer := new Designer("Alexander McQueen");
+	d4: Designer := new Designer("Coco Chanel");
+	d5: Designer := new Designer("Ralph Lauren");
+	d6: Designer := new Designer("Karl Lagerfeld");
+	d7: Designer := new Designer("Donatella Versace");
+	
+	-- fashion shows
+	f1: FashionShow := new FashionShow("12/01/2019", "Londres", "rock", 5, {d5, d7}, 120);
+	f2: FashionShow := new FashionShow("21/03/2018", "Paris", "summer", 10, {d6}, 40);
+	f3: FashionShow := new FashionShow("12/12/2020", "U.S.A", "freedom", 30, {d1}, 60);
+	f4: FashionShow := new FashionShow("04/04/2018", "Amsterdam", "wonderland", 35, {d4}, 55);
+	f5: FashionShow := new FashionShow("22/05/2019", "Belgium", "space", 10, {d3, d6}, 100);
+	f6: FashionShow := new FashionShow("19/06/2018", "Portugal", "love", 35.5, {d2}, 70);
+	f7: FashionShow := new FashionShow("13/02/2019", "Moscow", "peace", 12.5, {d5}, 65);
+	
 operations
+	public testGetModels: () ==> ()
+	testGetModels() == (
+    IO`println("\t\t test get operations of a Model");
+    let m1 = new Model("Adriana Lima", 36, 1.78, "Brasilian", <Female>) in (
+ 		assertEqual(m1.getName(),"Adriana Lima");
+ 		assertEqual(m1.getAge(), 36);
+ 		assertEqual(m1.getGender(), <Female>);
+ 		assertEqual(m1.getHeight(),1.78);
+ 		assertEqual(m1.getNationality(), "Brasilian");
+   );
+	);
+	
+	public testSetGetShowsModels: () ==> ()
+	testSetGetShowsModels() == (
+    IO`println("\t\t test get and set shows operation of a Model");
+    let m1 = new Model("Adriana Lima", 36, 1.78, "Brasilian", <Female>) in (
+ 		m1.setShows({f1, f2, f4});
+ 		assertEqual(m1.getShows(), {f1,f2,f4});
+   );
+	);	
+	
+	public testAddShowModels: () ==> ()
+	testAddShowModels() == (
+    IO`println("\t\t test add show to a Model");
+    let m1 = new Model("Adriana Lima", 36, 1.78, "Brasilian", <Female>) in (
+ 		m1.setShows({f1, f2, f4});
+ 		assertEqual(m1.getShows(), {f1,f2,f4});
+ 		m1.addShow(f5);
+ 		assertEqual(m1.getShows(),{f1,f2,f4,f5});
+   );
+	);	
+	
+	public testRemShowModels: () ==> ()
+	testRemShowModels() == (
+    IO`println("\t\t test remove show from a Model");
+    let m1 = new Model("Adriana Lima", 36, 1.78, "Brasilian", <Female>) in (
+ 		m1.setShows({f1, f2, f4});
+ 		assertEqual(m1.getShows(), {f1,f2,f4});
+ 		m1.remShow(f2);
+ 		assertEqual(m1.getShows(),{f1,f4});
+   );
+	);	
+	
 	-- Entry point that runs all tests with valid inputs
   public testAll: () ==> ()
   testAll() == (
+  	testGetModels();
+  	testSetGetShowsModels();
+  	testAddShowModels();
+  	testRemShowModels();
   );
 end TestModelClass

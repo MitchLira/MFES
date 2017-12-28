@@ -11,14 +11,14 @@ instance variables
 	it8: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<M>);
 	
 	-- models
-	m1: Model:= new Model("Adriana Lima", 36, 1.78, "Brasil", <Female>);
-	m2: Model:= new Model("Sara Sampaio", 26, 1.72, "Portugal", <Female>);
-	m3: Model:= new Model("Karlie Kloss", 25, 1.88, "U.S.A", <Female>);
-	m4: Model:= new Model("Gigi Hadid", 22, 1.79, "U.S.A", <Female>);
-	m5: Model:= new Model("Candice Swanepoel", 29, 1.77, "Africa do Sul", <Female>);
-	m6: Model:= new Model("Lily Aldridge", 32, 1.75, "U.S.A", <Female>);
-	m7: Model:= new Model("Ashley Graham", 30, 1.75, "U.S.A", <Female>);
-	m8: Model:= new Model("Miles McMillan", 28, 1.88, "U.S.A", <Male>);
+	m1: Model:= new Model("Adriana Lima", 36, 1.78, "Brasilian", <Female>);
+	m2: Model:= new Model("Sara Sampaio", 26, 1.72, "Portuguese", <Female>);
+	m3: Model:= new Model("Karlie Kloss", 25, 1.88, "American", <Female>);
+	m4: Model:= new Model("Gigi Hadid", 22, 1.79, "American", <Female>);
+	m5: Model:= new Model("Candice Swanepoel", 29, 1.77, "African", <Female>);
+	m6: Model:= new Model("Lily Aldridge", 32, 1.75, "American", <Female>);
+	m7: Model:= new Model("Ashley Graham", 30, 1.75, "American", <Female>);
+	m8: Model:= new Model("Miles McMillan", 28, 1.88, "American", <Male>);
 
 operations
 	public testSetGetModels: () ==> ()
