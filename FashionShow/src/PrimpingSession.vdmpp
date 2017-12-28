@@ -9,22 +9,61 @@ class PrimpingSession
 		public date: FashionShow`String;
 		public attendees: set of User;
 		public maxAttendees: int;
+		public primpingFull: bool;
 		
 		inv card attendees >= 0 or card attendees <= maxAttendees;
 		inv maxAttendees >= 0;
 	operations
-	public PrimpingSession: FashionShow`String * FashionShow`String * FashionShow`String * int ==> PrimpingSession 
-		PrimpingSession(n, p, d, m) == 
-		(
-			name := n;
-			place := p;
-			date := d;
-			maxAttendees := m;
-			attendees := {};
-			return self;
-		);
+		public PrimpingSession: FashionShow`String * FashionShow`String * FashionShow`String * int ==> PrimpingSession 
+			PrimpingSession(n, p, d, m) == 
+			(
+				name := n;
+				place := p;
+				date := d;
+				maxAttendees := m;
+				attendees := {};
+				primpingFull := false;
+				return self;
+			);
+		
+		public getName: () ==> FashionShow`String
+		getName() == return name;
+			
+		public getPlace: () ==> FashionShow`String
+		getPlace() == return place;
+			
+		public getDate: () ==> FashionShow`String
+		getDate() == return date;
+		
+		public getMaxAttendees: () ==> int
+		getMaxAttendees() == return maxAttendees;		
+		
+		public getPrimpingFull: () ==> bool
+		getPrimpingFull() == return primpingFull;
+		
+		public getAttendees: () ==> set of User
+		getAttendees() == return attendees;
+		
+		public registerAttendant: User ==> ()
+		registerAttendant(user) == (
+			attendees := attendees union {user};
+			
+			if card attendees = maxAttendees then primpingFull := true;
+		)
+		pre (user not in set attendees) and (card attendees < maxAttendees)
+		post (card attendees <= maxAttendees) and (user in set attendees);
+		
+		public removeAttendant: User ==> ()
+		removeAttendant(user) == (
+			attendees := attendees \ {user};
+			
+			primpingFull := false;
+		)
+		pre (user in set attendees)
+		post (user not in set attendees) and (card attendees <= maxAttendees);
+			
 	functions
-	-- TODO Define functiones here
+		
 	traces
 	-- TODO Define Combinatorial Test Traces here
 end PrimpingSession
