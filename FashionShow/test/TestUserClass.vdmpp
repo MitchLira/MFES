@@ -1,4 +1,4 @@
-class UserTest is subclass of MyTestCase
+class TestUserClass is subclass of MyTestCase
 	instance variables
 		u1: User := new User("mitchLira", "Miguel Lira");
 		u2: User := new User("miriniri", "Miriam Gonçalves");
@@ -16,10 +16,18 @@ class UserTest is subclass of MyTestCase
 				IO`println("\t\t test set Name in User");
 				let u4 = new User("mitchLira", "Miguel Lira") in (
 					u4.setName(u1.name);
-					assertEqual(u4.getName(), u1.getName());
+					assertEqual(u4.getName(), "Miguel Lira");
 				);
 			);
 			
+		public testSetGetUsername: () ==> ()
+			testSetGetUsername() == (
+				IO`println("\t\t test set username in User");
+				let u4 = new User("mitchLira", "Miguel Lira") in (
+					u4.setUsername(u1.username);
+					assertEqual(u4.getUsername(), "mitchLira");
+				);
+			);	
 		public testSetGetBudget: () ==> ()
 			testSetGetBudget() == (
 				IO`println("\t\t test set Budget in User");
@@ -44,4 +52,4 @@ class UserTest is subclass of MyTestCase
 				testSetGetBudget();
 				testSetGetBoughtItems();
 			);
-end UserTest
+end TestUserClass
