@@ -31,6 +31,7 @@ operations
 		price := pr;
 		designers := de;
 		primpingSessions := {};
+		audience := {};
 		maxSpectators := maxS;
 		return self;
 	);

@@ -5,18 +5,24 @@ instance variables
 	d1: Designer := new Designer("Miguel Lira");
 	d2: Designer := new Designer("Miriam Gonçalves");
 	d3: Designer := new Designer("Paulo Sérgio");
+	d4: Designer := new Designer("Coco Chanel");
+	d5: Designer := new Designer("Ralph Lauren");
+	d6: Designer := new Designer("Karl Lagerfeld");
+	d7: Designer := new Designer("Donatella Versace");
+	
 	
 	u1: User := new User("zequinhaBombeiro","José Esteves");
 	u2: User := new User("digas","Diogo Coelho");
 	u3: User := new User("loirinha33","Anabela Costa");
 	
-	m1: Model:= new Model("Adriana Lima", 36, 1.78, "Brasil");
-	m2: Model:= new Model("Sara Sampaio", 26, 1.72, "Portugal");
-	m3: Model:= new Model("Karlie Kloss", 25, 1.88, "U.S.A");
-	m4: Model:= new Model("Gigi Hadid", 22, 1.79, "U.S.A");
-	m5: Model:= new Model("Candice Swanepoel", 29, 1.77, "Africa do Sul");
-	m6: Model:= new Model("Lily Aldridge", 32, 1.75, "U.S.A");
-	m7: Model:= new Model("Ashley Graham", 30, 1.75, "U.S.A");
+	m1: Model:= new Model("Adriana Lima", 36, 1.78, "Brasil", <Female>);
+	m2: Model:= new Model("Sara Sampaio", 26, 1.72, "Portugal", <Female>);
+	m3: Model:= new Model("Karlie Kloss", 25, 1.88, "U.S.A", <Female>);
+	m4: Model:= new Model("Gigi Hadid", 22, 1.79, "U.S.A", <Female>);
+	m5: Model:= new Model("Candice Swanepoel", 29, 1.77, "Africa do Sul", <Female>);
+	m6: Model:= new Model("Lily Aldridge", 32, 1.75, "U.S.A", <Female>);
+	m7: Model:= new Model("Ashley Graham", 30, 1.75, "U.S.A", <Female>);
+	m8: Model:= new Model("Miles McMillan", 28, 1.88, "U.S.A", <Male>);
 	
 	it1: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<XL>);
 	it2: Item := new Item("Oculos de Sol Gucci","123ggg4hk",220.50,<S>);
@@ -31,13 +37,10 @@ operations
 public static main: () ==> ()
 	main() == (
 	IO`println("Running tests...");
-  new Test().testExample(); 
+  new TestDesignerClass().testAll();
+  new TestModelClass().testAll();
+  new TestItemClass().testAll();
   IO`println("Finished running tests");
 	);
-public testExample: () ==> ()
-  testExample() == (
-  	assertEqual(it5, it6);
-  	-- fazer aqui os teste!!!
- );
 
 end Test

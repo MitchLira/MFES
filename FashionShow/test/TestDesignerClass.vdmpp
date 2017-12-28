@@ -1,0 +1,169 @@
+class TestDesignerClass is subclass of MyTestCase
+instance variables
+	-- items
+	it1: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<XL>);
+	it2: Item := new Item("Oculos de Sol Gucci","123ggg4hk",220.50,<S>);
+	it3: Item := new Item("Calcinha Branca","1c34ff445",220.50,<M>);
+	it4: Item := new Item("Camisola Sarja Preta Versace","3213fff23",220.50,<L>);
+	it5: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<XS>);
+	it6: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<XS>);
+	it7: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<S>);
+	it8: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<M>);
+	
+	-- models
+	m1: Model:= new Model("Adriana Lima", 36, 1.78, "Brasilian", <Female>);
+	m2: Model:= new Model("Sara Sampaio", 26, 1.72, "Portuguese", <Female>);
+	m3: Model:= new Model("Karlie Kloss", 25, 1.88, "American", <Female>);
+	m4: Model:= new Model("Gigi Hadid", 22, 1.79, "American", <Female>);
+	m5: Model:= new Model("Candice Swanepoel", 29, 1.77, "African", <Female>);
+	m6: Model:= new Model("Lily Aldridge", 32, 1.75, "American", <Female>);
+	m7: Model:= new Model("Ashley Graham", 30, 1.75, "American", <Female>);
+	m8: Model:= new Model("Miles McMillan", 28, 1.88, "American", <Male>);
+
+operations
+	public testSetGetModels: () ==> ()
+	testSetGetModels() == (
+    IO`println("\t\t test set Models of a designer");
+    let d1 = new Designer("Coco Chanel") in (
+    	assertEqual(d1.getModels(), {});
+    	d1.setModels({m1,m2,m3});
+    	assertEqual(d1.getModels(), {m1,m2,m3});
+    	
+    );
+	);
+	
+	public testSetGetItems: () ==> ()
+	testSetGetItems() == (
+    IO`println("\t\t test get Items of a designer");
+    let d2 = new Designer("Ralph Lauren") in (
+    	assertEqual(d2.getItems(), {});
+    	d2.setItems({it1,it2});
+    	assertEqual(d2.getItems(), {it1,it2});
+    );
+	);
+	
+	public testGetName: () ==> ()
+	testGetName() == (
+    IO`println("\t\t test get Name of a designer");
+    let d3 = new Designer("Donatella Versace") in (
+    	assertEqual(d3.getName(), "Donatella Versace");
+    );
+	);
+	
+	public testAddModel: () ==> ()
+	testAddModel() == (
+		IO`println("\t\t test add Model to a designer");
+  	let d1 = new Designer("Coco Chanel") in (
+    d1.setModels({m1,m2,m3});
+    assertEqual(d1.getModels(), {m1,m2,m3});
+    d1.addModel(m4);
+    assertEqual(d1.getModels(),{m1,m2,m3,m4});
+		);
+	);
+	
+	public testAddItem: () ==> ()
+	testAddItem() == (
+		IO`println("\t\t test add item to a designer");
+  	let d1 = new Designer("Coco Chanel") in (
+    d1.setItems({it1,it2,it3});
+    assertEqual(d1.getItems(), {it1,it2,it3});
+    d1.addItem(it4);
+    assertEqual(d1.getItems(),{it1,it2,it3,it4});
+		);
+	);
+	
+	public testAddModels: () ==> ()
+	testAddModels() == (
+		IO`println("\t\t test add a set of Model to a designer");
+  	let d1 = new Designer("Coco Chanel") in (
+    d1.setModels({m1});
+    assertEqual(d1.getModels(), {m1});
+    d1.addModels({m4, m2,m3,m5});
+    assertEqual(d1.getModels(),{m1,m4,m2,m3,m5});
+    d1.addModels({m2,m3,m6});
+    assertEqual(d1.getModels(),{m1,m4,m2,m3,m5,m6});
+		);
+	);
+	public testAddItems: () ==> ()
+	testAddItems() == (
+		IO`println("\t\t test add a set of Item to a designer");
+  	let d1 = new Designer("Coco Chanel") in (
+    d1.setItems({it1});
+    assertEqual(d1.getItems(), {it1});
+    d1.addItems({it4, it2, it3, it5});
+    assertEqual(d1.getItems(),{it1,it4,it2,it3,it5});
+    d1.addItems({it2,it3,it6});
+    assertEqual(d1.getItems(),{it1,it4,it2,it3,it5,it6});
+		);
+	);
+	
+	public testRemModel: () ==> ()
+	testRemModel() == (
+		IO`println("\t\t test remove a Model from a designer");
+  	let d1 = new Designer("Coco Chanel") in (
+    d1.setModels({m1,m2,m3});
+    assertEqual(d1.getModels(), {m1,m2,m3});
+    d1.remModel(m3);
+    assertEqual(d1.getModels(),{m1,m2});
+    d1.remModel(m4);
+    assertEqual(d1.getModels(),{m1,m2});
+    
+		);
+	);
+	
+	public testRemItem: () ==> ()
+	testRemItem() == (
+		IO`println("\t\t test remove an Item from a designer");
+  	let d1 = new Designer("Coco Chanel") in (
+    d1.setItems({it1,it2,it3});
+    assertEqual(d1.getItems(), {it1,it2,it3});
+    d1.remItem(it3);
+    assertEqual(d1.getItems(),{it1,it2});    
+		);
+	);
+	
+	public testRemModels: () ==> ()
+	testRemModels() == (
+		IO`println("\t\t test remove a set of Model from a designer");
+  	let d1 = new Designer("Coco Chanel") in (
+    d1.setModels({m1, m2 , m3});
+    assertEqual(d1.getModels(), {m1, m2, m3});
+    d1.remModels({m2,m3});
+    assertEqual(d1.getModels(),{m1});
+    d1.remModels({m4});
+    assertEqual(d1.getModels(), {m1});
+		);
+	);
+	
+	public testRemItems: () ==> ()
+	testRemItems() == (
+		IO`println("\t\t test remove a set of Items from a designer");
+  	let d1 = new Designer("Coco Chanel") in (
+    d1.setItems({it1, it2 , it3});
+    assertEqual(d1.getItems(), {it1, it2, it3});
+    d1.remItems({it2,it3});
+    assertEqual(d1.getItems(),{it1});
+		);
+	);
+	
+
+	
+	
+	-- Entry point that runs all tests with valid inputs
+  public testAll: () ==> ()
+  testAll() == (
+  		testSetGetModels();
+  		testSetGetItems();
+  		testGetName();
+  		testAddModel();
+  		testAddItem();
+  		testAddModels();
+  		testAddItems();
+  		testRemModel();
+  		testRemModels();
+  		testRemItems();
+  		testRemItem();
+  		
+  );
+	
+end TestDesignerClass

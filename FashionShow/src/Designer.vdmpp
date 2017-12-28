@@ -1,24 +1,105 @@
 class Designer
-	types
-	values
-	-- TODO Define values here
-	instance variables
+types
+
+instance variables
 		public name: FashionShow`String;
 		public models: set of Model;
 		public items: set of Item;
+values
 	
-	operations
-	 	public Designer: FashionShow`String ==> Designer 
-		Designer(n) == 
-		(
+operations
+	public Designer: FashionShow`String ==> Designer 
+		Designer(n) == (
 			name := n;
 			models := {};
 			items := {};
 			return self;
 		);
-	functions
-	-- TODO Define functiones here
-	traces
-	-- TODO Define Combinatorial Test Traces here
+		
+	public getName: () ==> FashionShow`String
+		getName() == return name
+		post RESULT = name;
+		
+	public getModels: () ==> set of Model
+		getModels() == return models
+		post RESULT = models;
+	
+	public getItems: () ==> set of Item
+		getItems() == return items
+		post RESULT = items;
+			
+	public setItems: set of Item ==> ()
+		setItems(newItems) == (
+	 	items := newItems;
+		)
+		pre items = {}
+		post items <> {};
+	 
+	public setModels: set of Model ==> ()
+		setModels(newModels) == (
+	 	models := newModels;
+		)
+	pre models = {}
+	post models <> {};
+	
+	public addModel: Model ==> ()
+		addModel(model) == (
+	 			models := models union {model}
+		)
+	pre model not in set models;
+	 
+	public addModels: set of Model ==> ()
+		addModels(newModels) == (
+	  	for all m in set newModels do (
+	 				models := models union {m};
+			)
+	 	)
+	pre not (newModels subset models);
+	 	 
+	public remModel: Model ==> ()
+		remModel(model) == (
+	  		models := models \ {model}
+	 	)
+	pre models <> {};
+	 
+	public remModels: set of Model ==> ()
+		remModels(oldModels) == (
+	  	for all model in set oldModels do (
+	  			models := models \ {model};
+	  	)
+		)
+	pre models <> {};
+	  	
+	public addItem: Item ==> ()
+		addItem(item) == (
+	  		items := items union {item}
+		)
+	pre item not in set items;
+	 
+	public addItems: set of Item ==> ()
+		addItems(newItems) == (
+	 		for all i in set newItems do (
+	 				items := items union {i};
+	 		)
+	 	)
+	pre not (newItems subset items 
+	and newItems = items);
+ 		
+	public remItem: Item ==> ()
+		remItem(item) ==
+	   		items := items \ {item}
+	pre items <> {}
+	and item in set items;
+	 
+	public remItems: set of Item ==> ()
+		remItems(oldItems) ==
+	 		for all i in set oldItems do (
+	 				items := items \ {i}
+	 		)
+	pre items <> {}
+	and (oldItems subset items or oldItems = items);
+	 
+functions
+
 end Designer
 
