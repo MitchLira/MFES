@@ -2,22 +2,30 @@ class PrimpingSessionTest is subclass of MyTestCase
 	instance variables
 		u1: User := new User("mitchLira", "Miguel Lira");
 		u2: User := new User("miriniri", "Miriam Gonçalves");
-		u3: User := new User("pBabo", "Paulo Babo");
+--		u3: User := new User("pBabo", "Paulo Babo");
 		
-		p1: PrimpingSession := new PrimpingSession("Maquilhagem Profissional","Porto","12/01/2018",2);		
+		p1: PrimpingSession := new PrimpingSession("Maquilhagem Profissional","Porto","12/01/2018",2);
+		
+		infoP1 : set of FashionShow`String := {};	
 	operations
 		public testSetUser: () ==> ()
 		testSetUser() == (
 			IO`println("\t\t test set User in PrimpingSession");
 			assertEqual(false, p1.getPrimpingFull());
+			
 			p1.registerAttendant(u1);
 			p1.registerAttendant(u2);
 			assertEqual(true, p1.getPrimpingFull());
+			
 			IO`println(p1.getAttendees());
 			assertEqual(2, card p1.getAttendees());
+			
 			p1.removeAttendant(u1);
 			IO`println(p1.getAttendees());
-			assertEqual(false, p1.primpingFull);	
+			assertEqual(false, p1.getPrimpingFull());	
+			
+			infoP1 := infoP1 union {p1.getName(), p1.getPlace(), p1.getDate()};
+			assertEqual({"Maquilhagem Profissional","Porto","12/01/2018"},infoP1);
 		);
 		
 		public testAll: () ==> ()

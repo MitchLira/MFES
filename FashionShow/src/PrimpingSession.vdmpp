@@ -57,7 +57,7 @@ class PrimpingSession
 		removeAttendant(user) == (
 			attendees := attendees \ {user};
 			
-			if primpingFull then primpingFull := false;
+			primpingFull := false;
 		)
 		pre (user in set attendees)
 		post (user not in set attendees) and (card attendees <= maxAttendees);
