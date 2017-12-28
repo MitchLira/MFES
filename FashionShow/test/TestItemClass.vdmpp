@@ -1,0 +1,19 @@
+class TestItemClass is subclass of MyTestCase
+operations
+
+	public testGetItem: () ==> ()
+	testGetItem() == (
+    IO`println("\t\t test get operations of an Item");
+    let it1 = new Item("Gucci Sunglasses","123ggg4hk",220.50,<S>) in (
+ 		assertEqual(it1.getName(), "Gucci Sunglasses");
+ 		assertEqual(it1.getReference(),"123ggg4hk");
+ 		assertEqual(it1.getPrice(), 220.50);
+ 		assertEqual(it1.getSize(), <S>);
+   );
+	);	
+	-- Entry point that runs all tests with valid inputs
+  public testAll: () ==> ()
+  testAll() == (
+  	testGetItem();
+  );
+end TestItemClass
