@@ -1,14 +1,10 @@
 class TestUserClass is subclass of MyTestCase
 	instance variables
-		u1: User := new User("mitchLira", "Miguel Lira");
-		u2: User := new User("miriniri", "Miriam Gonçalves");
 		u3: User := new User("pBabo", "Paulo Babo");
 		
 		it1: Item := new Item("Camisolinha de l�","1c34ff445",220.50,<XL>);
 		it2: Item := new Item("Oculos de Sol Gucci","123ggg4hk",220.50,<S>);
 		it3: Item := new Item("Calcinha Branca","1c34ff445",220.50,<M>);
-		
-		u1Expected: FashionShow`String;
 		
 	operations
 		public testSetGetName: () ==> ()
