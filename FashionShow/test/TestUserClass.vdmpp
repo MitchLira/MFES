@@ -14,8 +14,9 @@ class TestUserClass is subclass of MyTestCase
 		public testSetGetName: () ==> ()
 			testSetGetName() == (
 				IO`println("\t\t test set Name in User");
-				let u4 = new User("mitchLira", "Miguel Lira") in (
-					u4.setName(u1.name);
+				let u4 = new User("mitchLira", "Miguel Luís") in (
+					assertEqual(u4.getName(), "Miguel Luís");
+					u4.setName("Miguel Lira");
 					assertEqual(u4.getName(), "Miguel Lira");
 				);
 			);
@@ -24,8 +25,9 @@ class TestUserClass is subclass of MyTestCase
 			testSetGetUsername() == (
 				IO`println("\t\t test set username in User");
 				let u4 = new User("mitchLira", "Miguel Lira") in (
-					u4.setUsername(u1.username);
 					assertEqual(u4.getUsername(), "mitchLira");
+					u4.setUsername("mitchLira00");
+					assertEqual(u4.getUsername(), "mitchLira00");
 				);
 			);	
 		public testSetGetBudget: () ==> ()
