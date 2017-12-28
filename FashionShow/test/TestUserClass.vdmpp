@@ -2,7 +2,7 @@ class TestUserClass is subclass of MyTestCase
 	instance variables
 		u3: User := new User("pBabo", "Paulo Babo");
 		
-		it1: Item := new Item("Camisolinha de lï¿½","1c34ff445",220.50,<XL>);
+		it1: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<XL>);
 		it2: Item := new Item("Oculos de Sol Gucci","123ggg4hk",220.50,<S>);
 		it3: Item := new Item("Calcinha Branca","1c34ff445",220.50,<M>);
 		
