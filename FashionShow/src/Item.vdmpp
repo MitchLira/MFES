@@ -1,17 +1,17 @@
 class Item
-	types
-	 public Ref =  seq of char 
-	  inv v == len v = 9;
-	 public Size = <XS>|<S>|<M>|<L>|<XL>|<XXL>;
-	values
-	-- TODO Define values here
-	instance variables
-		public name: FashionShow`String;
-		public reference: Ref; --TODO p�r reference unica
-		public price: FashionShow`Price;
-		public size: Size;
-	operations
-	 	public Item: FashionShow`String * Ref * FashionShow`Price * Size ==> Item 
+types
+public Ref =  seq of char 
+	inv v == len v = 9;
+	public Size = <XS>|<S>|<M>|<L>|<XL>|<XXL>;
+
+instance variables
+	public name: FashionShow`String;
+	public reference: Ref; --TODO p�r reference unica
+	public price: FashionShow`Price;
+	public size: Size;
+
+operations
+	public Item: FashionShow`String * Ref * FashionShow`Price * Size ==> Item 
 		Item(n, r, p, s) == 
 		(
 			name := n;
@@ -20,8 +20,22 @@ class Item
 			size := s;
 			return self;
 		);
-	functions
+		
+	public getName: () ==> FashionShow`String
+		getName() == return name
+		post RESULT = name;
+	
+	public getSize: () ==> Size
+		getSize() == return size
+		post RESULT = size;
+		
+	public getReference: () ==> Ref
+		getReference() == return reference
+		post RESULT = reference;
+	
+	public getPrice: () ==> FashionShow`Price
+		getPrice() == return price
+		post RESULT = price;
+functions
 	-- TODO Define functiones here
-	traces
-	-- TODO Define Combinatorial Test Traces here
 end Item
