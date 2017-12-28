@@ -31,38 +31,33 @@ operations
 	public setItems: set of Item ==> ()
 		setItems(newItems) == (
 	 	items := newItems;
-		);
+		)
+		pre items = {}
+		post items <> {};
 	 
 	public setModels: set of Model ==> ()
 		setModels(newModels) == (
 	 	models := newModels;
-		);
-	 
-	public itemAlreadyAdded : Item ==> bool
-		itemAlreadyAdded(item) == (
-	 	if(item in set items) then 
-	 		return true
-	 	else 
-	 		return false;
-		);
+		)
+	pre models = {}
+	post models <> {};
 	
 	public addModel: Model ==> ()
 		addModel(model) == (
-	 		if (not modelAlreadyInShow(model)) then 
 	 			models := models union {model}
-		);
+		)
+	pre model not in set models;
 	 
 	public addModels: set of Model ==> ()
 		addModels(newModels) == (
 	  	for all m in set newModels do (
-	 			if (not modelAlreadyInShow(m)) then
 	 				models := models union {m};
 			)
-	 	);
+	 	)
+	pre not (newModels subset models);
 	 	 
 	public remModel: Model ==> ()
 		remModel(model) == (
-	  	if (modelAlreadyInShow(model)) then
 	  		models := models \ {model}
 	 	)
 	pre models <> {};
@@ -70,50 +65,41 @@ operations
 	public remModels: set of Model ==> ()
 		remModels(oldModels) == (
 	  	for all model in set oldModels do (
-	    	if(modelAlreadyInShow(model)) then
 	  			models := models \ {model};
 	  	)
 		)
 	pre models <> {};
-	 
-	public modelAlreadyInShow : Model ==> bool
-		modelAlreadyInShow(model) == (
-			if (model in set models) then
-				return true
-			else 
-				return false;
-	);
 	  	
 	public addItem: Item ==> ()
 		addItem(item) == (
-	  	if(not itemAlreadyAdded(item)) then
 	  		items := items union {item}
-		);
+		)
+	pre item not in set items;
 	 
 	public addItems: set of Item ==> ()
 		addItems(newItems) == (
 	 		for all i in set newItems do (
-	 			if (not itemAlreadyAdded(i)) then
 	 				items := items union {i};
 	 		)
-	 	);
+	 	)
+	pre not (newItems subset items 
+	and newItems = items);
  		
 	public remItem: Item ==> ()
 		remItem(item) ==
-	  	if(itemAlreadyAdded(item)) then
-	   		items := items \ {item};
+	   		items := items \ {item}
+	pre items <> {}
+	and item in set items;
 	 
 	public remItems: set of Item ==> ()
 		remItems(oldItems) ==
 	 		for all i in set oldItems do (
-	 			if(itemAlreadyAdded(i)) then
 	 				items := items \ {i}
-	 		);
+	 		)
+	pre items <> {}
+	and (oldItems subset items or oldItems = items);
 	 
 functions
-	
-traces
--- TODO Define Combinatorial Test Traces here
 
 end Designer
 
