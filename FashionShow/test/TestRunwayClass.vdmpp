@@ -5,7 +5,7 @@ instance variables
 operations
 	public testPresentationAttributes: () ==> ()
 	testPresentationAttributes() == (
-		IO`println("\t\t test attributes in Presentation");
+		IO`println("\t\t test attributes in Runway");
 		
 	);
 		
