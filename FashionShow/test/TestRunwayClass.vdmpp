@@ -1,0 +1,17 @@
+class TestRunwayClass
+
+instance variables
+-- TODO Define instance variables here
+operations
+	public testPresentationAttributes: () ==> ()
+	testPresentationAttributes() == (
+		IO`println("\t\t test attributes in Presentation");
+		
+	);
+		
+	public testAll: () ==> ()
+	testAll() == (
+		testPresentationAttributes();
+	);
+
+end TestRunwayClass

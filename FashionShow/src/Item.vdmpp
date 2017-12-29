@@ -20,6 +20,7 @@ operations
 			size := s;
 			return self;
 		);
+		
 functions
 	-- TODO Define functiones here
 end Item

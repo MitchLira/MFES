@@ -38,9 +38,11 @@ public static main: () ==> ()
 	IO`println("Running tests...");
   new TestDesignerClass().testAll();
   new TestModelClass().testAll();
- -- new TestItemClass().testAll();
- -- new TestUserClass().testAll();
- -- new TestPrimpingSessionClass().testAll();
+  new TestItemClass().testAll();
+  new TestUserClass().testAll();
+  new TestPrimpingSessionClass().testAll();
+  new TestPresentationClass().testAll();
+  new TestRunwayClass().testAll();
   IO`println("Finished running tests");
 	);
 
