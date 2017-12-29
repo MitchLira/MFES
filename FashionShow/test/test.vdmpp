@@ -41,6 +41,7 @@ public static main: () ==> ()
   new TestItemClass().testAll();
   new TestUserClass().testAll();
   new TestPrimpingSessionClass().testAll();
+  new TestPresentationClass().testAll();
   IO`println("Finished running tests");
 	);
 
