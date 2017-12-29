@@ -6,7 +6,7 @@ class TestPrimpingSessionClass is subclass of MyTestCase
 		
 		
 		-- PrimpingSession(name, mk_Date(day, month, year), place, theme, price, maxSpectators)
-		p1: PrimpingSession := new PrimpingSession("Make up by Mario",mk_Plataform`Date(12, 1, 2018 ),"Lisbon", "MakeUp", 20, 50);
+		p1: PrimpingSession := new PrimpingSession("Make up by Mario",mk_Plataform`Date(2018, 12, 1 ),"Lisbon", "MakeUp", 20, 50);
 		
 	operations
 		public testPrimpingAttributes: () ==> ()

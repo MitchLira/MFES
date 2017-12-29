@@ -42,7 +42,7 @@ operations
    );
 	);	
 	
-/**public testAddShowModels: () ==> ()
+	public testAddShowModels: () ==> ()
 	testAddShowModels() == (
     IO`println("\t\t test add show to a Model");
     let m1 = new Model("Adriana Lima", 36, 1.78, "Brasilian", <Female>) in (
@@ -62,14 +62,14 @@ operations
  		m1.remShow(f2);
  		assertEqual(m1.shows,{f1,f4});
    );
-	);	**/
+	);
 	
 	-- Entry point that runs all tests with valid inputs
   public testAll: () ==> ()
   testAll() == (
   	testGetModelsAttributes();
   	testSetShowsModels();
-  --	testAddShowModels();
-  --	testRemShowModels();
+  	testAddShowModels();
+  	testRemShowModels();
   );
 end TestModelClass
