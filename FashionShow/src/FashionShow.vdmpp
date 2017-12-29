@@ -62,7 +62,7 @@ operations
 		return expositionItems(designer);
 	)
 	pre designer in set dom expositionItems;
-	
+-------------------------------------------------------------
 	public addDesigner: Designer ==> ()
 	addDesigner(designer)==
 	(
@@ -77,7 +77,21 @@ operations
 	post (designer  in set designers) and
 			 (designer  in set dom expositionItems) and
 			 (designer  in set dom models); 
-			 
+	
+	public removeDesigner: Designer ==> ()
+	removeDesigner(designer)==
+	(
+		designers:= designers \ {designer};
+		expositionItems:= (dom expositionItems \ {designer})<: expositionItems;
+		models:= (dom models \ {designer})<: models;
+	)
+	pre (designer  in set designers) and
+			(designer  in set dom expositionItems) and
+			(designer  in set dom models)	 
+	post (designer not in set designers) and
+			 (designer not in set dom expositionItems) and
+			 (designer not in set dom models);
+-------------------------------------------------------------			 
 	public addDesignerItem: Designer * Item ==> ()
 	addDesignerItem(designer,item)==
 	(
@@ -85,35 +99,20 @@ operations
 	)
 	pre (designer in set designers) and
 			(designer in set dom expositionItems) and 
-			(item in set designer.items)
-			
+			(item in set designer.items) and
+			(item not in set expositionItems(designer))
 	post item in set expositionItems(designer);
 	
-	
-	public addDesignerModel: Designer * Model ==> ()
-	addDesignerModel(designer, model)==
+	public removeDesignerItem: Designer * Item ==> ()
+	removeDesignerItem(designer,item)==
 	(
-		models(designer):= models(designer) union {model};
+		expositionItems(designer):= expositionItems(designer) \ {item};
 	)
 	pre (designer in set designers) and
-			(designer in set dom models) and
-			(model in set designer.models)
-	
-	post model in set models(designer);
-	
-	
-	public registerUserInShow: User ==> ()
-	registerUserInShow(user) ==
-	(
-		audience := audience union {user};
-		user.setBudget(user.budget - price);
-	)
-	pre (user.budget >= price) and
-			(user not in set audience)
-	post (user.budget >=0) and
-				(card audience <= maxSpectators) and
-				(user in set audience);
-	
+			(designer in set dom expositionItems) and
+			(item in set designer.items) and
+			(item in set expositionItems(designer))
+	post item not in set expositionItems(designer);
 	
 	--public addItemByRef: Item`Ref ==> ()
 	--addItemByRef(ref) ==
@@ -127,6 +126,59 @@ operations
 	--		)
 	--	)
 	--);
+------------------------------------------------------------
+	
+	public addDesignerModel: Designer * Model ==> ()
+	addDesignerModel(designer, model)==
+	(
+		models(designer):= models(designer) union {model};
+	)
+	pre (designer in set designers) and
+			(designer in set dom models) and
+			(model in set designer.models) and
+			(model not in set models(designer))
+	post model in set models(designer);
+	
+	
+	public removeDesignerModel: Designer * Model ==> ()
+	removeDesignerModel(designer, model)==
+	(
+		models(designer):= models(designer) \ {model};
+	)
+	pre (designer in set designers) and
+			(designer in set dom models) and
+			(model in set designer.models) and
+			(model in set models(designer))
+	post model not in set models(designer);
+	
+	-------------------------------------------
+	
+	public registerUserInShow: User ==> ()
+	registerUserInShow(user) ==
+	(
+		audience := audience union {user};
+		user.setBudget(user.budget - price);
+	)
+	pre (user.budget >= price) and
+			(user not in set audience)
+	post (user.budget >=0) and
+				(card audience <= maxSpectators) and
+				(user in set audience);
+	
+	public refundUser: User ==> ()
+	refundUser(user)==
+	(
+		audience := audience \ {user};
+		user.setBudget(user.budget + price);
+	)
+	pre (user in set audience) and
+			(user.budget >=0)
+	
+	post (user not in set audience) and
+			 (user.budget>0);
+	
+	
+	
 	
 functions
 -- TODO Define functiones here
