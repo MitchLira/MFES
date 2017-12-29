@@ -50,7 +50,7 @@ operations
   	let d1 = new Designer("Coco Chanel") in (
     d1.setModels({m1});
     assertEqual(d1.models, {m1});
-    d1.addModels({m4, m2,m3,m5});
+    d1.addModels({m4, m2, m3, m5});
     assertEqual(d1.models,{m1,m4,m2,m3,m5});
     d1.addModels({m2,m3,m6});
     assertEqual(d1.models,{m1,m4,m2,m3,m5,m6});
@@ -77,9 +77,6 @@ operations
     assertEqual(d1.models, {m1,m2,m3});
     d1.remModel(m3);
     assertEqual(d1.models,{m1,m2});
-    d1.remModel(m4);
-    assertEqual(d1.models,{m1,m2});
-    
 		);
 	);
 	
@@ -102,8 +99,6 @@ operations
     assertEqual(d1.models, {m1, m2, m3});
     d1.remModels({m2,m3});
     assertEqual(d1.models,{m1});
-    d1.remModels({m4});
-    assertEqual(d1.models, {m1});
 		);
 	);
 	

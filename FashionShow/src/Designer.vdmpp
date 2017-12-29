@@ -36,13 +36,13 @@ operations
 	 				models := models union {m};
 			)
 	 	)
-	pre not (newModels subset models);
+	pre not newModels subset models;
 	 	 
 	public remModel: Model ==> ()
 		remModel(model) == (
 	  		models := models \ {model}
 	 	)
-	pre models <> {};
+	pre models <> {} and model in set models;
 	 
 	public remModels: set of Model ==> ()
 		remModels(oldModels) == (
@@ -50,7 +50,7 @@ operations
 	  			models := models \ {model};
 	  	)
 		)
-	pre models <> {};
+	pre models <> {} and oldModels subset models;
 	  	
 	public addItem: Item ==> ()
 		addItem(item) == (
@@ -64,22 +64,19 @@ operations
 	 				items := items union {i};
 	 		)
 	 	)
-	pre not (newItems subset items 
-	and newItems = items);
+	pre (not newItems subset items) and newItems <> items;
  		
 	public remItem: Item ==> ()
 		remItem(item) ==
 	   		items := items \ {item}
-	pre items <> {}
-	and item in set items;
+	pre items <> {} and item in set items;
 	 
 	public remItems: set of Item ==> ()
 		remItems(oldItems) ==
 	 		for all i in set oldItems do (
 	 				items := items \ {i}
 	 		)
-	pre items <> {}
-	and (oldItems subset items or oldItems = items);
+	pre items <> {} and (oldItems subset items);
 	 
 functions
 
