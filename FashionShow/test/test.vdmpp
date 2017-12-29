@@ -1,6 +1,5 @@
 class Test is subclass of MyTestCase
 instance variables
-	site: Site := new Site();
 
 	d1: Designer := new Designer("Miguel Lira");
 	d2: Designer := new Designer("Miriam Gonçalves");

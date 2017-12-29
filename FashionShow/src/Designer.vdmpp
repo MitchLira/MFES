@@ -16,6 +16,14 @@ operations
 			return self;
 	);
 	
+	public setModels: set of Model ==> ()
+			setModels(model) == 
+				models := model;
+	
+	public setItems: set of Item ==> ()
+			setItems(item) == 
+				items := item;
+	
 	public addModel: Model ==> ()
 		addModel(model) == (
 	 			models := models union {model}

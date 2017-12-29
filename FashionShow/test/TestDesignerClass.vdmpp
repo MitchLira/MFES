@@ -21,43 +21,15 @@ instance variables
 	m8: Model:= new Model("Miles McMillan", 28, 1.88, "American", <Male>);
 
 operations
-	public testSetGetModels: () ==> ()
-	testSetGetModels() == (
-    IO`println("\t\t test set Models of a designer");
-    let d1 = new Designer("Coco Chanel") in (
-    	assertEqual(d1.getModels(), {});
-    	d1.setModels({m1,m2,m3});
-    	assertEqual(d1.getModels(), {m1,m2,m3});
-    	
-    );
-	);
-	
-	public testSetGetItems: () ==> ()
-	testSetGetItems() == (
-    IO`println("\t\t test get Items of a designer");
-    let d2 = new Designer("Ralph Lauren") in (
-    	assertEqual(d2.getItems(), {});
-    	d2.setItems({it1,it2});
-    	assertEqual(d2.getItems(), {it1,it2});
-    );
-	);
-	
-	public testGetName: () ==> ()
-	testGetName() == (
-    IO`println("\t\t test get Name of a designer");
-    let d3 = new Designer("Donatella Versace") in (
-    	assertEqual(d3.getName(), "Donatella Versace");
-    );
-	);
-	
+
 	public testAddModel: () ==> ()
 	testAddModel() == (
 		IO`println("\t\t test add Model to a designer");
   	let d1 = new Designer("Coco Chanel") in (
     d1.setModels({m1,m2,m3});
-    assertEqual(d1.getModels(), {m1,m2,m3});
+    assertEqual(d1.models, {m1,m2,m3});
     d1.addModel(m4);
-    assertEqual(d1.getModels(),{m1,m2,m3,m4});
+    assertEqual(d1.models,{m1,m2,m3,m4});
 		);
 	);
 	
@@ -66,9 +38,9 @@ operations
 		IO`println("\t\t test add item to a designer");
   	let d1 = new Designer("Coco Chanel") in (
     d1.setItems({it1,it2,it3});
-    assertEqual(d1.getItems(), {it1,it2,it3});
+    assertEqual(d1.items, {it1,it2,it3});
     d1.addItem(it4);
-    assertEqual(d1.getItems(),{it1,it2,it3,it4});
+    assertEqual(d1.items,{it1,it2,it3,it4});
 		);
 	);
 	
@@ -77,11 +49,11 @@ operations
 		IO`println("\t\t test add a set of Model to a designer");
   	let d1 = new Designer("Coco Chanel") in (
     d1.setModels({m1});
-    assertEqual(d1.getModels(), {m1});
+    assertEqual(d1.models, {m1});
     d1.addModels({m4, m2,m3,m5});
-    assertEqual(d1.getModels(),{m1,m4,m2,m3,m5});
+    assertEqual(d1.models,{m1,m4,m2,m3,m5});
     d1.addModels({m2,m3,m6});
-    assertEqual(d1.getModels(),{m1,m4,m2,m3,m5,m6});
+    assertEqual(d1.models,{m1,m4,m2,m3,m5,m6});
 		);
 	);
 	public testAddItems: () ==> ()
@@ -89,11 +61,11 @@ operations
 		IO`println("\t\t test add a set of Item to a designer");
   	let d1 = new Designer("Coco Chanel") in (
     d1.setItems({it1});
-    assertEqual(d1.getItems(), {it1});
+    assertEqual(d1.items, {it1});
     d1.addItems({it4, it2, it3, it5});
-    assertEqual(d1.getItems(),{it1,it4,it2,it3,it5});
+    assertEqual(d1.items,{it1,it4,it2,it3,it5});
     d1.addItems({it2,it3,it6});
-    assertEqual(d1.getItems(),{it1,it4,it2,it3,it5,it6});
+    assertEqual(d1.items,{it1,it4,it2,it3,it5,it6});
 		);
 	);
 	
@@ -102,11 +74,11 @@ operations
 		IO`println("\t\t test remove a Model from a designer");
   	let d1 = new Designer("Coco Chanel") in (
     d1.setModels({m1,m2,m3});
-    assertEqual(d1.getModels(), {m1,m2,m3});
+    assertEqual(d1.models, {m1,m2,m3});
     d1.remModel(m3);
-    assertEqual(d1.getModels(),{m1,m2});
+    assertEqual(d1.models,{m1,m2});
     d1.remModel(m4);
-    assertEqual(d1.getModels(),{m1,m2});
+    assertEqual(d1.models,{m1,m2});
     
 		);
 	);
@@ -116,9 +88,9 @@ operations
 		IO`println("\t\t test remove an Item from a designer");
   	let d1 = new Designer("Coco Chanel") in (
     d1.setItems({it1,it2,it3});
-    assertEqual(d1.getItems(), {it1,it2,it3});
+    assertEqual(d1.items, {it1,it2,it3});
     d1.remItem(it3);
-    assertEqual(d1.getItems(),{it1,it2});    
+    assertEqual(d1.items,{it1,it2});    
 		);
 	);
 	
@@ -127,11 +99,11 @@ operations
 		IO`println("\t\t test remove a set of Model from a designer");
   	let d1 = new Designer("Coco Chanel") in (
     d1.setModels({m1, m2 , m3});
-    assertEqual(d1.getModels(), {m1, m2, m3});
+    assertEqual(d1.models, {m1, m2, m3});
     d1.remModels({m2,m3});
-    assertEqual(d1.getModels(),{m1});
+    assertEqual(d1.models,{m1});
     d1.remModels({m4});
-    assertEqual(d1.getModels(), {m1});
+    assertEqual(d1.models, {m1});
 		);
 	);
 	
@@ -140,9 +112,9 @@ operations
 		IO`println("\t\t test remove a set of Items from a designer");
   	let d1 = new Designer("Coco Chanel") in (
     d1.setItems({it1, it2 , it3});
-    assertEqual(d1.getItems(), {it1, it2, it3});
+    assertEqual(d1.items, {it1, it2, it3});
     d1.remItems({it2,it3});
-    assertEqual(d1.getItems(),{it1});
+    assertEqual(d1.items,{it1});
 		);
 	);
 	
@@ -152,9 +124,6 @@ operations
 	-- Entry point that runs all tests with valid inputs
   public testAll: () ==> ()
   testAll() == (
-  		testSetGetModels();
-  		testSetGetItems();
-  		testGetName();
   		testAddModel();
   		testAddItem();
   		testAddModels();
