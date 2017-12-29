@@ -1,12 +1,14 @@
 class FashionShow
 types
- public String = seq of char;
+ public String = seq of char
+ 	inv s == s <> "";
  public Price = real 
  	inv p == p >= 0;
  public Models = set of Model;
 values
 
 instance variables
+	public name: String;
 	public date: String;
 	public place: String;
 	public theme: String;
@@ -18,25 +20,166 @@ instance variables
 	public expositionItems: map Designer to set of Item;
 	public models: map Designer to Models;  
 
+	inv maxSpectators >0;
 	inv card audience >=0 and card audience <= maxSpectators;
 	inv forall session in set primpingSessions & session.attendees subset audience;
 	inv forall session in set primpingSessions & (session.maxAttendees <= maxSpectators and (card session.attendees) <= (card audience));
+	
 operations
-	public FashionShow: String * String * String * Price * set of Designer * int ==> FashionShow 
-	FashionShow(d, p, t, pr, de, maxS) == 
+	public FashionShow:String * String * String * String * Price * int ==> FashionShow 
+	FashionShow(n,d, p, t, pr,  maxS) == 
 	(
+		name := n;
 		date := d;
 		place := p;
 		theme := t;
 		price := pr;
-		designers := de;
+		designers := {};
 		primpingSessions := {};
 		audience := {};
+		expositionItems := {|->};
+		models := {|->};
 		maxSpectators := maxS;
 		return self;
 	);
 
+	public getNrAttendees: () ==> int
+	getNrAttendees() ==
+	(
+		return card audience;
+	);
 
+	public getModelsOfDesignerInShow: Designer ==> set of Model
+	getModelsOfDesignerInShow(designer) ==
+	(
+		return models(designer);
+	)
+	pre designer in set dom models;
+	
+	public getItemsOfDesignerInShow: Designer ==> set of Item
+	getItemsOfDesignerInShow(designer) ==
+	(
+		return expositionItems(designer);
+	)
+	pre designer in set dom expositionItems;
+-------------------------------------------------------------
+	public addDesigner: Designer ==> ()
+	addDesigner(designer)==
+	(
+		designers := designers union {designer};
+		expositionItems(designer):= {};
+		models(designer):= {};
+	)
+	pre (designer not in set designers) and
+			(designer not in set dom expositionItems) and
+			(designer not in set dom models)
+	
+	post (designer  in set designers) and
+			 (designer  in set dom expositionItems) and
+			 (designer  in set dom models); 
+	
+	public removeDesigner: Designer ==> ()
+	removeDesigner(designer)==
+	(
+		designers:= designers \ {designer};
+		expositionItems:= (dom expositionItems \ {designer})<: expositionItems;
+		models:= (dom models \ {designer})<: models;
+	)
+	pre (designer  in set designers) and
+			(designer  in set dom expositionItems) and
+			(designer  in set dom models)	 
+	post (designer not in set designers) and
+			 (designer not in set dom expositionItems) and
+			 (designer not in set dom models);
+-------------------------------------------------------------			 
+	public addDesignerItem: Designer * Item ==> ()
+	addDesignerItem(designer,item)==
+	(
+		 expositionItems(designer):= expositionItems(designer) union {item};
+	)
+	pre (designer in set designers) and
+			(designer in set dom expositionItems) and 
+			(item in set designer.items) and
+			(item not in set expositionItems(designer))
+	post item in set expositionItems(designer);
+	
+	public removeDesignerItem: Designer * Item ==> ()
+	removeDesignerItem(designer,item)==
+	(
+		expositionItems(designer):= expositionItems(designer) \ {item};
+	)
+	pre (designer in set designers) and
+			(designer in set dom expositionItems) and
+			(item in set designer.items) and
+			(item in set expositionItems(designer))
+	post item not in set expositionItems(designer);
+	
+	--public addItemByRef: Item`Ref ==> ()
+	--addItemByRef(ref) ==
+	--(
+	--	for all designer in set designers do
+	--	(
+	--		for all item in set designer.items do
+	--		(
+	--			if item.reference = ref 
+	--			then addDesignerItem(designer,item);
+	--		)
+	--	)
+	--);
+------------------------------------------------------------
+	
+	public addDesignerModel: Designer * Model ==> ()
+	addDesignerModel(designer, model)==
+	(
+		models(designer):= models(designer) union {model};
+	)
+	pre (designer in set designers) and
+			(designer in set dom models) and
+			(model in set designer.models) and
+			(model not in set models(designer))
+	post model in set models(designer);
+	
+	
+	public removeDesignerModel: Designer * Model ==> ()
+	removeDesignerModel(designer, model)==
+	(
+		models(designer):= models(designer) \ {model};
+	)
+	pre (designer in set designers) and
+			(designer in set dom models) and
+			(model in set designer.models) and
+			(model in set models(designer))
+	post model not in set models(designer);
+	
+	-------------------------------------------
+	
+	public registerUserInShow: User ==> ()
+	registerUserInShow(user) ==
+	(
+		audience := audience union {user};
+		user.setBudget(user.budget - price);
+	)
+	pre (user.budget >= price) and
+			(user not in set audience)
+	post (user.budget >=0) and
+				(card audience <= maxSpectators) and
+				(user in set audience);
+	
+	public refundUser: User ==> ()
+	refundUser(user)==
+	(
+		audience := audience \ {user};
+		user.setBudget(user.budget + price);
+	)
+	pre (user in set audience) and
+			(user.budget >=0)
+	
+	post (user not in set audience) and
+			 (user.budget>0);
+	
+	
+	
+	
 functions
 -- TODO Define functiones here
 traces
