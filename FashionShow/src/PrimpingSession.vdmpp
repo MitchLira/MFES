@@ -14,8 +14,7 @@ class PrimpingSession is subclass of Event
 				place := p;
 				theme := t;
 				price := pr;
-				designers := {};
-				audience := {};
+				maxSpectators := maxS;
 				return self;
 			);
 		

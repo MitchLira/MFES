@@ -7,7 +7,7 @@ class Plataform
 		 public Date:: year : nat1
 		 							 month: nat1
 									 day  : nat1	
-		 	inv d == d.month < 12 and d.day <=30;
+		 	inv d == d.month <= 12 and d.day <=30;
 		 	
 	instance variables
 		public actualDate : Date;

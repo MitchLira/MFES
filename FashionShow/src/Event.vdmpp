@@ -11,7 +11,7 @@ instance variables
 	public designers: set of Designer := {};
 	public maxSpectators: nat ;
 	public audience: set of User := {};
-	
+
 	inv ((card audience) >= 0) and ((card audience) <= maxSpectators);
 	
 operations
