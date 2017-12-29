@@ -1,8 +1,6 @@
 class Runway is subclass of Event
 types
 -- TODO Define types here
-values
--- TODO Define values here
 instance variables
 	public expositionItems: map Designer to set of Item := {|->};
  	public models: map Designer to set of Model := {|->}; 
@@ -120,9 +118,5 @@ operations
 			(model in set designer.models) and
 			(model in set models(designer))
 	post model not in set models(designer);
-	
-functions
--- TODO Define functiones here
-traces
--- TODO Define Combinatorial Test Traces here
+
 end Runway

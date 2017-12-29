@@ -4,20 +4,20 @@ instance variables
 	-- Presentation(name, mk_Plataform`Date(year, month, day), place, theme, price, maxSpectators)
 	p1: Presentation := new Presentation("New Versace Collection", mk_Plataform`Date(2018,12,30), "Lisbon", "Spring", 120, 50);
 operations
-		public testPresentationAttributes: () ==> ()
-		testPresentationAttributes() == (
-			IO`println("\t\t test attributes in PrimpingSession");
-			assertEqual(p1.name, "New Versace Collection");
-			assertEqual(p1.place, "Lisbon");
-			assertEqual(p1.theme, "Spring");
-			assertEqual(p1.date, mk_Plataform`Date(2018,12,30));
-			assertEqual(p1.price, 120);
-			assertEqual(p1.maxSpectators, 50);
-		);
+	public testPresentationAttributes: () ==> ()
+	testPresentationAttributes() == (
+		IO`println("\t\t test attributes in Presentation");
+		assertEqual(p1.name, "New Versace Collection");
+		assertEqual(p1.place, "Lisbon");
+		assertEqual(p1.theme, "Spring");
+		assertEqual(p1.date, mk_Plataform`Date(2018,12,30));
+		assertEqual(p1.price, 120);
+		assertEqual(p1.maxSpectators, 50);
+	);
 		
-		public testAll: () ==> ()
-		testAll() == (
-			testPresentationAttributes();
-		);
+	public testAll: () ==> ()
+	testAll() == (
+		testPresentationAttributes();
+	);
 	
 end TestPresentationClass

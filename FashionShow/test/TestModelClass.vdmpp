@@ -17,7 +17,7 @@ instance variables
 	f4: Runway := new Runway("Angels", mk_Plataform`Date(2018,3, 1),"Paris", "Fantasy",200,50);
 	f5: Runway := new Runway("Wonderland", mk_Plataform`Date(2018, 9,21 ),"London", "Fantasy",120,40);
 	f6: Runway := new Runway("Wonderland", mk_Plataform`Date(2019, 12, 17),"London", "Fantasy",30,100);
-	f7: Runway := new Runway("Wonderland", mk_Plataform`Date(2019, 10, 13),"London", "Fantasy",40,120);
+	f7: Runway := new Runway("Wonderland", mk_Plataform`Date(2020, 12, 17),"London", "Fantasy",40,120);
 	
 operations
 	public testGetModelsAttributes: () ==> ()
@@ -52,6 +52,8 @@ operations
  		assertEqual(m1.shows,{f1,f2,f4,f5});
  		m1.addShow(f6);
  		assertEqual(m1.shows,{f1,f2,f4,f5,f6});
+ 		m1.addShow(f7);
+ 		assertEqual(m1.shows,{f1,f2,f4,f5,f6,f7});
    );
 	);	
 	
