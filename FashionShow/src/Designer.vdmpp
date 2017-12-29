@@ -2,13 +2,13 @@ class Designer
 types
 
 instance variables
-		public name: FashionShow`String;
+		public name: Plataform`String;
 		public models: set of Model;
 		public items: set of Item;
 values
 	
 operations
-	public Designer: FashionShow`String ==> Designer 
+	public Designer: Plataform`String ==> Designer 
 		Designer(n) == (
 			name := n;
 			models := {};
@@ -16,7 +16,7 @@ operations
 			return self;
 		);
 		
-	public getName: () ==> FashionShow`String
+	public getName: () ==> Plataform`String
 		getName() == return name
 		post RESULT = name;
 		

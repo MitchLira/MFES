@@ -2,17 +2,17 @@ class User
 	types
 		public Budget = real
 			inv r == r >= 0.0;
-		public Username = FashionShow`String;
+		public Username = Plataform`String;
 		
 	values
 	-- TODO Define values here
 	instance variables
 		public username: Username;
-		public name: FashionShow`String;
+		public name: Plataform`String;
 		public budget: Budget;
 		public boughtItems: set of Item;
 	operations
-		public User: Username * FashionShow`String ==> User 
+		public User: Username * Plataform`String ==> User 
 		User(u,n) == 
 		(
 			username := u;
@@ -22,14 +22,14 @@ class User
 			return self;
 		);
 		
-		public getUsername: () ==> FashionShow`String
+		public getUsername: () ==> Plataform`String
 			getUsername() == return username;
-		public setUsername: (FashionShow`String) ==> ()
+		public setUsername: (Plataform`String) ==> ()
 			setUsername(usrnm) == username := usrnm;
 		
-		public getName: () ==> FashionShow`String
+		public getName: () ==> Plataform`String
 			getName() == return name;
-		public setName: (FashionShow`String) ==> ()
+		public setName: (Plataform`String) ==> ()
 			setName(nm) == name := nm;
 			
 		public getBudget: () ==> Budget
