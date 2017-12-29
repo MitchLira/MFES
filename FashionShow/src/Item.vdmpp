@@ -5,13 +5,13 @@ public Ref =  seq of char
 	public Size = <XS>|<S>|<M>|<L>|<XL>|<XXL>;
 
 instance variables
-	public name: FashionShow`String;
+	public name: Plataform`String;
 	public reference: Ref; --TODO p�r reference unica
-	public price: FashionShow`Price;
+	public price: Plataform`Price;
 	public size: Size;
 
 operations
-	public Item: FashionShow`String * Ref * FashionShow`Price * Size ==> Item 
+	public Item: Plataform`String * Ref * Plataform`Price * Size ==> Item 
 		Item(n, r, p, s) == 
 		(
 			name := n;
@@ -20,22 +20,6 @@ operations
 			size := s;
 			return self;
 		);
-		
-	public getName: () ==> FashionShow`String
-		getName() == return name
-		post RESULT = name;
-	
-	public getSize: () ==> Size
-		getSize() == return size
-		post RESULT = size;
-		
-	public getReference: () ==> Ref
-		getReference() == return reference
-		post RESULT = reference;
-	
-	public getPrice: () ==> FashionShow`Price
-		getPrice() == return price
-		post RESULT = price;
 functions
 	-- TODO Define functiones here
 end Item

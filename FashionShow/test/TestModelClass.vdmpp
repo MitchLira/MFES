@@ -9,6 +9,7 @@ instance variables
 	d6: Designer := new Designer("Karl Lagerfeld");
 	d7: Designer := new Designer("Donatella Versace");
 	
+	--e1: Runway := new Event("nome",mk_Plataform`Date(1,2,3),"place","theme",200,200);
 	-- fashion shows
 	f1: FashionShow := new FashionShow("12/01/2019", "Londres", "rock", 5, {d5, d7}, 120);
 	f2: FashionShow := new FashionShow("21/03/2018", "Paris", "summer", 10, {d6}, 40);

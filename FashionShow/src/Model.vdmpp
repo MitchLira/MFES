@@ -8,17 +8,17 @@ types
 values
 -- TODO Define values here
 instance variables
- public name:  FashionShow`String;
+ public name:  Plataform`String;
  public age: Age;
  public height: Height; 
- public nationality: FashionShow`String;
- public shows: set of FashionShow;
+ public nationality: Plataform`String;
+ public shows: set of Event;
  public gender: Gender;
  
  inv card shows >= 0;
  
 operations
-	public Model: FashionShow`String * Age * Height * FashionShow`String * Gender ==> Model 
+	public Model: Plataform`String * Age * Height * Plataform`String * Gender ==> Model 
 	Model(n, a, h, na, g) == 
 	(
 		name := n;
@@ -29,46 +29,24 @@ operations
 		gender := g;
 		return self;
 	);
-	
-	public getName: () ==> FashionShow`String
-		getName() == return name
-		post RESULT = name;
-		
-	public getAge: () ==> Age
-		getAge() == return age
-		post RESULT = age;
-		
-	public getHeight: () ==> Height
-		getHeight() == return height
-		post RESULT = height;
-	
-	public getNationality: () ==> FashionShow`String
-		getNationality() == return nationality
-		post RESULT = nationality;
-	
-	public getShows: () ==> set of FashionShow
-		getShows() == return shows
-		post RESULT = shows;
-		
-	public getGender: () ==> Gender
-		getGender() == return gender
-		post RESULT = gender;
 
-	public setShows: set of FashionShow ==> ()
+	public setShows: set of Event ==> ()
 		setShows(newShows) == (
 	 	shows := newShows;
 		)
 	pre shows = {}
 	post shows = newShows;
 	
-	public addShow: FashionShow ==> ()
+	public addShow: Event ==> ()
 		addShow(newShow) == (
 	 			shows := shows union {newShow}
 	)
 	pre newShow not in set shows 
-		and forall s in set shows & newShow.date <> s.date;
+		and forall s in set shows & (newShow.date.day <> s.date.day or
+																 newShow.date.month <> s.date.month or
+		 														 newShow.date.year <> s.date.year);
 	
-	public remShow: FashionShow ==> ()
+	public remShow: Event ==> ()
 		remShow(oldShow) == (
 			shows := shows \ {oldShow}
 		)

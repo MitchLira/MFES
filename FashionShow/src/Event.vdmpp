@@ -1,0 +1,81 @@
+class Event
+
+values
+
+instance variables
+	public name: Plataform`String;
+	public place: Plataform`String;
+	public date: Plataform`Date;
+	public theme: Plataform`String;
+	public price: Plataform`Price; 
+	public designers: set of Designer;
+	public maxSpectators: int ;
+	public audience: set of User;
+	
+	inv maxSpectators >0;
+	inv card audience >=0 and card audience <= maxSpectators;
+	
+operations
+	public Event: Plataform`String * Plataform`Date * Plataform`String *  Plataform`String * Plataform`Price * int ==> Event 
+	Event(n,d, p, t, pr,  maxS) == 
+	(
+		name := n;
+		date := d;
+		place := p;
+		theme := t;
+		price := pr;
+		designers := {};
+		audience := {};
+		maxSpectators := maxS;
+		return self;
+	);
+----------------------------------------------------------------
+	
+	public registerUser: User ==> ()
+	registerUser(user) ==
+	(
+		audience := audience union {user};
+		user.setBudget(user.budget - price);
+	)
+	pre (user.budget >= price) and
+			(user not in set audience)
+	post (user.budget >=0) and
+				(card audience <= maxSpectators) and
+				(user in set audience);
+	
+	public refundUser: User ==> ()
+	refundUser(user)==
+	(
+		audience := audience \ {user};
+		user.setBudget(user.budget + price);
+	)
+	pre (user in set audience) and
+			(user.budget >=0)
+	
+	post (user not in set audience) and
+			 (user.budget>0);
+
+--------------------------------------------------------------
+
+	public addDesigner: Designer ==> ()
+	addDesigner(designer)==
+	(
+		designers:= designers union {designer};
+	)
+	pre designer not in set designers
+	post designer in set designers;
+	
+	public removeDesigner: Designer ==> ()
+	removeDesigner(designer)==
+	(
+		designers:= designers \ {designer};
+	)
+	pre designer in set designers
+	post designer not in set designers;
+	
+---------------------------------------------------------------
+functions
+-- TODO Define functiones here
+traces
+-- TODO Define Combinatorial Test Traces here
+end Event

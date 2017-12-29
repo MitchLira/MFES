@@ -1,54 +1,20 @@
-class FashionShow
+class Runway is subclass of Event
 types
- public String = seq of char
- 	inv s == s <> "";
- public Price = real 
- 	inv p == p >= 0;
- public Models = set of Model;
+-- TODO Define types here
 values
-
+-- TODO Define values here
 instance variables
-	public name: String;
-	public date: String;
-	public place: String;
-	public theme: String;
-	public price: Price; 
-	public designers: set of Designer;
-	public maxSpectators: int ;
-	public audience: set of User;
-	public primpingSessions: set of PrimpingSession;
 	public expositionItems: map Designer to set of Item;
-	public models: map Designer to Models;  
-
-	inv maxSpectators >0;
-	inv card audience >=0 and card audience <= maxSpectators;
-	inv forall session in set primpingSessions & session.attendees subset audience;
-	inv forall session in set primpingSessions & (session.maxAttendees <= maxSpectators and (card session.attendees) <= (card audience));
-	
+ 	public models: map Designer to set of Model; 
 operations
-	public FashionShow:String * String * String * String * Price * int ==> FashionShow 
-	FashionShow(n,d, p, t, pr,  maxS) == 
+	public Runway: Plataform`String * Plataform`Date * Plataform`String *  Plataform`String * Plataform`Price * int ==>Runway
+	Runway(n,d, p, t, pr,  maxS)==
 	(
-		name := n;
-		date := d;
-		place := p;
-		theme := t;
-		price := pr;
-		designers := {};
-		primpingSessions := {};
-		audience := {};
 		expositionItems := {|->};
 		models := {|->};
-		maxSpectators := maxS;
-		return self;
+		Event(n,d, p, t, pr,  maxS);
 	);
-
-	public getNrAttendees: () ==> int
-	getNrAttendees() ==
-	(
-		return card audience;
-	);
-
+	
 	public getModelsOfDesignerInShow: Designer ==> set of Model
 	getModelsOfDesignerInShow(designer) ==
 	(
@@ -151,37 +117,8 @@ operations
 			(model in set models(designer))
 	post model not in set models(designer);
 	
-	-------------------------------------------
-	
-	public registerUserInShow: User ==> ()
-	registerUserInShow(user) ==
-	(
-		audience := audience union {user};
-		user.setBudget(user.budget - price);
-	)
-	pre (user.budget >= price) and
-			(user not in set audience)
-	post (user.budget >=0) and
-				(card audience <= maxSpectators) and
-				(user in set audience);
-	
-	public refundUser: User ==> ()
-	refundUser(user)==
-	(
-		audience := audience \ {user};
-		user.setBudget(user.budget + price);
-	)
-	pre (user in set audience) and
-			(user.budget >=0)
-	
-	post (user not in set audience) and
-			 (user.budget>0);
-	
-	
-	
-	
 functions
 -- TODO Define functiones here
 traces
 -- TODO Define Combinatorial Test Traces here
-end FashionShow
+end Runway
