@@ -27,8 +27,10 @@ class User
 			
 		public getBoughtItems: () ==> set of Item
 			getBoughtItems() == return boughtItems;
+			
 		public setBoughtItem: (Item) ==> ()
 			setBoughtItem(item) == boughtItems := boughtItems union {item};
+		
 		public setBoughtItems: (set of Item) ==> ()
 			setBoughtItems(items) == boughtItems := boughtItems union items;
 		

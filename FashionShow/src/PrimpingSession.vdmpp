@@ -6,10 +6,16 @@ class PrimpingSession is subclass of Event
 	instance variables
 		
 	operations
-		public PrimpingSession: Plataform`String * Plataform`Date * Plataform`String *  Plataform`String * Plataform`Price * int ==> PrimpingSession 
+		public PrimpingSession: Plataform`String * Plataform`Date * Plataform`String *  Plataform`String * Plataform`Price * nat ==> PrimpingSession 
 			PrimpingSession(n,d, p, t, pr,  maxS) == 
 			(
-				Event(n,d, p, t, pr,  maxS);
+				name := n;
+				date := d;
+				place := p;
+				theme := t;
+				price := pr;
+				maxSpectators := maxS;
+				return self;
 			);
 		
 		
