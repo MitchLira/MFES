@@ -9,35 +9,35 @@ instance variables
 	d6: Designer := new Designer("Karl Lagerfeld");
 	d7: Designer := new Designer("Donatella Versace");
 	
-	--e1: Runway := new Event("nome",mk_Plataform`Date(1,2,3),"place","theme",200,200);
+	--e1: Runway := new Event("nome",mk_Date(year, month, day),"place","theme",price, MaxSpectators);
 	-- fashion shows
-	f1: FashionShow := new FashionShow("12/01/2019", "Londres", "rock", 5, {d5, d7}, 120);
-	f2: FashionShow := new FashionShow("21/03/2018", "Paris", "summer", 10, {d6}, 40);
-	f3: FashionShow := new FashionShow("12/12/2020", "U.S.A", "freedom", 30, {d1}, 60);
-	f4: FashionShow := new FashionShow("04/04/2018", "Amsterdam", "wonderland", 35, {d4}, 55);
-	f5: FashionShow := new FashionShow("22/05/2019", "Belgium", "space", 10, {d3, d6}, 100);
-	f6: FashionShow := new FashionShow("19/06/2018", "Portugal", "love", 35.5, {d2}, 70);
-	f7: FashionShow := new FashionShow("13/02/2019", "Moscow", "peace", 12.5, {d5}, 65);
+	f1: Runway := new Runway("Wonderland", mk_Plataform`Date(2018, 9, 20),"London", "Fantasy",75,100);
+	f2: Runway := new Event("New World", mk_Plataform`Date(2019, 11, 10),"U.S.A", "Rock",100,60);
+	f3: Runway := new Event("Pop Culture", mk_Plataform`Date(2018, 8, 2),"Paris", "Pop",20,90);
+	f4: Runway := new Event("Angels", mk_Plataform`Date(2018,3, 1),"Paris", "Fantasy",200,50);
+	f5: Runway := new Event("Wonderland", mk_Plataform`Date(2018, 2,29 ),"London", "Fantasy",120,40);
+	f6: Runway := new Event("Wonderland", mk_Plataform`Date(2019, 12, 17),"London", "Fantasy",30,100);
+	f7: Runway := new Event("Wonderland", mk_Plataform`Date(2019, 10, 13),"London", "Fantasy",40,120);
 	
 operations
-	public testGetModels: () ==> ()
-	testGetModels() == (
-    IO`println("\t\t test get operations of a Model");
+	public testGetModelsAttributes: () ==> ()
+	testGetModelsAttributes() == (
+    IO`println("\t\t test get attributes of a Model");
     let m1 = new Model("Adriana Lima", 36, 1.78, "Brasilian", <Female>) in (
- 		assertEqual(m1.getName(),"Adriana Lima");
- 		assertEqual(m1.getAge(), 36);
- 		assertEqual(m1.getGender(), <Female>);
- 		assertEqual(m1.getHeight(),1.78);
- 		assertEqual(m1.getNationality(), "Brasilian");
+ 		assertEqual(m1.name,"Adriana Lima");
+ 		assertEqual(m1.age, 36);
+ 		assertEqual(m1.gender, <Female>);
+ 		assertEqual(m1.height,1.78);
+ 		assertEqual(m1.nationality, "Brasilian");
    );
 	);
 	
-	public testSetGetShowsModels: () ==> ()
-	testSetGetShowsModels() == (
-    IO`println("\t\t test get and set shows operation of a Model");
+	public testSetShowsModels: () ==> ()
+	testSetShowsModels() == (
+    IO`println("\t\t test set shows operation of a Model");
     let m1 = new Model("Adriana Lima", 36, 1.78, "Brasilian", <Female>) in (
  		m1.setShows({f1, f2, f4});
- 		assertEqual(m1.getShows(), {f1,f2,f4});
+ 		assertEqual(m1.shows, {f1,f2,f4});
    );
 	);	
 	
@@ -46,9 +46,9 @@ operations
     IO`println("\t\t test add show to a Model");
     let m1 = new Model("Adriana Lima", 36, 1.78, "Brasilian", <Female>) in (
  		m1.setShows({f1, f2, f4});
- 		assertEqual(m1.getShows(), {f1,f2,f4});
+ 		assertEqual(m1.shows, {f1,f2,f4});
  		m1.addShow(f5);
- 		assertEqual(m1.getShows(),{f1,f2,f4,f5});
+ 		assertEqual(m1.shows,{f1,f2,f4,f5});
    );
 	);	
 	
@@ -57,17 +57,17 @@ operations
     IO`println("\t\t test remove show from a Model");
     let m1 = new Model("Adriana Lima", 36, 1.78, "Brasilian", <Female>) in (
  		m1.setShows({f1, f2, f4});
- 		assertEqual(m1.getShows(), {f1,f2,f4});
+ 		assertEqual(m1.shows, {f1,f2,f4});
  		m1.remShow(f2);
- 		assertEqual(m1.getShows(),{f1,f4});
+ 		assertEqual(m1.shows,{f1,f4});
    );
 	);	
 	
 	-- Entry point that runs all tests with valid inputs
   public testAll: () ==> ()
   testAll() == (
-  	testGetModels();
-  	testSetGetShowsModels();
+  	testGetModelsAttributes();
+  	testSetShowsModels();
   	testAddShowModels();
   	testRemShowModels();
   );

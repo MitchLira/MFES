@@ -10,9 +10,9 @@ operations
 	public Runway: Plataform`String * Plataform`Date * Plataform`String *  Plataform`String * Plataform`Price * int ==>Runway
 	Runway(n,d, p, t, pr,  maxS)==
 	(
+		Event(n,d, p, t, pr,  maxS);
 		expositionItems := {|->};
 		models := {|->};
-		Event(n,d, p, t, pr,  maxS);
 	);
 	
 	public getModelsOfDesignerInShow: Designer ==> set of Model

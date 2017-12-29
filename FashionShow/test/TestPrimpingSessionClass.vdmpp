@@ -1,0 +1,26 @@
+class TestPrimpingSessionClass is subclass of MyTestCase
+	instance variables
+		u1: User := new User("mitchLira", "Miguel Lira");
+		u2: User := new User("miriniri", "Miriam Gonçalves");
+--		u3: User := new User("pBabo", "Paulo Babo");
+		
+		
+		-- PrimpingSession(name, mk_Date(day, month, year), place, theme, price, maxSpectators)
+		p1: PrimpingSession := new PrimpingSession("Make up by Mario",mk_Plataform`Date(12, 1, 2018 ),"Lisbon", "MakeUp", 20, 50);
+		
+	operations
+		public testPrimpingAttributes: () ==> ()
+		testPrimpingAttributes() == (
+			IO`println("\t\t test attributes in PrimpingSession");
+			assertEqual(p1.name, "Make up by Mario");
+			assertEqual(p1.place, "Lisbon");
+			assertEqual(p1.theme, "MakeUp");
+			assertEqual(p1.price, 20);
+			assertEqual(p1.maxSpectators, 50);
+		);
+		
+		public testAll: () ==> ()
+		testAll() == (
+			testPrimpingAttributes();
+		);
+end TestPrimpingSessionClass

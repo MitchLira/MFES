@@ -7,32 +7,16 @@ class TestUserClass is subclass of MyTestCase
 		it3: Item := new Item("Calcinha Branca","1c34ff445",220.50,<M>);
 		
 	operations
-		public testSetGetName: () ==> ()
-			testSetGetName() == (
-				IO`println("\t\t test set Name in User");
+		public testGetUserAttributes: () ==> ()
+			testGetUserAttributes() == (
+				IO`println("\t\t test get User attributes");
 				let u4 = new User("mitchLira", "Miguel Luís") in (
-					assertEqual(u4.getName(), "Miguel Luís");
-					u4.setName("Miguel Lira");
-					assertEqual(u4.getName(), "Miguel Lira");
+					assertEqual(u4.name, "Miguel Luís");
+					assertEqual(u4.username, "mitchLira");
+					assertEqual(u4.budget, 0.0);
 				);
-			);
-			
-		public testSetGetUsername: () ==> ()
-			testSetGetUsername() == (
-				IO`println("\t\t test set username in User");
-				let u4 = new User("mitchLira", "Miguel Lira") in (
-					assertEqual(u4.getUsername(), "mitchLira");
-					u4.setUsername("mitchLira00");
-					assertEqual(u4.getUsername(), "mitchLira00");
-				);
-			);	
-		public testSetGetBudget: () ==> ()
-			testSetGetBudget() == (
-				IO`println("\t\t test set Budget in User");
-				assertEqual(0, u3.getBudget());
-				u3.setBudget(100);
-				assertEqual(100, u3.getBudget());
-			);
+		);	
+		
 			
 		public testSetGetBoughtItems: () ==> ()
 			testSetGetBoughtItems() == (
@@ -46,8 +30,7 @@ class TestUserClass is subclass of MyTestCase
 		
 		public testAll: () ==> ()
 			testAll() == (
-				testSetGetName();
-				testSetGetBudget();
+				testGetUserAttributes();
 				testSetGetBoughtItems();
 			);
 end TestUserClass

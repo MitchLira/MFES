@@ -12,7 +12,7 @@ instance variables
 	public maxSpectators: int ;
 	public audience: set of User;
 	
-	inv maxSpectators >0;
+	inv maxSpectators > 0;
 	inv card audience >=0 and card audience <= maxSpectators;
 	
 operations
