@@ -1,10 +1,5 @@
 class TestPrimpingSessionClass is subclass of MyTestCase
 	instance variables
-		u1: User := new User("mitchLira", "Miguel Lira");
-		u2: User := new User("miriniri", "Miriam Gonçalves");
---		u3: User := new User("pBabo", "Paulo Babo");
-		
-		
 		-- PrimpingSession(name, mk_Date(day, month, year), place, theme, price, maxSpectators)
 		p1: PrimpingSession := new PrimpingSession("Make up by Mario",mk_Plataform`Date(2018, 12, 1 ),"Lisbon", "MakeUp", 20, 50);
 		
