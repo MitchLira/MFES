@@ -8,15 +8,14 @@ instance variables
 	public date: Plataform`Date;
 	public theme: Plataform`String;
 	public price: Plataform`Price; 
-	public designers: set of Designer;
-	public maxSpectators: int ;
-	public audience: set of User;
+	public designers: set of Designer := {};
+	public maxSpectators: nat ;
+	public audience: set of User := {};
 	
-	inv maxSpectators > 0;
-	inv card audience >=0 and card audience <= maxSpectators;
+	inv ((card audience) >= 0) and ((card audience) <= maxSpectators);
 	
 operations
-	public Event: Plataform`String * Plataform`Date * Plataform`String *  Plataform`String * Plataform`Price * int ==> Event 
+	public Event: Plataform`String * Plataform`Date * Plataform`String *  Plataform`String * Plataform`Price * nat ==> Event 
 	Event(n,d, p, t, pr,  maxS) == 
 	(
 		name := n;
@@ -24,8 +23,6 @@ operations
 		place := p;
 		theme := t;
 		price := pr;
-		designers := {};
-		audience := {};
 		maxSpectators := maxS;
 		return self;
 	);

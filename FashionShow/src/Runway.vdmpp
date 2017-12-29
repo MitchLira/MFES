@@ -4,15 +4,19 @@ types
 values
 -- TODO Define values here
 instance variables
-	public expositionItems: map Designer to set of Item;
- 	public models: map Designer to set of Model; 
+	public expositionItems: map Designer to set of Item := {|->};
+ 	public models: map Designer to set of Model := {|->}; 
 operations
-	public Runway: Plataform`String * Plataform`Date * Plataform`String *  Plataform`String * Plataform`Price * int ==>Runway
-	Runway(n,d, p, t, pr,  maxS)==
+	public Runway: Plataform`String * Plataform`Date * Plataform`String *  Plataform`String * Plataform`Price * nat ==>Runway
+	Runway(n,d, p, t, pr, maxS)==
 	(
-		Event(n,d, p, t, pr,  maxS);
-		expositionItems := {|->};
-		models := {|->};
+		name := n;
+		date := d;
+		price := pr;
+		theme := t;
+		place := p;
+		maxSpectators := maxS;
+		return self;
 	);
 	
 	public getModelsOfDesignerInShow: Designer ==> set of Model
