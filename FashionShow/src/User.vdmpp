@@ -22,18 +22,6 @@ class User
 			return self;
 		);
 		
-		public getUsername: () ==> Plataform`String
-			getUsername() == return username;
-		public setUsername: (Plataform`String) ==> ()
-			setUsername(usrnm) == username := usrnm;
-		
-		public getName: () ==> Plataform`String
-			getName() == return name;
-		public setName: (Plataform`String) ==> ()
-			setName(nm) == name := nm;
-			
-		public getBudget: () ==> Budget
-			getBudget() == return budget;
 		public setBudget: (Budget) ==> ()
 			setBudget(bd) == budget := bd;
 			

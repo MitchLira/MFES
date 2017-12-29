@@ -20,22 +20,6 @@ operations
 			size := s;
 			return self;
 		);
-		
-	public getName: () ==> Plataform`String
-		getName() == return name
-		post RESULT = name;
-	
-	public getSize: () ==> Size
-		getSize() == return size
-		post RESULT = size;
-		
-	public getReference: () ==> Ref
-		getReference() == return reference
-		post RESULT = reference;
-	
-	public getPrice: () ==> Plataform`Price
-		getPrice() == return price
-		post RESULT = price;
 functions
 	-- TODO Define functiones here
 end Item

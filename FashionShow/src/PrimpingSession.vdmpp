@@ -15,7 +15,4 @@ class PrimpingSession is subclass of Event
 		
 			
 	functions
-		
-	traces
-	-- TODO Define Combinatorial Test Traces here
 end PrimpingSession

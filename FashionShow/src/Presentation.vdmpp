@@ -11,11 +11,7 @@ class Presentation is subclass of Event
 			(
 				Event(n,d, p, t, pr,  maxS);
 			);
-		
-		
 			
 	functions
-		
-	traces
-	-- TODO Define Combinatorial Test Traces here
+
 end Presentation

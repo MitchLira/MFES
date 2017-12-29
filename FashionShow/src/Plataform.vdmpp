@@ -10,15 +10,15 @@ class Plataform
 		 	inv d == d.month < 12 and d.day <=30;
 		 	
 	instance variables
-		private actualDate : Date;
-		private users: set of User;
+		public actualDate : Date;
+		public users: set of User;
 		inv not exists u1, u2 in set users & u1 <> u2 and u1.username = u2.username;
-		private events: set of Event;
+		public events: set of Event;
 		inv not exists e1, e2 in set events & e1 <> e2 and e1.name = e2.name;
 		inv not exists event in set events & Utils`isAfter(actualDate,event.date) = true;
-		private items: set of Item; 
+		public items: set of Item; 
 		inv not exists i1, i2 in set items & i1 <> i2 and i1.reference = i2.reference;
-		private designers: set of Designer
+		public designers: set of Designer
 		
 		
 	operations

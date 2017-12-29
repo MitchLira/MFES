@@ -29,30 +29,6 @@ operations
 		gender := g;
 		return self;
 	);
-	
-	public getName: () ==> Plataform`String
-		getName() == return name
-		post RESULT = name;
-		
-	public getAge: () ==> Age
-		getAge() == return age
-		post RESULT = age;
-		
-	public getHeight: () ==> Height
-		getHeight() == return height
-		post RESULT = height;
-	
-	public getNationality: () ==> Plataform`String
-		getNationality() == return nationality
-		post RESULT = nationality;
-	
-	public getShows: () ==> set of Event
-		getShows() == return shows
-		post RESULT = shows;
-		
-	public getGender: () ==> Gender
-		getGender() == return gender
-		post RESULT = gender;
 
 	public setShows: set of Event ==> ()
 		setShows(newShows) == (

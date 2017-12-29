@@ -4,8 +4,8 @@ values
 
 instance variables
 	public name: Plataform`String;
-	public date: Plataform`Date;
 	public place: Plataform`String;
+	public date: Plataform`Date;
 	public theme: Plataform`String;
 	public price: Plataform`Price; 
 	public designers: set of Designer;
@@ -29,27 +29,6 @@ operations
 		maxSpectators := maxS;
 		return self;
 	);
-
-	public getNrAttendees: () ==> int
-	getNrAttendees() ==
-	(
-		return card audience;
-	);
-
-	public getName: () ==> Plataform`String
-	getName() == return name;
-			
-	public getPlace: () ==> Plataform`String
-	getPlace() == return place;
-			
-	public getDate: () ==> Plataform`Date
-	getDate() == return date;
-		
-	public getMaxSpectators: () ==> int
-	getMaxSpectators() == return maxSpectators;		
-				
-	public getAudience: () ==> set of User
-	getAudience() == return audience;
 ----------------------------------------------------------------
 	
 	public registerUser: User ==> ()
