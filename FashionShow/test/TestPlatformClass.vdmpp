@@ -1,0 +1,113 @@
+class TestPlatformClass is subclass of MyTestCase
+types
+-- TODO Define types here
+values
+-- TODO Define values here
+instance variables
+	
+	d1: Designer := new Designer("Oscar de La Renta");
+	d2: Designer := new Designer("Donna Karen");
+	d3: Designer := new Designer("Alexander McQueen");
+	
+	it1: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<XL>);
+	it2: Item := new Item("Oculos de Sol Gucci","123ggg4hk",220.50,<S>);
+	it3: Item := new Item("Calcinha Branca","1c34ff445",220.50,<M>);
+	
+	u1: User := new User("mitchLira", "Miguel Lira");
+	u2: User := new User("miriniri", "Miriam Goncalves");
+	u3: User := new User("pauloB", "Paulo Babo");
+	
+
+	e1: Event := new PrimpingSession("Fique Bela e Amarela",
+																		mk_Plataform`Date(2017,12,29),
+																		"Avenida dos Aliados",
+																		"Amarelo/Dourado",
+																		20,
+																		50);
+	e2:	Event := new Presentation("Como andar na moda?",
+																 mk_Plataform`Date(2018,1,5),
+																 "Antigas Fabricas Tabopan",
+																 "Moda",
+																 5,
+																 300);
+	e3:	Event := new Runway("Victoria's Secret Runway",
+													 mk_Plataform`Date(2018,2,22),
+													 "Covelo de Ansiães",
+													 "Langerie",
+													 300,
+													 50
+													 );
+													 
+	p1: Plataform := new Plataform(mk_Plataform`Date(2017,12,29));
+operations
+	public testAddRemoveDesigner: () ==> ()
+	testAddRemoveDesigner()==
+	(
+		p1.addDesigner(d1);
+		p1.addDesigner(d2);
+		assertEqual({d1,d2},p1.designers);
+		p1.removeDesigner(d2);
+		assertEqual({d1},p1.designers);
+	);
+	
+	public testAddRemoveItem: () ==> ()
+	testAddRemoveItem()==
+	(
+		p1.addItem(it1);
+		p1.addItem(it2);
+		assertEqual({it1,it2},p1.items);
+		p1.removeItem(it2);
+		p1.removeItem(it1);
+		assertEqual({},p1.items);
+	);
+	
+	public testAddRemoveUser: () ==> ()
+	testAddRemoveUser()==
+	(
+		p1.addUser(u1);
+		p1.addUser(u2);
+		assertEqual({u1,u2},p1.users);
+		p1.removeUser(u2);
+		p1.removeUser(u1);
+		assertEqual({},p1.users);
+	);
+	
+	public testAddRemoveEvent: () ==> ()
+	testAddRemoveEvent()==
+	(
+		p1.addEvent(e1);
+		p1.addEvent(e2);
+		assertEqual({e1,e2},p1.events);
+		p1.removeEvent(e2);
+		p1.removeEvent(e1);
+		assertEqual({},p1.events);
+	);
+	
+	
+	public testEndDay: () ==> ()
+	testEndDay()==
+	(
+		p1.addEvent(e1);
+		p1.addEvent(e2);
+		p1.endDay();
+		assertEqual(30,p1.actualDate.day);
+		assertEqual(12,p1.actualDate.month);
+		assertEqual(2017,p1.actualDate.year);
+		assertEqual({e2},p1.events);
+		p1.removeEvent(e2);
+	);
+	
+	public testAll: () ==> ()
+  testAll() == (
+  	testAddRemoveDesigner();
+  	testAddRemoveUser();
+  	testAddRemoveItem();
+  	testAddRemoveEvent();
+  	testEndDay();
+  );
+  
+functions
+-- TODO Define functiones here
+traces
+-- TODO Define Combinatorial Test Traces here
+end TestPlatformClass
