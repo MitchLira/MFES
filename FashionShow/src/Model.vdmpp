@@ -44,14 +44,16 @@ operations
 	pre newShow not in set shows 
 		and forall s in set shows & (newShow.date.day <> s.date.day or
 																 newShow.date.month <> s.date.month or
-		 														 newShow.date.year <> s.date.year);
+		 														 newShow.date.year <> s.date.year)
+	post newShow in set shows;
 	
 	public remShow: Event ==> ()
 		remShow(oldShow) == (
 			shows := shows \ {oldShow}
 		)
 		pre oldShow in set shows
-		and shows <> {};
+		and shows <> {}
+		post oldShow not in set shows;
 		
 functions
 -- TODO Define functiones here

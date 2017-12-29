@@ -29,10 +29,12 @@ class User
 			getBoughtItems() == return boughtItems;
 			
 		public setBoughtItem: (Item) ==> ()
-			setBoughtItem(item) == boughtItems := boughtItems union {item};
+			setBoughtItem(item) == boughtItems := boughtItems union {item}
+		post item in set boughtItems;
 		
 		public setBoughtItems: (set of Item) ==> ()
-			setBoughtItems(items) == boughtItems := boughtItems union items;
+			setBoughtItems(items) == boughtItems := boughtItems union items
+		post items subset boughtItems ;
 		
 	functions
 		
