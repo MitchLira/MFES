@@ -2,8 +2,10 @@ class Runway is subclass of Event
 types
 -- TODO Define types here
 instance variables
-	public expositionItems: map Designer to set of Item := {|->};
- 	public models: map Designer to set of Model := {|->}; 
+	public expositionItems: map Designer to (set of Item) := {|->};
+ 	public models: set of Model := {};
+ 	public modelsItems: map Model to (set of Item) := {|->};
+ 	public showItems: set of Item := {};
 operations
 	public Runway: Plataform`String * Plataform`Date * Plataform`String *  Plataform`String * Plataform`Price * nat ==>Runway
 	Runway(n,d, p, t, pr, maxS)==
@@ -16,13 +18,43 @@ operations
 		maxSpectators := maxS;
 		return self;
 	);
+	public setModels: set of Model ==> ()
+			setModels(model) == 
+				models := model;
 	
-	public getModelsOfDesignerInShow: Designer ==> set of Model
-	getModelsOfDesignerInShow(designer) ==
-	(
-		return models(designer);
-	)
-	pre designer in set dom models;
+	public addModel: Model ==> ()
+		addModel(model) == (
+	 			models := models union {model};
+	 			modelsItems := modelsItems munion {model|-> {}};
+		)
+	pre model not in set models
+	post model in set models;
+	 
+	public addModels: set of Model ==> ()
+		addModels(newModels) == (
+	  	for all m in set newModels do (
+	 				models := models union {m};
+	 				modelsItems := modelsItems munion {m|-> {}};
+			)
+	 	)
+	pre not newModels subset models
+	post newModels subset models;
+	 	 
+	public remModel: Model ==> ()
+		remModel(model) == (
+	  		models := models \ {model}
+	 	)
+	pre models <> {} and model in set models
+	post model not in set models;
+	 
+	public remModels: set of Model ==> ()
+		remModels(oldModels) == (
+	  	for all model in set oldModels do (
+	  			models := models \ {model};
+	  	)
+		)
+	pre models <> {} and oldModels subset models
+	post not oldModels subset models;
 	
 	public getItemsOfDesignerInShow: Designer ==> set of Item
 	getItemsOfDesignerInShow(designer) ==
@@ -30,55 +62,65 @@ operations
 		return expositionItems(designer);
 	)
 	pre designer in set dom expositionItems;
+	
+	public getItemsInShow:() ==> set of Item
+	getItemsInShow() ==
+	(
+		dcl items: set of Item := {};
+		for all item in set rng expositionItems do (
+			items := items union item;
+		);
+		showItems := items;
+		return items;
+	);
+
 -------------------------------------------------------------
 	public addDesigner: Designer ==> ()
 	addDesigner(designer)==
 	(
 		designers := designers union {designer};
-		expositionItems(designer):= {};
-		models(designer):= {};
+		showItems := showItems union designer.items;
+		expositionItems := expositionItems munion {designer|-> designer.items};
+		
 	)
 	pre (designer not in set designers) and
-			(designer not in set dom expositionItems) and
-			(designer not in set dom models)
+			(designer not in set dom expositionItems)
 	
 	post (designer  in set designers) and
-			 (designer  in set dom expositionItems) and
-			 (designer  in set dom models); 
+			 (designer  in set dom expositionItems); 
+	
 	
 	public removeDesigner: Designer ==> ()
 	removeDesigner(designer)==
 	(
 		designers:= designers \ {designer};
-		expositionItems:= (dom expositionItems \ {designer})<: expositionItems;
-		models:= (dom models \ {designer})<: models;
+		showItems := showItems \ designer.items;
+		expositionItems:= {designer} <-: expositionItems;
 	)
 	pre (designer  in set designers) and
-			(designer  in set dom expositionItems) and
-			(designer  in set dom models)	 
+			(designer  in set dom expositionItems) 
 	post (designer not in set designers) and
-			 (designer not in set dom expositionItems) and
-			 (designer not in set dom models);
+			 (designer not in set dom expositionItems);
 -------------------------------------------------------------			 
 	public addDesignerItem: Designer * Item ==> ()
 	addDesignerItem(designer,item)==
 	(
+		 showItems := showItems union {item};
 		 expositionItems(designer):= expositionItems(designer) union {item};
 	)
 	pre (designer in set designers) and
-			(designer in set dom expositionItems) and 
-			(item in set designer.items) and
+			(designer in set (dom expositionItems)) and
 			(item not in set expositionItems(designer))
 	post item in set expositionItems(designer);
 	
 	public removeDesignerItem: Designer * Item ==> ()
 	removeDesignerItem(designer,item)==
 	(
+		showItems := showItems \ {item};
 		expositionItems(designer):= expositionItems(designer) \ {item};
 	)
 	pre (designer in set designers) and
 			(designer in set dom expositionItems) and
-			(item in set designer.items) and
 			(item in set expositionItems(designer))
 	post item not in set expositionItems(designer);
 	
@@ -95,28 +137,44 @@ operations
 	--	)
 	--);
 ------------------------------------------------------------
-	
-	public addDesignerModel: Designer * Model ==> ()
-	addDesignerModel(designer, model)==
+-------------------------------------------------------------			 
+	public setModelItem: Model * Item ==> ()
+	setModelItem(model,item)==
 	(
-		models(designer):= models(designer) union {model};
+		 modelsItems(model):= modelsItems(model) union {item};
 	)
-	pre (designer in set designers) and
-			(designer in set dom models) and
-			(model in set designer.models) and
-			(model not in set models(designer))
-	post model in set models(designer);
+	pre (model in set models) and
+			(model in set (dom modelsItems)) and
+			(item not in set modelsItems(model)) and
+			item in set showItems
+	post item in set modelsItems(model);
 	
-	
-	public removeDesignerModel: Designer * Model ==> ()
-	removeDesignerModel(designer, model)==
+	public setModelOutfit: Model * set of Item ==> ()
+	setModelOutfit(model,items)==
 	(
-		models(designer):= models(designer) \ {model};
+			modelsItems(model):= modelsItems(model) union items;
 	)
-	pre (designer in set designers) and
-			(designer in set dom models) and
-			(model in set designer.models) and
-			(model in set models(designer))
-	post model not in set models(designer);
-
+	pre (model in set models) and
+			(model in set (dom modelsItems)) and
+			(not (items  subset modelsItems(model)))
+	post items subset modelsItems(model);
+	
+	public removeModelOutfit: Model ==> ()
+	removeModelOutfit(model)==
+	(
+		modelsItems:= {model} <-: modelsItems;
+		modelsItems := modelsItems munion {model|-> {}};
+	)
+	pre (model in set models) and
+			(model in set dom modelsItems);
+			
+	public removeModelItem: Model * Item ==> ()
+	removeModelItem(model,item)==
+	(
+		modelsItems(model):= modelsItems(model) \ {item};
+	)
+	pre (model in set models) and
+			(model in set dom modelsItems) and
+			(item in set modelsItems(model))
+	post item not in set modelsItems(model);
 end Runway

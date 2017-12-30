@@ -3,7 +3,6 @@ types
 
 instance variables
 		public name: Plataform`String;
-		public models: set of Model;
 		public items: set of Item;
 values
 	
@@ -11,50 +10,13 @@ operations
 	public Designer: Plataform`String ==> Designer 
 		Designer(n) == (
 			name := n;
-			models := {};
 			items := {};
 			return self;
 	);
 	
-	public setModels: set of Model ==> ()
-			setModels(model) == 
-				models := model;
-	
 	public setItems: set of Item ==> ()
 			setItems(item) == 
 				items := item;
-	
-	public addModel: Model ==> ()
-		addModel(model) == (
-	 			models := models union {model}
-		)
-	pre model not in set models
-	post model in set models;
-	 
-	public addModels: set of Model ==> ()
-		addModels(newModels) == (
-	  	for all m in set newModels do (
-	 				models := models union {m};
-			)
-	 	)
-	pre not newModels subset models
-	post newModels subset models;
-	 	 
-	public remModel: Model ==> ()
-		remModel(model) == (
-	  		models := models \ {model}
-	 	)
-	pre models <> {} and model in set models
-	post model not in set models;
-	 
-	public remModels: set of Model ==> ()
-		remModels(oldModels) == (
-	  	for all model in set oldModels do (
-	  			models := models \ {model};
-	  	)
-		)
-	pre models <> {} and oldModels subset models
-	post not oldModels subset models;
 	  	
 	public addItem: Item ==> ()
 		addItem(item) == (

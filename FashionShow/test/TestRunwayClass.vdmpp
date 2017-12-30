@@ -1,17 +1,303 @@
-class TestRunwayClass
+class TestRunwayClass is subclass of MyTestCase
 
 instance variables
 -- TODO Define instance variables here
+	--e1: Runway := new Event("nome",mk_Date(year, month, day),"place","theme",price, MaxSpectators);
+	-- fashion shows
+	f1: Runway := new Runway("Wonderland", mk_Plataform`Date(2018, 9, 20),"London","Fantasy",75,100);
+	f2: Runway := new Runway("New World", mk_Plataform`Date(2019, 11, 10),"U.S.A", "Rock",100,60);
+	f3: Runway := new Runway("Pop Culture", mk_Plataform`Date(2018, 8, 2),"Paris", "Pop",20,90);
+	
+	--designers
+	d1: Designer := new Designer("Miguel Lira");
+	d2: Designer := new Designer("Miriam Gonçalves");
+	d3: Designer := new Designer("Paulo Sérgio");
+	d4: Designer := new Designer("Coco Chanel");
+	d5: Designer := new Designer("Ralph Lauren");
+	
+	--models
+	m1: Model:= new Model("Adriana Lima", 36, 1.78, "Brasil", <Female>);
+	m2: Model:= new Model("Sara Sampaio", 26, 1.72, "Portugal", <Female>);
+	m3: Model:= new Model("Karlie Kloss", 25, 1.88, "U.S.A", <Female>);
+	m4: Model:= new Model("Gigi Hadid", 22, 1.79, "U.S.A", <Female>);
+	m5: Model:= new Model("Candice Swanepoel", 29, 1.77, "Africa do Sul", <Female>);
+	m6: Model:= new Model("Lily Aldridge", 32, 1.75, "U.S.A", <Female>);
+	m7: Model:= new Model("Ashley Graham", 30, 1.75, "U.S.A", <Female>);
+	m8: Model:= new Model("Miles McMillan", 28, 1.88, "U.S.A", <Male>);
+	
+	-- items
+	it1: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<XL>);
+	it2: Item := new Item("Oculos de Sol Gucci","123ggg4hk",220.50,<S>);
+	it3: Item := new Item("Calcinha Branca","1c34ff445",220.50,<M>);
+	it4: Item := new Item("Camisola Sarja Preta Versace","3213fff23",220.50,<L>);
+	it5: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<S>);
+	it6: Item := new Item("Blusa axadrezada","1c34ff345",203,<XS>);
+	it7: Item := new Item("Calças rasgadas","2c34ff445",220,<S>);
+	it8: Item := new Item("Camisa Rosa","1c32ff445",120,<M>);
 operations
 	public testPresentationAttributes: () ==> ()
 	testPresentationAttributes() == (
 		IO`println("\t\t test attributes in Presentation");
-		
+		assertEqual(f1.name, "Wonderland");
+		assertEqual(f1.date, mk_Plataform`Date(2018, 9, 20));
+		assertEqual(f1.place, "London");
+		assertEqual(f1.theme, "Fantasy");
+		assertEqual(f1.price, 75);
+		assertEqual(f1.maxSpectators, 100);
 	);
-		
+	
+	public testAddModel: () ==> ()
+	testAddModel() == (
+		IO`println("\t\t test add Model to a runway");
+    f1.setModels({m1,m2,m3});
+    assertEqual(f1.models, {m1,m2,m3});
+    f1.addModel(m4);
+    assertEqual(f1.models,{m1,m2,m3,m4});
+	
+	);
+	
+	public testAddModels: () ==> ()
+	testAddModels() == (
+		IO`println("\t\t test add a set of Model to a runway");
+  	let d1 = new Runway("Wonderland", mk_Plataform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
+    d1.setModels({m1});
+    assertEqual(d1.models, {m1});
+    d1.addModels({m4, m2, m3, m5});
+    assertEqual(d1.models,{m1,m4,m2,m3,m5});
+    d1.addModels({m2,m3,m6});
+    assertEqual(d1.models,{m1,m4,m2,m3,m5,m6});
+		);
+	);
+	
+	public testRemModel: () ==> ()
+	testRemModel() == (
+		IO`println("\t\t test remove a Model from a runway");
+  	let d1 = new Runway("Wonderland", mk_Plataform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
+    d1.setModels({m1,m2,m3});
+    assertEqual(d1.models, {m1,m2,m3});
+    d1.remModel(m3);
+    assertEqual(d1.models,{m1,m2});
+		);
+	);
+	
+		public testRemModels: () ==> ()
+		testRemModels() == (
+		IO`println("\t\t test remove a set of Model from a runway");
+  	let d1 = new Runway("Wonderland", mk_Plataform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
+    d1.setModels({m1, m2 , m3});
+    assertEqual(d1.models, {m1, m2, m3});
+    d1.remModels({m2,m3});
+    assertEqual(d1.models,{m1});
+		);
+	);
+	
+	public testAddDesigner: () ==> ()
+	testAddDesigner() == (
+		IO`println("\t\t test adding designer to a runway");
+		let show1 = new Runway("Wonderland", mk_Plataform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
+    d1.addItems({it1, it2});
+    show1.addDesigner(d1);
+    assertEqual(show1.designers, {d1});
+    assertEqual(show1.expositionItems, {d1|->{it1,it2}});
+		);
+	);
+	
+	public testRemDesigner: () ==> ()
+	testRemDesigner() == (
+		IO`println("\t\t test removing designer from a runway");
+		let d6: Designer = new Designer("Karl Lagerfeld"),
+				d7: Designer = new Designer("Donatella Versace"),
+		show1 = new Runway("Wonderland", mk_Plataform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
+    d6.addItems({it1, it2});
+    d7.addItems({it4,it5});
+    show1.addDesigner(d6);
+    assertEqual(show1.designers, {d6});
+    assertEqual(show1.expositionItems, {d6|->{it1,it2}});
+    show1.addDesigner(d7);
+    assertEqual(show1.designers, {d6,d7});
+    assertEqual(show1.expositionItems, {d6|->{it1,it2},d7|->{it4,it5}});
+    show1.removeDesigner(d6);
+    assertEqual(show1.designers,{d7});
+    assertEqual(show1.expositionItems, {d7|->{it4,it5}})
+		);
+	);
+	
+	public testItemsOfDesigner: () ==> ()
+	testItemsOfDesigner() == (
+		IO`println("\t\t test getting items from a certain designer of a show");
+		let d6: Designer = new Designer("Karl Lagerfeld"),
+				d7: Designer = new Designer("Donatella Versace"),
+		show1 = new Runway("Wonderland", mk_Plataform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
+    d6.addItems({it1, it2});
+    d7.addItems({it4,it5});
+    show1.addDesigner(d6);
+    assertEqual(show1.designers, {d6});
+    assertEqual(show1.expositionItems, {d6|->{it1,it2}});
+    show1.addDesigner(d7);
+    assertEqual(show1.designers, {d6,d7});
+    assertEqual(show1.expositionItems, {d6|->{it1,it2},d7|->{it4,it5}});
+    assertEqual(show1.getItemsOfDesignerInShow(d6), {it1,it2});
+		);
+	);
+	
+	public testAddDesignerItem: () ==> ()
+	testAddDesignerItem() == (
+		IO`println("\t\t test adding an item to a designer in a show");
+		let d6: Designer = new Designer("Karl Lagerfeld"),
+				d7: Designer = new Designer("Donatella Versace"),
+		show1 = new Runway("Wonderland", mk_Plataform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
+    d6.addItems({it1, it2});
+    d7.addItems({it4});
+    show1.addDesigner(d6);
+    assertEqual(show1.designers, {d6});
+    assertEqual(show1.expositionItems, {d6|->{it1,it2}});
+    show1.addDesigner(d7);
+    assertEqual(show1.designers, {d6,d7});
+    assertEqual(show1.expositionItems, {d6|->{it1,it2},d7|->{it4}});
+    assertEqual(show1.getItemsOfDesignerInShow(d6), {it1,it2});
+    show1.addDesignerItem(d6, it5);
+    assertEqual(show1.expositionItems, {d6|->{it1,it2,it5},d7|->{it4}});
+    assertEqual(show1.getItemsOfDesignerInShow(d6), {it1,it2,it5});
+		);
+	);
+	
+	public testRemDesignerItem: () ==> ()
+	testRemDesignerItem() == (
+		IO`println("\t\t test removing an item from a designer in a show");
+		let d6: Designer = new Designer("Karl Lagerfeld"),
+				d7: Designer = new Designer("Donatella Versace"),
+		show1 = new Runway("Wonderland", mk_Plataform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
+    d6.addItems({it1, it2});
+    d7.addItems({it4,it5,it6});
+    show1.addDesigner(d6);
+    assertEqual(show1.designers, {d6});
+    assertEqual(show1.expositionItems, {d6|->{it1,it2}});
+    show1.addDesigner(d7);
+    assertEqual(show1.designers, {d6,d7});
+    assertEqual(show1.expositionItems, {d6|->{it1,it2},d7|->{it4,it5,it6}});
+    assertEqual(show1.getItemsOfDesignerInShow(d6), {it1,it2});
+    show1.removeDesignerItem(d7, it5);
+    assertEqual(show1.expositionItems, {d6|->{it1,it2},d7|->{it4,it6}});
+    assertEqual(show1.getItemsOfDesignerInShow(d7), {it4,it6});
+		);
+	);
+	
+	public testItemsInShow: () ==> ()
+	testItemsInShow() == (
+		IO`println("\t\t test getting items from a show");
+		let d6: Designer = new Designer("Karl Lagerfeld"),
+				d7: Designer = new Designer("Donatella Versace"),
+		show1 = new Runway("Wonderland", mk_Plataform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
+    d6.addItems({it1, it2});
+    d7.addItems({it4,it5,it6});
+    show1.addDesigner(d6);
+    assertEqual(show1.designers, {d6});
+    assertEqual(show1.expositionItems, {d6|->{it1,it2}});
+    show1.addDesigner(d7);
+    assertEqual(show1.designers, {d6,d7});
+    assertEqual(show1.expositionItems, {d6|->{it1,it2},d7|->{it4,it5,it6}});
+    assertEqual(show1.getItemsOfDesignerInShow(d6), {it1,it2});
+    assertEqual(show1.getItemsInShow(), {it1,it2,it4,it5,it6});
+		);
+	);
+	
+	public testSetModelItem: () ==> ()
+	testSetModelItem() == (
+		IO`println("\t\t test setting item in model of the show");
+		let d6: Designer = new Designer("Karl Lagerfeld"),
+				d7: Designer = new Designer("Donatella Versace"),
+		show1 = new Runway("Wonderland", mk_Plataform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
+    d6.addItems({it1, it2});
+    d7.addItems({it4,it5,it6});
+    show1.addDesigner(d6);
+    show1.addModels({m1, m2});
+    show1.addDesigner(d7);
+    assertEqual(show1.modelsItems,{m1|->{},m2|->{}});
+    show1.setModelItem(m1, it1);
+    assertEqual(show1.modelsItems,{m1|->{it1},m2|->{}});
+   	show1.setModelItem(m2, it6);
+   	assertEqual(show1.modelsItems,{m1|->{it1},m2|->{it6}});
+		);
+	);
+	
+	public testSetModelOutfit: () ==> ()
+	testSetModelOutfit() == (
+		IO`println("\t\t test setting an outfit to a model of the show");
+		let d6: Designer = new Designer("Karl Lagerfeld"),
+				d7: Designer = new Designer("Donatella Versace"),
+		show1 = new Runway("Wonderland", mk_Plataform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
+    d6.addItems({it1, it2});
+    d7.addItems({it4,it5,it6});
+    show1.addDesigner(d6);
+    show1.addModels({m1, m2});
+    show1.addDesigner(d7);
+    assertEqual(show1.modelsItems,{m1|->{},m2|->{}});
+    show1.setModelOutfit(m1, {it1,it5});
+    assertEqual(show1.modelsItems,{m1|->{it1,it5},m2|->{}});
+   	show1.setModelOutfit(m2, {it6,it2,it4});
+   	assertEqual(show1.modelsItems,{m1|->{it1,it5},m2|->{it6,it2,it4}});
+		);
+	);
+	
+	
+	public testRemModelOutfit: () ==> ()
+	testRemModelOutfit() == (
+		IO`println("\t\t test removing an outfit to a model of the show");
+		let d6: Designer = new Designer("Karl Lagerfeld"),
+				d7: Designer = new Designer("Donatella Versace"),
+		show1 = new Runway("Wonderland", mk_Plataform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
+    d6.addItems({it1, it2});
+    d7.addItems({it4,it5,it6});
+    show1.addDesigner(d6);
+    show1.addModels({m1, m2});
+    show1.addDesigner(d7);
+    assertEqual(show1.modelsItems,{m1|->{},m2|->{}});
+    show1.setModelOutfit(m1, {it1,it5});
+   	show1.setModelOutfit(m2, {it6,it2,it4});
+   	assertEqual(show1.modelsItems,{m1|->{it1,it5},m2|->{it6,it2,it4}});
+   	show1.removeModelOutfit(m1);
+		assertEqual(show1.modelsItems,{m1|->{},m2|->{it6,it2,it4}});
+		show1.removeModelOutfit(m2);
+		assertEqual(show1.modelsItems,{m1|->{},m2|->{}});   	
+		);
+	);
+	
+	public testRemModelItem: () ==> ()
+	testRemModelItem() == (
+		IO`println("\t\t test removing an item from a model of the show");
+		let d6: Designer = new Designer("Karl Lagerfeld"),
+				d7: Designer = new Designer("Donatella Versace"),
+		show1 = new Runway("Wonderland", mk_Plataform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
+    show1.addDesigner(d6);
+    show1.addModels({m1, m2});
+    show1.addDesigner(d7);
+    assertEqual(show1.modelsItems,{m1|->{},m2|->{}});
+    show1.setModelOutfit(m1, {it1,it5});
+   	show1.setModelOutfit(m2, {it6,it2,it4});
+   	assertEqual(show1.modelsItems,{m1|->{it1,it5},m2|->{it6,it2,it4}});
+		show1.removeModelItem(m1, it1);
+		assertEqual(show1.modelsItems,{m1|->{it5},m2|->{it6,it2,it4}});
+		);
+	);
+	
 	public testAll: () ==> ()
 	testAll() == (
+	IO`println("\t\t RUNWAY CLASS TESTS:");
 		testPresentationAttributes();
+		testAddModel();
+		testAddModels();
+		testRemModel();
+		testRemModels();
+		testAddDesigner();
+		testRemDesigner();
+		testItemsOfDesigner();
+		testAddDesignerItem();
+		testRemDesignerItem();
+		testItemsInShow();
+		testSetModelItem();
+		testSetModelOutfit();
+		testRemModelOutfit();
+		testRemModelItem();
 	);
 
 end TestRunwayClass
