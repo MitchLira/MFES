@@ -33,8 +33,24 @@ instance variables
 													 300,
 													 50
 													 );
-													 
+	e4:	Event := new Runway("Gigi vs Tommy Runway",
+													 mk_Platform`Date(2018,12,30),
+													 "Amarante",
+													 "Funny",
+													 300,
+													 50
+													 );
+	
+	e5:	Event := new Runway("Gucci for poor",
+													 mk_Platform`Date(2019,11,30),
+													 "Guimarães",
+													 "Pobreza",
+													 300,
+													 50
+													 );												 												 
 	p1: Platform := new Platform(mk_Platform`Date(2017,12,29));
+	p2: Platform := new Platform(mk_Platform`Date(2018,12,30));
+	p3: Platform := new Platform(mk_Platform`Date(2017,11,30));
 operations
 	public testAddRemoveDesigner: () ==> ()
 	testAddRemoveDesigner()==
@@ -94,7 +110,17 @@ operations
 		assertEqual(12,p1.actualDate.month);
 		assertEqual(2017,p1.actualDate.year);
 		assertEqual({e2},p1.events);
+		p2.addEvent(e4);
+		p2.endDay();
+		assertEqual(1,p2.actualDate.day);
+		assertEqual(1,p2.actualDate.month);
+		assertEqual(2019,p2.actualDate.year);
 		p1.removeEvent(e2);
+		p3.addEvent(e5);
+		p3.endDay();
+		assertEqual(1,p3.actualDate.day);
+		assertEqual(12,p3.actualDate.month);
+		assertEqual(2017,p3.actualDate.year);
 	);
 	
 	public testAll: () ==> ()
