@@ -10,8 +10,8 @@ instance variables
 	
 	--designers
 	d1: Designer := new Designer("Miguel Lira");
-	d2: Designer := new Designer("Miriam GonÁalves");
-	d3: Designer := new Designer("Paulo SÈrgio");
+	d2: Designer := new Designer("Miriam Gon√ßalves");
+	d3: Designer := new Designer("Paulo S√©rgio");
 	d4: Designer := new Designer("Coco Chanel");
 	d5: Designer := new Designer("Ralph Lauren");
 	
@@ -26,13 +26,13 @@ instance variables
 	m8: Model:= new Model("Miles McMillan", 28, 1.88, "U.S.A", <Male>);
 	
 	-- items
-	it1: Item := new Item("Camisolinha de l„","1c34ff445",220.50,<XL>);
+	it1: Item := new Item("Camisolinha de l√£","1c34ff445",220.50,<XL>);
 	it2: Item := new Item("Oculos de Sol Gucci","123ggg4hk",220.50,<S>);
 	it3: Item := new Item("Calcinha Branca","1c34ff445",220.50,<M>);
 	it4: Item := new Item("Camisola Sarja Preta Versace","3213fff23",220.50,<L>);
-	it5: Item := new Item("Camisolinha de l„","1c34ff445",220.50,<S>);
+	it5: Item := new Item("Camisolinha de l√£","1c34ff445",220.50,<S>);
 	it6: Item := new Item("Blusa axadrezada","1c34ff345",203,<XS>);
-	it7: Item := new Item("CalÁas rasgadas","2c34ff445",220,<S>);
+	it7: Item := new Item("Cal√ßas rasgadas","2c34ff445",220,<S>);
 	it8: Item := new Item("Camisa Rosa","1c32ff445",120,<M>);
 operations
 	public testRunwayAttributes: () ==> ()
