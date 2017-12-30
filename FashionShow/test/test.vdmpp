@@ -35,7 +35,7 @@ instance variables
 operations
 public static main: () ==> ()
 	main() == (
-	IO`println("Running tests...");
+	IO`println("Inicializar testes...");
   new TestDesignerClass().testAll();
   new TestModelClass().testAll();
   new TestItemClass().testAll();
@@ -46,7 +46,7 @@ public static main: () ==> ()
   new TestPlatformClass().testAll();
   new TestUtilsClass().testAll();  
   new TestRunwayClass().testAll();
-  IO`println("Finished running tests");
+  IO`println("Testes terminados com sucesso!");
 	);
 
 end Test
