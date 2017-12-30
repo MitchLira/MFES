@@ -2,12 +2,12 @@ class Designer
 types
 
 instance variables
-		public name: Plataform`String;
+		public name: Platform`String;
 		public items: set of Item;
 values
 	
 operations
-	public Designer: Plataform`String ==> Designer 
+	public Designer: Platform`String ==> Designer 
 		Designer(n) == (
 			name := n;
 			items := {};

@@ -6,7 +6,7 @@ class Presentation is subclass of Event
 	instance variables
 		
 	operations
-		public Presentation: Plataform`String * Plataform`Date * Plataform`String *  Plataform`String * Plataform`Price * nat ==> Presentation 
+		public Presentation: Platform`String * Platform`Date * Platform`String *  Platform`String * Platform`Price * nat ==> Presentation 
 			Presentation(n,d, p, t, pr,  maxS) == 
 			(
 				name := n;

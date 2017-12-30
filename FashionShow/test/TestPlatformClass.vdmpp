@@ -18,27 +18,23 @@ instance variables
 	u3: User := new User("pauloB", "Paulo Babo");
 	
 
-	e1: Event := new PrimpingSession("Fique Bela e Amarela",
-																		mk_Plataform`Date(2017,12,29),
-																		"Avenida dos Aliados",
-																		"Amarelo/Dourado",
-																		20,
-																		50);
+	e1: Event := new PrimpingSession("Fique Bela e Amarela",mk_Platform`Date(2017,12,29),"Avenida dos Aliados","Amarelo/Dourado",
+																		20,50);
 	e2:	Event := new Presentation("Como andar na moda?",
-																 mk_Plataform`Date(2018,1,5),
+																 mk_Platform`Date(2018,1,5),
 																 "Antigas Fabricas Tabopan",
 																 "Moda",
 																 5,
 																 300);
 	e3:	Event := new Runway("Victoria's Secret Runway",
-													 mk_Plataform`Date(2018,2,22),
+													 mk_Platform`Date(2018,2,22),
 													 "Covelo de Ansiães",
 													 "Langerie",
 													 300,
 													 50
 													 );
 													 
-	p1: Plataform := new Plataform(mk_Plataform`Date(2017,12,29));
+	p1: Platform := new Platform(mk_Platform`Date(2017,12,29));
 operations
 	public testAddRemoveDesigner: () ==> ()
 	testAddRemoveDesigner()==
@@ -99,6 +95,7 @@ operations
 	
 	public testAll: () ==> ()
   testAll() == (
+  IO`println("PLATFORM CLASS TESTS:");
   	testAddRemoveDesigner();
   	testAddRemoveUser();
   	testAddRemoveItem();

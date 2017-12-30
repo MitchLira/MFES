@@ -7,7 +7,7 @@ instance variables
  	public modelsItems: map Model to (set of Item) := {|->};
  	public showItems: set of Item := {};
 operations
-	public Runway: Plataform`String * Plataform`Date * Plataform`String *  Plataform`String * Plataform`Price * nat ==>Runway
+	public Runway: Platform`String * Platform`Date * Platform`String *  Platform`String * Platform`Price * nat ==>Runway
 	Runway(n,d, p, t, pr, maxS)==
 	(
 		name := n;

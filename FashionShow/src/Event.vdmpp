@@ -3,11 +3,11 @@ class Event
 values
 
 instance variables
-	public name: Plataform`String;
-	public place: Plataform`String;
-	public date: Plataform`Date;
-	public theme: Plataform`String;
-	public price: Plataform`Price; 
+	public name: Platform`String;
+	public place: Platform`String;
+	public date: Platform`Date;
+	public theme: Platform`String;
+	public price: Platform`Price; 
 	public designers: set of Designer := {};
 	public maxSpectators: nat ;
 	public audience: set of User := {};
@@ -15,7 +15,7 @@ instance variables
 	inv ((card audience) >= 0) and ((card audience) <= maxSpectators);
 	
 operations
-	public Event: Plataform`String * Plataform`Date * Plataform`String *  Plataform`String * Plataform`Price * nat ==> Event 
+	public Event: Platform`String * Platform`Date * Platform`String *  Platform`String * Platform`Price * nat ==> Event 
 	Event(n,d, p, t, pr,  maxS) == 
 	(
 		name := n;

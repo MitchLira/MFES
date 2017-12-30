@@ -9,15 +9,16 @@ operations
 	public testIsAfter: () ==> ()
 	testIsAfter()==
 	(
-		assertEqual(true,Utils`isAfter(mk_Plataform`Date(2017,2,3),mk_Plataform`Date(2017,2,2)));
-		assertEqual(false,Utils`isAfter(mk_Plataform`Date(2017,2,3),mk_Plataform`Date(2017,2,3)));
-		assertEqual(false,Utils`isAfter(mk_Plataform`Date(2014,2,3),mk_Plataform`Date(2017,2,2)));
-		assertEqual(true,Utils`isAfter(mk_Plataform`Date(2014,2,3),mk_Plataform`Date(2014,3,2)));
+		assertEqual(true,Utils`isAfter(mk_Platform`Date(2017,2,3),mk_Platform`Date(2017,2,2)));
+		assertEqual(false,Utils`isAfter(mk_Platform`Date(2017,2,3),mk_Platform`Date(2017,2,3)));
+		assertEqual(false,Utils`isAfter(mk_Platform`Date(2014,2,3),mk_Platform`Date(2017,2,2)));
+		assertEqual(true,Utils`isAfter(mk_Platform`Date(2014,2,3),mk_Platform`Date(2014,3,2)));
 	);
 	
 	public testAll: () ==> ()
 	testAll () ==
 	(
+	IO`println("UTILS CLASS TESTS:");
 		testIsAfter();
 	);
 functions

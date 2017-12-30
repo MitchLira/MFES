@@ -1,7 +1,7 @@
 class TestEventClass is subclass of MyTestCase
 instance variables
 	--Events
-	ev1: Event := new Event("Workshop Liner", mk_Plataform`Date(2018, 1,12), "Porto", "MakeUp", 10, 15);
+	ev1: Event := new Event("Workshop Liner", mk_Platform`Date(2018, 1,12), "Porto", "MakeUp", 10, 15);
 --	ev2: Event := new Event("Coleção de Inverno", mk_Plataform`Date(2018, 2,22), "Amarante", "Winter", 15, 20);
 --	ev3: Event := new Event("Coleção de VerÃ£o", mk_Plataform`Date(2018, 5,30), "Lisboa", "Summer", 30, 5);
 	
@@ -47,7 +47,7 @@ operations
 	
 	public testAll: () ==> ()
   testAll() == (
-  	IO`println("\t Testes Eventos:");
+  IO`println("EVENT CLASS TESTS:");
 		testUsers();
   );
 end TestEventClass

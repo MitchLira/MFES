@@ -11,13 +11,13 @@ instance variables
 	
 	--e1: Runway := new Event("nome",mk_Date(year, month, day),"place","theme",price, MaxSpectators);
 	-- fashion shows
-	f1: Runway := new Runway("Wonderland", mk_Plataform`Date(2018, 9, 20),"London","Fantasy",75,100);
-	f2: Runway := new Runway("New World", mk_Plataform`Date(2019, 11, 10),"U.S.A", "Rock",100,60);
-	f3: Runway := new Runway("Pop Culture", mk_Plataform`Date(2018, 8, 2),"Paris", "Pop",20,90);
-	f4: Runway := new Runway("Angels", mk_Plataform`Date(2018,3, 1),"Paris", "Fantasy",200,50);
-	f5: Runway := new Runway("Wonderland", mk_Plataform`Date(2018, 9,21 ),"London", "Fantasy",120,40);
-	f6: Runway := new Runway("Wonderland", mk_Plataform`Date(2019, 12, 17),"London", "Fantasy",30,100);
-	f7: Runway := new Runway("Wonderland", mk_Plataform`Date(2020, 12, 17),"London", "Fantasy",40,120);
+	f1: Runway := new Runway("Wonderland", mk_Platform`Date(2018, 9, 20),"London","Fantasy",75,100);
+	f2: Runway := new Runway("New World", mk_Platform`Date(2019, 11, 10),"U.S.A", "Rock",100,60);
+	f3: Runway := new Runway("Pop Culture", mk_Platform`Date(2018, 8, 2),"Paris", "Pop",20,90);
+	f4: Runway := new Runway("Angels", mk_Platform`Date(2018,3, 1),"Paris", "Fantasy",200,50);
+	f5: Runway := new Runway("Wonderland", mk_Platform`Date(2018, 9,21 ),"London", "Fantasy",120,40);
+	f6: Runway := new Runway("Wonderland", mk_Platform`Date(2019, 12, 17),"London", "Fantasy",30,100);
+	f7: Runway := new Runway("Wonderland", mk_Platform`Date(2020, 12, 17),"London", "Fantasy",40,120);
 	
 operations
 	public testGetModelsAttributes: () ==> ()
@@ -71,6 +71,7 @@ operations
 	-- Entry point that runs all tests with valid inputs
   public testAll: () ==> ()
   testAll() == (
+  IO`println("MODEL CLASS TESTS:");
   	testGetModelsAttributes();
   	testSetShowsModels();
   	testAddShowModels();

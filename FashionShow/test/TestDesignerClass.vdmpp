@@ -73,6 +73,7 @@ operations
 	-- Entry point that runs all tests with valid inputs
   public testAll: () ==> ()
   testAll() == (
+  IO`println("DESIGNER CLASS TESTS:");
   		testAddItem();
   		testAddItems();
   		testRemItems();
