@@ -35,9 +35,9 @@ instance variables
 	it7: Item := new Item("Calças rasgadas","2c34ff445",220,<S>);
 	it8: Item := new Item("Camisa Rosa","1c32ff445",120,<M>);
 operations
-	public testPresentationAttributes: () ==> ()
-	testPresentationAttributes() == (
-		IO`println("\t\t test attributes in Presentation");
+	public testRunwayAttributes: () ==> ()
+	testRunwayAttributes() == (
+	 IO`println("\t (1) Construtor de um Runway");
 		assertEqual(f1.name, "Wonderland");
 		assertEqual(f1.date, mk_Platform`Date(2018, 9, 20));
 		assertEqual(f1.place, "London");
@@ -48,7 +48,7 @@ operations
 	
 	public testAddModel: () ==> ()
 	testAddModel() == (
-		IO`println("\t\t test add Model to a runway");
+		IO`println("\t (2) Adição de uma modelo a um desfile");
     f1.setModels({m1,m2,m3});
     assertEqual(f1.models, {m1,m2,m3});
     f1.addModel(m4);
@@ -58,7 +58,7 @@ operations
 	
 	public testAddModels: () ==> ()
 	testAddModels() == (
-		IO`println("\t\t test add a set of Model to a runway");
+		IO`println("\t (3) Adição de um conjunto de modelos a um desfile");
   	let d1 = new Runway("Wonderland", mk_Platform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
     d1.setModels({m1});
     assertEqual(d1.models, {m1});
@@ -71,7 +71,7 @@ operations
 	
 	public testRemModel: () ==> ()
 	testRemModel() == (
-		IO`println("\t\t test remove a Model from a runway");
+		IO`println("\t (4) Remoção de uma modelo de um desfile");
   	let d1 = new Runway("Wonderland", mk_Platform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
     d1.setModels({m1,m2,m3});
     assertEqual(d1.models, {m1,m2,m3});
@@ -82,7 +82,7 @@ operations
 	
 		public testRemModels: () ==> ()
 		testRemModels() == (
-		IO`println("\t\t test remove a set of Model from a runway");
+		IO`println("\t (5) Remoção de um conjunto de modelos de um desfile");
   	let d1 = new Runway("Wonderland", mk_Platform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
     d1.setModels({m1, m2 , m3});
     assertEqual(d1.models, {m1, m2, m3});
@@ -93,7 +93,7 @@ operations
 	
 	public testAddDesigner: () ==> ()
 	testAddDesigner() == (
-		IO`println("\t\t test adding designer to a runway");
+		IO`println("\t (6) Adição de um designer e os seus items a um desfile");
 		let show1 = new Runway("Wonderland", mk_Platform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
     d1.addItems({it1, it2});
     show1.addDesigner(d1);
@@ -104,7 +104,7 @@ operations
 	
 	public testRemDesigner: () ==> ()
 	testRemDesigner() == (
-		IO`println("\t\t test removing designer from a runway");
+		IO`println("\t (7) Remoção de um designer e dos seus items de um desfile");
 		let d6: Designer = new Designer("Karl Lagerfeld"),
 				d7: Designer = new Designer("Donatella Versace"),
 		show1 = new Runway("Wonderland", mk_Platform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
@@ -124,7 +124,7 @@ operations
 	
 	public testItemsOfDesigner: () ==> ()
 	testItemsOfDesigner() == (
-		IO`println("\t\t test getting items from a certain designer of a show");
+		IO`println("\t (8) Seleção de items de um designer específico de um desfile");
 		let d6: Designer = new Designer("Karl Lagerfeld"),
 				d7: Designer = new Designer("Donatella Versace"),
 		show1 = new Runway("Wonderland", mk_Platform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
@@ -142,7 +142,7 @@ operations
 	
 	public testAddDesignerItem: () ==> ()
 	testAddDesignerItem() == (
-		IO`println("\t\t test adding an item to a designer in a show");
+		IO`println("\t (9) Adição de um item a um designer de um desfile");
 		let d6: Designer = new Designer("Karl Lagerfeld"),
 				d7: Designer = new Designer("Donatella Versace"),
 		show1 = new Runway("Wonderland", mk_Platform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
@@ -163,7 +163,7 @@ operations
 	
 	public testRemDesignerItem: () ==> ()
 	testRemDesignerItem() == (
-		IO`println("\t\t test removing an item from a designer in a show");
+		IO`println("\t (10) Remoção de um item de um designer de um desfile");
 		let d6: Designer = new Designer("Karl Lagerfeld"),
 				d7: Designer = new Designer("Donatella Versace"),
 		show1 = new Runway("Wonderland", mk_Platform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
@@ -184,7 +184,7 @@ operations
 	
 	public testItemsInShow: () ==> ()
 	testItemsInShow() == (
-		IO`println("\t\t test getting items from a show");
+		IO`println("\t (11) Seleção de items de um desfile");
 		let d6: Designer = new Designer("Karl Lagerfeld"),
 				d7: Designer = new Designer("Donatella Versace"),
 		show1 = new Runway("Wonderland", mk_Platform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
@@ -203,7 +203,7 @@ operations
 	
 	public testSetModelItem: () ==> ()
 	testSetModelItem() == (
-		IO`println("\t\t test setting item in model of the show");
+		IO`println("\t (12) Adicionar um item a uma modelo num desfile");
 		let d6: Designer = new Designer("Karl Lagerfeld"),
 				d7: Designer = new Designer("Donatella Versace"),
 		show1 = new Runway("Wonderland", mk_Platform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
@@ -222,7 +222,7 @@ operations
 	
 	public testSetModelOutfit: () ==> ()
 	testSetModelOutfit() == (
-		IO`println("\t\t test setting an outfit to a model of the show");
+		IO`println("\t (13) Adição de um conjunto de items a uma modelo de um desfile");
 		let d6: Designer = new Designer("Karl Lagerfeld"),
 				d7: Designer = new Designer("Donatella Versace"),
 		show1 = new Runway("Wonderland", mk_Platform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
@@ -242,7 +242,7 @@ operations
 	
 	public testRemModelOutfit: () ==> ()
 	testRemModelOutfit() == (
-		IO`println("\t\t test removing an outfit to a model of the show");
+		IO`println("\t (14) Remoção de um conjunto de items de uma modelo num desfile");
 		let d6: Designer = new Designer("Karl Lagerfeld"),
 				d7: Designer = new Designer("Donatella Versace"),
 		show1 = new Runway("Wonderland", mk_Platform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
@@ -264,7 +264,7 @@ operations
 	
 	public testRemModelItem: () ==> ()
 	testRemModelItem() == (
-		IO`println("\t\t test removing an item from a model of the show");
+		IO`println("\t (15) Remoção de um item de uma modelo num desfile");
 		let d6: Designer = new Designer("Karl Lagerfeld"),
 				d7: Designer = new Designer("Donatella Versace"),
 		show1 = new Runway("Wonderland", mk_Platform`Date(2018, 9, 20),"London","Fantasy",75,100) in (
@@ -282,8 +282,8 @@ operations
 	
 	public testAll: () ==> ()
 	testAll() == (
-	IO`println("RUNWAY CLASS TESTS:");
-		testPresentationAttributes();
+	IO`println("Testes da classe Runway:");
+		testRunwayAttributes();
 		testAddModel();
 		testAddModels();
 		testRemModel();

@@ -6,7 +6,7 @@ instance variables
 operations
 	public testPresentationAttributes: () ==> ()
 	testPresentationAttributes() == (
-		IO`println("\t\t test attributes in Presentation");
+	 IO`println("\t (1) Construtor de uma Presentation");
 		assertEqual(p1.name, "New Versace Collection");
 		assertEqual(p1.place, "Lisbon");
 		assertEqual(p1.theme, "Spring");
@@ -17,7 +17,7 @@ operations
 		
 	public testAll: () ==> ()
 	testAll() == (
-	IO`println("PRESENTATION CLASS TESTS:");
+	IO`println("Testes da classe Presentation:");
 		testPresentationAttributes();
 	);
 	

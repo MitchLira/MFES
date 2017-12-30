@@ -3,7 +3,7 @@ operations
 
 	public testGetItemAttributes: () ==> ()
 	testGetItemAttributes() == (
-    IO`println("\t\t test get attributes of an Item");
+    IO`println("\t (1) Construção de um Item");
     let it1 = new Item("Gucci Sunglasses","123ggg4hk",220.50,<S>) in (
  		assertEqual(it1.name, "Gucci Sunglasses");
  		assertEqual(it1.reference,"123ggg4hk");
@@ -14,7 +14,7 @@ operations
 	-- Entry point that runs all tests with valid inputs
   public testAll: () ==> ()
   testAll() == (
-  IO`println("ITEM CLASS TESTS:");
+  IO`println("Testes da classe Item:");
   	testGetItemAttributes();
   );
 end TestItemClass

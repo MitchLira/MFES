@@ -6,7 +6,7 @@ instance variables
 operations
 	public testPrimpingAttributes: () ==> ()
 	testPrimpingAttributes() == (
-		IO`println("\t\t test attributes in PrimpingSession");
+ IO`println("\t (1) Construtor de uma PrimpingSession ");
 		assertEqual(p1.name, "Make up by Mario");
 		assertEqual(p1.place, "Lisbon");
 		assertEqual(p1.theme, "MakeUp");
@@ -17,7 +17,7 @@ operations
 		
 	public testAll: () ==> ()
 	testAll() == (
-	IO`println("PRIMPINGSESSION CLASS TESTS:");
+	IO`println("Testes da classe PrimpingSession:");
 		testPrimpingAttributes();
 	);
 end TestPrimpingSessionClass

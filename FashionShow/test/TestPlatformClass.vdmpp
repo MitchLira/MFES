@@ -39,6 +39,7 @@ operations
 	public testAddRemoveDesigner: () ==> ()
 	testAddRemoveDesigner()==
 	(
+    IO`println("\t (1) Adição e remoção de um designer da plataforma");
 		p1.addDesigner(d1);
 		p1.addDesigner(d2);
 		assertEqual({d1,d2},p1.designers);
@@ -49,6 +50,7 @@ operations
 	public testAddRemoveItem: () ==> ()
 	testAddRemoveItem()==
 	(
+	 IO`println("\t (2) Adição e remoção de um item da plataforma");
 		p1.addItem(it1);
 		p1.addItem(it2);
 		assertEqual({it1,it2},p1.items);
@@ -60,6 +62,7 @@ operations
 	public testAddRemoveUser: () ==> ()
 	testAddRemoveUser()==
 	(
+	 IO`println("\t (3) Adição e remoção de um utilizador da plataforma");
 		p1.addUser(u1);
 		p1.addUser(u2);
 		assertEqual({u1,u2},p1.users);
@@ -71,6 +74,7 @@ operations
 	public testAddRemoveEvent: () ==> ()
 	testAddRemoveEvent()==
 	(
+	 IO`println("\t (4) Adição e remoção de um evento da plataforma");
 		p1.addEvent(e1);
 		p1.addEvent(e2);
 		assertEqual({e1,e2},p1.events);
@@ -82,7 +86,7 @@ operations
 	
 	public testEndDay: () ==> ()
 	testEndDay()==
-	(
+	( IO`println("\t (5) Finalização de um dia de eventos");
 		p1.addEvent(e1);
 		p1.addEvent(e2);
 		p1.endDay();
@@ -95,16 +99,11 @@ operations
 	
 	public testAll: () ==> ()
   testAll() == (
-  IO`println("PLATFORM CLASS TESTS:");
+  IO`println("Testes da classe Platform:");
   	testAddRemoveDesigner();
   	testAddRemoveUser();
   	testAddRemoveItem();
   	testAddRemoveEvent();
   	testEndDay();
   );
-  
-functions
--- TODO Define functiones here
-traces
--- TODO Define Combinatorial Test Traces here
 end TestPlatformClass

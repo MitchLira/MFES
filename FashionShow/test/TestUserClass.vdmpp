@@ -9,7 +9,7 @@ class TestUserClass is subclass of MyTestCase
 	operations
 		public testGetUserAttributes: () ==> ()
 			testGetUserAttributes() == (
-				IO`println("\t\t test get User attributes");
+				 IO`println("\t (1) Construtor de um utilizador");
 				let u4 = new User("mitchLira", "Miguel Luís") in (
 					assertEqual(u4.name, "Miguel Luís");
 					assertEqual(u4.username, "mitchLira");
@@ -22,7 +22,7 @@ class TestUserClass is subclass of MyTestCase
 			
 		public testSetGetBoughtItems: () ==> ()
 			testSetGetBoughtItems() == (
-				IO`println("\t\t test set Bought Items in User");
+ 				IO`println("\t (2) Alteração de items comprados de um utilizador");
 				assertEqual({}, u3.getBoughtItems());
 				u3.setBoughtItem(it1);
 				assertEqual({it1}, u3.getBoughtItems());
@@ -32,7 +32,7 @@ class TestUserClass is subclass of MyTestCase
 		
 		public testAll: () ==> ()
 			testAll() == (
-			IO`println("USER CLASS TESTS:");
+			IO`println("Testes da classe User:");
 				testGetUserAttributes();
 				testSetGetBoughtItems();
 			);

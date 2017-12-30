@@ -22,7 +22,7 @@ operations
 		assertEqual(1, card ev1.audience);
 		IO`println("\t (2) Verificação do Budget de um User após Registo num Evento");
 		assertEqual(90, u1.budget);
-		IO`println("\t (3) Remoçãoo de um User de um Evento");
+		IO`println("\t (3) Remoção de um User de um Evento");
 		ev1.refundUser(u1);
 		assertEqual(0, card ev1.audience);
 		IO`println("\t (4) Verificação da reposição do Budget do User removido do Evento");
@@ -40,14 +40,13 @@ operations
 		ev1.removeDesigner(d1);
 		assertEqual(1, card ev1.designers);
 		for all designer in set ev1.designers do(
-			IO`print("\t ");IO`println(designer.name);
 			assertEqual("Donna Karen", designer.name);
 		);
 	);
 	
 	public testAll: () ==> ()
   testAll() == (
-  IO`println("EVENT CLASS TESTS:");
+  IO`println("Testes da classe Event:");
 		testUsers();
   );
 end TestEventClass
