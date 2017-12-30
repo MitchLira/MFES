@@ -1,4 +1,4 @@
-class Plataform
+class Platform
 	types
 		 public String = seq of char
 		 	inv s == s <> "";
@@ -22,8 +22,8 @@ class Plataform
 		
 		
 	operations
-		public Plataform:Date ==> Plataform 
-			Plataform(actualD) == 
+		public Platform:Date ==> Platform 
+			Platform(actualD) == 
 			(
 				actualDate := actualD;
 				users := {};
@@ -154,4 +154,4 @@ class Plataform
 
 	traces
 	-- TODO Define Combinatorial Test Traces here
-end Plataform
+end Platform

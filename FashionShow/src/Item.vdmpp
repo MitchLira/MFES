@@ -5,13 +5,13 @@ public Ref =  seq of char
 	public Size = <XS>|<S>|<M>|<L>|<XL>|<XXL>;
 
 instance variables
-	public name: Plataform`String;
+	public name: Platform`String;
 	public reference: Ref; --TODO p�r reference unica
-	public price: Plataform`Price;
+	public price: Platform`Price;
 	public size: Size;
 
 operations
-	public Item: Plataform`String * Ref * Plataform`Price * Size ==> Item 
+	public Item: Platform`String * Ref * Platform`Price * Size ==> Item 
 		Item(n, r, p, s) == 
 		(
 			name := n;

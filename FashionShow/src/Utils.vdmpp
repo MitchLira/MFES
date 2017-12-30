@@ -8,7 +8,7 @@ instance variables
 operations
 	
 functions
-	public isAfter: Plataform`Date * Plataform`Date -> bool
+	public isAfter: Platform`Date * Platform`Date -> bool
 		isAfter(date1, date2) ==
 		(
 			if date1.year > date2.year then

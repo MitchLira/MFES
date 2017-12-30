@@ -2,17 +2,17 @@ class User
 	types
 		public Budget = real
 			inv r == r >= 0.0;
-		public Username = Plataform`String;
+		public Username = Platform`String;
 		
 	values
 	-- TODO Define values here
 	instance variables
 		public username: Username;
-		public name: Plataform`String;
+		public name: Platform`String;
 		public budget: Budget;
 		public boughtItems: set of Item;
 	operations
-		public User: Username * Plataform`String ==> User 
+		public User: Username * Platform`String ==> User 
 		User(u,n) == 
 		(
 			username := u;

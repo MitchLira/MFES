@@ -1,0 +1,28 @@
+class TestUtilsClass is subclass of MyTestCase
+types
+-- TODO Define types here
+values
+-- TODO Define values here
+instance variables
+-- TODO Define instance variables here
+operations
+	public testIsAfter: () ==> ()
+	testIsAfter()==
+	(
+		assertEqual(true,Utils`isAfter(mk_Platform`Date(2017,2,3),mk_Platform`Date(2017,2,2)));
+		assertEqual(false,Utils`isAfter(mk_Platform`Date(2017,2,3),mk_Platform`Date(2017,2,3)));
+		assertEqual(false,Utils`isAfter(mk_Platform`Date(2014,2,3),mk_Platform`Date(2017,2,2)));
+		assertEqual(true,Utils`isAfter(mk_Platform`Date(2014,2,3),mk_Platform`Date(2014,3,2)));
+	);
+	
+	public testAll: () ==> ()
+	testAll () ==
+	(
+	IO`println("UTILS CLASS TESTS:");
+		testIsAfter();
+	);
+functions
+-- TODO Define functiones here
+traces
+-- TODO Define Combinatorial Test Traces here
+end TestUtilsClass

@@ -32,6 +32,7 @@ class TestUserClass is subclass of MyTestCase
 		
 		public testAll: () ==> ()
 			testAll() == (
+			IO`println("USER CLASS TESTS:");
 				testGetUserAttributes();
 				testSetGetBoughtItems();
 			);
