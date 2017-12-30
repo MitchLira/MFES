@@ -1,20 +1,56 @@
+/**
+*	Esta classe representa um Evento
+*/		
 class Event
-
 values
 
 instance variables
+	/**
+	*	nome do evento
+	*/
 	public name: Platform`String;
+	/**
+	*	local onde se realizará o evento
+	*/
 	public place: Platform`String;
+	/**
+	*	data da realização do evento
+	*/
 	public date: Platform`Date;
+	/**
+	*	tema que descreverá o evento
+	*/
 	public theme: Platform`String;
+	/**
+	*	preço de entrada para o evento
+	*/
 	public price: Platform`Price; 
+	/**
+	*	designers que estarão a mostrar os seus itens no evento
+	*/
 	public designers: set of Designer := {};
+	/**
+	*	número máximo de users inscritos para o evento
+	*/
 	public maxSpectators: nat ;
+	/**
+	*	users inscritos até ao momento para o evento
+	*/
 	public audience: set of User := {};
 
 	inv ((card audience) >= 0) and ((card audience) <= maxSpectators);
 	
 operations
+	/**
+	*	Event construtor
+	*	
+	*	@param n corresponde ao nome de um evento
+	*	@param d corresponde à data de um evento
+	*	@param p corresponde ao local de um evento
+	*	@param t corresponde ao tema de um evento
+	*	@param pr corresponde ao preço de entrada de um evento
+	*	@param maxS corresponde ao número máximo de users inscritos de um evento
+	*/
 	public Event: Platform`String * Platform`Date * Platform`String *  Platform`String * Platform`Price * nat ==> Event 
 	Event(n,d, p, t, pr,  maxS) == 
 	(
@@ -27,7 +63,11 @@ operations
 		return self;
 	);
 ----------------------------------------------------------------
-	
+	/**
+	*	Inscrição de um user no evento
+	*	
+	*	@param user corresponde ao user a ser inscrito num evento
+	*/
 	public registerUser: User ==> ()
 	registerUser(user) ==
 	(
@@ -40,6 +80,11 @@ operations
 				(card audience <= maxSpectators) and
 				(user in set audience);
 	
+	/**
+	*	Remoção e reembolso de um user
+	*	
+	*	@param user corresponde ao user a ser removido e reembolsado por um evento
+	*/
 	public refundUser: User ==> ()
 	refundUser(user)==
 	(
@@ -53,7 +98,11 @@ operations
 			 (user.budget>0);
 
 --------------------------------------------------------------
-
+	/**
+	*	Adição de um designer a um evento
+	*	
+	*	@param designer corresponde ao designer a ser adicionado aos designer de um evento
+	*/
 	public addDesigner: Designer ==> ()
 	addDesigner(designer)==
 	(
@@ -62,6 +111,11 @@ operations
 	pre designer not in set designers
 	post designer in set designers;
 	
+	/**
+	*	Remoção de um designer
+	*	
+	*	@param designer corresponde ao designer a ser removido dos designer de um evento
+	*/
 	public removeDesigner: Designer ==> ()
 	removeDesigner(designer)==
 	(

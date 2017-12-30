@@ -1,157 +1,203 @@
+/**
+* Esta classe representa a Plataforma de controlo de users, eventos, itens e designers 
+*/
 class Platform
-	types
-		 public String = seq of char
-		 	inv s == s <> "";
-		 public Price = real 
-		 	inv p == p > 0;
-		 public Date:: year : nat1
-		 							 month: nat1
-									 day  : nat1	
-		 	inv d == d.month <= 12 and d.day <=30;
-		 	
-	instance variables
-		public actualDate : Date;
-		public users: set of User;
-		inv not exists u1, u2 in set users & u1 <> u2 and u1.username = u2.username;
-		public events: set of Event;
-		inv not exists e1, e2 in set events & e1 <> e2 and e1.name = e2.name;
-		inv not exists event in set events & Utils`isAfter(actualDate,event.date) = true;
-		public items: set of Item; 
-		inv not exists i1, i2 in set items & i1 <> i2 and i1.reference = i2.reference;
-		public designers: set of Designer
-		
-		
-	operations
-		public Platform:Date ==> Platform 
-			Platform(actualD) == 
-			(
-				actualDate := actualD;
-				users := {};
-				events := {};
-				items := {};
-				designers := {};
-				return self;
-			);
+types
+	 public String = seq of char
+	 	inv s == s <> "";
+	 public Price = real 
+	 	inv p == p > 0;
+	 public Date:: year : nat1
+	 							 month: nat1
+								 day  : nat1	
+	 	inv d == d.month <= 12 and d.day <=30;
+	 	
+instance variables
+	/**
+	*	data atual
+	*/
+	public actualDate : Date;
+	/**
+	*	users existentes numa plataforma
+	*/
+	public users: set of User;
+	inv not exists u1, u2 in set users & u1 <> u2 and u1.username = u2.username;
+	/**
+	*	eventos existentes numa plataforma
+	*/
+	public events: set of Event;
+	inv not exists e1, e2 in set events & e1 <> e2 and e1.name = e2.name;
+	inv not exists event in set events & Utils`isAfter(actualDate,event.date) = true;
+	/**
+	*	itens existentes numa plataforma
+	*/
+	public items: set of Item; 
+	inv not exists i1, i2 in set items & i1 <> i2 and i1.reference = i2.reference;
+	/**
+	*	designers existentes numa plataforma
+	*/
+	public designers: set of Designer
+	
+	
+operations
+	/**
+	*	Plataform construtor
+	*	
+	*	@param actualD corresponde à data atual da criação de uma plataforma
+	*/
+	public Platform:Date ==> Platform 
+		Platform(actualD) == 
+		(
+			actualDate := actualD;
+			users := {};
+			events := {};
+			items := {};
+			designers := {};
+			return self;
+		);
 -----------------------Date-----------------------------
-		public moveDataForward: () ==> ()
-			moveDataForward() ==
+	/**
+	*	Ajuste da data para com os limites de um mês, para ter datas reais
+	*/
+	public moveDataForward: () ==> ()
+		moveDataForward() ==
+		(
+			if (actualDate.day + 1) > 30 then
 			(
-				if (actualDate.day + 1) > 30 then
+				actualDate.day := 1;
+				if (actualDate.month+1) > 12 then
 				(
-					actualDate.day := 1;
-					if (actualDate.month+1) > 12 then
-					(
-						actualDate.month := 1;
-						actualDate.year := actualDate.year + 1;
-					)
-					else
-					(
-						actualDate.month := actualDate.month + 1;
-					);
+					actualDate.month := 1;
+					actualDate.year := actualDate.year + 1;
 				)
 				else
 				(
-					actualDate.day := actualDate.day + 1;
+					actualDate.month := actualDate.month + 1;
+				);
+			)
+			else
+			(
+				actualDate.day := actualDate.day + 1;
+			);
+		);
+
+	/**
+	*	Remoção de todos os eventos cujo dia da realização seja o atual
+	*/
+	public endDay: () ==> ()
+		endDay()==
+		(
+			moveDataForward();
+			for all event in set events do 
+			(
+				if Utils`isAfter(actualDate,event.date) = true then
+				(
+					removeEvent(event);
 				);
 			);
-
-
- 		public endDay: () ==> ()
- 			endDay()==
- 			(
- 				moveDataForward();
- 				for all event in set events do 
- 				(
- 					if Utils`isAfter(actualDate,event.date) = true then
- 					(
- 						removeEvent(event);
- 					);
- 				);
- 			)
- 			pre not exists event in set events & Utils`isAfter(actualDate,event.date) = true
- 			post not exists event in set events & Utils`isAfter(actualDate,event.date) = true;
+		)
+		pre not exists event in set events & Utils`isAfter(actualDate,event.date) = true
+		post not exists event in set events & Utils`isAfter(actualDate,event.date) = true;
 
 
 
 -----------------------Users----------------------------
+	/*
+	*	
+	*/
+	public addUser: User ==> ()
+		addUser(user)==
+		(
+			users := users union {user};
+		)
+		pre user not in set users
+		post user in set users and
+		(not exists u1, u2 in set users & u1 <> u2 and u1.username = u2.username);
+		
+	/**
+	*	
+	*/
+	public removeUser: User ==> ()
+		removeUser(user)==
+		(
+			users := users \ {user};
+		)
+		pre user  in set users
+		post user not in set users;
 
-		public addUser: User ==> ()
-			addUser(user)==
-			(
-				users := users union {user};
-			)
-			pre user not in set users
-			post user in set users and
-			(not exists u1, u2 in set users & u1 <> u2 and u1.username = u2.username);
-			
-		public removeUser: User ==> ()
-			removeUser(user)==
-			(
-				users := users \ {user};
-			)
-			pre user  in set users
-			post user not in set users;
-	
 -----------------------Events---------------------------
-
-		public addEvent: Event ==> ()
-			addEvent(event)==
-			(
-				events := events union {event};
-			)
-			pre event not in set events
-			post event in set events;
-			
-		public removeEvent: Event ==> ()
-			removeEvent(event)==
-			(
-				events := events \ {event};
-			)
-			pre event  in set events
-			post event not in set events;
-			
-------------------------Items----------------------------
+	/**
+	*	
+	*/
+	public addEvent: Event ==> ()
+		addEvent(event)==
+		(
+			events := events union {event};
+		)
+		pre event not in set events
+		post event in set events;
 	
-		public addItem: Item ==> ()
-			addItem(item)==
-			(
-				items := items union {item};
-			)
-			pre item not in set items
-			post item in set items and
-		 (not exists i1, i2 in set items & i1 <> i2 and i1.reference = i2.reference);
-			
-			
-		public removeItem: Item ==> ()
-			removeItem(item)==
-			(
-				items := items \ {item};
-			)
-			pre item  in set items
-			post item not in set items;
+	/**
+	*	
+	*/	
+	public removeEvent: Event ==> ()
+		removeEvent(event)==
+		(
+			events := events \ {event};
+		)
+		pre event  in set events
+		post event not in set events;
+		
+------------------------Items----------------------------
+	/**
+	*	
+	*/
+	public addItem: Item ==> ()
+		addItem(item)==
+		(
+			items := items union {item};
+		)
+		pre item not in set items
+		post item in set items and
+	 (not exists i1, i2 in set items & i1 <> i2 and i1.reference = i2.reference);
+		
+	/**
+	*	
+	*/	
+	public removeItem: Item ==> ()
+		removeItem(item)==
+		(
+			items := items \ {item};
+		)
+		pre item  in set items
+		post item not in set items;
 
 ----------------------Designers---------------------------
-
-		public addDesigner: Designer ==> ()
-			addDesigner(designer)==
-			(
-				designers := designers union {designer};
-			)
-			pre designer not in set designers
-			post designer in set designers;
-			
-			
-		public removeDesigner: Designer ==> ()
-			removeDesigner(designer)==
-			(
-				designers := designers \ {designer};
-			)
-			pre designer  in set designers
-			post designer not in set designers;
+	/**
+	*	
+	*/
+	public addDesigner: Designer ==> ()
+		addDesigner(designer)==
+		(
+			designers := designers union {designer};
+		)
+		pre designer not in set designers
+		post designer in set designers;
 		
+	/**
+	*	
+	*/	
+	public removeDesigner: Designer ==> ()
+		removeDesigner(designer)==
+		(
+			designers := designers \ {designer};
+		)
+		pre designer  in set designers
+		post designer not in set designers;
+	
 ----------------------------------------------------------------------
-	functions
+functions
 
-	traces
-	-- TODO Define Combinatorial Test Traces here
+traces
+-- TODO Define Combinatorial Test Traces here
 end Platform

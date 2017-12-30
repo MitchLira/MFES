@@ -1,12 +1,26 @@
+/**
+*	Esta classe representa um Designer bem como os itens que dispõe
+*/
 class Designer
 types
 
 instance variables
+		/**
+		*	nome do designer
+		*/
 		public name: Platform`String;
+		/**
+		*	itens dos quais o designer dispoõe
+		*/
 		public items: set of Item;
 values
 	
 operations
+	/**
+	*	Designer construtor
+	*	
+	*	@param n nome de um designer
+	*/
 	public Designer: Platform`String ==> Designer 
 		Designer(n) == (
 			name := n;
@@ -14,17 +28,32 @@ operations
 			return self;
 	);
 	
+	/**
+	*	Inserção de um conjunto de itens nos itens de um designer
+	*	
+	*	@param item corresponde aos itens a serem inseridos
+	*/
 	public setItems: set of Item ==> ()
 			setItems(item) == 
 				items := item;
 	  	
+	/**
+	*	Inserção de um item no conjunto de itens de um designer
+	*	
+	*	@param item corresponde ao item a ser inserido
+	*/
 	public addItem: Item ==> ()
 		addItem(item) == (
 	  		items := items union {item}
 		)
 	pre item not in set items
 	post item in set items;
-	 
+	
+	/**
+	*	Inserção de um conjunto de itens nos itens de um designer
+	*	
+	*	@param newItems corresponde aos itens a serem inseridos
+	*/
 	public addItems: set of Item ==> ()
 		addItems(newItems) == (
 	 		for all i in set newItems do (
@@ -34,12 +63,22 @@ operations
 	pre (not newItems subset items) and newItems <> items
 	post newItems subset items;
  		
+ 	/**
+	*	Remoção de um item do conjunto de itens de um designer
+	*	
+	*	@param item corresponde ao item a ser removido
+	*/
 	public remItem: Item ==> ()
 		remItem(item) ==
 	   		items := items \ {item}
 	pre items <> {} and item in set items
 	post item not in set items;
 	 
+	/**
+	*	Remoção de um conjunto de itens dos itens de um designer
+	*	
+	*	@param oldItems corresponde aos itens a serem removidos
+	*/
 	public remItems: set of Item ==> ()
 		remItems(oldItems) ==
 	 		for all i in set oldItems do (

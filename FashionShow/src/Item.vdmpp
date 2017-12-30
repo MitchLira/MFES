@@ -1,16 +1,39 @@
+/**
+* Esta classe representa um Item
+*/
 class Item
 types
-public Ref =  seq of char 
+	public Ref =  seq of char 
 	inv v == len v = 9;
 	public Size = <XS>|<S>|<M>|<L>|<XL>|<XXL>;
 
 instance variables
+	/**
+	*	nome de um item
+	*/
 	public name: Platform`String;
+	/**
+	*	referencia associada a um item
+	*/
 	public reference: Ref; --TODO p�r reference unica
+	/**
+	*	preço de um item
+	*/
 	public price: Platform`Price;
+	/**
+	*	tamanho de um item 
+	*/
 	public size: Size;
 
 operations
+	/**
+	*	Item construtor
+	*	
+	*	@param n corresponde ao nome de um item
+	*	@param r corresponde à referência de um item
+	*	@param p corresponde ao preço de um item
+	*	@param s corresponde ao tamanho de um item
+	*/
 	public Item: Platform`String * Ref * Platform`Price * Size ==> Item 
 		Item(n, r, p, s) == 
 		(
