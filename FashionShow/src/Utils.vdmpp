@@ -1,5 +1,5 @@
 /**
-* Esta classe representa as funções uilitárias e comuns a todas as classes
+* Esta classe representa as funcoes uilitarias e comuns a todas as classes
 */
 class Utils
 types
@@ -12,10 +12,10 @@ operations
 	
 functions
 	/**
-	*	Verifica duas datas de modo a comparar se a primeira é posterior à segunda
+	*	Verifica duas datas de modo a comparar se a primeira e posterior a segunda
 	*	
-	*	@param data1 corresponde à primeira data
-	*	@param data2 corresponde à segunda data
+	*	@param data1 corresponde a primeira data
+	*	@param data2 corresponde a segunda data
 	*/
 	public isAfter: Platform`Date * Platform`Date -> bool
 		isAfter(date1, date2) ==

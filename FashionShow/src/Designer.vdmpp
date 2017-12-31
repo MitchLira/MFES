@@ -1,5 +1,5 @@
 /**
-*	Esta classe representa um Designer bem como os itens que dispõe para os shows
+*	Esta classe representa um Designer bem como os itens que dispoe para os shows
 */
 class Designer
 types
@@ -10,7 +10,7 @@ instance variables
 		*/
 		public name: Platform`String;
 		/**
-		*	itens dos quais o designer dispoõe
+		*	itens dos quais o designer dispoe
 		*/
 		public items: set of Item;
 values
@@ -29,7 +29,7 @@ operations
 	);
 	
 	/**
-	*	Inserção de um conjunto de itens nos itens de um designer
+	*	Adicao de um conjunto de itens nos itens de um designer
 	*	
 	*	@param item corresponde aos itens a serem inseridos
 	*/
@@ -38,7 +38,7 @@ operations
 				items := item;
 	  	
 	/**
-	*	Inserção de um item no conjunto de itens de um designer
+	*	Adicao de um item no conjunto de itens de um designer
 	*	
 	*	@param item corresponde ao item a ser inserido
 	*/
@@ -50,7 +50,7 @@ operations
 	post item in set items;
 	
 	/**
-	*	Inserção de um conjunto de itens nos itens de um designer
+	*	Adicao de um conjunto de itens nos itens de um designer
 	*	
 	*	@param newItems corresponde aos itens a serem inseridos
 	*/
@@ -64,7 +64,7 @@ operations
 	post newItems subset items;
  		
  	/**
-	*	Remoção de um item do conjunto de itens de um designer
+	*	Remocao de um item do conjunto de itens de um designer
 	*	
 	*	@param item corresponde ao item a ser removido
 	*/
@@ -75,7 +75,7 @@ operations
 	post item not in set items;
 	 
 	/**
-	*	Remoção de um conjunto de itens dos itens de um designer
+	*	Remocao de um conjunto de itens dos itens de um designer
 	*	
 	*	@param oldItems corresponde aos itens a serem removidos
 	*/

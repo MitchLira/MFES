@@ -1,5 +1,5 @@
 /**
-*	Esta classe representa uma Apresentação
+*	Esta classe representa uma Apresentacao
 */
 class Presentation is subclass of Event
 types

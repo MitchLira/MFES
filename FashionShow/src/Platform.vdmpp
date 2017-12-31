@@ -43,7 +43,7 @@ operations
 	/**
 	*	Plataform construtor
 	*	
-	*	@param actualD corresponde à data atual da criação de uma plataforma
+	*	@param actualD corresponde a data atual da criacao de uma plataforma
 	*/
 	public Platform:Date ==> Platform 
 		Platform(actualD) == 
@@ -57,7 +57,7 @@ operations
 		);
 -----------------------Date-----------------------------
 	/**
-	*	Ajuste da data para com os limites de um mês, para ter datas reais
+	*	Ajuste da data para com os limites de um mes, para ter datas reais
 	*/
 	public moveDataForward: () ==> ()
 		moveDataForward() ==
@@ -82,7 +82,7 @@ operations
 		);
 
 	/**
-	*	Remoção de todos os eventos cujo dia da realização seja o atual
+	*	Remocao de todos os eventos cujo dia da realizacao seja o atual
 	*/
 	public endDay: () ==> ()
 		endDay()==
@@ -103,7 +103,7 @@ operations
 
 -----------------------Users----------------------------
 	/*
-	*	Inserção de um user numa plataforma
+	*	Adicao de um user numa plataforma
 	*	
 	*	@param user corresponde ao user a ser inserido nos users de uma plataforma
 	*/
@@ -117,7 +117,7 @@ operations
 		(not exists u1, u2 in set users & u1 <> u2 and u1.username = u2.username);
 		
 	/**
-	*	Remoção de um user dos users de uma plataforma
+	*	Remocao de um user dos users de uma plataforma
 	*	
 	*	@param user corresponde ao user a ser removido dos users de uma plataforma
 	*/
@@ -131,7 +131,7 @@ operations
 
 -----------------------Events---------------------------
 	/*
-	*	Inserção de um evento numa plataforma
+	*	Adicao de um evento numa plataforma
 	*	
 	*	@param event corresponde ao evento a ser inserido nos eventos de uma plataforma
 	*/
@@ -144,7 +144,7 @@ operations
 		post event in set events;
 	
 	/**
-	*	Remoção de um evento dos eventos de uma plataforma
+	*	Remocao de um evento dos eventos de uma plataforma
 	*	
 	*	@param event corresponde ao evento a ser removido dos eventos de uma plataforma
 	*/	
@@ -158,7 +158,7 @@ operations
 		
 ------------------------Items----------------------------
 	/*
-	*	Inserção de um item numa plataforma
+	*	Adicao de um item numa plataforma
 	*	
 	*	@param item corresponde ao item a ser inserido nos itens de uma plataforma
 	*/
@@ -172,7 +172,7 @@ operations
 	 (not exists i1, i2 in set items & i1 <> i2 and i1.reference = i2.reference);
 		
 	/**
-	*	Remoção de um item dos itens de uma plataforma
+	*	Remocao de um item dos itens de uma plataforma
 	*	
 	*	@param item corresponde ao item a ser removido dos itens de uma plataforma
 	*/	
@@ -186,7 +186,7 @@ operations
 
 ----------------------Designers---------------------------
 	/*
-	*	Inserção de um designer numa plataforma
+	*	Adicao de um designer numa plataforma
 	*	
 	*	@param designer corresponde ao designer a ser inserido nos designers de uma plataforma
 	*/
@@ -199,7 +199,7 @@ operations
 		post designer in set designers;
 		
 	/**
-	*	Remoção de um designer dos designers de uma plataforma
+	*	Remocao de um designer dos designers de uma plataforma
 	*	
 	*	@param designer corresponde ao designer a ser removido dos designers de uma plataforma
 	*/	

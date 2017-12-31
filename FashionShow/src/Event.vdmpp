@@ -1,6 +1,6 @@
 /**
-*	Esta classe representa um Evento e toda a informação com ele relacionada, tal como
-*	os designers que estarão presentes até aos users inscritos
+*	Esta classe representa um Evento e toda a informacao com ele relacionada, tal como
+*	os designers que estarao presentes ate aos users inscritos
 */		
 class Event
 values
@@ -11,19 +11,19 @@ instance variables
 	*/
 	public name: Platform`String;
 	/**
-	*	local onde se realizará o evento
+	*	local onde se realizara o evento
 	*/
 	public place: Platform`String;
 	/**
-	*	data da realização do evento
+	*	data da realizacao do evento
 	*/
 	public date: Platform`Date;
 	/**
-	*	tema que descreverá o evento
+	*	tema que descrevera o evento
 	*/
 	public theme: Platform`String;
 	/**
-	*	preço de entrada para o evento
+	*	preco de entrada para o evento
 	*/
 	public price: Platform`Price; 
 	/**
@@ -31,11 +31,11 @@ instance variables
 	*/
 	public designers: set of Designer := {};
 	/**
-	*	número máximo de users inscritos para o evento
+	*	numero maximo de users inscritos para o evento
 	*/
 	public maxSpectators: nat ;
 	/**
-	*	users inscritos até ao momento para o evento
+	*	users inscritos ate ao momento para o evento
 	*/
 	public audience: set of User := {};
 
@@ -46,11 +46,11 @@ operations
 	*	Event construtor
 	*	
 	*	@param n corresponde ao nome de um evento
-	*	@param d corresponde à data de um evento
+	*	@param d corresponde a data de um evento
 	*	@param p corresponde ao local de um evento
 	*	@param t corresponde ao tema de um evento
-	*	@param pr corresponde ao preço de entrada de um evento
-	*	@param maxS corresponde ao número máximo de users inscritos de um evento
+	*	@param pr corresponde ao preco de entrada de um evento
+	*	@param maxS corresponde ao numero maximo de users inscritos de um evento
 	*/
 	public Event: Platform`String * Platform`Date * Platform`String *  Platform`String * Platform`Price * nat ==> Event 
 	Event(n,d, p, t, pr,  maxS) == 
@@ -65,7 +65,7 @@ operations
 	);
 ----------------------------------------------------------------
 	/**
-	*	Inscrição de um user no evento
+	*	Adicao de um user no evento
 	*	
 	*	@param user corresponde ao user a ser inscrito num evento
 	*/
@@ -82,7 +82,7 @@ operations
 				(user in set audience);
 	
 	/**
-	*	Remoção e reembolso de um user
+	*	Remocao e reembolso de um user
 	*	
 	*	@param user corresponde ao user a ser removido e reembolsado por um evento
 	*/
@@ -100,7 +100,7 @@ operations
 
 --------------------------------------------------------------
 	/**
-	*	Adição de um designer a um evento
+	*	Adicao de um designer a um evento
 	*	
 	*	@param designer corresponde ao designer a ser adicionado aos designer de um evento
 	*/
@@ -113,7 +113,7 @@ operations
 	post designer in set designers;
 	
 	/**
-	*	Remoção de um designer
+	*	Remocao de um designer
 	*	
 	*	@param designer corresponde ao designer a ser removido dos designer de um evento
 	*/
