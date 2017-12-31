@@ -123,6 +123,25 @@ operations
 		assertEqual(2017,p3.actualDate.year);
 	);
 	
+	public testgetItemByRef: () ==> ()
+	testgetItemByRef()==
+	(
+	 IO`println("\t (6) Selecionar um item pela referência");
+		p1.addItem(it1);
+		p1.addItem(it2);
+		assertEqual(p1.getItemByRef("123ggg4hk"), it2);
+	);
+	
+	public testgetUserByUsername: () ==> ()
+		testgetUserByUsername()==
+		(
+			IO`println("\t (6) Selecionar um utilizador pelo username");
+			p1.addUser(u1);
+			p1.addUser(u2);
+			p1.addUser(u3);
+			assertEqual(p1.getUserByUsername("pauloB"), u3);
+		);
+	
 	public testAll: () ==> ()
   testAll() == (
   IO`println("Testes da classe Platform:");
@@ -131,5 +150,7 @@ operations
   	testAddRemoveItem();
   	testAddRemoveEvent();
   	testEndDay();
+  	testgetItemByRef();
+  	testgetUserByUsername();
   );
 end TestPlatformClass

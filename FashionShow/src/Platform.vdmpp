@@ -130,8 +130,8 @@ operations
 		post user not in set users;
 
 
-	public getUserByUserame: Platform`String ==> User
-		getUserByUserame(username) ==
+	public getUserByUsername: Platform`String ==> User
+		getUserByUsername(username) ==
 		(
 			dcl user: User;
 			for all u in set users do (
