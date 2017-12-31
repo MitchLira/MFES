@@ -1,0 +1,2228 @@
+<?xml version="1.0" encoding="UTF-8"?><uml:Model xmlns:uml="http://www.eclipse.org/uml2/3.0.0/UML" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1" xmi:version="2.1" xmi:id="_koOUIO46Eee1JLiXkYgGug" name="FashionShow">
+  <packagedElement xmi:type="uml:Package" xmi:id="_koOUIe46Eee1JLiXkYgGug" name="Basic VDM Types">
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOUIu46Eee1JLiXkYgGug" name="&lt;append&gt;"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOUI-46Eee1JLiXkYgGug" name="&lt;start&gt;"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOUJO46Eee1JLiXkYgGug" name="char"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOUJe46Eee1JLiXkYgGug" name="&lt;L&gt;"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOUJu46Eee1JLiXkYgGug" name="&lt;M&gt;"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOUJ-46Eee1JLiXkYgGug" name="&lt;S&gt;"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOUKO46Eee1JLiXkYgGug" name="&lt;XL&gt;"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOUKe46Eee1JLiXkYgGug" name="&lt;XS&gt;"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOUKu46Eee1JLiXkYgGug" name="&lt;XXL&gt;"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOUK-46Eee1JLiXkYgGug" name="int"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOULO46Eee1JLiXkYgGug" name="real"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOULe46Eee1JLiXkYgGug" name="&lt;Female&gt;"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOULu46Eee1JLiXkYgGug" name="&lt;Male&gt;"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOUL-46Eee1JLiXkYgGug" name="nat1"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOUMO46Eee1JLiXkYgGug" name="bool"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOUMe46Eee1JLiXkYgGug" name="Any"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOUMu46Eee1JLiXkYgGug" name="Void"/>
+    <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_koOUM-46Eee1JLiXkYgGug" name="nat"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koOUNO46Eee1JLiXkYgGug" name="IO" visibility="public">
+    <ownedOperation xmi:id="_koOUNe46Eee1JLiXkYgGug" name="writeval" visibility="public" isStatic="true" isQuery="true">
+      <ownedParameter xmi:id="_koOUNu46Eee1JLiXkYgGug" type="_koOUMO46Eee1JLiXkYgGug" direction="return"/>
+      <ownedParameter xmi:id="_koOUN-46Eee1JLiXkYgGug" name="val" type="_koOUYu46Eee1JLiXkYgGug"/>
+      <ownedTemplateSignature xmi:id="_koOUOO46Eee1JLiXkYgGug" parameter="_koOUOe46Eee1JLiXkYgGug">
+        <ownedParameter xmi:id="_koOUOe46Eee1JLiXkYgGug" default="_koOUOu46Eee1JLiXkYgGug">
+          <ownedDefault xmi:type="uml:LiteralString" xmi:id="_koOUOu46Eee1JLiXkYgGug" name="p"/>
+        </ownedParameter>
+      </ownedTemplateSignature>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOUO-46Eee1JLiXkYgGug" name="fwriteval" visibility="public" isStatic="true" isQuery="true">
+      <ownedParameter xmi:id="_koOUPO46Eee1JLiXkYgGug" type="_koOUMO46Eee1JLiXkYgGug" direction="return"/>
+      <ownedParameter xmi:id="_koOUPe46Eee1JLiXkYgGug" name="filename" type="_koO9g-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUPu46Eee1JLiXkYgGug" name="val" type="_koOUYu46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUP-46Eee1JLiXkYgGug" name="fdir" type="_koOUXe46Eee1JLiXkYgGug"/>
+      <ownedTemplateSignature xmi:id="_koOUQO46Eee1JLiXkYgGug" parameter="_koOUQe46Eee1JLiXkYgGug">
+        <ownedParameter xmi:id="_koOUQe46Eee1JLiXkYgGug" default="_koOUQu46Eee1JLiXkYgGug">
+          <ownedDefault xmi:type="uml:LiteralString" xmi:id="_koOUQu46Eee1JLiXkYgGug" name="p"/>
+        </ownedParameter>
+      </ownedTemplateSignature>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOUQ-46Eee1JLiXkYgGug" name="freadval" visibility="public" isStatic="true" isQuery="true">
+      <ownedParameter xmi:id="_koOURO46Eee1JLiXkYgGug" type="_koO9hu46Eee1JLiXkYgGug" direction="return"/>
+      <ownedParameter xmi:id="_koOURe46Eee1JLiXkYgGug" name="filename" type="_koO9g-46Eee1JLiXkYgGug"/>
+      <ownedTemplateSignature xmi:id="_koOURu46Eee1JLiXkYgGug" parameter="_koOUR-46Eee1JLiXkYgGug">
+        <ownedParameter xmi:id="_koOUR-46Eee1JLiXkYgGug" default="_koOUSO46Eee1JLiXkYgGug">
+          <ownedDefault xmi:type="uml:LiteralString" xmi:id="_koOUSO46Eee1JLiXkYgGug" name="p"/>
+        </ownedParameter>
+      </ownedTemplateSignature>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOUSe46Eee1JLiXkYgGug" name="echo" visibility="public">
+      <ownedParameter xmi:id="_koOUSu46Eee1JLiXkYgGug" name="text" type="_koO9g-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUS-46Eee1JLiXkYgGug" type="_koOUMO46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOUTO46Eee1JLiXkYgGug" name="fecho" visibility="public">
+      <ownedParameter xmi:id="_koOUTe46Eee1JLiXkYgGug" name="filename" type="_koO9g-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUTu46Eee1JLiXkYgGug" name="text" type="_koO9g-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUT-46Eee1JLiXkYgGug" name="fdir" type="_koO9je46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUUO46Eee1JLiXkYgGug" type="_koOUMO46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOUUe46Eee1JLiXkYgGug" name="ferror" visibility="public">
+      <ownedParameter xmi:id="_koOUUu46Eee1JLiXkYgGug" type="_koO9g-46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOUU-46Eee1JLiXkYgGug" name="print" visibility="public" isStatic="true">
+      <ownedParameter xmi:id="_koOUVO46Eee1JLiXkYgGug" name="arg" type="_koOUMe46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUVe46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOUVu46Eee1JLiXkYgGug" name="println" visibility="public" isStatic="true">
+      <ownedParameter xmi:id="_koOUV-46Eee1JLiXkYgGug" name="arg" type="_koOUMe46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUWO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOUWe46Eee1JLiXkYgGug" name="printf" visibility="public" isStatic="true">
+      <ownedParameter xmi:id="_koOUWu46Eee1JLiXkYgGug" name="format" type="_koO9g-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUW-46Eee1JLiXkYgGug" name="args" type="_koO9kO46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUXO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_koOUXe46Eee1JLiXkYgGug" name="filedirective">
+      <generalization xmi:id="_koOUXu46Eee1JLiXkYgGug" general="_koOUX-46Eee1JLiXkYgGug"/>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Enumeration" xmi:id="_koOUX-46Eee1JLiXkYgGug" name="filedirective_appendstart__1004785595">
+      <ownedLiteral xmi:id="_koOUYO46Eee1JLiXkYgGug" name="&lt;append&gt;"/>
+      <ownedLiteral xmi:id="_koOUYe46Eee1JLiXkYgGug" name="&lt;start&gt;"/>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_koOUYu46Eee1JLiXkYgGug" name="p"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koOUY-46Eee1JLiXkYgGug" name="Designer" visibility="public">
+    <ownedAttribute xmi:id="_koOUZO46Eee1JLiXkYgGug" name="name" visibility="public" type="_koOVO-46Eee1JLiXkYgGug" association="_koO9qu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOUZe46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOUZu46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOUaO46Eee1JLiXkYgGug" name="items" visibility="public" type="_koOUr-46Eee1JLiXkYgGug" association="_koO9ru46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOUae46Eee1JLiXkYgGug"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOUau46Eee1JLiXkYgGug" value="*"/>
+      
+    </ownedAttribute>
+    <ownedOperation xmi:id="_koOUbO46Eee1JLiXkYgGug" name="Designer" visibility="public">
+      <ownedParameter xmi:id="_koOUbe46Eee1JLiXkYgGug" name="n" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUbu46Eee1JLiXkYgGug" type="_koOUY-46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOUb-46Eee1JLiXkYgGug" name="setItems" visibility="public">
+      <ownedParameter xmi:id="_koOUcO46Eee1JLiXkYgGug" name="item" type="_koO9k-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUce46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOUcu46Eee1JLiXkYgGug" name="addItem" visibility="public">
+      <ownedParameter xmi:id="_koOUc-46Eee1JLiXkYgGug" name="item" type="_koOUr-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUdO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOUde46Eee1JLiXkYgGug" name="addItems" visibility="public">
+      <ownedParameter xmi:id="_koOUdu46Eee1JLiXkYgGug" name="newItems" type="_koO9k-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUd-46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOUeO46Eee1JLiXkYgGug" name="remItem" visibility="public">
+      <ownedParameter xmi:id="_koOUee46Eee1JLiXkYgGug" name="item" type="_koOUr-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUeu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOUe-46Eee1JLiXkYgGug" name="remItems" visibility="public">
+      <ownedParameter xmi:id="_koOUfO46Eee1JLiXkYgGug" name="oldItems" type="_koO9k-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUfe46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koOUfu46Eee1JLiXkYgGug" name="Event" visibility="public">
+    <ownedAttribute xmi:id="_koOUf-46Eee1JLiXkYgGug" name="name" visibility="public" type="_koOVO-46Eee1JLiXkYgGug" association="_koO9su46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOUgO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOUge46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOUg-46Eee1JLiXkYgGug" name="place" visibility="public" type="_koOVO-46Eee1JLiXkYgGug" association="_koO9tu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOUhO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOUhe46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOUh-46Eee1JLiXkYgGug" name="date" visibility="public" type="_koOVP-46Eee1JLiXkYgGug">
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOUie46Eee1JLiXkYgGug" name="theme" visibility="public" type="_koOVO-46Eee1JLiXkYgGug" association="_koO9uu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOUiu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOUi-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOUje46Eee1JLiXkYgGug" name="price" visibility="public" type="_koOVPe46Eee1JLiXkYgGug" association="_koO9vu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOUju46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOUj-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOUke46Eee1JLiXkYgGug" name="designers" visibility="public" type="_koOUY-46Eee1JLiXkYgGug" association="_koO9wu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOUku46Eee1JLiXkYgGug"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOUk-46Eee1JLiXkYgGug" value="*"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOUle46Eee1JLiXkYgGug" name="maxSpectators" visibility="public" type="_koOUM-46Eee1JLiXkYgGug">
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOUl-46Eee1JLiXkYgGug" name="audience" visibility="public" type="_koOVqe46Eee1JLiXkYgGug" association="_koO9xu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOUmO46Eee1JLiXkYgGug"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOUme46Eee1JLiXkYgGug" value="*"/>
+      
+    </ownedAttribute>
+    <ownedOperation xmi:id="_koOUm-46Eee1JLiXkYgGug" name="Event" visibility="public">
+      <ownedParameter xmi:id="_koOUnO46Eee1JLiXkYgGug" name="n" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUne46Eee1JLiXkYgGug" name="d" type="_koOVP-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUnu46Eee1JLiXkYgGug" name="p" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUn-46Eee1JLiXkYgGug" name="t" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUoO46Eee1JLiXkYgGug" name="pr" type="_koOVPe46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUoe46Eee1JLiXkYgGug" name="maxS" type="_koOUM-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUou46Eee1JLiXkYgGug" type="_koOUfu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOUo-46Eee1JLiXkYgGug" name="registerUser" visibility="public">
+      <ownedParameter xmi:id="_koOUpO46Eee1JLiXkYgGug" name="user" type="_koOVqe46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUpe46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOUpu46Eee1JLiXkYgGug" name="refundUser" visibility="public">
+      <ownedParameter xmi:id="_koOUp-46Eee1JLiXkYgGug" name="user" type="_koOVqe46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUqO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOUqe46Eee1JLiXkYgGug" name="addDesigner" visibility="public">
+      <ownedParameter xmi:id="_koOUqu46Eee1JLiXkYgGug" name="designer" type="_koOUY-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUq-46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOUrO46Eee1JLiXkYgGug" name="removeDesigner" visibility="public">
+      <ownedParameter xmi:id="_koOUre46Eee1JLiXkYgGug" name="designer" type="_koOUY-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUru46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koOUr-46Eee1JLiXkYgGug" name="Item" visibility="public">
+    <ownedAttribute xmi:id="_koOUsO46Eee1JLiXkYgGug" name="name" visibility="public" type="_koOVO-46Eee1JLiXkYgGug" association="_koO9yu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOUse46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOUsu46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOUtO46Eee1JLiXkYgGug" name="reference" visibility="public" type="_koOUxu46Eee1JLiXkYgGug" association="_koO9zu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOUte46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOUtu46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOUuO46Eee1JLiXkYgGug" name="price" visibility="public" type="_koOVPe46Eee1JLiXkYgGug" association="_koO90u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOUue46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOUuu46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOUvO46Eee1JLiXkYgGug" name="size" visibility="public" type="_koOUyO46Eee1JLiXkYgGug" association="_koO91u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOUve46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOUvu46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedOperation xmi:id="_koOUwO46Eee1JLiXkYgGug" name="Item" visibility="public">
+      <ownedParameter xmi:id="_koOUwe46Eee1JLiXkYgGug" name="n" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUwu46Eee1JLiXkYgGug" name="r" type="_koOUxu46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUw-46Eee1JLiXkYgGug" name="p" type="_koOVPe46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUxO46Eee1JLiXkYgGug" name="s" type="_koOUyO46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOUxe46Eee1JLiXkYgGug" type="_koOUr-46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_koOUxu46Eee1JLiXkYgGug" name="Ref">
+      <generalization xmi:id="_koOUx-46Eee1JLiXkYgGug" general="_koO9g-46Eee1JLiXkYgGug"/>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_koOUyO46Eee1JLiXkYgGug" name="Size">
+      <generalization xmi:id="_koOUye46Eee1JLiXkYgGug" general="_koOUyu46Eee1JLiXkYgGug"/>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Enumeration" xmi:id="_koOUyu46Eee1JLiXkYgGug" name="Size_LMSXLXSXXL__967022028">
+      <ownedLiteral xmi:id="_koOUy-46Eee1JLiXkYgGug" name="&lt;L&gt;"/>
+      <ownedLiteral xmi:id="_koOUzO46Eee1JLiXkYgGug" name="&lt;M&gt;"/>
+      <ownedLiteral xmi:id="_koOUze46Eee1JLiXkYgGug" name="&lt;S&gt;"/>
+      <ownedLiteral xmi:id="_koOUzu46Eee1JLiXkYgGug" name="&lt;XL&gt;"/>
+      <ownedLiteral xmi:id="_koOUz-46Eee1JLiXkYgGug" name="&lt;XS&gt;"/>
+      <ownedLiteral xmi:id="_koOU0O46Eee1JLiXkYgGug" name="&lt;XXL&gt;"/>
+    </nestedClassifier>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koOU0e46Eee1JLiXkYgGug" name="Model" visibility="public">
+    <ownedAttribute xmi:id="_koOU0u46Eee1JLiXkYgGug" name="name" visibility="public" type="_koOVO-46Eee1JLiXkYgGug" association="_koO92u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOU0-46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOU1O46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOU1u46Eee1JLiXkYgGug" name="age" visibility="public" type="_koOU-u46Eee1JLiXkYgGug" association="_koO93u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOU1-46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOU2O46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOU2u46Eee1JLiXkYgGug" name="height" visibility="public" type="_koOU_O46Eee1JLiXkYgGug" association="_koO94u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOU2-46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOU3O46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOU3u46Eee1JLiXkYgGug" name="nationality" visibility="public" type="_koOVO-46Eee1JLiXkYgGug" association="_koO95u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOU3-46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOU4O46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOU4u46Eee1JLiXkYgGug" name="shows" visibility="public" type="_koOUfu46Eee1JLiXkYgGug" association="_koO96u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOU4-46Eee1JLiXkYgGug"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOU5O46Eee1JLiXkYgGug" value="*"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOU5u46Eee1JLiXkYgGug" name="gender" visibility="public" type="_koOU_u46Eee1JLiXkYgGug" association="_koO97u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOU5-46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOU6O46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedOperation xmi:id="_koOU6u46Eee1JLiXkYgGug" name="Model" visibility="public">
+      <ownedParameter xmi:id="_koOU6-46Eee1JLiXkYgGug" name="n" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOU7O46Eee1JLiXkYgGug" name="a" type="_koOU-u46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOU7e46Eee1JLiXkYgGug" name="h" type="_koOU_O46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOU7u46Eee1JLiXkYgGug" name="na" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOU7-46Eee1JLiXkYgGug" name="g" type="_koOU_u46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOU8O46Eee1JLiXkYgGug" type="_koOU0e46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOU8e46Eee1JLiXkYgGug" name="setShows" visibility="public">
+      <ownedParameter xmi:id="_koOU8u46Eee1JLiXkYgGug" name="newShows" type="_koO9nO46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOU8-46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOU9O46Eee1JLiXkYgGug" name="addShow" visibility="public">
+      <ownedParameter xmi:id="_koOU9e46Eee1JLiXkYgGug" name="newShow" type="_koOUfu46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOU9u46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOU9-46Eee1JLiXkYgGug" name="remShow" visibility="public">
+      <ownedParameter xmi:id="_koOU-O46Eee1JLiXkYgGug" name="oldShow" type="_koOUfu46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOU-e46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_koOU-u46Eee1JLiXkYgGug" name="Age">
+      <generalization xmi:id="_koOU--46Eee1JLiXkYgGug" general="_koOUK-46Eee1JLiXkYgGug"/>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_koOU_O46Eee1JLiXkYgGug" name="Height">
+      <generalization xmi:id="_koOU_e46Eee1JLiXkYgGug" general="_koOULO46Eee1JLiXkYgGug"/>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_koOU_u46Eee1JLiXkYgGug" name="Gender">
+      <generalization xmi:id="_koOU_-46Eee1JLiXkYgGug" general="_koOVAO46Eee1JLiXkYgGug"/>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Enumeration" xmi:id="_koOVAO46Eee1JLiXkYgGug" name="Gender_FemaleMale_375619406">
+      <ownedLiteral xmi:id="_koOVAe46Eee1JLiXkYgGug" name="&lt;Female&gt;"/>
+      <ownedLiteral xmi:id="_koOVAu46Eee1JLiXkYgGug" name="&lt;Male&gt;"/>
+    </nestedClassifier>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koOVA-46Eee1JLiXkYgGug" name="Platform" visibility="public">
+    <ownedAttribute xmi:id="_koOVBO46Eee1JLiXkYgGug" name="actualDate" visibility="public" type="_koOVP-46Eee1JLiXkYgGug">
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOVBu46Eee1JLiXkYgGug" name="users" visibility="public" type="_koOVqe46Eee1JLiXkYgGug" association="_koO98u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOVB-46Eee1JLiXkYgGug"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOVCO46Eee1JLiXkYgGug" value="*"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOVCu46Eee1JLiXkYgGug" name="events" visibility="public" type="_koOUfu46Eee1JLiXkYgGug" association="_koO99u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOVC-46Eee1JLiXkYgGug"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOVDO46Eee1JLiXkYgGug" value="*"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOVDu46Eee1JLiXkYgGug" name="items" visibility="public" type="_koOUr-46Eee1JLiXkYgGug" association="_koO9-u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOVD-46Eee1JLiXkYgGug"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOVEO46Eee1JLiXkYgGug" value="*"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOVEu46Eee1JLiXkYgGug" name="designers" visibility="public" type="_koOUY-46Eee1JLiXkYgGug" association="_koO9_u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOVE-46Eee1JLiXkYgGug"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOVFO46Eee1JLiXkYgGug" value="*"/>
+      
+    </ownedAttribute>
+    <ownedOperation xmi:id="_koOVFu46Eee1JLiXkYgGug" name="Platform" visibility="public">
+      <ownedParameter xmi:id="_koOVF-46Eee1JLiXkYgGug" name="actualD" type="_koOVP-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVGO46Eee1JLiXkYgGug" type="_koOVA-46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVGe46Eee1JLiXkYgGug" name="moveDataForward" visibility="public">
+      <ownedParameter xmi:id="_koOVGu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVG-46Eee1JLiXkYgGug" name="endDay" visibility="public">
+      <ownedParameter xmi:id="_koOVHO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVHe46Eee1JLiXkYgGug" name="addUser" visibility="public">
+      <ownedParameter xmi:id="_koOVHu46Eee1JLiXkYgGug" name="user" type="_koOVqe46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVH-46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVIO46Eee1JLiXkYgGug" name="removeUser" visibility="public">
+      <ownedParameter xmi:id="_koOVIe46Eee1JLiXkYgGug" name="user" type="_koOVqe46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVIu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVI-46Eee1JLiXkYgGug" name="getUserByUsername" visibility="public">
+      <ownedParameter xmi:id="_koOVJO46Eee1JLiXkYgGug" name="username" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVJe46Eee1JLiXkYgGug" type="_koOVqe46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVJu46Eee1JLiXkYgGug" name="addEvent" visibility="public">
+      <ownedParameter xmi:id="_koOVJ-46Eee1JLiXkYgGug" name="event" type="_koOUfu46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVKO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVKe46Eee1JLiXkYgGug" name="removeEvent" visibility="public">
+      <ownedParameter xmi:id="_koOVKu46Eee1JLiXkYgGug" name="event" type="_koOUfu46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVK-46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVLO46Eee1JLiXkYgGug" name="addItem" visibility="public">
+      <ownedParameter xmi:id="_koOVLe46Eee1JLiXkYgGug" name="item" type="_koOUr-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVLu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVL-46Eee1JLiXkYgGug" name="removeItem" visibility="public">
+      <ownedParameter xmi:id="_koOVMO46Eee1JLiXkYgGug" name="item" type="_koOUr-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVMe46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVMu46Eee1JLiXkYgGug" name="getItemByRef" visibility="public">
+      <ownedParameter xmi:id="_koOVM-46Eee1JLiXkYgGug" name="ref" type="_koOUxu46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVNO46Eee1JLiXkYgGug" type="_koOUr-46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVNe46Eee1JLiXkYgGug" name="addDesigner" visibility="public">
+      <ownedParameter xmi:id="_koOVNu46Eee1JLiXkYgGug" name="designer" type="_koOUY-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVN-46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVOO46Eee1JLiXkYgGug" name="removeDesigner" visibility="public">
+      <ownedParameter xmi:id="_koOVOe46Eee1JLiXkYgGug" name="designer" type="_koOUY-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVOu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_koOVO-46Eee1JLiXkYgGug" name="String">
+      <generalization xmi:id="_koOVPO46Eee1JLiXkYgGug" general="_koO9g-46Eee1JLiXkYgGug"/>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_koOVPe46Eee1JLiXkYgGug" name="Price">
+      <generalization xmi:id="_koOVPu46Eee1JLiXkYgGug" general="_koOULO46Eee1JLiXkYgGug"/>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_koOVP-46Eee1JLiXkYgGug" name="Date">
+      <ownedAttribute xmi:id="_koOVQO46Eee1JLiXkYgGug" name="year" type="_koOUL-46Eee1JLiXkYgGug"/>
+      <ownedAttribute xmi:id="_koOVQe46Eee1JLiXkYgGug" name="month" type="_koOUL-46Eee1JLiXkYgGug"/>
+      <ownedAttribute xmi:id="_koOVQu46Eee1JLiXkYgGug" name="day" type="_koOUL-46Eee1JLiXkYgGug"/>
+      <nestedClassifier xmi:type="uml:Stereotype" xmi:id="_koOVQ-46Eee1JLiXkYgGug" name="record"/>
+    </nestedClassifier>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koOVRO46Eee1JLiXkYgGug" name="Presentation" visibility="public">
+    <generalization xmi:id="_koOVRe46Eee1JLiXkYgGug" general="_koOUfu46Eee1JLiXkYgGug"/>
+    <ownedOperation xmi:id="_koOVRu46Eee1JLiXkYgGug" name="Presentation" visibility="public">
+      <ownedParameter xmi:id="_koOVR-46Eee1JLiXkYgGug" name="n" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVSO46Eee1JLiXkYgGug" name="d" type="_koOVP-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVSe46Eee1JLiXkYgGug" name="p" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVSu46Eee1JLiXkYgGug" name="t" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVS-46Eee1JLiXkYgGug" name="pr" type="_koOVPe46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVTO46Eee1JLiXkYgGug" name="maxS" type="_koOUM-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVTe46Eee1JLiXkYgGug" type="_koOVRO46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koOVTu46Eee1JLiXkYgGug" name="PrimpingSession" visibility="public">
+    <generalization xmi:id="_koOVT-46Eee1JLiXkYgGug" general="_koOUfu46Eee1JLiXkYgGug"/>
+    <ownedOperation xmi:id="_koOVUO46Eee1JLiXkYgGug" name="PrimpingSession" visibility="public">
+      <ownedParameter xmi:id="_koOVUe46Eee1JLiXkYgGug" name="n" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVUu46Eee1JLiXkYgGug" name="d" type="_koOVP-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVU-46Eee1JLiXkYgGug" name="p" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVVO46Eee1JLiXkYgGug" name="t" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVVe46Eee1JLiXkYgGug" name="pr" type="_koOVPe46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVVu46Eee1JLiXkYgGug" name="maxS" type="_koOUM-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVV-46Eee1JLiXkYgGug" type="_koOVTu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koOVWO46Eee1JLiXkYgGug" name="Runway" visibility="public">
+    <generalization xmi:id="_koOVWe46Eee1JLiXkYgGug" general="_koOUfu46Eee1JLiXkYgGug"/>
+    <ownedAttribute xmi:id="_koOVWu46Eee1JLiXkYgGug" name="expositionItems" visibility="public" type="_koOUr-46Eee1JLiXkYgGug" isUnique="false" association="_koO-Au46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOVW-46Eee1JLiXkYgGug"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOVXO46Eee1JLiXkYgGug" value="*"/>
+      <qualifier xmi:id="_koOVXe46Eee1JLiXkYgGug" type="_koOUY-46Eee1JLiXkYgGug">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOVXu46Eee1JLiXkYgGug" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOVX-46Eee1JLiXkYgGug" value="1"/>
+      </qualifier>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOVYe46Eee1JLiXkYgGug" name="models" visibility="public" type="_koOU0e46Eee1JLiXkYgGug" association="_koO-Bu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOVYu46Eee1JLiXkYgGug"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOVY-46Eee1JLiXkYgGug" value="*"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOVZe46Eee1JLiXkYgGug" name="modelsItems" visibility="public" type="_koOUr-46Eee1JLiXkYgGug" isUnique="false" association="_koO-Cu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOVZu46Eee1JLiXkYgGug"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOVZ-46Eee1JLiXkYgGug" value="*"/>
+      <qualifier xmi:id="_koOVaO46Eee1JLiXkYgGug" type="_koOU0e46Eee1JLiXkYgGug">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOVae46Eee1JLiXkYgGug" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOVau46Eee1JLiXkYgGug" value="1"/>
+      </qualifier>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOVbO46Eee1JLiXkYgGug" name="showItems" visibility="public" type="_koOUr-46Eee1JLiXkYgGug" association="_koO-Du46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOVbe46Eee1JLiXkYgGug"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOVbu46Eee1JLiXkYgGug" value="*"/>
+      
+    </ownedAttribute>
+    <ownedOperation xmi:id="_koOVcO46Eee1JLiXkYgGug" name="Runway" visibility="public">
+      <ownedParameter xmi:id="_koOVce46Eee1JLiXkYgGug" name="n" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVcu46Eee1JLiXkYgGug" name="d" type="_koOVP-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVc-46Eee1JLiXkYgGug" name="p" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVdO46Eee1JLiXkYgGug" name="t" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVde46Eee1JLiXkYgGug" name="pr" type="_koOVPe46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVdu46Eee1JLiXkYgGug" name="maxS" type="_koOUM-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVd-46Eee1JLiXkYgGug" type="_koOVWO46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVeO46Eee1JLiXkYgGug" name="setModels" visibility="public">
+      <ownedParameter xmi:id="_koOVee46Eee1JLiXkYgGug" name="model" type="_koO9o-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVeu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVe-46Eee1JLiXkYgGug" name="addModel" visibility="public">
+      <ownedParameter xmi:id="_koOVfO46Eee1JLiXkYgGug" name="model" type="_koOU0e46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVfe46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVfu46Eee1JLiXkYgGug" name="addModels" visibility="public">
+      <ownedParameter xmi:id="_koOVf-46Eee1JLiXkYgGug" name="newModels" type="_koO9o-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVgO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVge46Eee1JLiXkYgGug" name="remModel" visibility="public">
+      <ownedParameter xmi:id="_koOVgu46Eee1JLiXkYgGug" name="model" type="_koOU0e46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVg-46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVhO46Eee1JLiXkYgGug" name="remModels" visibility="public">
+      <ownedParameter xmi:id="_koOVhe46Eee1JLiXkYgGug" name="oldModels" type="_koO9o-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVhu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVh-46Eee1JLiXkYgGug" name="getItemsOfDesignerInShow" visibility="public">
+      <ownedParameter xmi:id="_koOViO46Eee1JLiXkYgGug" name="designer" type="_koOUY-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVie46Eee1JLiXkYgGug" type="_koO9k-46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOViu46Eee1JLiXkYgGug" name="getItemsInShow" visibility="public">
+      <ownedParameter xmi:id="_koOVi-46Eee1JLiXkYgGug" type="_koO9k-46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVjO46Eee1JLiXkYgGug" name="addDesigner" visibility="public">
+      <ownedParameter xmi:id="_koOVje46Eee1JLiXkYgGug" name="designer" type="_koOUY-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVju46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVj-46Eee1JLiXkYgGug" name="removeDesigner" visibility="public">
+      <ownedParameter xmi:id="_koOVkO46Eee1JLiXkYgGug" name="designer" type="_koOUY-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVke46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVku46Eee1JLiXkYgGug" name="addDesignerItem" visibility="public">
+      <ownedParameter xmi:id="_koOVk-46Eee1JLiXkYgGug" name="designer" type="_koOUY-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVlO46Eee1JLiXkYgGug" name="item" type="_koOUr-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVle46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVlu46Eee1JLiXkYgGug" name="removeDesignerItem" visibility="public">
+      <ownedParameter xmi:id="_koOVl-46Eee1JLiXkYgGug" name="designer" type="_koOUY-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVmO46Eee1JLiXkYgGug" name="item" type="_koOUr-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVme46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVmu46Eee1JLiXkYgGug" name="setModelItem" visibility="public">
+      <ownedParameter xmi:id="_koOVm-46Eee1JLiXkYgGug" name="model" type="_koOU0e46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVnO46Eee1JLiXkYgGug" name="item" type="_koOUr-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVne46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVnu46Eee1JLiXkYgGug" name="setModelOutfit" visibility="public">
+      <ownedParameter xmi:id="_koOVn-46Eee1JLiXkYgGug" name="model" type="_koOU0e46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVoO46Eee1JLiXkYgGug" name="items" type="_koO9k-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVoe46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVou46Eee1JLiXkYgGug" name="removeModelOutfit" visibility="public">
+      <ownedParameter xmi:id="_koOVo-46Eee1JLiXkYgGug" name="model" type="_koOU0e46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVpO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVpe46Eee1JLiXkYgGug" name="removeModelItem" visibility="public">
+      <ownedParameter xmi:id="_koOVpu46Eee1JLiXkYgGug" name="model" type="_koOU0e46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVp-46Eee1JLiXkYgGug" name="item" type="_koOUr-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVqO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koOVqe46Eee1JLiXkYgGug" name="User" visibility="public">
+    <ownedAttribute xmi:id="_koOVqu46Eee1JLiXkYgGug" name="username" visibility="public" type="_koO7NO46Eee1JLiXkYgGug" association="_koO-Eu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOVq-46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOVrO46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOVru46Eee1JLiXkYgGug" name="name" visibility="public" type="_koOVO-46Eee1JLiXkYgGug" association="_koO-Fu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOVr-46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOVsO46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOVsu46Eee1JLiXkYgGug" name="budget" visibility="public" type="_koO7Mu46Eee1JLiXkYgGug" association="_koO-Gu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOVs-46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOVtO46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koOVtu46Eee1JLiXkYgGug" name="boughtItems" visibility="public" type="_koOUr-46Eee1JLiXkYgGug" association="_koO-Hu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koOVt-46Eee1JLiXkYgGug"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koOVuO46Eee1JLiXkYgGug" value="*"/>
+      
+    </ownedAttribute>
+    <ownedOperation xmi:id="_koOVuu46Eee1JLiXkYgGug" name="User" visibility="public">
+      <ownedParameter xmi:id="_koOVu-46Eee1JLiXkYgGug" name="u" type="_koO7NO46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVvO46Eee1JLiXkYgGug" name="n" type="_koOVO-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVve46Eee1JLiXkYgGug" type="_koOVqe46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVvu46Eee1JLiXkYgGug" name="setBudget" visibility="public">
+      <ownedParameter xmi:id="_koOVv-46Eee1JLiXkYgGug" name="bd" type="_koO7Mu46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVwO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVwe46Eee1JLiXkYgGug" name="getBoughtItems" visibility="public">
+      <ownedParameter xmi:id="_koOVwu46Eee1JLiXkYgGug" type="_koO9k-46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVw-46Eee1JLiXkYgGug" name="setBoughtItem" visibility="public">
+      <ownedParameter xmi:id="_koOVxO46Eee1JLiXkYgGug" name="item" type="_koOUr-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koOVxe46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koOVxu46Eee1JLiXkYgGug" name="setBoughtItems" visibility="public">
+      <ownedParameter xmi:id="_koO7MO46Eee1JLiXkYgGug" name="items" type="_koO9k-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koO7Me46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_koO7Mu46Eee1JLiXkYgGug" name="Budget">
+      <generalization xmi:id="_koO7M-46Eee1JLiXkYgGug" general="_koOULO46Eee1JLiXkYgGug"/>
+    </nestedClassifier>
+    <nestedClassifier xmi:type="uml:Class" xmi:id="_koO7NO46Eee1JLiXkYgGug" name="Username">
+      <generalization xmi:id="_koO7Ne46Eee1JLiXkYgGug" general="_koOVO-46Eee1JLiXkYgGug"/>
+    </nestedClassifier>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koO7Nu46Eee1JLiXkYgGug" name="Utils" visibility="public">
+    <ownedOperation xmi:id="_koO7N-46Eee1JLiXkYgGug" name="isAfter" visibility="public" isStatic="true" isQuery="true">
+      <ownedParameter xmi:id="_koO7OO46Eee1JLiXkYgGug" type="_koOUMO46Eee1JLiXkYgGug" direction="return"/>
+      <ownedParameter xmi:id="_koO7Oe46Eee1JLiXkYgGug" name="date1" type="_koOVP-46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koO7Ou46Eee1JLiXkYgGug" name="date2" type="_koOVP-46Eee1JLiXkYgGug"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koO7O-46Eee1JLiXkYgGug" name="MyTestCase" visibility="public">
+    <ownedOperation xmi:id="_koO7PO46Eee1JLiXkYgGug" name="assertTrue" visibility="protected">
+      <ownedParameter xmi:id="_koO7Pe46Eee1JLiXkYgGug" name="arg" type="_koOUMO46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koO7Pu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO7P-46Eee1JLiXkYgGug" name="assertEqual" visibility="protected">
+      <ownedParameter xmi:id="_koO7QO46Eee1JLiXkYgGug" name="expected" type="_koOUMe46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koO7Qe46Eee1JLiXkYgGug" name="actual" type="_koOUMe46Eee1JLiXkYgGug"/>
+      <ownedParameter xmi:id="_koO7Qu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koO7Q-46Eee1JLiXkYgGug" name="TestDesignerClass" visibility="public">
+    <generalization xmi:id="_koO7RO46Eee1JLiXkYgGug" general="_koO7O-46Eee1JLiXkYgGug"/>
+    <ownedAttribute xmi:id="_koO7Re46Eee1JLiXkYgGug" name="it1" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koO-Iu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7Ru46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7R-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7Se46Eee1JLiXkYgGug" name="it2" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koO-Ju46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7Su46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7S-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7Te46Eee1JLiXkYgGug" name="it3" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koO-Ku46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7Tu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7T-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7Ue46Eee1JLiXkYgGug" name="it4" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koO-Lu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7Uu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7U-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7Ve46Eee1JLiXkYgGug" name="it5" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koO-Mu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7Vu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7V-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7We46Eee1JLiXkYgGug" name="it6" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koO-Nu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7Wu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7W-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7Xe46Eee1JLiXkYgGug" name="it7" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koO-Ou46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7Xu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7X-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7Ye46Eee1JLiXkYgGug" name="it8" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koO-Pu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7Yu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7Y-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7Ze46Eee1JLiXkYgGug" name="m1" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koO-Qu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7Zu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7Z-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7ae46Eee1JLiXkYgGug" name="m2" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koO-Ru46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7au46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7a-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7be46Eee1JLiXkYgGug" name="m3" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koO-Su46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7bu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7b-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7ce46Eee1JLiXkYgGug" name="m4" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koO-Tu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7cu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7c-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7de46Eee1JLiXkYgGug" name="m5" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koO-Uu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7du46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7d-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7ee46Eee1JLiXkYgGug" name="m6" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koO-Vu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7eu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7e-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7fe46Eee1JLiXkYgGug" name="m7" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koO-Wu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7fu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7f-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7ge46Eee1JLiXkYgGug" name="m8" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koO-Xu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7gu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7g-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedOperation xmi:id="_koO7he46Eee1JLiXkYgGug" name="testAddItem" visibility="public">
+      <ownedParameter xmi:id="_koO7hu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO7h-46Eee1JLiXkYgGug" name="testAddItems" visibility="public">
+      <ownedParameter xmi:id="_koO7iO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO7ie46Eee1JLiXkYgGug" name="testRemItem" visibility="public">
+      <ownedParameter xmi:id="_koO7iu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO7i-46Eee1JLiXkYgGug" name="testRemItems" visibility="public">
+      <ownedParameter xmi:id="_koO7jO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO7je46Eee1JLiXkYgGug" name="testAll" visibility="public">
+      <ownedParameter xmi:id="_koO7ju46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koO7j-46Eee1JLiXkYgGug" name="TestEventClass" visibility="public">
+    <generalization xmi:id="_koO7kO46Eee1JLiXkYgGug" general="_koO7O-46Eee1JLiXkYgGug"/>
+    <ownedAttribute xmi:id="_koO7ke46Eee1JLiXkYgGug" name="ev1" visibility="private" type="_koOUfu46Eee1JLiXkYgGug" association="_koO-Yu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7ku46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7k-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7le46Eee1JLiXkYgGug" name="d1" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koO-Zu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7lu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7l-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7me46Eee1JLiXkYgGug" name="d2" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koO-au46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7mu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7m-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7ne46Eee1JLiXkYgGug" name="u1" visibility="private" type="_koOVqe46Eee1JLiXkYgGug" association="_koO-bu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7nu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7n-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7oe46Eee1JLiXkYgGug" name="u2" visibility="private" type="_koOVqe46Eee1JLiXkYgGug" association="_koO-cu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7ou46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7o-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedOperation xmi:id="_koO7pe46Eee1JLiXkYgGug" name="testUsers" visibility="public">
+      <ownedParameter xmi:id="_koO7pu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO7p-46Eee1JLiXkYgGug" name="testAll" visibility="public">
+      <ownedParameter xmi:id="_koO7qO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koO7qe46Eee1JLiXkYgGug" name="TestItemClass" visibility="public">
+    <generalization xmi:id="_koO7qu46Eee1JLiXkYgGug" general="_koO7O-46Eee1JLiXkYgGug"/>
+    <ownedOperation xmi:id="_koO7q-46Eee1JLiXkYgGug" name="testGetItemAttributes" visibility="public">
+      <ownedParameter xmi:id="_koO7rO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO7re46Eee1JLiXkYgGug" name="testAll" visibility="public">
+      <ownedParameter xmi:id="_koO7ru46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koO7r-46Eee1JLiXkYgGug" name="TestModelClass" visibility="public">
+    <generalization xmi:id="_koO7sO46Eee1JLiXkYgGug" general="_koO7O-46Eee1JLiXkYgGug"/>
+    <ownedAttribute xmi:id="_koO7se46Eee1JLiXkYgGug" name="d1" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koO-du46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7su46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7s-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7te46Eee1JLiXkYgGug" name="d2" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koO-eu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7tu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7t-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7ue46Eee1JLiXkYgGug" name="d3" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koO-fu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7uu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7u-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7ve46Eee1JLiXkYgGug" name="d4" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koO-gu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7vu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7v-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7we46Eee1JLiXkYgGug" name="d5" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koO-hu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7wu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7w-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7xe46Eee1JLiXkYgGug" name="d6" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koO-iu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7xu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7x-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7ye46Eee1JLiXkYgGug" name="d7" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koO-ju46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7yu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7y-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7ze46Eee1JLiXkYgGug" name="f1" visibility="private" type="_koOVWO46Eee1JLiXkYgGug" association="_koO-ku46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7zu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7z-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO70e46Eee1JLiXkYgGug" name="f2" visibility="private" type="_koOVWO46Eee1JLiXkYgGug" association="_koO-lu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO70u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO70-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO71e46Eee1JLiXkYgGug" name="f3" visibility="private" type="_koOVWO46Eee1JLiXkYgGug" association="_koO-mu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO71u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO71-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO72e46Eee1JLiXkYgGug" name="f4" visibility="private" type="_koOVWO46Eee1JLiXkYgGug" association="_koO-nu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO72u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO72-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO73e46Eee1JLiXkYgGug" name="f5" visibility="private" type="_koOVWO46Eee1JLiXkYgGug" association="_koO-ou46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO73u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO73-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO74e46Eee1JLiXkYgGug" name="f6" visibility="private" type="_koOVWO46Eee1JLiXkYgGug" association="_koO-pu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO74u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO74-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO75e46Eee1JLiXkYgGug" name="f7" visibility="private" type="_koOVWO46Eee1JLiXkYgGug" association="_koO-qu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO75u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO75-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedOperation xmi:id="_koO76e46Eee1JLiXkYgGug" name="testGetModelsAttributes" visibility="public">
+      <ownedParameter xmi:id="_koO76u46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO76-46Eee1JLiXkYgGug" name="testSetShowsModels" visibility="public">
+      <ownedParameter xmi:id="_koO77O46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO77e46Eee1JLiXkYgGug" name="testAddShowModels" visibility="public">
+      <ownedParameter xmi:id="_koO77u46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO77-46Eee1JLiXkYgGug" name="testRemShowModels" visibility="public">
+      <ownedParameter xmi:id="_koO78O46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO78e46Eee1JLiXkYgGug" name="testAll" visibility="public">
+      <ownedParameter xmi:id="_koO78u46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koO78-46Eee1JLiXkYgGug" name="TestPlatformClass" visibility="public">
+    <generalization xmi:id="_koO79O46Eee1JLiXkYgGug" general="_koO7O-46Eee1JLiXkYgGug"/>
+    <ownedAttribute xmi:id="_koO79e46Eee1JLiXkYgGug" name="d1" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koO-ru46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO79u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO79-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7-e46Eee1JLiXkYgGug" name="d2" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koO-su46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7-u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7--46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO7_e46Eee1JLiXkYgGug" name="d3" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koO-tu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO7_u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO7_-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8Ae46Eee1JLiXkYgGug" name="it1" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koO-uu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8Au46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8A-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8Be46Eee1JLiXkYgGug" name="it2" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koO-vu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8Bu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8B-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8Ce46Eee1JLiXkYgGug" name="it3" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koO-wu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8Cu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8C-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8De46Eee1JLiXkYgGug" name="u1" visibility="private" type="_koOVqe46Eee1JLiXkYgGug" association="_koO-xu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8Du46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8D-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8Ee46Eee1JLiXkYgGug" name="u2" visibility="private" type="_koOVqe46Eee1JLiXkYgGug" association="_koO-yu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8Eu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8E-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8Fe46Eee1JLiXkYgGug" name="u3" visibility="private" type="_koOVqe46Eee1JLiXkYgGug" association="_koO-zu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8Fu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8F-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8Ge46Eee1JLiXkYgGug" name="e1" visibility="private" type="_koOUfu46Eee1JLiXkYgGug" association="_koO-0u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8Gu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8G-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8He46Eee1JLiXkYgGug" name="e2" visibility="private" type="_koOUfu46Eee1JLiXkYgGug" association="_koO-1u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8Hu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8H-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8Ie46Eee1JLiXkYgGug" name="e3" visibility="private" type="_koOUfu46Eee1JLiXkYgGug" association="_koO-2u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8Iu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8I-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8Je46Eee1JLiXkYgGug" name="e4" visibility="private" type="_koOUfu46Eee1JLiXkYgGug" association="_koO-3u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8Ju46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8J-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8Ke46Eee1JLiXkYgGug" name="e5" visibility="private" type="_koOUfu46Eee1JLiXkYgGug" association="_koO-4u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8Ku46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8K-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8Le46Eee1JLiXkYgGug" name="p1" visibility="private" type="_koOVA-46Eee1JLiXkYgGug" association="_koO-5u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8Lu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8L-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8Me46Eee1JLiXkYgGug" name="p2" visibility="private" type="_koOVA-46Eee1JLiXkYgGug" association="_koO-6u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8Mu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8M-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8Ne46Eee1JLiXkYgGug" name="p3" visibility="private" type="_koOVA-46Eee1JLiXkYgGug" association="_koO-7u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8Nu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8N-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedOperation xmi:id="_koO8Oe46Eee1JLiXkYgGug" name="testAddRemoveDesigner" visibility="public">
+      <ownedParameter xmi:id="_koO8Ou46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8O-46Eee1JLiXkYgGug" name="testAddRemoveItem" visibility="public">
+      <ownedParameter xmi:id="_koO8PO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8Pe46Eee1JLiXkYgGug" name="testAddRemoveUser" visibility="public">
+      <ownedParameter xmi:id="_koO8Pu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8P-46Eee1JLiXkYgGug" name="testAddRemoveEvent" visibility="public">
+      <ownedParameter xmi:id="_koO8QO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8Qe46Eee1JLiXkYgGug" name="testEndDay" visibility="public">
+      <ownedParameter xmi:id="_koO8Qu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8Q-46Eee1JLiXkYgGug" name="testgetItemByRef" visibility="public">
+      <ownedParameter xmi:id="_koO8RO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8Re46Eee1JLiXkYgGug" name="testgetUserByUsername" visibility="public">
+      <ownedParameter xmi:id="_koO8Ru46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8R-46Eee1JLiXkYgGug" name="testAll" visibility="public">
+      <ownedParameter xmi:id="_koO8SO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koO8Se46Eee1JLiXkYgGug" name="TestPresentationClass" visibility="public">
+    <generalization xmi:id="_koO8Su46Eee1JLiXkYgGug" general="_koO7O-46Eee1JLiXkYgGug"/>
+    <ownedAttribute xmi:id="_koO8S-46Eee1JLiXkYgGug" name="p1" visibility="private" type="_koOVRO46Eee1JLiXkYgGug" association="_koO-8u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8TO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8Te46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedOperation xmi:id="_koO8T-46Eee1JLiXkYgGug" name="testPresentationAttributes" visibility="public">
+      <ownedParameter xmi:id="_koO8UO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8Ue46Eee1JLiXkYgGug" name="testAll" visibility="public">
+      <ownedParameter xmi:id="_koO8Uu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koO8U-46Eee1JLiXkYgGug" name="TestPrimpingSessionClass" visibility="public">
+    <generalization xmi:id="_koO8VO46Eee1JLiXkYgGug" general="_koO7O-46Eee1JLiXkYgGug"/>
+    <ownedAttribute xmi:id="_koO8Ve46Eee1JLiXkYgGug" name="p1" visibility="private" type="_koOVTu46Eee1JLiXkYgGug" association="_koPiQO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8Vu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8V-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedOperation xmi:id="_koO8We46Eee1JLiXkYgGug" name="testPrimpingAttributes" visibility="public">
+      <ownedParameter xmi:id="_koO8Wu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8W-46Eee1JLiXkYgGug" name="testAll" visibility="public">
+      <ownedParameter xmi:id="_koO8XO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koO8Xe46Eee1JLiXkYgGug" name="TestRunwayClass" visibility="public">
+    <generalization xmi:id="_koO8Xu46Eee1JLiXkYgGug" general="_koO7O-46Eee1JLiXkYgGug"/>
+    <ownedAttribute xmi:id="_koO8X-46Eee1JLiXkYgGug" name="f1" visibility="private" type="_koOVWO46Eee1JLiXkYgGug" association="_koPiRO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8YO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8Ye46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8Y-46Eee1JLiXkYgGug" name="f2" visibility="private" type="_koOVWO46Eee1JLiXkYgGug" association="_koPiSO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8ZO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8Ze46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8Z-46Eee1JLiXkYgGug" name="f3" visibility="private" type="_koOVWO46Eee1JLiXkYgGug" association="_koPiTO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8aO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8ae46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8a-46Eee1JLiXkYgGug" name="d1" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koPiUO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8bO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8be46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8b-46Eee1JLiXkYgGug" name="d2" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koPiVO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8cO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8ce46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8c-46Eee1JLiXkYgGug" name="d3" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koPiWO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8dO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8de46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8d-46Eee1JLiXkYgGug" name="d4" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koPiXO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8eO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8ee46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8e-46Eee1JLiXkYgGug" name="d5" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koPiYO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8fO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8fe46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8f-46Eee1JLiXkYgGug" name="m1" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koPiZO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8gO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8ge46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8g-46Eee1JLiXkYgGug" name="m2" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koPiaO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8hO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8he46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8h-46Eee1JLiXkYgGug" name="m3" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koPibO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8iO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8ie46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8i-46Eee1JLiXkYgGug" name="m4" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koPicO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8jO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8je46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8j-46Eee1JLiXkYgGug" name="m5" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koPidO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8kO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8ke46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8k-46Eee1JLiXkYgGug" name="m6" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koPieO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8lO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8le46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8l-46Eee1JLiXkYgGug" name="m7" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koPifO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8mO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8me46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8m-46Eee1JLiXkYgGug" name="m8" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koPigO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8nO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8ne46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8n-46Eee1JLiXkYgGug" name="it1" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPihO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8oO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8oe46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8o-46Eee1JLiXkYgGug" name="it2" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPiiO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8pO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8pe46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8p-46Eee1JLiXkYgGug" name="it3" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPijO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8qO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8qe46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8q-46Eee1JLiXkYgGug" name="it4" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPikO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8rO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8re46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8r-46Eee1JLiXkYgGug" name="it5" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPilO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8sO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8se46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8s-46Eee1JLiXkYgGug" name="it6" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPimO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8tO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8te46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8t-46Eee1JLiXkYgGug" name="it7" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPinO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8uO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8ue46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO8u-46Eee1JLiXkYgGug" name="it8" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPioO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO8vO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO8ve46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedOperation xmi:id="_koO8v-46Eee1JLiXkYgGug" name="testRunwayAttributes" visibility="public">
+      <ownedParameter xmi:id="_koO8wO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8we46Eee1JLiXkYgGug" name="testAddModel" visibility="public">
+      <ownedParameter xmi:id="_koO8wu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8w-46Eee1JLiXkYgGug" name="testAddModels" visibility="public">
+      <ownedParameter xmi:id="_koO8xO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8xe46Eee1JLiXkYgGug" name="testRemModel" visibility="public">
+      <ownedParameter xmi:id="_koO8xu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8x-46Eee1JLiXkYgGug" name="testRemModels" visibility="public">
+      <ownedParameter xmi:id="_koO8yO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8ye46Eee1JLiXkYgGug" name="testAddDesigner" visibility="public">
+      <ownedParameter xmi:id="_koO8yu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8y-46Eee1JLiXkYgGug" name="testRemDesigner" visibility="public">
+      <ownedParameter xmi:id="_koO8zO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8ze46Eee1JLiXkYgGug" name="testItemsOfDesigner" visibility="public">
+      <ownedParameter xmi:id="_koO8zu46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8z-46Eee1JLiXkYgGug" name="testAddDesignerItem" visibility="public">
+      <ownedParameter xmi:id="_koO80O46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO80e46Eee1JLiXkYgGug" name="testRemDesignerItem" visibility="public">
+      <ownedParameter xmi:id="_koO80u46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO80-46Eee1JLiXkYgGug" name="testItemsInShow" visibility="public">
+      <ownedParameter xmi:id="_koO81O46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO81e46Eee1JLiXkYgGug" name="testSetModelItem" visibility="public">
+      <ownedParameter xmi:id="_koO81u46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO81-46Eee1JLiXkYgGug" name="testSetModelOutfit" visibility="public">
+      <ownedParameter xmi:id="_koO82O46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO82e46Eee1JLiXkYgGug" name="testRemModelOutfit" visibility="public">
+      <ownedParameter xmi:id="_koO82u46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO82-46Eee1JLiXkYgGug" name="testRemModelItem" visibility="public">
+      <ownedParameter xmi:id="_koO83O46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO83e46Eee1JLiXkYgGug" name="testAll" visibility="public">
+      <ownedParameter xmi:id="_koO83u46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koO83-46Eee1JLiXkYgGug" name="TestUserClass" visibility="public">
+    <generalization xmi:id="_koO84O46Eee1JLiXkYgGug" general="_koO7O-46Eee1JLiXkYgGug"/>
+    <ownedAttribute xmi:id="_koO84e46Eee1JLiXkYgGug" name="u3" visibility="private" type="_koOVqe46Eee1JLiXkYgGug" association="_koPipO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO84u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO84-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO85e46Eee1JLiXkYgGug" name="it1" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPiqO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO85u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO85-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO86e46Eee1JLiXkYgGug" name="it2" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPirO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO86u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO86-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO87e46Eee1JLiXkYgGug" name="it3" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPisO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO87u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO87-46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedOperation xmi:id="_koO88e46Eee1JLiXkYgGug" name="testGetUserAttributes" visibility="public">
+      <ownedParameter xmi:id="_koO88u46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO88-46Eee1JLiXkYgGug" name="testSetGetBoughtItems" visibility="public">
+      <ownedParameter xmi:id="_koO89O46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO89e46Eee1JLiXkYgGug" name="testAll" visibility="public">
+      <ownedParameter xmi:id="_koO89u46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koO89-46Eee1JLiXkYgGug" name="TestUtilsClass" visibility="public">
+    <generalization xmi:id="_koO8-O46Eee1JLiXkYgGug" general="_koO7O-46Eee1JLiXkYgGug"/>
+    <ownedOperation xmi:id="_koO8-e46Eee1JLiXkYgGug" name="testIsAfter" visibility="public">
+      <ownedParameter xmi:id="_koO8-u46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+    <ownedOperation xmi:id="_koO8--46Eee1JLiXkYgGug" name="testAll" visibility="public">
+      <ownedParameter xmi:id="_koO8_O46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_koO8_e46Eee1JLiXkYgGug" name="Test" visibility="public">
+    <generalization xmi:id="_koO8_u46Eee1JLiXkYgGug" general="_koO7O-46Eee1JLiXkYgGug"/>
+    <ownedAttribute xmi:id="_koO8_-46Eee1JLiXkYgGug" name="d1" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koPitO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9AO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Ae46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9A-46Eee1JLiXkYgGug" name="d2" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koPiuO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9BO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Be46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9B-46Eee1JLiXkYgGug" name="d3" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koPivO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9CO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Ce46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9C-46Eee1JLiXkYgGug" name="d4" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koPiwO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9DO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9De46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9D-46Eee1JLiXkYgGug" name="d5" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koPixO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9EO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Ee46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9E-46Eee1JLiXkYgGug" name="d6" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koPiyO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9FO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Fe46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9F-46Eee1JLiXkYgGug" name="d7" visibility="private" type="_koOUY-46Eee1JLiXkYgGug" association="_koPizO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9GO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Ge46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9G-46Eee1JLiXkYgGug" name="u1" visibility="private" type="_koOVqe46Eee1JLiXkYgGug" association="_koPi0O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9HO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9He46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9H-46Eee1JLiXkYgGug" name="u2" visibility="private" type="_koOVqe46Eee1JLiXkYgGug" association="_koPi1O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9IO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Ie46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9I-46Eee1JLiXkYgGug" name="u3" visibility="private" type="_koOVqe46Eee1JLiXkYgGug" association="_koPi2O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9JO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Je46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9J-46Eee1JLiXkYgGug" name="m1" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koPi3O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9KO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Ke46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9K-46Eee1JLiXkYgGug" name="m2" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koPi4O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9LO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Le46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9L-46Eee1JLiXkYgGug" name="m3" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koPi5O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9MO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Me46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9M-46Eee1JLiXkYgGug" name="m4" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koPi6O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9NO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Ne46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9N-46Eee1JLiXkYgGug" name="m5" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koPi7O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9OO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Oe46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9O-46Eee1JLiXkYgGug" name="m6" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koPi8O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9PO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Pe46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9P-46Eee1JLiXkYgGug" name="m7" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koPi9O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9QO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Qe46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9Q-46Eee1JLiXkYgGug" name="m8" visibility="private" type="_koOU0e46Eee1JLiXkYgGug" association="_koPi-O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9RO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Re46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9R-46Eee1JLiXkYgGug" name="it1" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPi_O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9SO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Se46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9S-46Eee1JLiXkYgGug" name="it2" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPjAO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9TO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Te46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9T-46Eee1JLiXkYgGug" name="it3" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPjBO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9UO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Ue46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9U-46Eee1JLiXkYgGug" name="it4" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPjCO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9VO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Ve46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9V-46Eee1JLiXkYgGug" name="it5" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPjDO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9WO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9We46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9W-46Eee1JLiXkYgGug" name="it6" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPjEO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9XO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Xe46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9X-46Eee1JLiXkYgGug" name="it7" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPjFO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9YO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Ye46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_koO9Y-46Eee1JLiXkYgGug" name="it8" visibility="private" type="_koOUr-46Eee1JLiXkYgGug" association="_koPjGO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9ZO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9Ze46Eee1JLiXkYgGug" value="1"/>
+      
+    </ownedAttribute>
+    <ownedOperation xmi:id="_koO9Z-46Eee1JLiXkYgGug" name="main" visibility="public" isStatic="true">
+      <ownedParameter xmi:id="_koO9aO46Eee1JLiXkYgGug" type="_koOUMu46Eee1JLiXkYgGug" direction="return"/>
+    </ownedOperation>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_koO9ae46Eee1JLiXkYgGug" name="Composite VDM Types">
+    <packagedElement xmi:type="uml:Class" xmi:id="_koO9au46Eee1JLiXkYgGug" name="Seq&lt;T&gt;">
+      <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_koO9a-46Eee1JLiXkYgGug" name="T" parameter="_koO9bO46Eee1JLiXkYgGug">
+        <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_koO9bO46Eee1JLiXkYgGug" parameteredElement="_koO9be46Eee1JLiXkYgGug">
+          <ownedParameteredElement xmi:type="uml:Class" xmi:id="_koO9be46Eee1JLiXkYgGug" name="T" templateParameter="_koO9bO46Eee1JLiXkYgGug"/>
+        </ownedParameter>
+      </ownedTemplateSignature>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_koO9bu46Eee1JLiXkYgGug" name="Product&lt;A,B&gt;">
+      <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_koO9b-46Eee1JLiXkYgGug" name="A,B" parameter="_koO9cO46Eee1JLiXkYgGug _koO9cu46Eee1JLiXkYgGug">
+        <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_koO9cO46Eee1JLiXkYgGug" parameteredElement="_koO9ce46Eee1JLiXkYgGug">
+          <ownedParameteredElement xmi:type="uml:Class" xmi:id="_koO9ce46Eee1JLiXkYgGug" name="A" templateParameter="_koO9cO46Eee1JLiXkYgGug"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_koO9cu46Eee1JLiXkYgGug" parameteredElement="_koO9c-46Eee1JLiXkYgGug">
+          <ownedParameteredElement xmi:type="uml:Class" xmi:id="_koO9c-46Eee1JLiXkYgGug" name="B" templateParameter="_koO9cu46Eee1JLiXkYgGug"/>
+        </ownedParameter>
+      </ownedTemplateSignature>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_koO9dO46Eee1JLiXkYgGug" name="Optional&lt;T&gt;">
+      <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_koO9de46Eee1JLiXkYgGug" name="T" parameter="_koO9du46Eee1JLiXkYgGug">
+        <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_koO9du46Eee1JLiXkYgGug" parameteredElement="_koO9d-46Eee1JLiXkYgGug">
+          <ownedParameteredElement xmi:type="uml:Class" xmi:id="_koO9d-46Eee1JLiXkYgGug" name="T" templateParameter="_koO9du46Eee1JLiXkYgGug"/>
+        </ownedParameter>
+      </ownedTemplateSignature>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_koO9eO46Eee1JLiXkYgGug" name="Set&lt;T&gt;">
+      <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_koO9ee46Eee1JLiXkYgGug" name="T" parameter="_koO9eu46Eee1JLiXkYgGug">
+        <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_koO9eu46Eee1JLiXkYgGug" parameteredElement="_koO9e-46Eee1JLiXkYgGug">
+          <ownedParameteredElement xmi:type="uml:Class" xmi:id="_koO9e-46Eee1JLiXkYgGug" name="T" templateParameter="_koO9eu46Eee1JLiXkYgGug"/>
+        </ownedParameter>
+      </ownedTemplateSignature>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_koO9fO46Eee1JLiXkYgGug" name="Map&lt;D,R&gt;">
+      <ownedTemplateSignature xmi:type="uml:RedefinableTemplateSignature" xmi:id="_koO9fe46Eee1JLiXkYgGug" name="D,R" parameter="_koO9fu46Eee1JLiXkYgGug _koO9gO46Eee1JLiXkYgGug">
+        <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_koO9fu46Eee1JLiXkYgGug" parameteredElement="_koO9f-46Eee1JLiXkYgGug">
+          <ownedParameteredElement xmi:type="uml:Class" xmi:id="_koO9f-46Eee1JLiXkYgGug" name="D" templateParameter="_koO9fu46Eee1JLiXkYgGug"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:ClassifierTemplateParameter" xmi:id="_koO9gO46Eee1JLiXkYgGug" parameteredElement="_koO9ge46Eee1JLiXkYgGug">
+          <ownedParameteredElement xmi:type="uml:Class" xmi:id="_koO9ge46Eee1JLiXkYgGug" name="R" templateParameter="_koO9gO46Eee1JLiXkYgGug"/>
+        </ownedParameter>
+      </ownedTemplateSignature>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_koO9gu46Eee1JLiXkYgGug" name="Binding classes">
+    <packagedElement xmi:type="uml:Class" xmi:id="_koO9g-46Eee1JLiXkYgGug" name="Seq&lt;char&gt;">
+      <templateBinding xmi:id="_koO9hO46Eee1JLiXkYgGug" signature="_koO9a-46Eee1JLiXkYgGug">
+        <parameterSubstitution xmi:id="_koO9he46Eee1JLiXkYgGug" actual="_koOUJO46Eee1JLiXkYgGug" formal="_koO9bO46Eee1JLiXkYgGug"/>
+      </templateBinding>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_koO9hu46Eee1JLiXkYgGug" name="Product&lt;bool,Optional&lt;p&gt;&gt;">
+      <templateBinding xmi:id="_koO9h-46Eee1JLiXkYgGug" signature="_koO9b-46Eee1JLiXkYgGug">
+        <parameterSubstitution xmi:id="_koO9iO46Eee1JLiXkYgGug" actual="_koOUMO46Eee1JLiXkYgGug" formal="_koO9cO46Eee1JLiXkYgGug"/>
+        <parameterSubstitution xmi:id="_koO9ie46Eee1JLiXkYgGug" actual="_koO9iu46Eee1JLiXkYgGug" formal="_koO9cu46Eee1JLiXkYgGug"/>
+      </templateBinding>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_koO9iu46Eee1JLiXkYgGug" name="Optional&lt;p&gt;">
+      <templateBinding xmi:id="_koO9i-46Eee1JLiXkYgGug" signature="_koO9de46Eee1JLiXkYgGug">
+        <parameterSubstitution xmi:id="_koO9jO46Eee1JLiXkYgGug" actual="_koOUYu46Eee1JLiXkYgGug" formal="_koO9du46Eee1JLiXkYgGug"/>
+      </templateBinding>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_koO9je46Eee1JLiXkYgGug" name="Optional&lt;IO::filedirective&gt;">
+      <templateBinding xmi:id="_koO9ju46Eee1JLiXkYgGug" signature="_koO9de46Eee1JLiXkYgGug">
+        <parameterSubstitution xmi:id="_koO9j-46Eee1JLiXkYgGug" actual="_koOUXe46Eee1JLiXkYgGug" formal="_koO9du46Eee1JLiXkYgGug"/>
+      </templateBinding>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_koO9kO46Eee1JLiXkYgGug" name="Seq&lt;Any&gt;">
+      <templateBinding xmi:id="_koO9ke46Eee1JLiXkYgGug" signature="_koO9a-46Eee1JLiXkYgGug">
+        <parameterSubstitution xmi:id="_koO9ku46Eee1JLiXkYgGug" actual="_koOUMe46Eee1JLiXkYgGug" formal="_koO9bO46Eee1JLiXkYgGug"/>
+      </templateBinding>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_koO9k-46Eee1JLiXkYgGug" name="Set&lt;Item&gt;">
+      <templateBinding xmi:id="_koO9lO46Eee1JLiXkYgGug" signature="_koO9ee46Eee1JLiXkYgGug">
+        <parameterSubstitution xmi:id="_koO9le46Eee1JLiXkYgGug" actual="_koOUr-46Eee1JLiXkYgGug" formal="_koO9eu46Eee1JLiXkYgGug"/>
+      </templateBinding>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_koO9lu46Eee1JLiXkYgGug" name="Set&lt;Designer&gt;">
+      <templateBinding xmi:id="_koO9l-46Eee1JLiXkYgGug" signature="_koO9ee46Eee1JLiXkYgGug">
+        <parameterSubstitution xmi:id="_koO9mO46Eee1JLiXkYgGug" actual="_koOUY-46Eee1JLiXkYgGug" formal="_koO9eu46Eee1JLiXkYgGug"/>
+      </templateBinding>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_koO9me46Eee1JLiXkYgGug" name="Set&lt;User&gt;">
+      <templateBinding xmi:id="_koO9mu46Eee1JLiXkYgGug" signature="_koO9ee46Eee1JLiXkYgGug">
+        <parameterSubstitution xmi:id="_koO9m-46Eee1JLiXkYgGug" actual="_koOVqe46Eee1JLiXkYgGug" formal="_koO9eu46Eee1JLiXkYgGug"/>
+      </templateBinding>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_koO9nO46Eee1JLiXkYgGug" name="Set&lt;Event&gt;">
+      <templateBinding xmi:id="_koO9ne46Eee1JLiXkYgGug" signature="_koO9ee46Eee1JLiXkYgGug">
+        <parameterSubstitution xmi:id="_koO9nu46Eee1JLiXkYgGug" actual="_koOUfu46Eee1JLiXkYgGug" formal="_koO9eu46Eee1JLiXkYgGug"/>
+      </templateBinding>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_koO9n-46Eee1JLiXkYgGug" name="Map&lt;Designer,Set&lt;Item&gt;&gt;">
+      <templateBinding xmi:id="_koO9oO46Eee1JLiXkYgGug" signature="_koO9fe46Eee1JLiXkYgGug">
+        <parameterSubstitution xmi:id="_koO9oe46Eee1JLiXkYgGug" actual="_koOUY-46Eee1JLiXkYgGug" formal="_koO9fu46Eee1JLiXkYgGug"/>
+        <parameterSubstitution xmi:id="_koO9ou46Eee1JLiXkYgGug" actual="_koO9k-46Eee1JLiXkYgGug" formal="_koO9gO46Eee1JLiXkYgGug"/>
+      </templateBinding>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_koO9o-46Eee1JLiXkYgGug" name="Set&lt;Model&gt;">
+      <templateBinding xmi:id="_koO9pO46Eee1JLiXkYgGug" signature="_koO9ee46Eee1JLiXkYgGug">
+        <parameterSubstitution xmi:id="_koO9pe46Eee1JLiXkYgGug" actual="_koOU0e46Eee1JLiXkYgGug" formal="_koO9eu46Eee1JLiXkYgGug"/>
+      </templateBinding>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_koO9pu46Eee1JLiXkYgGug" name="Map&lt;Model,Set&lt;Item&gt;&gt;">
+      <templateBinding xmi:id="_koO9p-46Eee1JLiXkYgGug" signature="_koO9fe46Eee1JLiXkYgGug">
+        <parameterSubstitution xmi:id="_koO9qO46Eee1JLiXkYgGug" actual="_koOU0e46Eee1JLiXkYgGug" formal="_koO9fu46Eee1JLiXkYgGug"/>
+        <parameterSubstitution xmi:id="_koO9qe46Eee1JLiXkYgGug" actual="_koO9k-46Eee1JLiXkYgGug" formal="_koO9gO46Eee1JLiXkYgGug"/>
+      </templateBinding>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO9qu46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOUZO46Eee1JLiXkYgGug _koO9q-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO9q-46Eee1JLiXkYgGug" name="" type="_koOUY-46Eee1JLiXkYgGug" association="_koO9qu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9rO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9re46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO9ru46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOUaO46Eee1JLiXkYgGug _koO9r-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO9r-46Eee1JLiXkYgGug" name="" type="_koOUY-46Eee1JLiXkYgGug" association="_koO9ru46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9sO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9se46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO9su46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOUf-46Eee1JLiXkYgGug _koO9s-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO9s-46Eee1JLiXkYgGug" name="" type="_koOUfu46Eee1JLiXkYgGug" association="_koO9su46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9tO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9te46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO9tu46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOUg-46Eee1JLiXkYgGug _koO9t-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO9t-46Eee1JLiXkYgGug" name="" type="_koOUfu46Eee1JLiXkYgGug" association="_koO9tu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9uO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9ue46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO9uu46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOUie46Eee1JLiXkYgGug _koO9u-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO9u-46Eee1JLiXkYgGug" name="" type="_koOUfu46Eee1JLiXkYgGug" association="_koO9uu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9vO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9ve46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO9vu46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOUje46Eee1JLiXkYgGug _koO9v-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO9v-46Eee1JLiXkYgGug" name="" type="_koOUfu46Eee1JLiXkYgGug" association="_koO9vu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9wO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9we46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO9wu46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOUke46Eee1JLiXkYgGug _koO9w-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO9w-46Eee1JLiXkYgGug" name="" type="_koOUfu46Eee1JLiXkYgGug" association="_koO9wu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9xO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9xe46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO9xu46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOUl-46Eee1JLiXkYgGug _koO9x-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO9x-46Eee1JLiXkYgGug" name="" type="_koOUfu46Eee1JLiXkYgGug" association="_koO9xu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9yO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9ye46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO9yu46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOUsO46Eee1JLiXkYgGug _koO9y-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO9y-46Eee1JLiXkYgGug" name="" type="_koOUr-46Eee1JLiXkYgGug" association="_koO9yu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9zO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9ze46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO9zu46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOUtO46Eee1JLiXkYgGug _koO9z-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO9z-46Eee1JLiXkYgGug" name="" type="_koOUr-46Eee1JLiXkYgGug" association="_koO9zu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO90O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO90e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO90u46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOUuO46Eee1JLiXkYgGug _koO90-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO90-46Eee1JLiXkYgGug" name="" type="_koOUr-46Eee1JLiXkYgGug" association="_koO90u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO91O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO91e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO91u46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOUvO46Eee1JLiXkYgGug _koO91-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO91-46Eee1JLiXkYgGug" name="" type="_koOUr-46Eee1JLiXkYgGug" association="_koO91u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO92O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO92e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO92u46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOU0u46Eee1JLiXkYgGug _koO92-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO92-46Eee1JLiXkYgGug" name="" type="_koOU0e46Eee1JLiXkYgGug" association="_koO92u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO93O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO93e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO93u46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOU1u46Eee1JLiXkYgGug _koO93-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO93-46Eee1JLiXkYgGug" name="" type="_koOU0e46Eee1JLiXkYgGug" association="_koO93u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO94O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO94e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO94u46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOU2u46Eee1JLiXkYgGug _koO94-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO94-46Eee1JLiXkYgGug" name="" type="_koOU0e46Eee1JLiXkYgGug" association="_koO94u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO95O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO95e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO95u46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOU3u46Eee1JLiXkYgGug _koO95-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO95-46Eee1JLiXkYgGug" name="" type="_koOU0e46Eee1JLiXkYgGug" association="_koO95u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO96O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO96e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO96u46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOU4u46Eee1JLiXkYgGug _koO96-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO96-46Eee1JLiXkYgGug" name="" type="_koOU0e46Eee1JLiXkYgGug" association="_koO96u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO97O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO97e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO97u46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOU5u46Eee1JLiXkYgGug _koO97-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO97-46Eee1JLiXkYgGug" name="" type="_koOU0e46Eee1JLiXkYgGug" association="_koO97u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO98O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO98e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO98u46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOVBu46Eee1JLiXkYgGug _koO98-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO98-46Eee1JLiXkYgGug" name="" type="_koOVA-46Eee1JLiXkYgGug" association="_koO98u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO99O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO99e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO99u46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOVCu46Eee1JLiXkYgGug _koO99-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO99-46Eee1JLiXkYgGug" name="" type="_koOVA-46Eee1JLiXkYgGug" association="_koO99u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9-O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9-e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO9-u46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOVDu46Eee1JLiXkYgGug _koO9--46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO9--46Eee1JLiXkYgGug" name="" type="_koOVA-46Eee1JLiXkYgGug" association="_koO9-u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO9_O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO9_e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO9_u46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOVEu46Eee1JLiXkYgGug _koO9_-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO9_-46Eee1JLiXkYgGug" name="" type="_koOVA-46Eee1JLiXkYgGug" association="_koO9_u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-AO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Ae46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Au46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOVWu46Eee1JLiXkYgGug _koO-A-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-A-46Eee1JLiXkYgGug" name="" type="_koOVWO46Eee1JLiXkYgGug" association="_koO-Au46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-BO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Be46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Bu46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOVYe46Eee1JLiXkYgGug _koO-B-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-B-46Eee1JLiXkYgGug" name="" type="_koOVWO46Eee1JLiXkYgGug" association="_koO-Bu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-CO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Ce46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Cu46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOVZe46Eee1JLiXkYgGug _koO-C-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-C-46Eee1JLiXkYgGug" name="" type="_koOVWO46Eee1JLiXkYgGug" association="_koO-Cu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-DO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-De46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Du46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOVbO46Eee1JLiXkYgGug _koO-D-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-D-46Eee1JLiXkYgGug" name="" type="_koOVWO46Eee1JLiXkYgGug" association="_koO-Du46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-EO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Ee46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Eu46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOVqu46Eee1JLiXkYgGug _koO-E-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-E-46Eee1JLiXkYgGug" name="" type="_koOVqe46Eee1JLiXkYgGug" association="_koO-Eu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-FO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Fe46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Fu46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOVru46Eee1JLiXkYgGug _koO-F-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-F-46Eee1JLiXkYgGug" name="" type="_koOVqe46Eee1JLiXkYgGug" association="_koO-Fu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-GO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Ge46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Gu46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOVsu46Eee1JLiXkYgGug _koO-G-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-G-46Eee1JLiXkYgGug" name="" type="_koOVqe46Eee1JLiXkYgGug" association="_koO-Gu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-HO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-He46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Hu46Eee1JLiXkYgGug" visibility="public" memberEnd="_koOVtu46Eee1JLiXkYgGug _koO-H-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-H-46Eee1JLiXkYgGug" name="" type="_koOVqe46Eee1JLiXkYgGug" association="_koO-Hu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-IO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Ie46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Iu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7Re46Eee1JLiXkYgGug _koO-I-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-I-46Eee1JLiXkYgGug" name="" type="_koO7Q-46Eee1JLiXkYgGug" association="_koO-Iu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-JO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Je46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Ju46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7Se46Eee1JLiXkYgGug _koO-J-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-J-46Eee1JLiXkYgGug" name="" type="_koO7Q-46Eee1JLiXkYgGug" association="_koO-Ju46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-KO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Ke46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Ku46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7Te46Eee1JLiXkYgGug _koO-K-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-K-46Eee1JLiXkYgGug" name="" type="_koO7Q-46Eee1JLiXkYgGug" association="_koO-Ku46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-LO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Le46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Lu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7Ue46Eee1JLiXkYgGug _koO-L-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-L-46Eee1JLiXkYgGug" name="" type="_koO7Q-46Eee1JLiXkYgGug" association="_koO-Lu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-MO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Me46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Mu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7Ve46Eee1JLiXkYgGug _koO-M-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-M-46Eee1JLiXkYgGug" name="" type="_koO7Q-46Eee1JLiXkYgGug" association="_koO-Mu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-NO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Ne46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Nu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7We46Eee1JLiXkYgGug _koO-N-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-N-46Eee1JLiXkYgGug" name="" type="_koO7Q-46Eee1JLiXkYgGug" association="_koO-Nu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-OO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Oe46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Ou46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7Xe46Eee1JLiXkYgGug _koO-O-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-O-46Eee1JLiXkYgGug" name="" type="_koO7Q-46Eee1JLiXkYgGug" association="_koO-Ou46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-PO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Pe46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Pu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7Ye46Eee1JLiXkYgGug _koO-P-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-P-46Eee1JLiXkYgGug" name="" type="_koO7Q-46Eee1JLiXkYgGug" association="_koO-Pu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-QO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Qe46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Qu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7Ze46Eee1JLiXkYgGug _koO-Q-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-Q-46Eee1JLiXkYgGug" name="" type="_koO7Q-46Eee1JLiXkYgGug" association="_koO-Qu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-RO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Re46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Ru46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7ae46Eee1JLiXkYgGug _koO-R-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-R-46Eee1JLiXkYgGug" name="" type="_koO7Q-46Eee1JLiXkYgGug" association="_koO-Ru46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-SO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Se46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Su46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7be46Eee1JLiXkYgGug _koO-S-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-S-46Eee1JLiXkYgGug" name="" type="_koO7Q-46Eee1JLiXkYgGug" association="_koO-Su46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-TO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Te46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Tu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7ce46Eee1JLiXkYgGug _koO-T-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-T-46Eee1JLiXkYgGug" name="" type="_koO7Q-46Eee1JLiXkYgGug" association="_koO-Tu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-UO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Ue46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Uu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7de46Eee1JLiXkYgGug _koO-U-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-U-46Eee1JLiXkYgGug" name="" type="_koO7Q-46Eee1JLiXkYgGug" association="_koO-Uu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-VO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Ve46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Vu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7ee46Eee1JLiXkYgGug _koO-V-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-V-46Eee1JLiXkYgGug" name="" type="_koO7Q-46Eee1JLiXkYgGug" association="_koO-Vu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-WO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-We46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Wu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7fe46Eee1JLiXkYgGug _koO-W-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-W-46Eee1JLiXkYgGug" name="" type="_koO7Q-46Eee1JLiXkYgGug" association="_koO-Wu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-XO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Xe46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Xu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7ge46Eee1JLiXkYgGug _koO-X-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-X-46Eee1JLiXkYgGug" name="" type="_koO7Q-46Eee1JLiXkYgGug" association="_koO-Xu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-YO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Ye46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Yu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7ke46Eee1JLiXkYgGug _koO-Y-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-Y-46Eee1JLiXkYgGug" name="" type="_koO7j-46Eee1JLiXkYgGug" association="_koO-Yu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-ZO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-Ze46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-Zu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7le46Eee1JLiXkYgGug _koO-Z-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-Z-46Eee1JLiXkYgGug" name="" type="_koO7j-46Eee1JLiXkYgGug" association="_koO-Zu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-aO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-ae46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-au46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7me46Eee1JLiXkYgGug _koO-a-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-a-46Eee1JLiXkYgGug" name="" type="_koO7j-46Eee1JLiXkYgGug" association="_koO-au46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-bO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-be46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-bu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7ne46Eee1JLiXkYgGug _koO-b-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-b-46Eee1JLiXkYgGug" name="" type="_koO7j-46Eee1JLiXkYgGug" association="_koO-bu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-cO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-ce46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-cu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7oe46Eee1JLiXkYgGug _koO-c-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-c-46Eee1JLiXkYgGug" name="" type="_koO7j-46Eee1JLiXkYgGug" association="_koO-cu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-dO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-de46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-du46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7se46Eee1JLiXkYgGug _koO-d-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-d-46Eee1JLiXkYgGug" name="" type="_koO7r-46Eee1JLiXkYgGug" association="_koO-du46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-eO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-ee46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-eu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7te46Eee1JLiXkYgGug _koO-e-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-e-46Eee1JLiXkYgGug" name="" type="_koO7r-46Eee1JLiXkYgGug" association="_koO-eu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-fO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-fe46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-fu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7ue46Eee1JLiXkYgGug _koO-f-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-f-46Eee1JLiXkYgGug" name="" type="_koO7r-46Eee1JLiXkYgGug" association="_koO-fu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-gO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-ge46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-gu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7ve46Eee1JLiXkYgGug _koO-g-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-g-46Eee1JLiXkYgGug" name="" type="_koO7r-46Eee1JLiXkYgGug" association="_koO-gu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-hO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-he46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-hu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7we46Eee1JLiXkYgGug _koO-h-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-h-46Eee1JLiXkYgGug" name="" type="_koO7r-46Eee1JLiXkYgGug" association="_koO-hu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-iO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-ie46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-iu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7xe46Eee1JLiXkYgGug _koO-i-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-i-46Eee1JLiXkYgGug" name="" type="_koO7r-46Eee1JLiXkYgGug" association="_koO-iu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-jO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-je46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-ju46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7ye46Eee1JLiXkYgGug _koO-j-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-j-46Eee1JLiXkYgGug" name="" type="_koO7r-46Eee1JLiXkYgGug" association="_koO-ju46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-kO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-ke46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-ku46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7ze46Eee1JLiXkYgGug _koO-k-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-k-46Eee1JLiXkYgGug" name="" type="_koO7r-46Eee1JLiXkYgGug" association="_koO-ku46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-lO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-le46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-lu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO70e46Eee1JLiXkYgGug _koO-l-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-l-46Eee1JLiXkYgGug" name="" type="_koO7r-46Eee1JLiXkYgGug" association="_koO-lu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-mO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-me46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-mu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO71e46Eee1JLiXkYgGug _koO-m-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-m-46Eee1JLiXkYgGug" name="" type="_koO7r-46Eee1JLiXkYgGug" association="_koO-mu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-nO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-ne46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-nu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO72e46Eee1JLiXkYgGug _koO-n-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-n-46Eee1JLiXkYgGug" name="" type="_koO7r-46Eee1JLiXkYgGug" association="_koO-nu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-oO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-oe46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-ou46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO73e46Eee1JLiXkYgGug _koO-o-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-o-46Eee1JLiXkYgGug" name="" type="_koO7r-46Eee1JLiXkYgGug" association="_koO-ou46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-pO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-pe46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-pu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO74e46Eee1JLiXkYgGug _koO-p-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-p-46Eee1JLiXkYgGug" name="" type="_koO7r-46Eee1JLiXkYgGug" association="_koO-pu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-qO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-qe46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-qu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO75e46Eee1JLiXkYgGug _koO-q-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-q-46Eee1JLiXkYgGug" name="" type="_koO7r-46Eee1JLiXkYgGug" association="_koO-qu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-rO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-re46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-ru46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO79e46Eee1JLiXkYgGug _koO-r-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-r-46Eee1JLiXkYgGug" name="" type="_koO78-46Eee1JLiXkYgGug" association="_koO-ru46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-sO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-se46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-su46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7-e46Eee1JLiXkYgGug _koO-s-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-s-46Eee1JLiXkYgGug" name="" type="_koO78-46Eee1JLiXkYgGug" association="_koO-su46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-tO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-te46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-tu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO7_e46Eee1JLiXkYgGug _koO-t-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-t-46Eee1JLiXkYgGug" name="" type="_koO78-46Eee1JLiXkYgGug" association="_koO-tu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-uO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-ue46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-uu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8Ae46Eee1JLiXkYgGug _koO-u-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-u-46Eee1JLiXkYgGug" name="" type="_koO78-46Eee1JLiXkYgGug" association="_koO-uu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-vO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-ve46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-vu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8Be46Eee1JLiXkYgGug _koO-v-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-v-46Eee1JLiXkYgGug" name="" type="_koO78-46Eee1JLiXkYgGug" association="_koO-vu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-wO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-we46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-wu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8Ce46Eee1JLiXkYgGug _koO-w-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-w-46Eee1JLiXkYgGug" name="" type="_koO78-46Eee1JLiXkYgGug" association="_koO-wu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-xO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-xe46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-xu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8De46Eee1JLiXkYgGug _koO-x-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-x-46Eee1JLiXkYgGug" name="" type="_koO78-46Eee1JLiXkYgGug" association="_koO-xu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-yO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-ye46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-yu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8Ee46Eee1JLiXkYgGug _koO-y-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-y-46Eee1JLiXkYgGug" name="" type="_koO78-46Eee1JLiXkYgGug" association="_koO-yu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-zO46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-ze46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-zu46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8Fe46Eee1JLiXkYgGug _koO-z-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-z-46Eee1JLiXkYgGug" name="" type="_koO78-46Eee1JLiXkYgGug" association="_koO-zu46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-0O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-0e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-0u46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8Ge46Eee1JLiXkYgGug _koO-0-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-0-46Eee1JLiXkYgGug" name="" type="_koO78-46Eee1JLiXkYgGug" association="_koO-0u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-1O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-1e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-1u46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8He46Eee1JLiXkYgGug _koO-1-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-1-46Eee1JLiXkYgGug" name="" type="_koO78-46Eee1JLiXkYgGug" association="_koO-1u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-2O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-2e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-2u46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8Ie46Eee1JLiXkYgGug _koO-2-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-2-46Eee1JLiXkYgGug" name="" type="_koO78-46Eee1JLiXkYgGug" association="_koO-2u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-3O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-3e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-3u46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8Je46Eee1JLiXkYgGug _koO-3-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-3-46Eee1JLiXkYgGug" name="" type="_koO78-46Eee1JLiXkYgGug" association="_koO-3u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-4O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-4e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-4u46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8Ke46Eee1JLiXkYgGug _koO-4-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-4-46Eee1JLiXkYgGug" name="" type="_koO78-46Eee1JLiXkYgGug" association="_koO-4u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-5O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-5e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-5u46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8Le46Eee1JLiXkYgGug _koO-5-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-5-46Eee1JLiXkYgGug" name="" type="_koO78-46Eee1JLiXkYgGug" association="_koO-5u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-6O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-6e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-6u46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8Me46Eee1JLiXkYgGug _koO-6-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-6-46Eee1JLiXkYgGug" name="" type="_koO78-46Eee1JLiXkYgGug" association="_koO-6u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-7O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-7e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-7u46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8Ne46Eee1JLiXkYgGug _koO-7-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-7-46Eee1JLiXkYgGug" name="" type="_koO78-46Eee1JLiXkYgGug" association="_koO-7u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-8O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-8e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koO-8u46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8S-46Eee1JLiXkYgGug _koO-8-46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koO-8-46Eee1JLiXkYgGug" name="" type="_koO8Se46Eee1JLiXkYgGug" association="_koO-8u46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koO-9O46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koO-9e46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPiQO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8Ve46Eee1JLiXkYgGug _koPiQe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPiQe46Eee1JLiXkYgGug" name="" type="_koO8U-46Eee1JLiXkYgGug" association="_koPiQO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiQu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPiQ-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPiRO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8X-46Eee1JLiXkYgGug _koPiRe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPiRe46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPiRO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiRu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPiR-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPiSO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8Y-46Eee1JLiXkYgGug _koPiSe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPiSe46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPiSO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiSu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPiS-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPiTO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8Z-46Eee1JLiXkYgGug _koPiTe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPiTe46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPiTO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiTu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPiT-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPiUO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8a-46Eee1JLiXkYgGug _koPiUe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPiUe46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPiUO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiUu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPiU-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPiVO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8b-46Eee1JLiXkYgGug _koPiVe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPiVe46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPiVO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiVu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPiV-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPiWO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8c-46Eee1JLiXkYgGug _koPiWe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPiWe46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPiWO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiWu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPiW-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPiXO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8d-46Eee1JLiXkYgGug _koPiXe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPiXe46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPiXO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiXu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPiX-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPiYO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8e-46Eee1JLiXkYgGug _koPiYe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPiYe46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPiYO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiYu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPiY-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPiZO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8f-46Eee1JLiXkYgGug _koPiZe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPiZe46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPiZO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiZu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPiZ-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPiaO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8g-46Eee1JLiXkYgGug _koPiae46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPiae46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPiaO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiau46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPia-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPibO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8h-46Eee1JLiXkYgGug _koPibe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPibe46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPibO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPibu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPib-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPicO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8i-46Eee1JLiXkYgGug _koPice46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPice46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPicO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPicu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPic-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPidO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8j-46Eee1JLiXkYgGug _koPide46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPide46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPidO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPidu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPid-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPieO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8k-46Eee1JLiXkYgGug _koPiee46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPiee46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPieO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPieu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPie-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPifO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8l-46Eee1JLiXkYgGug _koPife46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPife46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPifO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPifu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPif-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPigO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8m-46Eee1JLiXkYgGug _koPige46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPige46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPigO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPigu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPig-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPihO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8n-46Eee1JLiXkYgGug _koPihe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPihe46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPihO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPihu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPih-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPiiO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8o-46Eee1JLiXkYgGug _koPiie46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPiie46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPiiO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiiu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPii-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPijO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8p-46Eee1JLiXkYgGug _koPije46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPije46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPijO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiju46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPij-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPikO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8q-46Eee1JLiXkYgGug _koPike46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPike46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPikO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiku46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPik-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPilO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8r-46Eee1JLiXkYgGug _koPile46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPile46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPilO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPilu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPil-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPimO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8s-46Eee1JLiXkYgGug _koPime46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPime46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPimO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPimu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPim-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPinO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8t-46Eee1JLiXkYgGug _koPine46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPine46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPinO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPinu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPin-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPioO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8u-46Eee1JLiXkYgGug _koPioe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPioe46Eee1JLiXkYgGug" name="" type="_koO8Xe46Eee1JLiXkYgGug" association="_koPioO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiou46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPio-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPipO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO84e46Eee1JLiXkYgGug _koPipe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPipe46Eee1JLiXkYgGug" name="" type="_koO83-46Eee1JLiXkYgGug" association="_koPipO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPipu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPip-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPiqO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO85e46Eee1JLiXkYgGug _koPiqe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPiqe46Eee1JLiXkYgGug" name="" type="_koO83-46Eee1JLiXkYgGug" association="_koPiqO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiqu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPiq-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPirO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO86e46Eee1JLiXkYgGug _koPire46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPire46Eee1JLiXkYgGug" name="" type="_koO83-46Eee1JLiXkYgGug" association="_koPirO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiru46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPir-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPisO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO87e46Eee1JLiXkYgGug _koPise46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPise46Eee1JLiXkYgGug" name="" type="_koO83-46Eee1JLiXkYgGug" association="_koPisO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPisu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPis-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPitO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO8_-46Eee1JLiXkYgGug _koPite46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPite46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPitO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPitu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPit-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPiuO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9A-46Eee1JLiXkYgGug _koPiue46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPiue46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPiuO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiuu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPiu-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPivO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9B-46Eee1JLiXkYgGug _koPive46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPive46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPivO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPivu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPiv-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPiwO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9C-46Eee1JLiXkYgGug _koPiwe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPiwe46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPiwO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiwu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPiw-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPixO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9D-46Eee1JLiXkYgGug _koPixe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPixe46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPixO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPixu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPix-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPiyO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9E-46Eee1JLiXkYgGug _koPiye46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPiye46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPiyO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPiyu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPiy-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPizO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9F-46Eee1JLiXkYgGug _koPize46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPize46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPizO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPizu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPiz-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPi0O46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9G-46Eee1JLiXkYgGug _koPi0e46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPi0e46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPi0O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPi0u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPi0-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPi1O46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9H-46Eee1JLiXkYgGug _koPi1e46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPi1e46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPi1O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPi1u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPi1-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPi2O46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9I-46Eee1JLiXkYgGug _koPi2e46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPi2e46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPi2O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPi2u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPi2-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPi3O46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9J-46Eee1JLiXkYgGug _koPi3e46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPi3e46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPi3O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPi3u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPi3-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPi4O46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9K-46Eee1JLiXkYgGug _koPi4e46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPi4e46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPi4O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPi4u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPi4-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPi5O46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9L-46Eee1JLiXkYgGug _koPi5e46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPi5e46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPi5O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPi5u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPi5-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPi6O46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9M-46Eee1JLiXkYgGug _koPi6e46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPi6e46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPi6O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPi6u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPi6-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPi7O46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9N-46Eee1JLiXkYgGug _koPi7e46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPi7e46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPi7O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPi7u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPi7-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPi8O46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9O-46Eee1JLiXkYgGug _koPi8e46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPi8e46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPi8O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPi8u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPi8-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPi9O46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9P-46Eee1JLiXkYgGug _koPi9e46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPi9e46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPi9O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPi9u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPi9-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPi-O46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9Q-46Eee1JLiXkYgGug _koPi-e46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPi-e46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPi-O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPi-u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPi--46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPi_O46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9R-46Eee1JLiXkYgGug _koPi_e46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPi_e46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPi_O46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPi_u46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPi_-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPjAO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9S-46Eee1JLiXkYgGug _koPjAe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPjAe46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPjAO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPjAu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPjA-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPjBO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9T-46Eee1JLiXkYgGug _koPjBe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPjBe46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPjBO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPjBu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPjB-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPjCO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9U-46Eee1JLiXkYgGug _koPjCe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPjCe46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPjCO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPjCu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPjC-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPjDO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9V-46Eee1JLiXkYgGug _koPjDe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPjDe46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPjDO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPjDu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPjD-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPjEO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9W-46Eee1JLiXkYgGug _koPjEe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPjEe46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPjEO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPjEu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPjE-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPjFO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9X-46Eee1JLiXkYgGug _koPjFe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPjFe46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPjFO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPjFu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPjF-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_koPjGO46Eee1JLiXkYgGug" visibility="private" memberEnd="_koO9Y-46Eee1JLiXkYgGug _koPjGe46Eee1JLiXkYgGug">
+    <ownedEnd xmi:id="_koPjGe46Eee1JLiXkYgGug" name="" type="_koO8_e46Eee1JLiXkYgGug" association="_koPjGO46Eee1JLiXkYgGug">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_koPjGu46Eee1JLiXkYgGug" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_koPjG-46Eee1JLiXkYgGug" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+</uml:Model>
