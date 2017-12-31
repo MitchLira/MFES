@@ -97,6 +97,21 @@ public class Platform implements Serializable{
     items = SetUtil.diff(Utils.copy(items), SetUtil.set(item));
   }
 
+  public ArrayList<Event> getUserEvents(User user)
+  {
+	  ArrayList<Event> userEvents = new ArrayList<Event>();
+	  Iterator it = events.iterator();
+	  while(it.hasNext())
+	  {
+		  Event event = (Event) it.next();
+		  if(event.audience.contains(user))
+		  {
+			  userEvents.add(event);
+		  }
+	  }
+	  return userEvents;
+  }
+  
   public Item getItemByRef(final String ref) {
 
     Item item = null;

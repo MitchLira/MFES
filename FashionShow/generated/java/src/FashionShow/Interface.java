@@ -96,10 +96,11 @@ public class Interface {
 			System.out.println("#==================User: "+user.username+"==================#");
 			System.out.println("Choose an option: \n");
 			System.out.println("1- See User Info;");
-			System.out.println("2- Buy Item;");
-			System.out.println("3- Buy Event Ticket;");
-			System.out.println("4- Refund Event Ticket;");
-			System.out.println("5- Deposit Money;");
+			System.out.println("2- See User Events;");
+			System.out.println("3- Buy Item;");
+			System.out.println("4- Buy Event Ticket;");
+			System.out.println("5- Refund Event Ticket;");
+			System.out.println("6- Deposit Money;");
 			System.out.println("0- Return;");
 			System.out.println("#========================================#");
 			int option = intReader(0,5);
@@ -110,24 +111,94 @@ public class Interface {
 				case 1:
 					showUserInfo(user);
 					break;
-				case 2:	
+				case 2:
+					showUserEvents(user);
+					break;
+				case 3:	
 					searchItem(user);
 					break;
-				case 3:
-					searchEvent(user); //TODO
-					break;
 				case 4:
-					//TODO
+					searchEvent(user); 
 					break;
 				case 5:
+					//TODO
+					break;
+				case 6:
 					depositMoney(user);
 					break;
 			}
 		}
 	}
 	
+	private static void showUserEvents(User user) {
+		System.out.println("#==================User Events==================#");
+		ArrayList<Event> userEvents = platform.getUserEvents(user);
+		if(userEvents.size()==0)
+		{
+			System.out.println("This user has no Event tickets");
+		}
+		else
+		{
+			for(int i = 0; i< userEvents.size(); i++)
+			{
+				Event event = userEvents.get(i);
+				System.out.println("-> "+(i+1)+". Nome: "+ event.name+" | Theme: "+ event.theme +
+						" | Place: "+ event.place + "| Price: " + event.price +" €;");
+			}
+		}
+		System.out.println("#========================================#");
+		System.out.println("Press Enter to go back:");
+		scanner.nextLine();
+		
+	}
+
 	private static void searchEvent(User user) {
-		// TODO
+		ArrayList<Event> foundEvents = new ArrayList<Event>();
+		System.out.println("Search for an Event: (Name or Theme)");
+		String eventString = scanner.nextLine();
+		Iterator it = platform.events.iterator();
+		while(it.hasNext())
+		{
+			Event event = (Event)it.next();
+			if(event.name.contains(eventString) || event.theme.contains(eventString))
+			{
+				foundEvents.add(event);
+			}
+		}
+		showFoundEvents(user,foundEvents, eventString);
+		
+	}
+
+	private static void showFoundEvents(User user, ArrayList<Event> foundEvents, String eventString) {
+		System.out.println("#===========Buy Event Ticket: " +  eventString + "==========#");
+		if(foundEvents.size()==0)
+		{
+			System.out.println("-> No Events were found: Press Enter to go back;");
+			System.out.println("#========================================#");
+			scanner.nextLine();
+		}
+		else
+		{
+			for (int i = 0; i < foundEvents.size(); i++)
+			{
+				Event event = foundEvents.get(i);
+				System.out.println("-> "+(i+1)+". Nome: "+ event.name+" | Theme: "+ event.theme +
+						" | Place: "+ event.place + "| Price: " + event.price +" €;");
+			}
+			System.out.println("#========================================#");
+			System.out.println("To wich Event do you want to buy a ticket? (Index) 0 to go back :");
+			int index = intReader(0,foundEvents.size()+1);
+			if(index == 0)
+			{
+				return;
+			}
+			else
+			{
+				foundEvents.get(index-1).registerUser(user);
+				System.out.println("Ticket to event "+foundEvents.get(index-1).name +"bought!");
+			}
+			
+		}
 		
 	}
 
