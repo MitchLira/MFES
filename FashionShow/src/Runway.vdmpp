@@ -1,12 +1,38 @@
+/**
+*	Esta classe representa uma subclasse de um Evento, para ver  decorrer do evento 
+*/
 class Runway is subclass of Event
 types
+
 -- TODO Define types here
 instance variables
+	/**
+	*	itens de cada designer em exposição
+	*/
 	public expositionItems: map Designer to (set of Item) := {|->};
+	/**
+	*	modelos disponiveis para usar desfilar com o itens dos designers
+	*/
  	public models: set of Model := {};
+ 	/**
+	*	itens a serem utilizados por cada modelo
+	*/
  	public modelsItems: map Model to (set of Item) := {|->};
+ 	/**
+	*	itens disponiveis no show
+	*/
  	public showItems: set of Item := {};
 operations
+	/**
+	*	Runway construtor
+	*	
+	*	@param n corresponde ao nome do evento
+	*	@param d corresponde à data do evento
+	*	@param p corresponde ao local do evento
+	*	@param t corresponde ao tema do evento
+	*	@param pr corresponde ao preço de entrada do evento
+	*	@param maxS corresponde ao número máximo de users inscritos no evento
+	*/
 	public Runway: Platform`String * Platform`Date * Platform`String *  Platform`String * Platform`Price * nat ==>Runway
 	Runway(n,d, p, t, pr, maxS)==
 	(
@@ -18,10 +44,21 @@ operations
 		maxSpectators := maxS;
 		return self;
 	);
+	
+	/**
+	*	Inserção de modelos no conjunto de modelos do evento
+	*	
+	*	@param model corresponde aos(às) modelos a serem inseridas num evento
+	*/
 	public setModels: set of Model ==> ()
 			setModels(model) == 
 				models := model;
 	
+	/**
+	*	Inserção de um(a) modelo no conjunto de modelos do evento
+	*	
+	*	@param model corresponde ao(à) modelo a ser inserida num evento
+	*/
 	public addModel: Model ==> ()
 		addModel(model) == (
 	 			models := models union {model};
@@ -29,7 +66,12 @@ operations
 		)
 	pre model not in set models
 	post model in set models;
-	 
+	
+	/**
+	*	Inserção de modelos no conjunto de modelos do evento
+	*	
+	*	@param newModels corresponde aos(às) modelos a serem inseridas num evento
+	*/
 	public addModels: set of Model ==> ()
 		addModels(newModels) == (
 	  	for all m in set newModels do (
@@ -39,14 +81,24 @@ operations
 	 	)
 	pre not newModels subset models
 	post newModels subset models;
-	 	 
+	 
+	/**
+	*	Remoção de um(a) modelo do evento
+	*	
+	*	@param model corresponde ao(à) modelo a ser removida de um evento
+	*/
 	public remModel: Model ==> ()
 		remModel(model) == (
 	  		models := models \ {model}
 	 	)
 	pre models <> {} and model in set models
 	post model not in set models;
-	 
+	
+	/**
+	*	Remoção de um conjunto de modelos do evento
+	*	
+	*	@param oldModels corresponde aos(às) modelos a serem removidas
+	*/
 	public remModels: set of Model ==> ()
 		remModels(oldModels) == (
 	  	for all model in set oldModels do (
@@ -56,6 +108,12 @@ operations
 	pre models <> {} and oldModels subset models
 	post not oldModels subset models;
 	
+	/**
+	*	Dado um designer obtém-se o conjunto de itens que ele dispõe
+	*	
+	*	@param designer corresponde ao designer de quem se quer obter os itens
+	*	@return conjunto de itens
+	*/
 	public getItemsOfDesignerInShow: Designer ==> set of Item
 	getItemsOfDesignerInShow(designer) ==
 	(
@@ -63,6 +121,11 @@ operations
 	)
 	pre designer in set dom expositionItems;
 	
+	/**
+	*	Obter os itens disponíveis no show
+	*	
+	*	@return conjunto de itens
+	*/
 	public getItemsInShow:() ==> set of Item
 	getItemsInShow() ==
 	(
@@ -75,6 +138,12 @@ operations
 	);
 
 -------------------------------------------------------------
+	/**
+	*	Adição de um designer no conjunto de designers, bem como atualização 
+	*	dos itens do show e dos itens em exposição
+	*	
+	*	@param designer corresponde ao designer a adicionar ao evento
+	*/
 	public addDesigner: Designer ==> ()
 	addDesigner(designer)==
 	(
@@ -89,7 +158,12 @@ operations
 	post (designer  in set designers) and
 			 (designer  in set dom expositionItems); 
 	
-	
+	/**
+	*	Remoção de um designer do conjunto de designers, bem como atualização
+	*	dos itens do shwo e dos itens em exposição
+	*	
+	*	@param designer corresponde ao designer a remover do evento
+	*/
 	public removeDesigner: Designer ==> ()
 	removeDesigner(designer)==
 	(
@@ -102,6 +176,12 @@ operations
 	post (designer not in set designers) and
 			 (designer not in set dom expositionItems);
 -------------------------------------------------------------			 
+	/**
+	*	Adição de um item associado a um designer aos itens do show e aos itens em exposição
+	*	
+	*	@param designer corresponde ao designer de quem o item a ser inserido pertence
+	*	@param item corresponde ao item a ser inserido no evento
+	*/
 	public addDesignerItem: Designer * Item ==> ()
 	addDesignerItem(designer,item)==
 	(
@@ -113,6 +193,12 @@ operations
 			(item not in set expositionItems(designer))
 	post item in set expositionItems(designer);
 	
+	/**
+	*	Remoção de um item associado a um designer dos itens do show e dos itens em exposição
+	*	
+	*	@param designer corresponde ao designer de quem o item a ser removido pertence
+	*	@param item corresponde ao item a ser removido do evento
+	*/
 	public removeDesignerItem: Designer * Item ==> ()
 	removeDesignerItem(designer,item)==
 	(
@@ -137,7 +223,13 @@ operations
 	--	)
 	--);
 ------------------------------------------------------------
--------------------------------------------------------------			 
+-------------------------------------------------------------	
+	/**
+	*	Adição de um item aos itens que um(a) modelo utilizará no evento
+	*	
+	*	@param model corresponde ao(à) modelo a quem o item vai ser associado
+	*	@param item corresponde ao item a ser adicionado
+	*/		 
 	public setModelItem: Model * Item ==> ()
 	setModelItem(model,item)==
 	(
@@ -149,6 +241,12 @@ operations
 			item in set showItems
 	post item in set modelsItems(model);
 	
+	/**
+	*	Adição de um conjunto de itens(Outfit) aos itens a serem utilizados por um(a) modelo
+	*	
+	*	@param model corresponde ao(à) modelo a quem os itens vão ser adicionados
+	*	@param items corresponde aos itens a serem adicionados
+	*/
 	public setModelOutfit: Model * set of Item ==> ()
 	setModelOutfit(model,items)==
 	(
@@ -159,6 +257,12 @@ operations
 			(not (items  subset modelsItems(model)))
 	post items subset modelsItems(model);
 	
+	/**
+	*	Remoção de um conjunto de itens(Outfi) dos itens que um(a) modelo tinha associado para o evento
+	*	
+	*	@param model corresponde ao(à) modelo a quem o item vai ser removido
+	*	@param item corresponde ao itens a serem removidos
+	*/
 	public removeModelOutfit: Model ==> ()
 	removeModelOutfit(model)==
 	(
@@ -167,7 +271,13 @@ operations
 	)
 	pre (model in set models) and
 			(model in set dom modelsItems);
-			
+	
+	/**
+	*	Remoção de um item dos itens que um(a) modelo tinha associado para o evento
+	*	
+	*	@param model corresponde ao(à) modelo a quem o item vai ser removido
+	*	@param item corresponde ao item a ser removido
+	*/	
 	public removeModelItem: Model * Item ==> ()
 	removeModelItem(model,item)==
 	(
