@@ -1,23 +1,29 @@
+/**
+*	Esta classe representa uma Apresentação
+*/
 class Presentation is subclass of Event
-	types
-	-- TODO Define types here
-	values
-	-- TODO Define values here
-	instance variables
+types
+-- TODO Define types here
+values
+-- TODO Define values here
+instance variables
+	
+operations
+	/**
+	*	Presentation construtor
+	*/
+	public Presentation: Platform`String * Platform`Date * Platform`String *  Platform`String * Platform`Price * nat ==> Presentation 
+		Presentation(n,d, p, t, pr,  maxS) == 
+		(
+			name := n;
+			date := d;
+			place := p;
+			theme := t;
+			price := pr;
+			maxSpectators := maxS;
+			return self;
+		);
 		
-	operations
-		public Presentation: Platform`String * Platform`Date * Platform`String *  Platform`String * Platform`Price * nat ==> Presentation 
-			Presentation(n,d, p, t, pr,  maxS) == 
-			(
-				name := n;
-				date := d;
-				place := p;
-				theme := t;
-				price := pr;
-				maxSpectators := maxS;
-				return self;
-			);
-			
-	functions
+functions
 
 end Presentation

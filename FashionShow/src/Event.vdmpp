@@ -1,5 +1,6 @@
 /**
-*	Esta classe representa um Evento
+*	Esta classe representa um Evento e toda a informação com ele relacionada, tal como
+*	os designers que estarão presentes até aos users inscritos
 */		
 class Event
 values

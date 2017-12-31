@@ -1,43 +1,85 @@
+/**
+*	Esta classe representa o User e toda a informação relacionada com ele, tal como atualizar o
+*	seu saldo e ver os itens comprados
+*/
 class User
-	types
-		public Budget = real
-			inv r == r >= 0.0;
-		public Username = Platform`String;
-		
-	values
-	-- TODO Define values here
-	instance variables
-		public username: Username;
-		public name: Platform`String;
-		public budget: Budget;
-		public boughtItems: set of Item;
-	operations
-		public User: Username * Platform`String ==> User 
-		User(u,n) == 
-		(
-			username := u;
-			name := n;
-			budget := 0.0;
-			boughtItems:= {};
-			return self;
-		);
-		
-		public setBudget: (Budget) ==> ()
-			setBudget(bd) == budget := bd;
-			
-		public getBoughtItems: () ==> set of Item
-			getBoughtItems() == return boughtItems;
-			
-		public setBoughtItem: (Item) ==> ()
-			setBoughtItem(item) == boughtItems := boughtItems union {item}
-		post item in set boughtItems;
-		
-		public setBoughtItems: (set of Item) ==> ()
-			setBoughtItems(items) == boughtItems := boughtItems union items
-		post items subset boughtItems ;
-		
-	functions
-		
-	traces
-	-- TODO Define Combinatorial Test Traces here
+types
+	public Budget = real
+		inv r == r >= 0.0;
+	public Username = Platform`String;
+	
+values
+-- TODO Define values here
+instance variables
+	/**
+	*	username será único, sendo a variável de identificação de um user
+	*/
+	public username: Username;
+	/**
+	*	nome de um user
+	*/
+	public name: Platform`String;
+	/**
+	*	saldo que permite a um user comprar itens ou inscrever-se em shows
+	*/
+	public budget: Budget;
+	/**
+	*	conjunto de itens comprados por um user
+	*/
+	public boughtItems: set of Item;
+operations
+	/**
+	*	User construtor
+	*	
+	*	@param u corresponde ao username de um user
+	*	@param n corresponde ao nome de um user
+	*/
+	public User: Username * Platform`String ==> User 
+	User(u,n) == 
+	(
+		username := u;
+		name := n;
+		budget := 0.0;
+		boughtItems:= {};
+		return self;
+	);
+	
+	/**
+	*	Atualização do saldo de um user
+	*	
+	*	@param bd corresponde ao saldo a inserir
+	*/
+	public setBudget: (Budget) ==> ()
+		setBudget(bd) == budget := bd;
+	
+	/**
+	*	Obtenção do conjunto de itens comprados por um user
+	*	
+	*	@return set of Item
+	*/
+	public getBoughtItems: () ==> set of Item
+		getBoughtItems() == return boughtItems;
+	
+	/**
+	*	Atualização do conjunto de itens comprados por um user
+	*	
+	*	@param item corresponde ao item a inserir no conjunto de itens de um user
+	*/
+	public setBoughtItem: (Item) ==> ()
+		setBoughtItem(item) == boughtItems := boughtItems union {item}
+	post item in set boughtItems;
+	
+	/**
+	*	Atualização do conjunto de itens comprados por um user
+	*	
+	*	@param items corresponde aos itens a inserir no conjunto de itens de um user
+	*/
+	public setBoughtItems: (set of Item) ==> ()
+		setBoughtItems(items) == boughtItems := boughtItems union items
+	post items subset boughtItems ;
+	
+functions
+	
+traces
+-- TODO Define Combinatorial Test Traces here
 end User

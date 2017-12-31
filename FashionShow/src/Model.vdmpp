@@ -1,5 +1,5 @@
 /**
-*	Esta classe representa uma Modelo
+*	Esta classe representa um(a) Modelo bem como os shows nos quais está associada para participar
 */
 class Model
 types

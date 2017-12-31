@@ -1,5 +1,5 @@
 /**
-* Esta classe representa um Item
+* Esta classe representa um Item contendo toda a infor,ação relacionada com um Item
 */
 class Item
 types

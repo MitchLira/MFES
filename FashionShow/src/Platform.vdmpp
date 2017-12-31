@@ -103,7 +103,9 @@ operations
 
 -----------------------Users----------------------------
 	/*
+	*	Inserção de um user numa plataforma
 	*	
+	*	@param user corresponde ao user a ser inserido nos users de uma plataforma
 	*/
 	public addUser: User ==> ()
 		addUser(user)==
@@ -115,7 +117,9 @@ operations
 		(not exists u1, u2 in set users & u1 <> u2 and u1.username = u2.username);
 		
 	/**
+	*	Remoção de um user dos users de uma plataforma
 	*	
+	*	@param user corresponde ao user a ser removido dos users de uma plataforma
 	*/
 	public removeUser: User ==> ()
 		removeUser(user)==
@@ -126,8 +130,10 @@ operations
 		post user not in set users;
 
 -----------------------Events---------------------------
-	/**
+	/*
+	*	Inserção de um evento numa plataforma
 	*	
+	*	@param event corresponde ao evento a ser inserido nos eventos de uma plataforma
 	*/
 	public addEvent: Event ==> ()
 		addEvent(event)==
@@ -138,7 +144,9 @@ operations
 		post event in set events;
 	
 	/**
+	*	Remoção de um evento dos eventos de uma plataforma
 	*	
+	*	@param event corresponde ao evento a ser removido dos eventos de uma plataforma
 	*/	
 	public removeEvent: Event ==> ()
 		removeEvent(event)==
@@ -149,8 +157,10 @@ operations
 		post event not in set events;
 		
 ------------------------Items----------------------------
-	/**
+	/*
+	*	Inserção de um item numa plataforma
 	*	
+	*	@param item corresponde ao item a ser inserido nos itens de uma plataforma
 	*/
 	public addItem: Item ==> ()
 		addItem(item)==
@@ -162,7 +172,9 @@ operations
 	 (not exists i1, i2 in set items & i1 <> i2 and i1.reference = i2.reference);
 		
 	/**
+	*	Remoção de um item dos itens de uma plataforma
 	*	
+	*	@param item corresponde ao item a ser removido dos itens de uma plataforma
 	*/	
 	public removeItem: Item ==> ()
 		removeItem(item)==
@@ -173,8 +185,10 @@ operations
 		post item not in set items;
 
 ----------------------Designers---------------------------
-	/**
+	/*
+	*	Inserção de um designer numa plataforma
 	*	
+	*	@param designer corresponde ao designer a ser inserido nos designers de uma plataforma
 	*/
 	public addDesigner: Designer ==> ()
 		addDesigner(designer)==
@@ -185,7 +199,9 @@ operations
 		post designer in set designers;
 		
 	/**
+	*	Remoção de um designer dos designers de uma plataforma
 	*	
+	*	@param designer corresponde ao designer a ser removido dos designers de uma plataforma
 	*/	
 	public removeDesigner: Designer ==> ()
 		removeDesigner(designer)==
