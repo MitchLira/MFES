@@ -6,7 +6,9 @@
 \usepackage{hyperref}
 \usepackage{titletoc}
 \usepackage{float} 
-
+\usepackage{fullpage}
+\usepackage[color]{vdmlisting}
+\usepackage{longtable}
 \graphicspath{ {images/} }
 
 \hypersetup{colorlinks=true,
@@ -16,7 +18,7 @@ linkcolor=black}
 \title{ \begin{center}
 					\includegraphics[scale=0.6]{./images/FEUPlogo}
 				\end{center}
-				\textbf{Werewolves of Miller's Hollow}}
+				\textbf{FashionShow}}
 \author{Miguel Lira Barbeitos Luís - up201405324\\
 		Miriam Cristiana Meireles Campos Gonçalves - up201403441\\
 		Paulo Sérgio Silva Babo - up201404022}
@@ -66,9 +68,18 @@ linkcolor=black}
 \end{figure}
 		
 \section{Modelo Formal VDM++}
-\subsection{Class FashionShow}
+\subsection{Class Platform}
+
+\subsection{Class User}
+\subsection{Class Event}
+\subsection{Class PrimpingSession}
+\subsection{Class Presentation}
+\subsection{Class Runway}
 \subsection{Class Model}
 \subsection{Class Designer}
+\input{specification/Designer.vdmpp.tex}
+\subsection{Class Item}
+\subsection{Class Utils}
 
 \section{Modelo de Validação}
 \subsection{Class Test}
