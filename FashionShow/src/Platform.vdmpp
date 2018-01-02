@@ -43,7 +43,7 @@ operations
 	/**
 	*	Plataform construtor
 	*	
-	*	@param actualD corresponde Ã  data atual da criaÃ§Ã£o de uma plataforma
+	*	@param actualD corresponde a  data atual da criacao de uma plataforma
 	*/
 	public Platform:Date ==> Platform 
 		Platform(actualD) == 
@@ -57,7 +57,7 @@ operations
 		);
 -----------------------Date-----------------------------
 	/**
-	*	Ajuste da data para com os limites de um mÃªs, para ter datas reais
+	*	Ajuste da data para com os limites de um mes, para ter datas reais
 	*/
 	public moveDataForward: () ==> ()
 		moveDataForward() ==
@@ -143,7 +143,7 @@ operations
 		post RESULT in set users;
 -----------------------Events---------------------------
 	/*
-	*	Inserção de um evento numa plataforma
+	*	Insercao de um evento numa plataforma
 	*	
 	*	@param event corresponde ao evento a ser inserido nos eventos de uma plataforma
 	*/

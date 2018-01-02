@@ -1,5 +1,5 @@
 /**
-*	Esta classe representa um(a) Modelo bem como os shows nos quais está associada para participar
+*	Esta classe representa um(a) Modelo bem como os shows nos quais esta associada para participar
 */
 class Model
 types
@@ -32,7 +32,7 @@ instance variables
 	*/
 	public shows: set of Event;
 	/**
-	*	género de um(a) modelo
+	*	genero de um(a) modelo
 	*/
 	public gender: Gender;
  
@@ -43,10 +43,10 @@ operations
 	*	Model construtor
 	*	
 	*	@param n corresponde ao nome de um(a) modelo
-	*	@param a corresponde à idade de um(a) modelo
+	*	@param a corresponde a� idade de um(a) modelo
 	*	@param h corresponde ao peso de um(a) modelo
-	*	@param na corresponde à nacionalidade de um(a) modelo
-	*	@param g corresponde ao género de um(a) modelo
+	*	@param na corresponde a� nacionalidade de um(a) modelo
+	*	@param g corresponde ao genero de um(a) modelo
 	*/
 	public Model: Platform`String * Age * Height * Platform`String * Gender ==> Model 
 	Model(n, a, h, na, g) == 
@@ -61,7 +61,7 @@ operations
 	);
 	
 	/**
-	*	Inserção de um(a) modelo em shows, que ficam visíveis nos shows de um(a) modelo
+	*	Insercao de um(a) modelo em shows, que ficam visiveis nos shows de um(a) modelo
 	*	
 	*	@param newShows corresponde aos shows a serem adicionados aos shows de um(a) modelo
 	*/
@@ -73,7 +73,7 @@ operations
 	post shows = newShows;
 	
 	/**
-	*	Inserção de um(a) modelo num show que ficará visível nos shows de um(a) modelo
+	*	Insercao de um(a) modelo num show que ficara visivel nos shows de um(a) modelo
 	*	
 	*	@param newShow corresponde ao show a ser adicionado aos shows de um(a) modelo
 	*/
@@ -88,7 +88,7 @@ operations
 	post newShow in set shows;
 	
 	/**
-	*	Remoção de um(a) modelo de um show que deixará de estar visível nos shows de um(a) modelo
+	*	Remocaoo de um(a) modelo de um show que deixara de estar visivel nos shows de um(a) modelo
 	*	
 	*	@param oldShow corresponde ao show a ser removido dos shows de um(a) modelo
 	*/

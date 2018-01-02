@@ -1,5 +1,5 @@
 /**
-*	Esta classe representa o User e toda a informação relacionada com ele, tal como atualizar o
+*	Esta classe representa o User e toda a informacao relacionada com ele, tal como atualizar o
 *	seu saldo e ver os itens comprados
 */
 class User
@@ -12,7 +12,7 @@ values
 -- TODO Define values here
 instance variables
 	/**
-	*	username será único, sendo a variável de identificação de um user
+	*	username sera unico, sendo a variavel de identificacao de um user
 	*/
 	public username: Username;
 	/**
@@ -45,7 +45,7 @@ operations
 	);
 	
 	/**
-	*	Atualização do saldo de um user
+	*	Atualizacao do saldo de um user
 	*	
 	*	@param bd corresponde ao saldo a inserir
 	*/
@@ -53,7 +53,7 @@ operations
 		setBudget(bd) == budget := bd;
 	
 	/**
-	*	Obtenção do conjunto de itens comprados por um user
+	*	Obtencao do conjunto de itens comprados por um user
 	*	
 	*	@return set of Item
 	*/
@@ -61,7 +61,7 @@ operations
 		getBoughtItems() == return boughtItems;
 	
 	/**
-	*	Atualização do conjunto de itens comprados por um user
+	*	Atualizacao do conjunto de itens comprados por um user
 	*	
 	*	@param item corresponde ao item a inserir no conjunto de itens de um user
 	*/
@@ -70,7 +70,7 @@ operations
 	post item in set boughtItems;
 	
 	/**
-	*	Atualização do conjunto de itens comprados por um user
+	*	Atualizacao do conjunto de itens comprados por um user
 	*	
 	*	@param items corresponde aos itens a inserir no conjunto de itens de um user
 	*/

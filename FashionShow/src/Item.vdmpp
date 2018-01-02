@@ -1,5 +1,5 @@
 /**
-* Esta classe representa um Item contendo toda a infor,ação relacionada com um Item
+* Esta classe representa um Item contendo toda a informacao relacionada com um Item
 */
 class Item
 types
@@ -15,9 +15,9 @@ instance variables
 	/**
 	*	referencia associada a um item
 	*/
-	public reference: Ref; --TODO p�r reference unica
+	public reference: Ref;
 	/**
-	*	preço de um item
+	*	preco de um item
 	*/
 	public price: Platform`Price;
 	/**
@@ -30,8 +30,8 @@ operations
 	*	Item construtor
 	*	
 	*	@param n corresponde ao nome de um item
-	*	@param r corresponde à referência de um item
-	*	@param p corresponde ao preço de um item
+	*	@param r corresponde a� referencia de um item
+	*	@param p corresponde ao preco de um item
 	*	@param s corresponde ao tamanho de um item
 	*/
 	public Item: Platform`String * Ref * Platform`Price * Size ==> Item 
