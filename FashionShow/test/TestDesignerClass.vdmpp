@@ -1,14 +1,14 @@
 class TestDesignerClass is subclass of MyTestCase
 instance variables
 	-- items
-	it1: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<XL>);
+	it1: Item := new Item("Camisolinha de la","1c34ff445",220.50,<XL>);
 	it2: Item := new Item("Oculos de Sol Gucci","123ggg4hk",220.50,<S>);
 	it3: Item := new Item("Calcinha Branca","1c34ff445",220.50,<M>);
 	it4: Item := new Item("Camisola Sarja Preta Versace","3213fff23",220.50,<L>);
-	it5: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<XS>);
-	it6: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<XS>);
-	it7: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<S>);
-	it8: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<M>);
+	it5: Item := new Item("Camisolinha de la","1c34ff445",220.50,<XS>);
+	it6: Item := new Item("Camisolinha de la","1c34ff445",220.50,<XS>);
+	it7: Item := new Item("Camisolinha de la","1c34ff445",220.50,<S>);
+	it8: Item := new Item("Camisolinha de la","1c34ff445",220.50,<M>);
 	
 	-- models
 	m1: Model:= new Model("Adriana Lima", 36, 1.78, "Brasilian", <Female>);
@@ -23,7 +23,7 @@ instance variables
 operations	
 	public testAddItem: () ==> ()
 	testAddItem() == (
-		IO`println("\t (1) Adição de um item a um designer");
+		IO`println("\t (1) Adicao de um item a um designer");
   	let d1 = new Designer("Coco Chanel") in (
     d1.setItems({it1,it2,it3});
     assertEqual(d1.items, {it1,it2,it3});
@@ -34,7 +34,7 @@ operations
 	
 	public testAddItems: () ==> ()
 	testAddItems() == (
-		IO`println("\t (2) Adição de um conjunto de items a um designer");
+		IO`println("\t (2) Adicao de um conjunto de items a um designer");
   	let d1 = new Designer("Coco Chanel") in (
     d1.setItems({it1});
     assertEqual(d1.items, {it1});
@@ -47,7 +47,7 @@ operations
 	
 	public testRemItem: () ==> ()
 	testRemItem() == (
-		IO`println("\t (4) Remoção de um item de um designer");
+		IO`println("\t (4) Remocao de um item de um designer");
   	let d1 = new Designer("Coco Chanel") in (
     d1.setItems({it1,it2,it3});
     assertEqual(d1.items, {it1,it2,it3});
@@ -58,7 +58,7 @@ operations
 	
 	public testRemItems: () ==> ()
 	testRemItems() == (
-		IO`println("\t (3) Remoção de um conjunto de items de um designer");
+		IO`println("\t (3) Remocao de um conjunto de items de um designer");
   	let d1 = new Designer("Coco Chanel") in (
     d1.setItems({it1, it2 , it3});
     assertEqual(d1.items, {it1, it2, it3});

@@ -2,8 +2,6 @@ class TestEventClass is subclass of MyTestCase
 instance variables
 	--Events
 	ev1: Event := new Event("Workshop Liner", mk_Platform`Date(2018, 1,12), "Porto", "MakeUp", 10, 15);
---	ev2: Event := new Event("Coleção de Inverno", mk_Plataform`Date(2018, 2,22), "Amarante", "Winter", 15, 20);
---	ev3: Event := new Event("Coleção de VerÃ£o", mk_Plataform`Date(2018, 5,30), "Lisboa", "Summer", 30, 5);
 	
 	--Designers
 	d1: Designer := new Designer("Oscar de La Renta");
@@ -20,12 +18,12 @@ operations
 		u1.setBudget(100);
 		ev1.registerUser(u1);
 		assertEqual(1, card ev1.audience);
-		IO`println("\t (2) Verificação do Budget de um User após Registo num Evento");
+		IO`println("\t (2) Verificacao do Budget de um User apos Registo num Evento");
 		assertEqual(90, u1.budget);
-		IO`println("\t (3) Remoção de um User de um Evento");
+		IO`println("\t (3) Remocao de um User de um Evento");
 		ev1.refundUser(u1);
 		assertEqual(0, card ev1.audience);
-		IO`println("\t (4) Verificação da reposição do Budget do User removido do Evento");
+		IO`println("\t (4) Verificacao da reposicao do Budget do User removido do Evento");
 		assertEqual(100, u1.budget);
 		
 		IO`println("\t (5) Adicionar Designers ao Evento");
@@ -36,7 +34,7 @@ operations
 		ev1.addDesigner(d1);
 		ev1.addDesigner(d2);
 		assertEqual(2, card ev1.designers);
-		IO`println("\t (6) Remoção de um Designer a um Evento");
+		IO`println("\t (6) Remocao de um Designer a um Evento");
 		ev1.removeDesigner(d1);
 		assertEqual(1, card ev1.designers);
 		for all designer in set ev1.designers do(

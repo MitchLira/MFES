@@ -13,7 +13,7 @@ operations
  public testIsAfter: () ==> ()
  testIsAfter()==
  ( 
-    IO`println("\t (1) Verifição de uma data ser posterior a outra");
+    IO`println("\t (1) Verificao de uma data ser posterior a outra");
   assertEqual(true,Utils`isAfter(mk_Platform`Date(2017,2,3),mk_Platform`Date(2017,2,2)));
   assertEqual(false,Utils`isAfter(mk_Platform`Date(2017,2,3),mk_Platform`Date(2017,2,3)));
   assertEqual(false,Utils`isAfter(mk_Platform`Date(2014,2,3),mk_Platform`Date(2017,2,2)));
@@ -41,12 +41,12 @@ end TestUtilsClass
 Function or operation & Line & Coverage & Calls \\
 \hline
 \hline
-\hyperref[testAll:19]{testAll} & 19&100.0\% & 3 \\
+\hyperref[testAll:19]{testAll} & 19&100.0\% & 1 \\
 \hline
-\hyperref[testIsAfter:9]{testIsAfter} & 9&100.0\% & 3 \\
+\hyperref[testIsAfter:9]{testIsAfter} & 9&100.0\% & 1 \\
 \hline
 \hline
-TestUtilsClass.vdmpp & & 100.0\% & 6 \\
+TestUtilsClass.vdmpp & & 100.0\% & 2 \\
 \hline
 \end{longtable}
 

@@ -9,7 +9,7 @@ operations
 	public testIsAfter: () ==> ()
 	testIsAfter()==
 	(	
-    IO`println("\t (1) Verifição de uma data ser posterior a outra");
+    IO`println("\t (1) Verificao de uma data ser posterior a outra");
 		assertEqual(true,Utils`isAfter(mk_Platform`Date(2017,2,3),mk_Platform`Date(2017,2,2)));
 		assertEqual(false,Utils`isAfter(mk_Platform`Date(2017,2,3),mk_Platform`Date(2017,2,3)));
 		assertEqual(false,Utils`isAfter(mk_Platform`Date(2014,2,3),mk_Platform`Date(2017,2,2)));

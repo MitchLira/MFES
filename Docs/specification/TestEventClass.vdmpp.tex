@@ -3,8 +3,6 @@ class TestEventClass is subclass of MyTestCase
 instance variables
  --Events
  ev1: Event := new Event("Workshop Liner", mk_Platform`Date(2018, 1,12), "Porto", "MakeUp", 10, 15);
--- ev2: Event := new Event("Coleção de Inverno", mk_Plataform`Date(2018, 2,22), "Amarante", "Winter", 15, 20);
--- ev3: Event := new Event("Coleção de VerÃ£o", mk_Plataform`Date(2018, 5,30), "Lisboa", "Summer", 30, 5);
  
  --Designers
  d1: Designer := new Designer("Oscar de La Renta");
@@ -15,21 +13,21 @@ instance variables
  u2: User := new User("mitchlira", "Miguel Lira");
 operations
  --Test oerations with Users
+ public testUsers: () ==> ()
+ testUsers() == (
 (*@
 \label{testUsers:17}
 @*)
- public testUsers: () ==> ()
- testUsers() == (
   IO`println("\t (1) Registar um User num Evento");
   u1.setBudget(100);
   ev1.registerUser(u1);
   assertEqual(1, card ev1.audience);
-  IO`println("\t (2) Verificação do Budget de um User após Registo num Evento");
+  IO`println("\t (2) Verificacao do Budget de um User apos Registo num Evento");
   assertEqual(90, u1.budget);
-  IO`println("\t (3) Remoção de um User de um Evento");
+  IO`println("\t (3) Remocao de um User de um Evento");
   ev1.refundUser(u1);
   assertEqual(0, card ev1.audience);
-  IO`println("\t (4) Verificação da reposição do Budget do User removido do Evento");
+  IO`println("\t (4) Verificacao da reposicao do Budget do User removido do Evento");
   assertEqual(100, u1.budget);
   
   IO`println("\t (5) Adicionar Designers ao Evento");
@@ -40,7 +38,7 @@ operations
   ev1.addDesigner(d1);
   ev1.addDesigner(d2);
   assertEqual(2, card ev1.designers);
-  IO`println("\t (6) Remoção de um Designer a um Evento");
+  IO`println("\t (6) Remocao de um Designer a um Evento");
   ev1.removeDesigner(d1);
   assertEqual(1, card ev1.designers);
   for all designer in set ev1.designers do(
@@ -48,11 +46,11 @@ operations
   );
  );
  
+ public testAll: () ==> ()
+  testAll() == (
 (*@
 \label{testAll:47}
 @*)
- public testAll: () ==> ()
-  testAll() == (
   IO`println("Testes da classe Event:");
   testUsers();
   );
@@ -64,12 +62,12 @@ end TestEventClass
 Function or operation & Line & Coverage & Calls \\
 \hline
 \hline
-\hyperref[testAll:47]{testAll} & 47&100.0\% & 3 \\
+\hyperref[testAll:47]{testAll} & 47&100.0\% & 1 \\
 \hline
-\hyperref[testUsers:17]{testUsers} & 17&100.0\% & 3 \\
+\hyperref[testUsers:17]{testUsers} & 17&100.0\% & 1 \\
 \hline
 \hline
-TestEventClass.vdmpp & & 100.0\% & 6 \\
+TestEventClass.vdmpp & & 100.0\% & 2 \\
 \hline
 \end{longtable}
 

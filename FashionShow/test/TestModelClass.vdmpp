@@ -22,7 +22,7 @@ instance variables
 operations
 	public testGetModelsAttributes: () ==> ()
 	testGetModelsAttributes() == (
-    IO`println("\t (1) Construção de um Model");
+    IO`println("\t (1) Construcao de um Model");
    
     let m1 = new Model("Adriana Lima", 36, 1.78, "Brasilian", <Female>) in (
  		assertEqual(m1.name,"Adriana Lima");
@@ -35,7 +35,7 @@ operations
 	
 	public testSetShowsModels: () ==> ()
 	testSetShowsModels() == (
-		IO`println("\t (2) Alteração de um conjunto de shows de um Model");
+		IO`println("\t (2) Alteracao de um conjunto de shows de um Model");
     let m1 = new Model("Adriana Lima", 36, 1.78, "Brasilian", <Female>) in (
  		m1.setShows({f1, f2, f3});
  		assertEqual(m1.shows, {f1,f2,f3});
@@ -44,7 +44,7 @@ operations
 	
 	public testAddShowModels: () ==> ()
 	testAddShowModels() == (
-    IO`println("\t (3) Adição de um show a um Model");
+    IO`println("\t (3) Adicao de um show a um Model");
     let m1 = new Model("Adriana Lima", 36, 1.78, "Brasilian", <Female>) in (
  		m1.setShows({f1, f2, f4});
  		assertEqual(m1.shows, {f1,f2,f4});
@@ -59,7 +59,7 @@ operations
 	
 	public testRemShowModels: () ==> ()
 	testRemShowModels() == (
-    IO`println("\t (4) Remoção de um show de um Model");
+    IO`println("\t (4) Remocao de um show de um Model");
     let m1 = new Model("Adriana Lima", 36, 1.78, "Brasilian", <Female>) in (
  		m1.setShows({f1, f2, f4});
  		assertEqual(m1.shows, {f1,f2,f4});
