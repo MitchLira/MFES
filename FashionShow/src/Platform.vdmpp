@@ -43,7 +43,7 @@ operations
 	/**
 	*	Plataform construtor
 	*	
-	*	@param actualD corresponde a  data atual da criacao de uma plataforma
+	*	@param actualD corresponde aï¿½ data atual da criacao de uma plataforma
 	*/
 	public Platform:Date ==> Platform 
 		Platform(actualD) == 
@@ -129,7 +129,12 @@ operations
 		pre user  in set users
 		post user not in set users;
 
-
+	/**
+	*	Obtencao de um user atraves do seu username visto ser o permite identificar os users
+	*	
+	*	@param username corresponde ao username de um user para proceder a pesquisa deste user
+	*	@return User
+	*/
 	public getUserByUsername: Platform`String ==> User
 		getUserByUsername(username) ==
 		(
@@ -195,7 +200,13 @@ operations
 		)
 		pre item  in set items
 		post item not in set items;
-		
+	
+	/**
+	*	Obtencao de um item atraves da sua referencia visto ser o que permite identificar os itens
+	*	
+	*	@param ref corresponde a referencia do item que se pretende pesquisar
+	*	@return Item
+	*/
 	public getItemByRef: Item`Ref ==> Item
 		getItemByRef(ref)== 
 		(
