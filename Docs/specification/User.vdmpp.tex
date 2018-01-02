@@ -1,0 +1,123 @@
+\begin{vdmpp}[breaklines=true]
+/**
+* Esta classe representa o User e toda a informacao relacionada com ele, tal como atualizar o
+* seu saldo e ver os itens comprados
+*/
+class User
+types
+ public Budget = real
+  inv r == r >= 0.0;
+ public Username = Platform`String;
+ 
+values
+-- TODO Define values here
+instance variables
+ /**
+ * username sera unico, sendo a variavel de identificacao de um user
+ */
+ public username: Username;
+ /**
+ * nome de um user
+ */
+ public name: Platform`String;
+ /**
+ * saldo que permite a um user comprar itens ou inscrever-se em shows
+ */
+ public budget: Budget;
+ /**
+ * conjunto de itens comprados por um user
+ */
+ public boughtItems: set of Item;
+operations
+ /**
+ * User construtor
+ * 
+ * @param u corresponde ao username de um user
+ * @param n corresponde ao nome de um user
+ */
+(*@
+\label{User:37}
+@*)
+ public User: Username * Platform`String ==> User 
+ User(u,n) == 
+ (
+  username := u;
+  name := n;
+  budget := 0.0;
+  boughtItems:= {};
+  return self;
+ );
+ 
+ /**
+ * Atualizacao do saldo de um user
+ * 
+ * @param bd corresponde ao saldo a inserir
+ */
+(*@
+\label{setBudget:52}
+@*)
+ public setBudget: (Budget) ==> ()
+  setBudget(bd) == budget := bd;
+ 
+ /**
+ * Obtencao do conjunto de itens comprados por um user
+ * 
+ * @return set of Item
+ */
+(*@
+\label{getBoughtItems:60}
+@*)
+ public getBoughtItems: () ==> set of Item
+  getBoughtItems() == return boughtItems;
+ 
+ /**
+ * Atualizacao do conjunto de itens comprados por um user
+ * 
+ * @param item corresponde ao item a inserir no conjunto de itens de um user
+ */
+(*@
+\label{setBoughtItem:68}
+@*)
+ public setBoughtItem: (Item) ==> ()
+  setBoughtItem(item) == boughtItems := boughtItems union {item}
+ post item in set boughtItems;
+ 
+ /**
+ * Atualizacao do conjunto de itens comprados por um user
+ * 
+ * @param items corresponde aos itens a inserir no conjunto de itens de um user
+ */
+(*@
+\label{setBoughtItems:77}
+@*)
+ public setBoughtItems: (set of Item) ==> ()
+  setBoughtItems(items) == boughtItems := boughtItems union items
+ post items subset boughtItems ;
+ 
+functions
+ 
+traces
+-- TODO Define Combinatorial Test Traces here
+end User
+\end{vdmpp}
+\bigskip
+\begin{longtable}{|l|r|r|r|}
+\hline
+Function or operation & Line & Coverage & Calls \\
+\hline
+\hline
+\hyperref[User:37]{User} & 37&100.0\% & 21 \\
+\hline
+\hyperref[getBoughtItems:60]{getBoughtItems} & 60&100.0\% & 9 \\
+\hline
+\hyperref[setBoughtItem:68]{setBoughtItem} & 68&100.0\% & 3 \\
+\hline
+\hyperref[setBoughtItems:77]{setBoughtItems} & 77&100.0\% & 3 \\
+\hline
+\hyperref[setBudget:52]{setBudget} & 52&100.0\% & 21 \\
+\hline
+\hline
+User.vdmpp & & 100.0\% & 57 \\
+\hline
+\end{longtable}
+

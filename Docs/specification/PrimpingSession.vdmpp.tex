@@ -1,0 +1,48 @@
+\begin{vdmpp}[breaklines=true]
+/**
+* Esta classe representa a primping session
+*/
+class PrimpingSession is subclass of Event
+types
+-- TODO Define types here
+values
+-- TODO Define values here
+instance variables
+ 
+operations
+ /**
+ * PrimpingSession construtor
+ */
+(*@
+\label{PrimpingSession:15}
+@*)
+ public PrimpingSession: Platform`String * Platform`Date * Platform`String *  Platform`String * Platform`Price * nat ==> PrimpingSession 
+  PrimpingSession(n,d, p, t, pr,  maxS) == 
+  (
+   name := n;
+   date := d;
+   place := p;
+   theme := t;
+   price := pr;
+   maxSpectators := maxS;
+   return self;
+  );
+ 
+ 
+  
+functions
+end PrimpingSession
+\end{vdmpp}
+\bigskip
+\begin{longtable}{|l|r|r|r|}
+\hline
+Function or operation & Line & Coverage & Calls \\
+\hline
+\hline
+\hyperref[PrimpingSession:15]{PrimpingSession} & 15&100.0\% & 6 \\
+\hline
+\hline
+PrimpingSession.vdmpp & & 100.0\% & 6 \\
+\hline
+\end{longtable}
+

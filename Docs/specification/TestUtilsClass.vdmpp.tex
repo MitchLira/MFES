@@ -1,0 +1,52 @@
+\begin{vdmpp}[breaklines=true]
+class TestUtilsClass is subclass of MyTestCase
+types
+-- TODO Define types here
+values
+-- TODO Define values here
+instance variables
+-- TODO Define instance variables here
+operations
+(*@
+\label{testIsAfter:9}
+@*)
+ public testIsAfter: () ==> ()
+ testIsAfter()==
+ ( 
+    IO`println("\t (1) Verifição de uma data ser posterior a outra");
+  assertEqual(true,Utils`isAfter(mk_Platform`Date(2017,2,3),mk_Platform`Date(2017,2,2)));
+  assertEqual(false,Utils`isAfter(mk_Platform`Date(2017,2,3),mk_Platform`Date(2017,2,3)));
+  assertEqual(false,Utils`isAfter(mk_Platform`Date(2014,2,3),mk_Platform`Date(2017,2,2)));
+  assertEqual(true,Utils`isAfter(mk_Platform`Date(2014,2,3),mk_Platform`Date(2014,3,2)));
+ );
+ 
+(*@
+\label{testAll:19}
+@*)
+ public testAll: () ==> ()
+ testAll () ==
+ (
+ IO`println("Test da classe Utils");
+  testIsAfter();
+ );
+functions
+-- TODO Define functiones here
+traces
+-- TODO Define Combinatorial Test Traces here
+end TestUtilsClass
+\end{vdmpp}
+\bigskip
+\begin{longtable}{|l|r|r|r|}
+\hline
+Function or operation & Line & Coverage & Calls \\
+\hline
+\hline
+\hyperref[testAll:19]{testAll} & 19&100.0\% & 3 \\
+\hline
+\hyperref[testIsAfter:9]{testIsAfter} & 9&100.0\% & 3 \\
+\hline
+\hline
+TestUtilsClass.vdmpp & & 100.0\% & 6 \\
+\hline
+\end{longtable}
+

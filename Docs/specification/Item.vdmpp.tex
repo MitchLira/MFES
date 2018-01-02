@@ -1,0 +1,67 @@
+\begin{vdmpp}[breaklines=true]
+/**
+* Esta classe representa um Item contendo toda a informacao relacionada com um Item
+*/
+class Item
+types
+ public Ref =  seq of char 
+ inv v == len v = 9;
+ public Size = <XS>|<S>|<M>|<L>|<XL>|<XXL>;
+
+instance variables
+ /**
+ * nome de um item
+ */
+ public name: Platform`String;
+ /**
+ * referencia associada a um item
+ */
+ public reference: Ref;
+ /**
+ * preco de um item
+ */
+ public price: Platform`Price;
+ /**
+ * tamanho de um item 
+ */
+ public size: Size;
+
+operations
+ /**
+ * Item construtor
+ * 
+ * @param n corresponde ao nome de um item
+ * @param r corresponde a referencia de um item
+ * @param p corresponde ao preco de um item
+ * @param s corresponde ao tamanho de um item
+ */
+(*@
+\label{Item:37}
+@*)
+ public Item: Platform`String * Ref * Platform`Price * Size ==> Item 
+  Item(n, r, p, s) == 
+  (
+   name := n;
+   reference := r;
+   price := p;
+   size := s;
+   return self;
+  );
+  
+functions
+ -- TODO Define functiones here
+end Item
+\end{vdmpp}
+\bigskip
+\begin{longtable}{|l|r|r|r|}
+\hline
+Function or operation & Line & Coverage & Calls \\
+\hline
+\hline
+\hyperref[Item:37]{Item} & 37&100.0\% & 69 \\
+\hline
+\hline
+Item.vdmpp & & 100.0\% & 69 \\
+\hline
+\end{longtable}
+

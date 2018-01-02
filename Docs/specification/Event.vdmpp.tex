@@ -1,0 +1,171 @@
+\begin{vdmpp}[breaklines=true]
+/**
+* Esta classe representa um Evento e toda a informacao com ele relacionada, tal como
+* os designers que estarao presentes ate aos users inscritos
+*/  
+class Event
+values
+
+instance variables
+ /**
+ * nome do evento
+ */
+ public name: Platform`String;
+ /**
+ * local onde se realizara o evento
+ */
+ public place: Platform`String;
+ /**
+ * data da realizacao do evento
+ */
+ public date: Platform`Date;
+ /**
+ * tema que descrevera o evento
+ */
+ public theme: Platform`String;
+ /**
+ * preco de entrada para o evento
+ */
+ public price: Platform`Price; 
+ /**
+ * designers que estarao a mostrar os seus itens no evento
+ */
+ public designers: set of Designer := {};
+ /**
+ * numero maximo de users inscritos para o evento
+ */
+ public maxSpectators: nat ;
+ /**
+ * users inscritos ate ao momento para o evento
+ */
+ public audience: set of User := {};
+
+ inv ((card audience) >= 0) and ((card audience) <= maxSpectators);
+ 
+operations
+ /**
+ * Event construtor
+ * 
+ * @param n corresponde ao nome de um evento
+ * @param d corresponde a data de um evento
+ * @param p corresponde ao local de um evento
+ * @param t corresponde ao tema de um evento
+ * @param pr corresponde ao preco de entrada de um evento
+ * @param maxS corresponde ao numero maximo de users inscritos de um evento
+ */
+(*@
+\label{Event:55}
+@*)
+ public Event: Platform`String * Platform`Date * Platform`String *  Platform`String * Platform`Price * nat ==> Event 
+ Event(n,d, p, t, pr,  maxS) == 
+ (
+  name := n;
+  date := d;
+  place := p;
+  theme := t;
+  price := pr;
+  maxSpectators := maxS;
+  return self;
+ );
+----------------------------------------------------------------
+ /**
+ * Inscricao de um user no evento
+ * 
+ * @param user corresponde ao user a ser inscrito num evento
+ */
+(*@
+\label{registerUser:72}
+@*)
+ public registerUser: User ==> ()
+ registerUser(user) ==
+ (
+  audience := audience union {user};
+  user.setBudget(user.budget - price);
+ )
+ pre (user.budget >= price) and
+   (user not in set audience)
+ post (user.budget >=0) and
+    (card audience <= maxSpectators) and
+    (user in set audience);
+ 
+ /**
+ * Remocao e reembolso de um user
+ * 
+ * @param user corresponde ao user a ser removido e reembolsado por um evento
+ */
+(*@
+\label{refundUser:89}
+@*)
+ public refundUser: User ==> ()
+ refundUser(user)==
+ (
+  audience := audience \ {user};
+  user.setBudget(user.budget + price);
+ )
+ pre (user in set audience) and
+   (user.budget >=0)
+ 
+ post (user not in set audience) and
+    (user.budget>0);
+
+--------------------------------------------------------------
+ /**
+ * Adicao de um designer a um evento
+ * 
+ * @param designer corresponde ao designer a ser adicionado aos designer de um evento
+ */
+(*@
+\label{addDesigner:107}
+@*)
+ public addDesigner: Designer ==> ()
+ addDesigner(designer)==
+ (
+  designers:= designers union {designer};
+ )
+ pre designer not in set designers
+ post designer in set designers;
+ 
+ /**
+ * Remocao de um designer
+ * 
+ * @param designer corresponde ao designer a ser removido dos designer de um evento
+ */
+(*@
+\label{removeDesigner:120}
+@*)
+ public removeDesigner: Designer ==> ()
+ removeDesigner(designer)==
+ (
+  designers:= designers \ {designer};
+ )
+ pre designer in set designers
+ post designer not in set designers;
+ 
+---------------------------------------------------------------
+functions
+-- TODO Define functiones here
+traces
+-- TODO Define Combinatorial Test Traces here
+end Event
+\end{vdmpp}
+\bigskip
+\begin{longtable}{|l|r|r|r|}
+\hline
+Function or operation & Line & Coverage & Calls \\
+\hline
+\hline
+\hyperref[Event:55]{Event} & 55&100.0\% & 3 \\
+\hline
+\hyperref[addDesigner:107]{addDesigner} & 107&100.0\% & 6 \\
+\hline
+\hyperref[refundUser:89]{refundUser} & 89&100.0\% & 6 \\
+\hline
+\hyperref[registerUser:72]{registerUser} & 72&100.0\% & 9 \\
+\hline
+\hyperref[removeDesigner:120]{removeDesigner} & 120&100.0\% & 6 \\
+\hline
+\hline
+Event.vdmpp & & 100.0\% & 30 \\
+\hline
+\end{longtable}
+

@@ -1,0 +1,136 @@
+\begin{vdmpp}[breaklines=true]
+/**
+* Esta classe representa um Designer bem como os itens que dispoe para os shows
+*/
+class Designer
+types
+
+instance variables
+  /**
+  * nome do designer
+  */
+  public name: Platform`String;
+  /**
+  * itens dos quais o designer dispoe
+  */
+  public items: set of Item;
+values
+ 
+operations
+ /**
+ * Designer construtor
+ * 
+ * @param n nome de um designer
+ */
+(*@
+\label{Designer:24}
+@*)
+ public Designer: Platform`String ==> Designer 
+  Designer(n) == (
+   name := n;
+   items := {};
+   return self;
+ );
+ 
+ /**
+ * Insercao de um conjunto de itens nos itens de um designer
+ * 
+ * @param item corresponde aos itens a serem inseridos
+ */
+(*@
+\label{setItems:36}
+@*)
+ public setItems: set of Item ==> ()
+   setItems(item) == 
+    items := item;
+    
+ /**
+ * Insercao de um item no conjunto de itens de um designer
+ * 
+ * @param item corresponde ao item a ser inserido
+ */
+(*@
+\label{addItem:45}
+@*)
+ public addItem: Item ==> ()
+  addItem(item) == (
+     items := items union {item}
+  )
+ pre item not in set items
+ post item in set items;
+ 
+ /**
+ * Insercao de um conjunto de itens nos itens de um designer
+ * 
+ * @param newItems corresponde aos itens a serem inseridos
+ */
+(*@
+\label{addItems:57}
+@*)
+ public addItems: set of Item ==> ()
+  addItems(newItems) == (
+    for all i in set newItems do (
+      items := items union {i};
+    )
+   )
+ pre (not newItems subset items) and newItems <> items
+ post newItems subset items;
+   
+  /**
+ * Remocao de um item do conjunto de itens de um designer
+ * 
+ * @param item corresponde ao item a ser removido
+ */
+(*@
+\label{remItem:71}
+@*)
+ public remItem: Item ==> ()
+  remItem(item) ==
+      items := items \ {item}
+ pre items <> {} and item in set items
+ post item not in set items;
+  
+ /**
+ * Remocao de um conjunto de itens dos itens de um designer
+ * 
+ * @param oldItems corresponde aos itens a serem removidos
+ */
+(*@
+\label{remItems:82}
+@*)
+ public remItems: set of Item ==> ()
+  remItems(oldItems) ==
+    for all i in set oldItems do (
+      items := items \ {i}
+    )
+ pre items <> {} and (oldItems subset items)
+ post not oldItems subset items;
+  
+functions
+
+end Designer
+
+\end{vdmpp}
+\bigskip
+\begin{longtable}{|l|r|r|r|}
+\hline
+Function or operation & Line & Coverage & Calls \\
+\hline
+\hline
+\hyperref[Designer:24]{Designer} & 24&100.0\% & 117 \\
+\hline
+\hyperref[addItem:45]{addItem} & 45&100.0\% & 3 \\
+\hline
+\hyperref[addItems:57]{addItems} & 57&100.0\% & 57 \\
+\hline
+\hyperref[remItem:71]{remItem} & 71&100.0\% & 3 \\
+\hline
+\hyperref[remItems:82]{remItems} & 82&100.0\% & 3 \\
+\hline
+\hyperref[setItems:36]{setItems} & 36&100.0\% & 12 \\
+\hline
+\hline
+Designer.vdmpp & & 100.0\% & 195 \\
+\hline
+\end{longtable}
+

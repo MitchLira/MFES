@@ -1,0 +1,209 @@
+\begin{vdmpp}[breaklines=true]
+class TestPlatformClass is subclass of MyTestCase
+types
+-- TODO Define types here
+values
+-- TODO Define values here
+instance variables
+ 
+ d1: Designer := new Designer("Oscar de La Renta");
+ d2: Designer := new Designer("Donna Karen");
+ d3: Designer := new Designer("Alexander McQueen");
+ 
+ it1: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<XL>);
+ it2: Item := new Item("Oculos de Sol Gucci","123ggg4hk",220.50,<S>);
+ it3: Item := new Item("Calcinha Branca","1c34ff445",220.50,<M>);
+ 
+ u1: User := new User("mitchLira", "Miguel Lira");
+ u2: User := new User("miriniri", "Miriam Goncalves");
+ u3: User := new User("pauloB", "Paulo Babo");
+ 
+
+ e1: Event := new PrimpingSession("Fique Bela e Amarela",mk_Platform`Date(2017,12,29),"Avenida dos Aliados","Amarelo/Dourado",
+                  20,50);
+ e2: Event := new Presentation("Como andar na moda?",
+                 mk_Platform`Date(2018,1,5),
+                 "Antigas Fabricas Tabopan",
+                 "Moda",
+                 5,
+                 300);
+ e3: Event := new Runway("Victoria's Secret Runway",
+              mk_Platform`Date(2018,2,22),
+              "Covelo de Ansiães",
+              "Langerie",
+              300,
+              50
+              );
+ e4: Event := new Runway("Gigi vs Tommy Runway",
+              mk_Platform`Date(2018,12,30),
+              "Amarante",
+              "Funny",
+              300,
+              50
+              );
+ 
+ e5: Event := new Runway("Gucci for poor",
+              mk_Platform`Date(2019,11,30),
+              "Guimarães",
+              "Pobreza",
+              300,
+              50
+              );                          
+ p1: Platform := new Platform(mk_Platform`Date(2017,12,29));
+ p2: Platform := new Platform(mk_Platform`Date(2018,12,30));
+ p3: Platform := new Platform(mk_Platform`Date(2017,11,30));
+operations
+(*@
+\label{testAddRemoveDesigner:55}
+@*)
+ public testAddRemoveDesigner: () ==> ()
+ testAddRemoveDesigner()==
+ (
+    IO`println("\t (1) Adição e remoção de um designer da plataforma");
+  p1.addDesigner(d1);
+  p1.addDesigner(d2);
+  assertEqual({d1,d2},p1.designers);
+  p1.removeDesigner(d2);
+  assertEqual({d1},p1.designers);
+ );
+ 
+(*@
+\label{testAddRemoveItem:66}
+@*)
+ public testAddRemoveItem: () ==> ()
+ testAddRemoveItem()==
+ (
+  IO`println("\t (2) Adição e remoção de um item da plataforma");
+  p1.addItem(it1);
+  p1.addItem(it2);
+  assertEqual({it1,it2},p1.items);
+  p1.removeItem(it2);
+  p1.removeItem(it1);
+  assertEqual({},p1.items);
+ );
+ 
+(*@
+\label{testAddRemoveUser:78}
+@*)
+ public testAddRemoveUser: () ==> ()
+ testAddRemoveUser()==
+ (
+  IO`println("\t (3) Adição e remoção de um utilizador da plataforma");
+  p1.addUser(u1);
+  p1.addUser(u2);
+  assertEqual({u1,u2},p1.users);
+  p1.removeUser(u2);
+  p1.removeUser(u1);
+  assertEqual({},p1.users);
+ );
+ 
+(*@
+\label{testAddRemoveEvent:90}
+@*)
+ public testAddRemoveEvent: () ==> ()
+ testAddRemoveEvent()==
+ (
+  IO`println("\t (4) Adição e remoção de um evento da plataforma");
+  p1.addEvent(e1);
+  p1.addEvent(e2);
+  assertEqual({e1,e2},p1.events);
+  p1.removeEvent(e2);
+  p1.removeEvent(e1);
+  assertEqual({},p1.events);
+ );
+ 
+ 
+(*@
+\label{testEndDay:103}
+@*)
+ public testEndDay: () ==> ()
+ testEndDay()==
+ ( IO`println("\t (5) Finalização de um dia de eventos");
+  p1.addEvent(e1);
+  p1.addEvent(e2);
+  p1.endDay();
+  assertEqual(30,p1.actualDate.day);
+  assertEqual(12,p1.actualDate.month);
+  assertEqual(2017,p1.actualDate.year);
+  assertEqual({e2},p1.events);
+  p2.addEvent(e4);
+  p2.endDay();
+  assertEqual(1,p2.actualDate.day);
+  assertEqual(1,p2.actualDate.month);
+  assertEqual(2019,p2.actualDate.year);
+  p1.removeEvent(e2);
+  p3.addEvent(e5);
+  p3.endDay();
+  assertEqual(1,p3.actualDate.day);
+  assertEqual(12,p3.actualDate.month);
+  assertEqual(2017,p3.actualDate.year);
+ );
+ 
+(*@
+\label{testgetItemByRef:126}
+@*)
+ public testgetItemByRef: () ==> ()
+ testgetItemByRef()==
+ (
+  IO`println("\t (6) Selecionar um item pela referência");
+  p1.addItem(it1);
+  p1.addItem(it2);
+  assertEqual(p1.getItemByRef("123ggg4hk"), it2);
+ );
+ 
+(*@
+\label{testgetUserByUsername:135}
+@*)
+ public testgetUserByUsername: () ==> ()
+  testgetUserByUsername()==
+  (
+   IO`println("\t (6) Selecionar um utilizador pelo username");
+   p1.addUser(u1);
+   p1.addUser(u2);
+   p1.addUser(u3);
+   assertEqual(p1.getUserByUsername("pauloB"), u3);
+  );
+ 
+(*@
+\label{testAll:145}
+@*)
+ public testAll: () ==> ()
+  testAll() == (
+  IO`println("Testes da classe Platform:");
+   testAddRemoveDesigner();
+   testAddRemoveUser();
+   testAddRemoveItem();
+   testAddRemoveEvent();
+   testEndDay();
+   testgetItemByRef();
+   testgetUserByUsername();
+  );
+end TestPlatformClass
+\end{vdmpp}
+\bigskip
+\begin{longtable}{|l|r|r|r|}
+\hline
+Function or operation & Line & Coverage & Calls \\
+\hline
+\hline
+\hyperref[testAddRemoveDesigner:55]{testAddRemoveDesigner} & 55&100.0\% & 3 \\
+\hline
+\hyperref[testAddRemoveEvent:90]{testAddRemoveEvent} & 90&100.0\% & 3 \\
+\hline
+\hyperref[testAddRemoveItem:66]{testAddRemoveItem} & 66&100.0\% & 3 \\
+\hline
+\hyperref[testAddRemoveUser:78]{testAddRemoveUser} & 78&100.0\% & 3 \\
+\hline
+\hyperref[testAll:145]{testAll} & 145&100.0\% & 3 \\
+\hline
+\hyperref[testEndDay:103]{testEndDay} & 103&100.0\% & 3 \\
+\hline
+\hyperref[testgetItemByRef:126]{testgetItemByRef} & 126&100.0\% & 3 \\
+\hline
+\hyperref[testgetUserByUsername:135]{testgetUserByUsername} & 135&100.0\% & 3 \\
+\hline
+\hline
+TestPlatformClass.vdmpp & & 100.0\% & 24 \\
+\hline
+\end{longtable}
+
