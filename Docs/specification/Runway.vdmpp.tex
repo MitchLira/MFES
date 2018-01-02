@@ -1,0 +1,383 @@
+\begin{vdmpp}[breaklines=true]
+/**
+* Esta classe representa uma subclasse de um Evento, para ver  decorrer do evento 
+*/
+class Runway is subclass of Event
+types
+
+-- TODO Define types here
+instance variables
+ /**
+ * itens de cada designer em exposicao
+ */
+ public expositionItems: map Designer to (set of Item) := {|->};
+ /**
+ * modelos disponiveis para usar desfilar com o itens dos designers
+ */
+  public models: set of Model := {};
+  /**
+ * itens a serem utilizados por cada modelo
+ */
+  public modelsItems: map Model to (set of Item) := {|->};
+  /**
+ * itens disponiveis no show
+ */
+  public showItems: set of Item := {};
+operations
+ /**
+ * Runway construtor
+ * 
+ * @param n corresponde ao nome do evento
+ * @param d corresponde a  data do evento
+ * @param p corresponde ao local do evento
+ * @param t corresponde ao tema do evento
+ * @param pr corresponde ao preco de entrada do evento
+ * @param maxS corresponde ao numero maximo de users inscritos no evento
+ */
+(*@
+\label{Runway:36}
+@*)
+ public Runway: Platform`String * Platform`Date * Platform`String *  Platform`String * Platform`Price * nat ==>Runway
+ Runway(n,d, p, t, pr, maxS)==
+ (
+  name := n;
+  date := d;
+  price := pr;
+  theme := t;
+  place := p;
+  maxSpectators := maxS;
+  return self;
+ );
+ 
+ /**
+ * Insercaoo de modelos no conjunto de modelos do evento
+ * 
+ * @param model corresponde aos(as) modelos a serem inseridas num evento
+ */
+(*@
+\label{setModels:53}
+@*)
+ public setModels: set of Model ==> ()
+   setModels(model) == 
+    models := model;
+ 
+ /**
+ * Insercao de um(a) modelo no conjunto de modelos do evento
+ * 
+ * @param model corresponde ao(a) modelo a ser inserida num evento
+ */
+(*@
+\label{addModel:62}
+@*)
+ public addModel: Model ==> ()
+  addModel(model) == (
+     models := models union {model};
+     modelsItems := modelsItems munion {model|-> {}};
+  )
+ pre model not in set models
+ post model in set models;
+ 
+ /**
+ * Insercao de modelos no conjunto de modelos do evento
+ * 
+ * @param newModels corresponde aos(as) modelos a serem inseridas num evento
+ */
+(*@
+\label{addModels:75}
+@*)
+ public addModels: set of Model ==> ()
+  addModels(newModels) == (
+    for all m in set newModels do (
+      models := models union {m};
+      modelsItems := modelsItems munion {m|-> {}};
+   )
+   )
+ pre not newModels subset models
+ post newModels subset models;
+  
+ /**
+ * Remocao de um(a) modelo do evento
+ * 
+ * @param model corresponde ao(a) modelo a ser removida de um evento
+ */
+(*@
+\label{remModel:90}
+@*)
+ public remModel: Model ==> ()
+  remModel(model) == (
+     models := models \ {model}
+   )
+ pre models <> {} and model in set models
+ post model not in set models;
+ 
+ /**
+ * Remocao de um conjunto de modelos do evento
+ * 
+ * @param oldModels corresponde aos(as) modelos a serem removidas
+ */
+(*@
+\label{remModels:102}
+@*)
+ public remModels: set of Model ==> ()
+  remModels(oldModels) == (
+    for all model in set oldModels do (
+      models := models \ {model};
+    )
+  )
+ pre models <> {} and oldModels subset models
+ post not oldModels subset models;
+ 
+ /**
+ * Dado um designer obtem-se o conjunto de itens que ele dispoe
+ * 
+ * @param designer corresponde ao designer de quem se quer obter os itens
+ * @return conjunto de itens
+ */
+(*@
+\label{getItemsOfDesignerInShow:117}
+@*)
+ public getItemsOfDesignerInShow: Designer ==> set of Item
+ getItemsOfDesignerInShow(designer) ==
+ (
+  return expositionItems(designer);
+ )
+ pre designer in set dom expositionItems;
+ 
+ /**
+ * Obter os itens disponiveis no show
+ * 
+ * @return conjunto de itens
+ */
+(*@
+\label{getItemsInShow:129}
+@*)
+ public getItemsInShow:() ==> set of Item
+ getItemsInShow() ==
+ (
+  dcl items: set of Item := {};
+  for all item in set rng expositionItems do (
+   items := items union item;
+  );
+  showItems := items;
+  return items;
+ );
+
+-------------------------------------------------------------
+ /**
+ * Adicao de um designer no conjunto de designers, bem como atualizacao 
+ * dos itens do show e dos itens em exposicao
+ * 
+ * @param designer corresponde ao designer a adicionar ao evento
+ */
+(*@
+\label{addDesigner:147}
+@*)
+ public addDesigner: Designer ==> ()
+ addDesigner(designer)==
+ (
+  designers := designers union {designer};
+  showItems := showItems union designer.items;
+  expositionItems := expositionItems munion {designer|-> designer.items};
+  
+ )
+ pre (designer not in set designers) and
+   (designer not in set dom expositionItems)
+ 
+ post (designer  in set designers) and
+    (designer  in set dom expositionItems); 
+ 
+ /**
+ * Remocao de um designer do conjunto de designers, bem como atualizacao
+ * dos itens do shwo e dos itens em exposicao
+ * 
+ * @param designer corresponde ao designer a remover do evento
+ */
+(*@
+\label{removeDesigner:167}
+@*)
+ public removeDesigner: Designer ==> ()
+ removeDesigner(designer)==
+ (
+  designers:= designers \ {designer};
+  showItems := showItems \ designer.items;
+  expositionItems:= {designer} <-: expositionItems;
+ )
+ pre (designer  in set designers) and
+   (designer  in set dom expositionItems) 
+ post (designer not in set designers) and
+    (designer not in set dom expositionItems);
+-------------------------------------------------------------    
+ /**
+ * Adicao de um item associado a um designer aos itens do show e aos itens em exposicao
+ * 
+ * @param designer corresponde ao designer de quem o item a ser inserido pertence
+ * @param item corresponde ao item a ser inserido no evento
+ */
+(*@
+\label{addDesignerItem:185}
+@*)
+ public addDesignerItem: Designer * Item ==> ()
+ addDesignerItem(designer,item)==
+ (
+   showItems := showItems union {item};
+   expositionItems(designer):= expositionItems(designer) union {item};
+ )
+ pre (designer in set designers) and
+   (designer in set (dom expositionItems)) and
+   (item not in set expositionItems(designer))
+ post item in set expositionItems(designer);
+ 
+ /**
+ * Remocao de um item associado a um designer dos itens do show e dos itens em exposicao
+ * 
+ * @param designer corresponde ao designer de quem o item a ser removido pertence
+ * @param item corresponde ao item a ser removido do evento
+ */
+(*@
+\label{removeDesignerItem:202}
+@*)
+ public removeDesignerItem: Designer * Item ==> ()
+ removeDesignerItem(designer,item)==
+ (
+  showItems := showItems \ {item};
+  expositionItems(designer):= expositionItems(designer) \ {item};
+ )
+ pre (designer in set designers) and
+   (designer in set dom expositionItems) and
+   (item in set expositionItems(designer))
+ post item not in set expositionItems(designer);
+ 
+ --public addItemByRef: Item`Ref ==> ()
+ --addItemByRef(ref) ==
+ --(
+ -- for all designer in set designers do
+ -- (
+ --  for all item in set designer.items do
+ --  (
+ --   if item.reference = ref 
+ --   then addDesignerItem(designer,item);
+ --  )
+ -- )
+ --);
+------------------------------------------------------------
+------------------------------------------------------------- 
+ /**
+ * Adicao de um item aos itens que um(a) modelo utilizara no evento
+ * 
+ * @param model corresponde ao(a) modelo a quem o item vai ser associado
+ * @param item corresponde ao item a ser adicionado
+ */   
+(*@
+\label{setModelItem:233}
+@*)
+ public setModelItem: Model * Item ==> ()
+ setModelItem(model,item)==
+ (
+   modelsItems(model):= modelsItems(model) union {item};
+ )
+ pre (model in set models) and
+   (model in set (dom modelsItems)) and
+   (item not in set modelsItems(model)) and
+   item in set showItems
+ post item in set modelsItems(model);
+ 
+ /**
+ * Adicao de um conjunto de itens(Outfit) aos itens a serem utilizados por um(a) modelo
+ * 
+ * @param model corresponde ao(a) modelo a quem os itens vao ser adicionados
+ * @param items corresponde aos itens a serem adicionados
+ */
+(*@
+\label{setModelOutfit:250}
+@*)
+ public setModelOutfit: Model * set of Item ==> ()
+ setModelOutfit(model,items)==
+ (
+   modelsItems(model):= modelsItems(model) union items;
+ )
+ pre (model in set models) and
+   (model in set (dom modelsItems)) and
+   (not (items  subset modelsItems(model)))
+ post items subset modelsItems(model);
+ 
+ /**
+ * Remocao de um conjunto de itens(Outfi) dos itens que um(a) modelo tinha associado para o evento
+ * 
+ * @param model corresponde ao(a) modelo a quem o item vai ser removido
+ * @param item corresponde ao itens a serem removidos
+ */
+(*@
+\label{removeModelOutfit:266}
+@*)
+ public removeModelOutfit: Model ==> ()
+ removeModelOutfit(model)==
+ (
+  modelsItems:= {model} <-: modelsItems;
+  modelsItems := modelsItems munion {model|-> {}};
+ )
+ pre (model in set models) and
+   (model in set dom modelsItems);
+ 
+ /**
+ * Remocao de um item dos itens que um(a) modelo tinha associado para o evento
+ * 
+ * @param model corresponde ao(a) modelo a quem o item vai ser removido
+ * @param item corresponde ao item a ser removido
+ */ 
+(*@
+\label{removeModelItem:281}
+@*)
+ public removeModelItem: Model * Item ==> ()
+ removeModelItem(model,item)==
+ (
+  modelsItems(model):= modelsItems(model) \ {item};
+ )
+ pre (model in set models) and
+   (model in set dom modelsItems) and
+   (item in set modelsItems(model))
+ post item not in set modelsItems(model);
+end Runway
+\end{vdmpp}
+\bigskip
+\begin{longtable}{|l|r|r|r|}
+\hline
+Function or operation & Line & Coverage & Calls \\
+\hline
+\hline
+\hyperref[Runway:36]{Runway} & 36&100.0\% & 78 \\
+\hline
+\hyperref[addDesigner:147]{addDesigner} & 147&100.0\% & 57 \\
+\hline
+\hyperref[addDesignerItem:185]{addDesignerItem} & 185&100.0\% & 3 \\
+\hline
+\hyperref[addModel:62]{addModel} & 62&100.0\% & 3 \\
+\hline
+\hyperref[addModels:75]{addModels} & 75&100.0\% & 45 \\
+\hline
+\hyperref[getItemsInShow:129]{getItemsInShow} & 129&100.0\% & 6 \\
+\hline
+\hyperref[getItemsOfDesignerInShow:117]{getItemsOfDesignerInShow} & 117&100.0\% & 18 \\
+\hline
+\hyperref[remModel:90]{remModel} & 90&100.0\% & 3 \\
+\hline
+\hyperref[remModels:102]{remModels} & 102&100.0\% & 6 \\
+\hline
+\hyperref[removeDesigner:167]{removeDesigner} & 167&100.0\% & 3 \\
+\hline
+\hyperref[removeDesignerItem:202]{removeDesignerItem} & 202&100.0\% & 3 \\
+\hline
+\hyperref[removeModelItem:281]{removeModelItem} & 281&100.0\% & 3 \\
+\hline
+\hyperref[removeModelOutfit:266]{removeModelOutfit} & 266&100.0\% & 6 \\
+\hline
+\hyperref[setModelItem:233]{setModelItem} & 233&100.0\% & 6 \\
+\hline
+\hyperref[setModelOutfit:250]{setModelOutfit} & 250&100.0\% & 18 \\
+\hline
+\hyperref[setModels:53]{setModels} & 53&100.0\% & 12 \\
+\hline
+\hline
+Runway.vdmpp & & 100.0\% & 270 \\
+\hline
+\end{longtable}
+

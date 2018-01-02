@@ -1,0 +1,70 @@
+\begin{vdmpp}[breaklines=true]
+class Test is subclass of MyTestCase
+instance variables
+
+ d1: Designer := (*@\vdmnotcovered{new}@*) (*@\vdmnotcovered{Designer}@*)((*@\vdmnotcovered{"Miguel Lira"}@*));
+ d2: Designer := new Designer((*@\vdmnotcovered{"Miriam Gonçalves"}@*));
+ d3: Designer := (*@\vdmnotcovered{new}@*) (*@\vdmnotcovered{Designer}@*)((*@\vdmnotcovered{"Paulo Sérgio"}@*));
+ d4: Designer := (*@\vdmnotcovered{new}@*) (*@\vdmnotcovered{Designer}@*)((*@\vdmnotcovered{"Coco Chanel"}@*));
+ d5: Designer := new (*@\vdmnotcovered{Designer}@*)((*@\vdmnotcovered{"Ralph Lauren"}@*));
+ d6: Designer := new Designer((*@\vdmnotcovered{"Karl Lagerfeld"}@*));
+ d7: Designer := (*@\vdmnotcovered{new}@*) (*@\vdmnotcovered{Designer}@*)((*@\vdmnotcovered{"Donatella Versace"}@*));
+ 
+ 
+ u1: User := new User("zequinhaBombeiro",(*@\vdmnotcovered{"José Esteves"}@*));
+ u2: User := new (*@\vdmnotcovered{User}@*)((*@\vdmnotcovered{"digas"}@*),(*@\vdmnotcovered{"Diogo Coelho"}@*));
+ u3: User := (*@\vdmnotcovered{new}@*) (*@\vdmnotcovered{User}@*)((*@\vdmnotcovered{"loirinha33"}@*),(*@\vdmnotcovered{"Anabela Costa"}@*));
+ 
+ m1: Model:= (*@\vdmnotcovered{new}@*) (*@\vdmnotcovered{Model}@*)((*@\vdmnotcovered{"Adriana Lima"}@*), 36, (*@\vdmnotcovered{1.78}@*), (*@\vdmnotcovered{"Brasil"}@*), (*@\vdmnotcovered{<Female>}@*));
+ m2: Model:= new Model("Sara Sampaio", 26, (*@\vdmnotcovered{1.72}@*), (*@\vdmnotcovered{"Portugal"}@*), (*@\vdmnotcovered{<Female>}@*));
+ m3: Model:= (*@\vdmnotcovered{new}@*) (*@\vdmnotcovered{Model}@*)((*@\vdmnotcovered{"Karlie Kloss"}@*), (*@\vdmnotcovered{25}@*), (*@\vdmnotcovered{1.88}@*), (*@\vdmnotcovered{"U.S.A"}@*), (*@\vdmnotcovered{<Female>}@*));
+ m4: Model:= new (*@\vdmnotcovered{Model}@*)((*@\vdmnotcovered{"Gigi Hadid"}@*), (*@\vdmnotcovered{22}@*), (*@\vdmnotcovered{1.79}@*), (*@\vdmnotcovered{"U.S.A"}@*), (*@\vdmnotcovered{<Female>}@*));
+ m5: Model:= new Model("Candice Swanepoel", 29, 1.77, (*@\vdmnotcovered{"Africa do Sul"}@*), (*@\vdmnotcovered{<Female>}@*));
+ m6: Model:= new Model((*@\vdmnotcovered{"Lily Aldridge"}@*), 32, (*@\vdmnotcovered{1.75}@*), (*@\vdmnotcovered{"U.S.A"}@*), (*@\vdmnotcovered{<Female>}@*));
+ m7: Model:= (*@\vdmnotcovered{new}@*) (*@\vdmnotcovered{Model}@*)((*@\vdmnotcovered{"Ashley Graham"}@*), 30, (*@\vdmnotcovered{1.75}@*), (*@\vdmnotcovered{"U.S.A"}@*), (*@\vdmnotcovered{<Female>}@*));
+ m8: Model:= new Model("Miles McMillan", 28, (*@\vdmnotcovered{1.88}@*), (*@\vdmnotcovered{"U.S.A"}@*), (*@\vdmnotcovered{<Male>}@*));
+ 
+ it1: Item := new Item("Camisolinha de lã","1c34ff445",220.50,(*@\vdmnotcovered{<XL>}@*));
+ it2: Item := new Item("Oculos de Sol Gucci",(*@\vdmnotcovered{"123ggg4hk"}@*),(*@\vdmnotcovered{220.50}@*),(*@\vdmnotcovered{<S>}@*));
+ it3: Item := new (*@\vdmnotcovered{Item}@*)((*@\vdmnotcovered{"Calcinha Branca"}@*),(*@\vdmnotcovered{"1c34ff445"}@*),(*@\vdmnotcovered{220.50}@*),(*@\vdmnotcovered{<M>}@*));
+ it4: Item := new Item("Camisola Sarja Preta Versace",(*@\vdmnotcovered{"3213fff23"}@*),(*@\vdmnotcovered{220.50}@*),(*@\vdmnotcovered{<L>}@*));
+ it5: Item := new Item("Camisolinha de lã","1c34ff445",(*@\vdmnotcovered{220.50}@*),(*@\vdmnotcovered{<XS>}@*));
+ it6: Item := new Item((*@\vdmnotcovered{"Camisolinha de lã"}@*),(*@\vdmnotcovered{"1c34ff445"}@*),220.50,(*@\vdmnotcovered{<XS>}@*));
+ it7: Item := new (*@\vdmnotcovered{Item}@*)("Camisolinha de lã","1c34ff445",220.50,(*@\vdmnotcovered{<S>}@*));
+ it8: Item := new Item("Camisolinha de lã",(*@\vdmnotcovered{"1c34ff445"}@*),220.50,(*@\vdmnotcovered{<M>}@*));
+ 
+operations
+(*@
+\label{main:36}
+@*)
+public static main: () ==> ()
+ main() == (
+ IO`println("Inicializar testes...");
+  new TestDesignerClass().testAll();
+  new TestModelClass().testAll();
+  new TestItemClass().testAll();
+  new TestUserClass().testAll();
+  new TestPrimpingSessionClass().testAll();
+  new TestPresentationClass().testAll();
+  new TestEventClass().testAll();
+  new TestPlatformClass().testAll();
+  new TestUtilsClass().testAll();  
+  new TestRunwayClass().testAll();
+  IO`println("Testes terminados com sucesso!");
+ );
+
+end Test
+\end{vdmpp}
+\bigskip
+\begin{longtable}{|l|r|r|r|}
+\hline
+Function or operation & Line & Coverage & Calls \\
+\hline
+\hline
+\hyperref[main:36]{main} & 36&100.0\% & 2 \\
+\hline
+\hline
+test.vdmpp & & 9.8\% & 2 \\
+\hline
+\end{longtable}
+

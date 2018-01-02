@@ -1,0 +1,47 @@
+\begin{vdmpp}[breaklines=true]
+/**
+* Esta classe representa uma Apresentacao
+*/
+class Presentation is subclass of Event
+types
+-- TODO Define types here
+values
+-- TODO Define values here
+instance variables
+ 
+operations
+ /**
+ * Presentation construtor
+ */
+(*@
+\label{Presentation:15}
+@*)
+ public Presentation: Platform`String * Platform`Date * Platform`String *  Platform`String * Platform`Price * nat ==> Presentation 
+  Presentation(n,d, p, t, pr,  maxS) == 
+  (
+   name := n;
+   date := d;
+   place := p;
+   theme := t;
+   price := pr;
+   maxSpectators := maxS;
+   return self;
+  );
+  
+functions
+
+end Presentation
+\end{vdmpp}
+\bigskip
+\begin{longtable}{|l|r|r|r|}
+\hline
+Function or operation & Line & Coverage & Calls \\
+\hline
+\hline
+\hyperref[Presentation:15]{Presentation} & 15&100.0\% & 6 \\
+\hline
+\hline
+Presentation.vdmpp & & 100.0\% & 6 \\
+\hline
+\end{longtable}
+

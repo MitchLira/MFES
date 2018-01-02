@@ -1,0 +1,316 @@
+\begin{vdmpp}[breaklines=true]
+/**
+* Esta classe representa a Plataforma de controlo de users, eventos, itens e designers 
+*/
+class Platform
+types
+  public String = seq of char
+   inv s == s <> "";
+  public Price = real 
+   inv p == p > 0;
+  public Date:: year : nat1
+          month: nat1
+         day  : nat1 
+   inv d == d.month <= 12 and d.day <=30;
+   
+instance variables
+ /**
+ * data atual
+ */
+ public actualDate : Date;
+ /**
+ * users existentes numa plataforma
+ */
+ public users: set of User;
+ inv not exists u1, u2 in set users & u1 <> u2 and u1.username = u2.username;
+ /**
+ * eventos existentes numa plataforma
+ */
+ public events: set of Event;
+ inv not exists e1, e2 in set events & e1 <> e2 and e1.name = e2.name;
+ inv not exists event in set events & Utils`isAfter(actualDate,event.date) = true;
+ /**
+ * itens existentes numa plataforma
+ */
+ public items: set of Item; 
+ inv not exists i1, i2 in set items & i1 <> i2 and i1.reference = i2.reference;
+ /**
+ * designers existentes numa plataforma
+ */
+ public designers: set of Designer
+ 
+ 
+operations
+ /**
+ * Plataform construtor
+ * 
+ * @param actualD corresponde a data atual da criacao de uma plataforma
+ */
+(*@
+\label{Platform:48}
+@*)
+ public Platform:Date ==> Platform 
+  Platform(actualD) == 
+  (
+   actualDate := actualD;
+   users := {};
+   events := {};
+   items := {};
+   designers := {};
+   return self;
+  );
+-----------------------Date-----------------------------
+ /**
+ * Ajuste da data para com os limites de um mes, para ter datas reais
+ */
+(*@
+\label{moveDataForward:62}
+@*)
+ public moveDataForward: () ==> ()
+  moveDataForward() ==
+  (
+   if (actualDate.day + 1) > 30 then
+   (
+    actualDate.day := 1;
+    if (actualDate.month+1) > 12 then
+    (
+     actualDate.month := 1;
+     actualDate.year := actualDate.year + 1;
+    )
+    else
+    (
+     actualDate.month := actualDate.month + 1;
+    );
+   )
+   else
+   (
+    actualDate.day := actualDate.day + 1;
+   );
+  );
+
+ /**
+ * Remocao de todos os eventos cujo dia da realizacao seja o atual
+ */
+(*@
+\label{endDay:87}
+@*)
+ public endDay: () ==> ()
+  endDay()==
+  (
+   moveDataForward();
+   for all event in set events do 
+   (
+    if Utils`isAfter(actualDate,event.date) = true then
+    (
+     removeEvent(event);
+    );
+   );
+  )
+  pre not exists event in set events & Utils`isAfter(actualDate,event.date) = true
+  post not exists event in set events & Utils`isAfter(actualDate,event.date) = true;
+
+
+
+-----------------------Users----------------------------
+ /*
+ * Insercao de um user numa plataforma
+ * 
+ * @param user corresponde ao user a ser inserido nos users de uma plataforma
+ */
+(*@
+\label{addUser:110}
+@*)
+ public addUser: User ==> ()
+  addUser(user)==
+  (
+   users := users union {user};
+  )
+  pre user not in set users
+  post user in set users and
+  (not exists u1, u2 in set users & u1 <> u2 and u1.username = u2.username);
+  
+ /**
+ * Remocao de um user dos users de uma plataforma
+ * 
+ * @param user corresponde ao user a ser removido dos users de uma plataforma
+ */
+(*@
+\label{removeUser:124}
+@*)
+ public removeUser: User ==> ()
+  removeUser(user)==
+  (
+   users := users \ {user};
+  )
+  pre user  in set users
+  post user not in set users;
+
+
+(*@
+\label{getUserByUsername:133}
+@*)
+ public getUserByUsername: Platform`String ==> User
+  getUserByUsername(username) ==
+  (
+   dcl user: User;
+   for all u in set users do (
+    if(u.username = username) then
+     user := u;
+   );
+   return user;
+  )
+  post RESULT in set users;
+-----------------------Events---------------------------
+ /*
+ * Insercao de um evento numa plataforma
+ * 
+ * @param event corresponde ao evento a ser inserido nos eventos de uma plataforma
+ */
+(*@
+\label{addEvent:150}
+@*)
+ public addEvent: Event ==> ()
+  addEvent(event)==
+  (
+   events := events union {event};
+  )
+  pre event not in set events
+  post event in set events;
+ 
+ /**
+ * Remocao de um evento dos eventos de uma plataforma
+ * 
+ * @param event corresponde ao evento a ser removido dos eventos de uma plataforma
+ */ 
+(*@
+\label{removeEvent:163}
+@*)
+ public removeEvent: Event ==> ()
+  removeEvent(event)==
+  (
+   events := events \ {event};
+  )
+  pre event  in set events
+  post event not in set events;
+  
+------------------------Items----------------------------
+ /*
+ * Insercao de um item numa plataforma
+ * 
+ * @param item corresponde ao item a ser inserido nos itens de uma plataforma
+ */
+(*@
+\label{addItem:177}
+@*)
+ public addItem: Item ==> ()
+  addItem(item)==
+  (
+   items := items union {item};
+  )
+  pre item not in set items
+  post item in set items and
+  (not exists i1, i2 in set items & i1 <> i2 and i1.reference = i2.reference);
+  
+ /**
+ * Remocao de um item dos itens de uma plataforma
+ * 
+ * @param item corresponde ao item a ser removido dos itens de uma plataforma
+ */ 
+(*@
+\label{removeItem:191}
+@*)
+ public removeItem: Item ==> ()
+  removeItem(item)==
+  (
+   items := items \ {item};
+  )
+  pre item  in set items
+  post item not in set items;
+  
+(*@
+\label{getItemByRef:199}
+@*)
+ public getItemByRef: Item`Ref ==> Item
+  getItemByRef(ref)== 
+  (
+   dcl item: Item ;
+   for all it in set items do (
+    if(it.reference = ref) then
+     item := it;
+   );
+   return item;
+  )
+  post RESULT in set items;
+----------------------Designers---------------------------
+ /*
+ * Insercao de um designer numa plataforma
+ * 
+ * @param designer corresponde ao designer a ser inserido nos designers de uma plataforma
+ */
+(*@
+\label{addDesigner:216}
+@*)
+ public addDesigner: Designer ==> ()
+  addDesigner(designer)==
+  (
+   designers := designers union {designer};
+  )
+  pre designer not in set designers
+  post designer in set designers;
+  
+ /**
+ * Remocao de um designer dos designers de uma plataforma
+ * 
+ * @param designer corresponde ao designer a ser removido dos designers de uma plataforma
+ */ 
+(*@
+\label{removeDesigner:229}
+@*)
+ public removeDesigner: Designer ==> ()
+  removeDesigner(designer)==
+  (
+   designers := designers \ {designer};
+  )
+  pre designer  in set designers
+  post designer not in set designers;
+ 
+----------------------------------------------------------------------
+end Platform
+\end{vdmpp}
+\bigskip
+\begin{longtable}{|l|r|r|r|}
+\hline
+Function or operation & Line & Coverage & Calls \\
+\hline
+\hline
+\hyperref[Platform:48]{Platform} & 48&100.0\% & 9 \\
+\hline
+\hyperref[addDesigner:216]{addDesigner} & 216&100.0\% & 6 \\
+\hline
+\hyperref[addEvent:150]{addEvent} & 150&100.0\% & 18 \\
+\hline
+\hyperref[addItem:177]{addItem} & 177&100.0\% & 12 \\
+\hline
+\hyperref[addUser:110]{addUser} & 110&100.0\% & 57 \\
+\hline
+\hyperref[endDay:87]{endDay} & 87&100.0\% & 9 \\
+\hline
+\hyperref[getItemByRef:199]{getItemByRef} & 199&100.0\% & 3 \\
+\hline
+\hyperref[getUserByUsername:133]{getUserByUsername} & 133&100.0\% & 3 \\
+\hline
+\hyperref[moveDataForward:62]{moveDataForward} & 62&100.0\% & 3 \\
+\hline
+\hyperref[removeDesigner:229]{removeDesigner} & 229&100.0\% & 3 \\
+\hline
+\hyperref[removeEvent:163]{removeEvent} & 163&100.0\% & 15 \\
+\hline
+\hyperref[removeItem:191]{removeItem} & 191&100.0\% & 12 \\
+\hline
+\hyperref[removeUser:124]{removeUser} & 124&100.0\% & 12 \\
+\hline
+\hline
+Platform.vdmpp & & 100.0\% & 162 \\
+\hline
+\end{longtable}
+

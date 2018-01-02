@@ -1,0 +1,139 @@
+\begin{vdmpp}[breaklines=true]
+/**
+* Esta classe representa um(a) Modelo bem como os shows nos quais esta associada para participar
+*/
+class Model
+types
+ public Age = int
+  inv i ==  i <= 65 and  i >= 18;
+ public Height = real 
+  inv r == r <= 2.10 and r >= 1.60;
+ public Gender = <Female>|<Male>;
+values
+-- TODO Define values here
+instance variables
+ /**
+ * nome de um(a) modelo
+ */ 
+ public name:  Platform`String;
+ /**
+ * idade de um(a) modelo
+ */
+ public age: Age;
+ /**
+ * peso de um(a) modelo
+ */
+ public height: Height;
+ /**
+ * nacionalidade de um(a) modelo
+ */ 
+ public nationality: Platform`String;
+ /**
+ * shows nos quais um(a) modelo vai participar
+ */
+ public shows: set of Event;
+ /**
+ * genero de um(a) modelo
+ */
+ public gender: Gender;
+ 
+ inv card shows >= 0;
+ 
+operations
+ /**
+ * Model construtor
+ * 
+ * @param n corresponde ao nome de um(a) modelo
+ * @param a corresponde a  idade de um(a) modelo
+ * @param h corresponde ao peso de um(a) modelo
+ * @param na corresponde a  nacionalidade de um(a) modelo
+ * @param g corresponde ao genero de um(a) modelo
+ */
+(*@
+\label{Model:51}
+@*)
+ public Model: Platform`String * Age * Height * Platform`String * Gender ==> Model 
+ Model(n, a, h, na, g) == 
+ (
+  name := n;
+  age := a;
+  height := h;
+  nationality := na;
+  shows := {};
+  gender := g;
+  return self;
+ );
+ 
+ /**
+ * Insercao de um(a) modelo em shows, que ficam visiveis nos shows de um(a) modelo
+ * 
+ * @param newShows corresponde aos shows a serem adicionados aos shows de um(a) modelo
+ */
+(*@
+\label{setShows:68}
+@*)
+ public setShows: set of Event ==> ()
+  setShows(newShows) == (
+   shows := newShows;
+  )
+ pre shows = {}
+ post shows = newShows;
+ 
+ /**
+ * Insercao de um(a) modelo num show que ficara visivel nos shows de um(a) modelo
+ * 
+ * @param newShow corresponde ao show a ser adicionado aos shows de um(a) modelo
+ */
+(*@
+\label{addShow:80}
+@*)
+ public addShow: Event ==> ()
+  addShow(newShow) == (
+     shows := shows union {newShow}
+ )
+ pre newShow not in set shows 
+  and forall s in set shows & (newShow.date.day <> s.date.day or
+                 newShow.date.month <> s.date.month or
+                  newShow.date.year <> s.date.year)
+ post newShow in set shows;
+ 
+ /**
+ * Remocaoo de um(a) modelo de um show que deixara de estar visivel nos shows de um(a) modelo
+ * 
+ * @param oldShow corresponde ao show a ser removido dos shows de um(a) modelo
+ */
+(*@
+\label{remShow:95}
+@*)
+ public remShow: Event ==> ()
+  remShow(oldShow) == (
+   shows := shows \ {oldShow}
+  )
+  pre oldShow in set shows
+  and shows <> {}
+  post oldShow not in set shows;
+  
+functions
+-- TODO Define functiones here
+
+end Model
+\end{vdmpp}
+\bigskip
+\begin{longtable}{|l|r|r|r|}
+\hline
+Function or operation & Line & Coverage & Calls \\
+\hline
+\hline
+\hyperref[Model:51]{Model} & 51&100.0\% & 60 \\
+\hline
+\hyperref[addShow:80]{addShow} & 80&100.0\% & 9 \\
+\hline
+\hyperref[remShow:95]{remShow} & 95&100.0\% & 3 \\
+\hline
+\hyperref[setShows:68]{setShows} & 68&100.0\% & 9 \\
+\hline
+\hline
+Model.vdmpp & & 100.0\% & 81 \\
+\hline
+\end{longtable}
+

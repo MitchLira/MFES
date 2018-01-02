@@ -1,0 +1,62 @@
+\begin{vdmpp}[breaklines=true]
+/**
+* Esta classe representa as funcoes uilitarias e comuns a todas as classes
+*/
+class Utils
+types
+-- TODO Define types here
+values
+-- TODO Define values here
+instance variables
+-- TODO Define instance variables here
+operations
+ 
+functions
+ /**
+ * Verifica duas datas de modo a comparar se a primeira e posterior a segunda
+ * 
+ * @param data1 corresponde a primeira data
+ * @param data2 corresponde a segunda data
+ */
+(*@
+\label{isAfter:20}
+@*)
+ public isAfter: Platform`Date * Platform`Date -> bool
+  isAfter(date1, date2) ==
+  (
+   if date1.year > date2.year then
+    true
+   elseif date1.year < date2.year then 
+    false
+   else 
+   (
+    if date1.month > date2.month then
+     (*@\vdmnotcovered{true}@*)
+    elseif date1.month < date2.month then
+     true
+    else 
+    (
+     if date1.day > date2.day then
+      true
+     else 
+      false
+    )
+   )
+  );
+traces
+-- TODO Define Combinatorial Test Traces here
+end Utils
+\end{vdmpp}
+\bigskip
+\begin{longtable}{|l|r|r|r|}
+\hline
+Function or operation & Line & Coverage & Calls \\
+\hline
+\hline
+\hyperref[isAfter:20]{isAfter} & 20&97.0\% & 36 \\
+\hline
+\hline
+Utils.vdmpp & & 97.0\% & 36 \\
+\hline
+\end{longtable}
+

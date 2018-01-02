@@ -1,0 +1,67 @@
+\begin{vdmpp}[breaklines=true]
+class TestUserClass is subclass of MyTestCase
+ instance variables
+  u3: User := new User("pBabo", "Paulo Babo");
+  
+  it1: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<XL>);
+  it2: Item := new Item("Oculos de Sol Gucci","123ggg4hk",220.50,<S>);
+  it3: Item := new Item("Calcinha Branca","1c34ff445",220.50,<M>);
+  
+ operations
+(*@
+\label{testGetUserAttributes:10}
+@*)
+  public testGetUserAttributes: () ==> ()
+   testGetUserAttributes() == (
+     IO`println("\t (1) Construtor de um utilizador");
+    let u4 = new User("mitchLira", "Miguel Luís") in (
+     assertEqual(u4.name, "Miguel Luís");
+     assertEqual(u4.username, "mitchLira");
+     assertEqual(u4.budget, 0.0);
+     u4.setBudget(125.5);
+     assertEqual(u4.budget, 125.5);
+    );
+  ); 
+  
+   
+(*@
+\label{testSetGetBoughtItems:23}
+@*)
+  public testSetGetBoughtItems: () ==> ()
+   testSetGetBoughtItems() == (
+     IO`println("\t (2) Alteração de items comprados de um utilizador");
+    assertEqual({}, u3.getBoughtItems());
+    u3.setBoughtItem(it1);
+    assertEqual({it1}, u3.getBoughtItems());
+    u3.setBoughtItems({it2,it3});
+    assertEqual({it1,it2,it3}, u3.getBoughtItems());
+   );
+  
+(*@
+\label{testAll:33}
+@*)
+  public testAll: () ==> ()
+   testAll() == (
+   IO`println("Testes da classe User:");
+    testGetUserAttributes();
+    testSetGetBoughtItems();
+   );
+end TestUserClass
+\end{vdmpp}
+\bigskip
+\begin{longtable}{|l|r|r|r|}
+\hline
+Function or operation & Line & Coverage & Calls \\
+\hline
+\hline
+\hyperref[testAll:33]{testAll} & 33&100.0\% & 3 \\
+\hline
+\hyperref[testGetUserAttributes:10]{testGetUserAttributes} & 10&100.0\% & 3 \\
+\hline
+\hyperref[testSetGetBoughtItems:23]{testSetGetBoughtItems} & 23&100.0\% & 3 \\
+\hline
+\hline
+TestUserClass.vdmpp & & 100.0\% & 9 \\
+\hline
+\end{longtable}
+
