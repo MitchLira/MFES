@@ -3,7 +3,7 @@ operations
 
 	public testGetItemAttributes: () ==> ()
 	testGetItemAttributes() == (
-    IO`println("\t (1) Construção de um Item");
+    IO`println("\t (1) Construcao de um Item");
     let it1 = new Item("Gucci Sunglasses","123ggg4hk",220.50,<S>) in (
  		assertEqual(it1.name, "Gucci Sunglasses");
  		assertEqual(it1.reference,"123ggg4hk");

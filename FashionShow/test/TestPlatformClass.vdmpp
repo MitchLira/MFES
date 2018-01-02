@@ -9,7 +9,7 @@ instance variables
 	d2: Designer := new Designer("Donna Karen");
 	d3: Designer := new Designer("Alexander McQueen");
 	
-	it1: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<XL>);
+	it1: Item := new Item("Camisolinha de la","1c34ff445",220.50,<XL>);
 	it2: Item := new Item("Oculos de Sol Gucci","123ggg4hk",220.50,<S>);
 	it3: Item := new Item("Calcinha Branca","1c34ff445",220.50,<M>);
 	
@@ -20,15 +20,15 @@ instance variables
 
 	e1: Event := new PrimpingSession("Fique Bela e Amarela",mk_Platform`Date(2017,12,29),"Avenida dos Aliados","Amarelo/Dourado",
 																		20,50);
-	e2:	Event := new Presentation("Como andar na moda?",
+	e2:	Event := new Presentation("Como andar na moda",
 																 mk_Platform`Date(2018,1,5),
 																 "Antigas Fabricas Tabopan",
 																 "Moda",
 																 5,
 																 300);
-	e3:	Event := new Runway("Victoria's Secret Runway",
+	e3:	Event := new Runway("Victorias Secret Runway",
 													 mk_Platform`Date(2018,2,22),
-													 "Covelo de Ansiães",
+													 "Covelo de Ansiaes",
 													 "Langerie",
 													 300,
 													 50
@@ -43,7 +43,7 @@ instance variables
 	
 	e5:	Event := new Runway("Gucci for poor",
 													 mk_Platform`Date(2019,11,30),
-													 "Guimarães",
+													 "Guimaraes",
 													 "Pobreza",
 													 300,
 													 50
@@ -55,7 +55,7 @@ operations
 	public testAddRemoveDesigner: () ==> ()
 	testAddRemoveDesigner()==
 	(
-    IO`println("\t (1) Adição e remoção de um designer da plataforma");
+    IO`println("\t (1) Adicao e remoção de um designer da plataforma");
 		p1.addDesigner(d1);
 		p1.addDesigner(d2);
 		assertEqual({d1,d2},p1.designers);
@@ -66,7 +66,7 @@ operations
 	public testAddRemoveItem: () ==> ()
 	testAddRemoveItem()==
 	(
-	 IO`println("\t (2) Adição e remoção de um item da plataforma");
+	 IO`println("\t (2) Adicao e remocao de um item da plataforma");
 		p1.addItem(it1);
 		p1.addItem(it2);
 		assertEqual({it1,it2},p1.items);
@@ -78,7 +78,7 @@ operations
 	public testAddRemoveUser: () ==> ()
 	testAddRemoveUser()==
 	(
-	 IO`println("\t (3) Adição e remoção de um utilizador da plataforma");
+	 IO`println("\t (3) Adicao e remocao de um utilizador da plataforma");
 		p1.addUser(u1);
 		p1.addUser(u2);
 		assertEqual({u1,u2},p1.users);
@@ -90,7 +90,7 @@ operations
 	public testAddRemoveEvent: () ==> ()
 	testAddRemoveEvent()==
 	(
-	 IO`println("\t (4) Adição e remoção de um evento da plataforma");
+	 IO`println("\t (4) Adicao e remocao de um evento da plataforma");
 		p1.addEvent(e1);
 		p1.addEvent(e2);
 		assertEqual({e1,e2},p1.events);
@@ -102,7 +102,7 @@ operations
 	
 	public testEndDay: () ==> ()
 	testEndDay()==
-	( IO`println("\t (5) Finalização de um dia de eventos");
+	( IO`println("\t (5) Finalizacao de um dia de eventos");
 		p1.addEvent(e1);
 		p1.addEvent(e2);
 		p1.endDay();
@@ -126,7 +126,7 @@ operations
 	public testgetItemByRef: () ==> ()
 	testgetItemByRef()==
 	(
-	 IO`println("\t (6) Selecionar um item pela referência");
+	 IO`println("\t (6) Selecionar um item pela referencia");
 		p1.addItem(it1);
 		p1.addItem(it2);
 		assertEqual(p1.getItemByRef("123ggg4hk"), it2);

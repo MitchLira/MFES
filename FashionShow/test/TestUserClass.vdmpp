@@ -2,7 +2,7 @@ class TestUserClass is subclass of MyTestCase
 	instance variables
 		u3: User := new User("pBabo", "Paulo Babo");
 		
-		it1: Item := new Item("Camisolinha de lã","1c34ff445",220.50,<XL>);
+		it1: Item := new Item("Camisolinha de la","1c34ff445",220.50,<XL>);
 		it2: Item := new Item("Oculos de Sol Gucci","123ggg4hk",220.50,<S>);
 		it3: Item := new Item("Calcinha Branca","1c34ff445",220.50,<M>);
 		
@@ -10,8 +10,8 @@ class TestUserClass is subclass of MyTestCase
 		public testGetUserAttributes: () ==> ()
 			testGetUserAttributes() == (
 				 IO`println("\t (1) Construtor de um utilizador");
-				let u4 = new User("mitchLira", "Miguel Luís") in (
-					assertEqual(u4.name, "Miguel Luís");
+				let u4 = new User("mitchLira", "Miguel Luis") in (
+					assertEqual(u4.name, "Miguel Luis");
 					assertEqual(u4.username, "mitchLira");
 					assertEqual(u4.budget, 0.0);
 					u4.setBudget(125.5);
@@ -22,7 +22,7 @@ class TestUserClass is subclass of MyTestCase
 			
 		public testSetGetBoughtItems: () ==> ()
 			testSetGetBoughtItems() == (
- 				IO`println("\t (2) Alteração de items comprados de um utilizador");
+ 				IO`println("\t (2) Alteracao de items comprados de um utilizador");
 				assertEqual({}, u3.getBoughtItems());
 				u3.setBoughtItem(it1);
 				assertEqual({it1}, u3.getBoughtItems());
