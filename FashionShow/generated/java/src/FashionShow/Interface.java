@@ -704,7 +704,7 @@ public class Interface {
 			}
 			else
 			{
-				user.setBoughtItem(foundItems.get(index-1));
+				user.buyItem(foundItems.get(index-1));
 				System.out.println("Item "+foundItems.get(index-1).name +"bought!");
 			}
 			

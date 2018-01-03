@@ -44,6 +44,12 @@ public class User {
     boughtItems = SetUtil.union(Utils.copy(boughtItems), Utils.copy(items));
   }
 
+  public void buyItem(final Item item) {
+
+    setBoughtItem(item);
+    budget = budget.doubleValue() - item.price.doubleValue();
+  }
+
   public User() {}
 
   public String toString() {
