@@ -910,7 +910,7 @@ public class Interface {
 				case 0:
 					return;
 				case 1:
-					viewAllItems();
+					viewAllItems(1);
 					break;
 				case 2:	
 					createItem();
@@ -922,7 +922,7 @@ public class Interface {
 		}
 	}
 	
-	public static void viewAllItems()
+	public static void viewAllItems(int n)
 	{
 		System.out.println("#================View All Items================#");
 		if(platform.items.size() != 0)
@@ -932,7 +932,7 @@ public class Interface {
 			while(iterator.hasNext())
 			{
 				Item item = (Item)iterator.next();
-				System.out.println("->" + (counter) + ". Name: " + item.name + " | Price: " + item.price);
+				System.out.println("->" + (counter) + ". Name: " + item.name + " | Price: " + item.price + " | Size: " + item.size + " | Reference: " + item.reference);
 				counter++;
 			}
 		}
@@ -941,7 +941,14 @@ public class Interface {
 			System.out.println("There are no items created.");
 		}
 		System.out.println("#==============================================#");
-		System.out.println("Press Enter to go back:");
+		if(n == 1)
+		{
+			System.out.println("Press Enter to go back:");	
+		}
+		else
+		{
+			System.out.println("Press Enter to choose the item to delete.");
+		}
 		scanner.nextLine();
 	}
 	
@@ -953,7 +960,7 @@ public class Interface {
 		Object size;
 		while(true)
 		{
-			System.out.println("What's item name?(0 to cancel;)");
+			System.out.println("What's item names?(0 to cancel;)");
 			name = scanner.nextLine();
 			if(name.equals("0"))
 			{
@@ -1021,6 +1028,7 @@ public class Interface {
 	
 	public static void deleteItem()
 	{
+		viewAllItems(2);
 		String reference;
 		Item item = null;
 		while(true)
@@ -1054,7 +1062,8 @@ public class Interface {
 			System.out.println("#==================Users Menu==================#");
 			System.out.println("Choose an option: \n");
 			System.out.println("1- See all Designers;");
-			System.out.println("3- Register Designer;");
+			System.out.println("2- Register Designer;");
+			System.out.println("3- Add Item to Designer;");
 			System.out.println("4- Ban Designer;");
 			System.out.println("0- Return;");
 			System.out.println("#==============================================#");
@@ -1064,23 +1073,23 @@ public class Interface {
 				case 0:
 					return;
 				case 1:
-					viewAllUsers();
+					viewAllDesigners(1);
 					break;
-				case 2:	
-					chooseUser();
+				case 2:
+					registerDesigner();
 					break;
 				case 3:
-					registerUser();
+					addItemToDesigner();
 					break;
 				case 4:
-					banUser();
+					banDesigner();
 					break;
 				
 			}
 		}
 	}
 	
-	public static void viewAllDesigners()
+	public static void viewAllDesigners(int n)
 	{
 		System.out.println("#================View All Designers================#");
 		if(platform.designers.size()!=0)
@@ -1089,17 +1098,151 @@ public class Interface {
 			int counter = 1;
 			while(iterator.hasNext())
 			{
-				User user = (User)iterator.next();
-				System.out.println("->" + (counter) +". Username: "+ user.username + " | Name: " + user.name);
+				Designer designer = (Designer)iterator.next();
+				System.out.println("->" + (counter) +".  Name: " + designer.name);
 				counter++;
 			}
 		}
 		else
 		{
-			System.out.println("There are no users registed.");
+			System.out.println("There are no designers registed.");
 		}
 		System.out.println("#==============================================#");
-		System.out.println("Press Enter to go back:");
+		if(n == 1) 
+		{
+			System.out.println("Press Enter to go back:");
+		}
+		else
+		{
+			System.out.println("Press Enter to choose the designer to ban:");
+		}
 		scanner.nextLine();
+	}
+	
+	public static void registerDesigner()
+	{
+		String name;
+		while(true)
+		{
+			System.out.println("What's designer names?(0 to cancel;)");
+			name=scanner.nextLine();
+			if(name.equals("0"))
+			{
+				return;
+			}
+			if(verifyDesigner(name))
+			{
+				break;
+			}
+			else
+			{
+				System.out.println("This name already exists; Try another one.");
+			}
+		}
+		Designer designer = new Designer(name);
+		platform.addDesigner(designer);
+	}
+	
+	public static boolean verifyDesigner(String name)
+	{
+		Iterator iterator = platform.designers.iterator();
+		while(iterator.hasNext())
+		{
+			Designer designer = (Designer)iterator.next();
+			if(designer.name.equalsIgnoreCase(name))
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	private static void addItemToDesigner() 
+	{
+//		viewAllDesigners();
+//		
+//		System.out.println("#==================Add Item==================#");
+//		if(platform.designers.size()==0)
+//		{
+//			System.out.println("This Platform has no Designers yet. Press Enter to return:");
+//			System.out.println("#============================================#");
+//			scanner.nextLine();
+//		}
+//		else
+//		{	
+//			int counter = 1;
+//			Iterator it = platform.designers.iterator();
+//			ArrayList<Map<Designer,Item>> allItems = new ArrayList<Map<Designer,Item>>();
+//			while(it.hasNext())
+//			{
+//				Designer designer = (Designer) it.next();
+//				if(designer.items.size()>0)
+//				{
+//					System.out.println("Designer: "+designer.name);
+//					Iterator it2 = designer.items.iterator();
+//					while(it2.hasNext())
+//					{
+//						Item item = (Item)it2.next();
+//						System.out.println("        -> "+counter+"- Item: "+item.name+ " | Ref: " + item.reference);
+//						counter++;
+//						Map<Designer,Item> map = new HashMap<Designer,Item>();
+//						map.put(designer, item);
+//						allItems.add(map);
+//					}
+//				}
+//			}
+//			System.out.println("Choose a item to add to the event. (Index, 0 to cancel)");
+//			int index = intReader(0,allItems.size());
+//			if(index == 0)
+//				return;
+//			System.out.println("Item added successfully!");
+//		}
+		
+	}
+	
+	public static void banDesigner()
+	{
+		viewAllDesigners(2);
+		String name;
+		Designer des = null;
+		while(true)
+		{
+			System.out.println("What's the Designer (name) you want to ban?(0 to cancel;)");
+			name = scanner.nextLine();
+			if(name.equals("0"))
+			{
+				return;
+			}
+			if(!verifyDesigner(name))
+			{
+				Designer d = getDesigner(name);
+				if(d != null)
+				{
+					des = d;
+				}
+				break;
+			}
+			else
+			{
+				System.out.println("This designer doesn't exist.");
+			}
+		}
+		platform.removeDesigner(des);
+		System.out.println("Designer: " + des.name + " deleted from platform.");
+	}
+	
+	public static Designer getDesigner(String name)
+	{
+		Iterator iterator = platform.designers.iterator();
+		Designer designer = null;
+		while(iterator.hasNext())
+		{
+			designer = (Designer)iterator.next();
+			if(designer.name.equalsIgnoreCase(name))
+			{
+				break;
+			}
+		}
+		return designer;
 	}
 }
