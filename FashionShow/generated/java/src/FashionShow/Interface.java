@@ -715,7 +715,7 @@ public class Interface {
 	private static void depositMoney(User user) {
 		System.out.println("How much do you wanna deposit? (Max: 1000 �)");
 		int value = intReader(0,1000);
-		user.setBudget((Double)user.budget+value);
+		user.depositMoney(value);
 		System.out.println("Money deposited in user account");
 		
 	}

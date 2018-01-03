@@ -53,6 +53,18 @@ operations
 		setBudget(bd) == budget := bd;
 	
 	/**
+	*	Deposito no saldo de um user
+	*	
+	*	@param monet corresponde ao dinheiro a depositar
+	*/
+	public depositMoney: Budget ==> ()
+		depositMoney(money) ==
+		(
+			setBudget(budget + money);
+		)
+		pre money > 0.0
+		post budget > 0.0;
+	/**
 	*	Obtencao do conjunto de itens comprados por um user
 	*	
 	*	@return set of Item
@@ -79,8 +91,10 @@ operations
 	post items subset boughtItems ;
 	
 	/**
+	* Compra um item ao utilizador
+	*
+	* @param item corresponde ao item a comprar
 	*/
-	
 	public buyItem: (Item) ==> ()
 		buyItem(item) == 
 		(
