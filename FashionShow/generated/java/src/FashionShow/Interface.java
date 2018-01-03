@@ -25,7 +25,10 @@ public class Interface {
 	public static void main(String[] args) throws ClassNotFoundException, IOException {
 		platform = DataManager.loadPlatformFromFile();
 		scanner = new Scanner(System.in);
-		mainMenu();
+		while(true)
+		{
+			mainMenu();
+		}
 	}
 	
 	public static void mainMenu()
@@ -46,7 +49,7 @@ public class Interface {
 			switch (option)
 			{
 				case 0:
-					return;
+					System.exit(0);;
 				case 1:
 					UsersMainMenu();
 					break;
@@ -60,8 +63,8 @@ public class Interface {
 					DesignersMainMenu();
 					break;
 				case 5:
-					//TODO
-					break;
+					platform.endDay();
+					return;
 				
 			}
 		}
@@ -900,8 +903,7 @@ public class Interface {
 			System.out.println("#==================Items Menu==================#");
 			System.out.println("Choose an option: \n");
 			System.out.println("1- See all Items;");
-			System.out.println("2- Create Item;");
-			System.out.println("3- Delete Item");
+			System.out.println("2- Delete Item;");
 			System.out.println("0- Return;");
 			System.out.println("#==============================================#");
 			int option = intReader(0,4);
@@ -913,11 +915,8 @@ public class Interface {
 					viewAllItems(1);
 					break;
 				case 2:	
-					createItem();
-					break;		
-				case 3:
 					deleteItem();
-					break;
+					break;		
 			}
 		}
 	}
@@ -952,7 +951,7 @@ public class Interface {
 		scanner.nextLine();
 	}
 	
-	public static void createItem()
+	public static void createItem(Designer designer)
 	{
 		String name;
 		String reference;
@@ -1010,6 +1009,7 @@ public class Interface {
 		}
 		Item item = new Item(name, reference, price, size);
 		platform.addItem(item);
+		designer.addItem(item);
 	}
 	
 	public static boolean verifyItemReference(String reference)
@@ -1051,6 +1051,15 @@ public class Interface {
 		}
 		platform.removeItem(item);
 		System.out.println("Item: " + item.reference + " deleted from platform.");
+		Iterator it = platform.designers.iterator();
+		while(it.hasNext())
+		{
+			Designer designer = (Designer)it.next();
+			if(designer.items.contains(item))
+			{
+				designer.remItem(item);
+			}
+		}
 	}
 
 //-----------------------------------------------Designers--------------------------------------------------
@@ -1059,7 +1068,7 @@ public class Interface {
 	{
 		while(true)
 		{
-			System.out.println("#==================Users Menu==================#");
+			System.out.println("#==================Designers Menu==================#");
 			System.out.println("Choose an option: \n");
 			System.out.println("1- See all Designers;");
 			System.out.println("2- Register Designer;");
@@ -1079,7 +1088,17 @@ public class Interface {
 					registerDesigner();
 					break;
 				case 3:
-					addItemToDesigner();
+					ArrayList<Designer> foundDesigners = searchPlatformDesigner();
+					if(foundDesigners.size()>0)
+					{
+						System.out.println("Choose a desginer to add an Item: (Index, 0 to Cancel;)");
+						int index = intReader(0,foundDesigners.size());
+						if(index==0)
+							break;
+						Designer chosenDesigner = foundDesigners.get(index-1);
+						createItem(chosenDesigner);
+					}
+					
 					break;
 				case 4:
 					banDesigner();
@@ -1155,49 +1174,6 @@ public class Interface {
 			}
 		}
 		return true;
-	}
-	
-	private static void addItemToDesigner() 
-	{
-//		viewAllDesigners();
-//		
-//		System.out.println("#==================Add Item==================#");
-//		if(platform.designers.size()==0)
-//		{
-//			System.out.println("This Platform has no Designers yet. Press Enter to return:");
-//			System.out.println("#============================================#");
-//			scanner.nextLine();
-//		}
-//		else
-//		{	
-//			int counter = 1;
-//			Iterator it = platform.designers.iterator();
-//			ArrayList<Map<Designer,Item>> allItems = new ArrayList<Map<Designer,Item>>();
-//			while(it.hasNext())
-//			{
-//				Designer designer = (Designer) it.next();
-//				if(designer.items.size()>0)
-//				{
-//					System.out.println("Designer: "+designer.name);
-//					Iterator it2 = designer.items.iterator();
-//					while(it2.hasNext())
-//					{
-//						Item item = (Item)it2.next();
-//						System.out.println("        -> "+counter+"- Item: "+item.name+ " | Ref: " + item.reference);
-//						counter++;
-//						Map<Designer,Item> map = new HashMap<Designer,Item>();
-//						map.put(designer, item);
-//						allItems.add(map);
-//					}
-//				}
-//			}
-//			System.out.println("Choose a item to add to the event. (Index, 0 to cancel)");
-//			int index = intReader(0,allItems.size());
-//			if(index == 0)
-//				return;
-//			System.out.println("Item added successfully!");
-//		}
-		
 	}
 	
 	public static void banDesigner()
