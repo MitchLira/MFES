@@ -50,8 +50,7 @@ operations
 	*	@param bd corresponde ao saldo a inserir
 	*/
 	public setBudget: (Budget) ==> ()
-		setBudget(bd) == budget := bd + budget
-	post RESULT >= 0;
+		setBudget(bd) == budget := bd;
 	/**
 	*	Obtencao do conjunto de itens comprados por um user
 	*	
