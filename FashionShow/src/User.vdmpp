@@ -51,7 +51,6 @@ operations
 	*/
 	public setBudget: (Budget) ==> ()
 		setBudget(bd) == budget := bd;
-	
 	/**
 	*	Deposito no saldo de um user
 	*	
