@@ -58,14 +58,28 @@ operations
 @*)
  public setBudget: (Budget) ==> ()
   setBudget(bd) == budget := bd;
- 
+ /**
+ * Deposito no saldo de um user
+ * 
+ * @param monet corresponde ao dinheiro a depositar
+ */
+(*@
+\label{depositMoney:59}
+@*)
+ public depositMoney: Budget ==> ()
+  depositMoney(money) ==
+  (
+   setBudget(budget + money);
+  )
+  pre money > 0.0
+  post budget > 0.0;
  /**
  * Obtencao do conjunto de itens comprados por um user
  * 
  * @return set of Item
  */
 (*@
-\label{getBoughtItems:60}
+\label{getBoughtItems:71}
 @*)
  public getBoughtItems: () ==> set of Item
   getBoughtItems() == return boughtItems;
@@ -76,7 +90,7 @@ operations
  * @param item corresponde ao item a inserir no conjunto de itens de um user
  */
 (*@
-\label{setBoughtItem:68}
+\label{setBoughtItem:79}
 @*)
  public setBoughtItem: (Item) ==> ()
   setBoughtItem(item) == boughtItems := boughtItems union {item}
@@ -88,11 +102,28 @@ operations
  * @param items corresponde aos itens a inserir no conjunto de itens de um user
  */
 (*@
-\label{setBoughtItems:77}
+\label{setBoughtItems:88}
 @*)
  public setBoughtItems: (set of Item) ==> ()
   setBoughtItems(items) == boughtItems := boughtItems union items
  post items subset boughtItems ;
+ 
+ /**
+ * Compra um item ao utilizador
+ *
+ * @param item corresponde ao item a comprar
+ */
+(*@
+\label{buyItem:97}
+@*)
+ public buyItem: (Item) ==> ()
+  buyItem(item) == 
+  (
+   setBoughtItem(item);
+   budget := budget - item.price;
+  )
+ pre budget >= item.price
+ post budget >= 0;
  
 functions
  
@@ -106,18 +137,22 @@ end User
 Function or operation & Line & Coverage & Calls \\
 \hline
 \hline
-\hyperref[User:37]{User} & 37&100.0\% & 21 \\
+\hyperref[User:37]{User} & 37&100.0\% & 17 \\
 \hline
-\hyperref[getBoughtItems:60]{getBoughtItems} & 60&100.0\% & 9 \\
+\hyperref[buyItem:97]{buyItem} & 97&100.0\% & 1 \\
 \hline
-\hyperref[setBoughtItem:68]{setBoughtItem} & 68&100.0\% & 3 \\
+\hyperref[depositMoney:59]{depositMoney} & 59&100.0\% & 4 \\
 \hline
-\hyperref[setBoughtItems:77]{setBoughtItems} & 77&100.0\% & 3 \\
+\hyperref[getBoughtItems:71]{getBoughtItems} & 71&100.0\% & 12 \\
 \hline
-\hyperref[setBudget:52]{setBudget} & 52&100.0\% & 21 \\
+\hyperref[setBoughtItem:79]{setBoughtItem} & 79&100.0\% & 4 \\
+\hline
+\hyperref[setBoughtItems:88]{setBoughtItems} & 88&100.0\% & 3 \\
+\hline
+\hyperref[setBudget:52]{setBudget} & 52&100.0\% & 19 \\
 \hline
 \hline
-User.vdmpp & & 100.0\% & 57 \\
+User.vdmpp & & 100.0\% & 60 \\
 \hline
 \end{longtable}
 

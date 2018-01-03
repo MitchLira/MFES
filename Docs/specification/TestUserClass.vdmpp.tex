@@ -20,12 +20,14 @@ class TestUserClass is subclass of MyTestCase
      assertEqual(u4.budget, 0.0);
      u4.setBudget(125.5);
      assertEqual(u4.budget, 125.5);
+     u4.depositMoney(20);
+     assertEqual(u4.budget, 145.5);
     );
   ); 
   
    
 (*@
-\label{testSetGetBoughtItems:23}
+\label{testSetGetBoughtItems:25}
 @*)
   public testSetGetBoughtItems: () ==> ()
    testSetGetBoughtItems() == (
@@ -36,15 +38,34 @@ class TestUserClass is subclass of MyTestCase
     u3.setBoughtItems({it2,it3});
     assertEqual({it1,it2,it3}, u3.getBoughtItems());
    );
-  
+   
 (*@
-\label{testAll:33}
+\label{testBuyItem:35}
 @*)
+(*@
+\label{testAll:35}
+@*)
+   public testBuyItem: () ==> ()
+   testBuyItem() == (
+   IO`println("\t (3) Comprar um item");
+   let u4 = new User("mitchLira", "Miguel Luis") in (
+    assertEqual({}, u4.getBoughtItems());
+    u4.depositMoney(500);
+    u4.buyItem(it1);
+    assertEqual({it1}, u4.getBoughtItems());
+    assertEqual(u4.budget, 279.5);
+    );
+     
+    
+   );
+  
+  
   public testAll: () ==> ()
    testAll() == (
    IO`println("Testes da classe User:");
     testGetUserAttributes();
     testSetGetBoughtItems();
+    testBuyItem();
    );
 end TestUserClass
 \end{vdmpp}
