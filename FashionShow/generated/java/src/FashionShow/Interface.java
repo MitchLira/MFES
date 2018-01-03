@@ -9,7 +9,13 @@ import java.util.Scanner;
 
 import FashionShow.Platform.Date;
 import FashionShow.quotes.FemaleQuote;
+import FashionShow.quotes.LQuote;
+import FashionShow.quotes.MQuote;
 import FashionShow.quotes.MaleQuote;
+import FashionShow.quotes.SQuote;
+import FashionShow.quotes.XLQuote;
+import FashionShow.quotes.XSQuote;
+import FashionShow.quotes.XXLQuote;
 
 public class Interface {
 	
@@ -48,10 +54,10 @@ public class Interface {
 					EventsMainMenu();
 					break;
 				case 3:
-					//TODO
+					ItemsMainMenu();
 					break;
 				case 4:
-					//TODO
+					DesignersMainMenu();
 					break;
 				case 5:
 					//TODO
@@ -294,7 +300,7 @@ public class Interface {
 		System.out.println("Name: "+ event.name);
 		System.out.println("Theme: "+ event.theme);
 		System.out.println("Place: "+ event.place);
-		System.out.println("Price: "+ event.price + " €");
+		System.out.println("Price: "+ event.price + " ï¿½");
 		System.out.println("Audience: "+ event.audience.size()+ "/" +event.maxSpectators);
 		System.out.println("Designers:");
 		Iterator it = event.designers.iterator();
@@ -334,7 +340,7 @@ public class Interface {
 				while(it.hasNext())
 				{
 					Item item = (Item) it.next();
-					System.out.println("        ->Item: "+item.name+ " | Price: "+ item.price + "€");
+					System.out.println("        ->Item: "+item.name+ " | Price: "+ item.price + "ï¿½");
 				}
 			}
 		}
@@ -371,7 +377,7 @@ public class Interface {
 			{
 				Event event = foundEvents.get(i);
 				System.out.println("-> "+(i+1)+". Nome: "+ event.name+" | Theme: "+ event.theme +
-						" | Place: "+ event.place + "| Price: " + event.price +" €;");
+						" | Place: "+ event.place + "| Price: " + event.price +" ï¿½;");
 			}
 			System.out.println("#========================================#");
 		}
@@ -465,7 +471,7 @@ public class Interface {
 			{
 				Event event = (Event)iterator.next();
 				System.out.println("->" + (counter) +". Type: "+ event.getClass().getCanonicalName() + " | Name: "+ event.name +
-									" | Theme: " + event.theme + " | Place: "+ event.place + " | Price: " + event.price + "€" + 
+									" | Theme: " + event.theme + " | Place: "+ event.place + " | Price: " + event.price + "ï¿½" + 
 									" | available spots: " + ((int)event.maxSpectators-event.audience.size()));
 				counter++;
 			}
@@ -482,7 +488,6 @@ public class Interface {
 
 //-----------------------------------------------Users--------------------------------------------------	
 	
-
 	public static void UsersMainMenu()
 	{
 		while(true)
@@ -571,7 +576,7 @@ public class Interface {
 			{
 				Event event = userEvents.get(i);
 				System.out.println("-> "+(i+1)+". Nome: "+ event.name+" | Theme: "+ event.theme +
-						" | Place: "+ event.place + "| Price: " + event.price +" €;");
+						" | Place: "+ event.place + "| Price: " + event.price +" ï¿½;");
 			}
 		}
 		System.out.println("#========================================#");
@@ -596,7 +601,7 @@ public class Interface {
 			{
 				Event event = userEvents.get(i);
 				System.out.println("-> "+(i+1)+". Nome: "+ event.name+" | Theme: "+ event.theme +
-						" | Place: "+ event.place + "| Price: " + event.price +" €;");
+						" | Place: "+ event.place + "| Price: " + event.price +" ï¿½;");
 			}
 		}
 		System.out.println("#========================================#");
@@ -636,7 +641,7 @@ public class Interface {
 			{
 				Event event = foundEvents.get(i);
 				System.out.println("-> "+(i+1)+". Nome: "+ event.name+" | Theme: "+ event.theme +
-						" | Place: "+ event.place + "| Price: " + event.price +" €;");
+						" | Place: "+ event.place + "| Price: " + event.price +" ï¿½;");
 			}
 			System.out.println("#========================================#");
 			System.out.println("To wich Event do you want to buy a ticket? (Index) 0 to go back :");
@@ -685,7 +690,7 @@ public class Interface {
 			{
 				Item item = foundItems.get(i);
 				System.out.println("-> "+(i+1)+". Nome: "+ item.name+" | Ref: "+ item.reference +
-									" | Size: "+ item.size + "| Price: " + item.price +" €;");
+									" | Size: "+ item.size + "| Price: " + item.price +" ï¿½;");
 			}
 			System.out.println("#========================================#");
 			System.out.println("Which Item do you want to buy (Index)?  0 to go back :");
@@ -705,7 +710,7 @@ public class Interface {
 	}
 
 	private static void depositMoney(User user) {
-		System.out.println("How much do you wanna deposit? (Max: 1000 €)");
+		System.out.println("How much do you wanna deposit? (Max: 1000 ï¿½)");
 		int value = intReader(0,1000);
 		user.setBudget((Double)user.budget+value);
 		System.out.println("Money deposited in user account");
@@ -716,7 +721,7 @@ public class Interface {
 		System.out.println("#==================Info==================#");
 		System.out.println("Username: "+user.username);
 		System.out.println("Name: "+user.name);
-		System.out.println("Budget: "+ user.budget + " €");
+		System.out.println("Budget: "+ user.budget + " ï¿½");
 		System.out.println("Bought Items:");
 		Iterator it = user.boughtItems.iterator();
 		if(user.boughtItems.size()==0)
@@ -727,7 +732,7 @@ public class Interface {
 			while(it.hasNext())
 			{
 				Item item = (Item) it.next();
-				System.out.println("        ->Item: "+item.name+" | Price: "+ item.price +" € | Ref: "+ item.reference);
+				System.out.println("        ->Item: "+item.name+" | Price: "+ item.price +" ï¿½ | Ref: "+ item.reference);
 			}
 		}
 		System.out.println("#========================================#");
@@ -804,11 +809,11 @@ public class Interface {
 			}
 			else
 			{
-				System.out.println("Este username não existe.");
+				System.out.println("This user doesn't exist..");
 			}
 		}
 		platform.removeUser(user);
-		System.out.println("User: "+user.username+" eliminado da plataforma");
+		System.out.println("User: "+user.username+" deleted from platform.");
 	}
 	
 	public static void registerUser()
@@ -841,8 +846,7 @@ public class Interface {
 		User user = new User(username,name);
 		platform.addUser(user);
 	}
-	
-	
+		
 	public static int intReader(int min, int max)  
 	{  
 		String option;
@@ -887,4 +891,215 @@ public class Interface {
 		return true;
 	}
 	
+//-----------------------------------------------Items--------------------------------------------------	
+	
+	public static void ItemsMainMenu()
+	{
+		while(true)
+		{
+			System.out.println("#==================Items Menu==================#");
+			System.out.println("Choose an option: \n");
+			System.out.println("1- See all Items;");
+			System.out.println("2- Create Item;");
+			System.out.println("3- Delete Item");
+			System.out.println("0- Return;");
+			System.out.println("#==============================================#");
+			int option = intReader(0,4);
+			switch (option)
+			{
+				case 0:
+					return;
+				case 1:
+					viewAllItems();
+					break;
+				case 2:	
+					createItem();
+					break;		
+				case 3:
+					deleteItem();
+					break;
+			}
+		}
+	}
+	
+	public static void viewAllItems()
+	{
+		System.out.println("#================View All Items================#");
+		if(platform.items.size() != 0)
+		{
+			Iterator iterator = platform.items.iterator();
+			int counter = 1;
+			while(iterator.hasNext())
+			{
+				Item item = (Item)iterator.next();
+				System.out.println("->" + (counter) + ". Name: " + item.name + " | Price: " + item.price);
+				counter++;
+			}
+		}
+		else
+		{
+			System.out.println("There are no items created.");
+		}
+		System.out.println("#==============================================#");
+		System.out.println("Press Enter to go back:");
+		scanner.nextLine();
+	}
+	
+	public static void createItem()
+	{
+		String name;
+		String reference;
+		Number price;
+		Object size;
+		while(true)
+		{
+			System.out.println("What's item name?(0 to cancel;)");
+			name = scanner.nextLine();
+			if(name.equals("0"))
+			{
+				return;
+			}
+			System.out.println("What's item reference?(0 to cancel;)");
+			reference = scanner.nextLine();
+			if(reference.equals("0"))
+			{
+				return;
+			}
+			System.out.println("What's item price?");
+			price = Float.parseFloat(scanner.nextLine());
+			System.out.println("What's item size?");
+			System.out.println(" --> 1- XS");
+			System.out.println(" --> 2- S");
+			System.out.println(" --> 3- M");
+			System.out.println(" --> 4- L");
+			System.out.println(" --> 5- XL");
+			System.out.println(" --> 6- XXL");
+			int sizeChoice = intReader(1,6);			
+			if(sizeChoice == 1)
+			{
+				size = new XSQuote();
+			}
+			else if(sizeChoice == 2)
+			{
+				size = new SQuote();
+			}
+			else if(sizeChoice == 3)
+			{
+				size = new MQuote();
+			}
+			else if(sizeChoice == 4)
+			{
+				size = new LQuote();
+			}
+			else if(sizeChoice == 5)
+			{
+				size = new XLQuote();
+			}
+			else
+			{
+				size = new XXLQuote();
+			}
+			break;
+		}
+		Item item = new Item(name, reference, price, size);
+		platform.addItem(item);
+	}
+	
+	public static boolean verifyItemReference(String reference)
+	{
+		Iterator iterator = platform.items.iterator();
+		while(iterator.hasNext())
+		{
+			Item user = (Item)iterator.next();
+			if(user.reference.equalsIgnoreCase(reference))
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	public static void deleteItem()
+	{
+		String reference;
+		Item item = null;
+		while(true)
+		{
+			System.out.println("What's the item (reference) you want to delete?(0 to cancel;)");
+			reference = scanner.nextLine();
+			if(reference.equals("0"))
+			{
+				return;
+			}
+			if(!verifyItemReference(reference))
+			{
+				item = platform.getItemByRef(reference);
+				break;
+			}
+			else
+			{
+				System.out.println("This item doesn't exist.");
+			}
+		}
+		platform.removeItem(item);
+		System.out.println("Item: " + item.reference + " deleted from platform.");
+	}
+
+//-----------------------------------------------Designers--------------------------------------------------
+	
+	public static void DesignersMainMenu()
+	{
+		while(true)
+		{
+			System.out.println("#==================Users Menu==================#");
+			System.out.println("Choose an option: \n");
+			System.out.println("1- See all Designers;");
+			System.out.println("3- Register Designer;");
+			System.out.println("4- Ban Designer;");
+			System.out.println("0- Return;");
+			System.out.println("#==============================================#");
+			int option = intReader(0,4);
+			switch (option)
+			{
+				case 0:
+					return;
+				case 1:
+					viewAllUsers();
+					break;
+				case 2:	
+					chooseUser();
+					break;
+				case 3:
+					registerUser();
+					break;
+				case 4:
+					banUser();
+					break;
+				
+			}
+		}
+	}
+	
+	public static void viewAllDesigners()
+	{
+		System.out.println("#================View All Designers================#");
+		if(platform.designers.size()!=0)
+		{
+			Iterator iterator = platform.designers.iterator();
+			int counter = 1;
+			while(iterator.hasNext())
+			{
+				User user = (User)iterator.next();
+				System.out.println("->" + (counter) +". Username: "+ user.username + " | Name: " + user.name);
+				counter++;
+			}
+		}
+		else
+		{
+			System.out.println("There are no users registed.");
+		}
+		System.out.println("#==============================================#");
+		System.out.println("Press Enter to go back:");
+		scanner.nextLine();
+	}
 }
