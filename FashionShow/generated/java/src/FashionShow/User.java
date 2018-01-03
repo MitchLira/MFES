@@ -29,6 +29,11 @@ public class User {
     budget = bd;
   }
 
+  public void depositMoney(final Number money) {
+
+    setBudget(budget.doubleValue() + money.doubleValue());
+  }
+
   public VDMSet getBoughtItems() {
 
     return Utils.copy(boughtItems);
@@ -42,6 +47,12 @@ public class User {
   public void setBoughtItems(final VDMSet items) {
 
     boughtItems = SetUtil.union(Utils.copy(boughtItems), Utils.copy(items));
+  }
+
+  public void buyItem(final Item item) {
+
+    setBoughtItem(item);
+    budget = budget.doubleValue() - item.price.doubleValue();
   }
 
   public User() {}
