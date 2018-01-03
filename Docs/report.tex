@@ -55,10 +55,322 @@ linkcolor=black}
 
 \section{Descrição Informal do Sistema e Lista de Requisitos}
 \subsection{Descrição Informal do Sistema}
+Este projeto pretende simular a gestão através de uma plataforma de vários desfiles/ espetáculos de moda. É possível haver vários tipos de eventos nos quais os utilizadores podem comprar bilhetes para assistir ao desfile,  comprar peças/itens do desfile e pesquisar por peças.
+\newline
+O objetivo final é permitir que seja possível visualizar os diferentes constituintes necessários para criar e gerir/simular um evento de moda, nomeadamente: modelos, designers, artigos expostos, participantes entre outros.  
 \subsection{Lista de Requisitos}
-
+\begin{center}
+\begin{tabular}{ |p{1cm}|p{5cm}|p{8cm}|  }
+\hline
+ ID & Descrição & Restrições \\
+\hline
+R1 & Registo de um utilizador & Não pode haver outro utilizador com o mesmo username  ou igual \\
+\hline
+R2 & Comprar um ticket para um evento  & O dinheiro que o utilizador tem deve ser igual ou superior ao preço do bilhete \\
+\hline
+R3 & Comprar items & O dinheiro que o utilizador tem deve ser igual ou superior ao preço do bilhete \\
+\hline
+R4 & Criar um evento & Não pode haver outro evento igual na plataforma\\
+\hline
+R5 & Apagar um evento & O evento que se quer apagar deve existir na plataforma \\
+\hline
+R6 & Adicionar designers a um evento & O designer não pode já estar associado/a nesse evento \\
+\hline
+R7 & Adicionar modelos  a um evento & O/A modelo não pode já estar associado/a nesse evento  \\
+\hline
+R8 & Adicionar items a um evento & Os items não podem já estar associados a esse evento e têm que pertencer a um dos designers do evento\\
+\hline
+R9 & Adicionar designer à plataforma & Não pode haver outro designer igual na plataforma \\
+\hline
+R10 & Adicionar um item ao designer & O designer não pode ter items iguais \\
+\hline
+R11 & Apagar designer da plataforma & O designer que se quer banir deve constar na plataforma\\
+\hline
+R12 & Apagar um utilizador & O utilizador que se quer banir deve exister na plataforma \\
+\hline
+\end{tabular}
+\end{center}
 \section{Modelo UML}
 \subsection{Modelo de Casos de Uso}
+\begin{figure}[H]
+\centering
+\includegraphics[width=160mm,height=150mm]{./images/usecasediagram.png}
+\caption{Diagrama de classes}
+\label{fig:method}
+\end{figure}
+
+\begin{center}
+\begin{tabular}{ |p{2.5cm}|p{9cm}| }
+\hline
+ Cenário & Criar conta de utilizador \\
+\hline
+Descrição & Criar conta de utilizador na plataforma\\
+\hline
+ Prés-condições & Não pode haver outro utilizador com o mesmo username na plataforma \\
+\hline
+Pós-condições & O utilizador pertence ao conjunto de utilizadores da plataforma\\
+\hline
+Passos & -\\
+\hline
+Exceções &  -\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ |p{2.5cm}|p{9cm}| }
+\hline
+ Cenário & Comprar bilhete para evento \\
+\hline
+Descrição & Comprar bilhete para evento\\
+\hline
+ Prés-condições &  O preço do bilhete tem que ser menor ou igual ao dinheiro que o utilizador tem\\
+\hline
+Pós-condições & O evento pertence ao conjunto de eventos aos quais o utilizador vai assistir\\
+\hline
+Passos &  Retirar o dinheiro da conta do utilizador e adicionar o evento ao conjunto de eventos do utilizador\\
+\hline
+Exceções & -\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ |p{2.5cm}|p{9cm}| }
+\hline
+ Cenário & Comprar item \\
+\hline
+Descrição & Comprar item de um evento do qual o utilizador vai assistir\\
+\hline
+ Prés-condições &  O item tem que pertencer ao conjunto de items de um dos eventos a que o utilizador vai assistir e o preço desse item deve ser menor ou igual ao dinheiro que o utilizador tem\\
+\hline
+Pós-condições & O item é adicionado aos items comprados do utilizador\\
+\hline
+Passos &  Retirar o dinheiro da conta do utilizador e adicionar o item ao conjunto de items comprados do utilizador\\
+\hline
+Exceções & -\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ |p{2.5cm}|p{9cm}| }
+\hline
+ Cenário & Depositar dinheiro \\
+\hline
+Descrição & Depositar dinheiro na conta do utilizador\\
+\hline
+ Prés-condições &  -\\
+\hline
+Pós-condições & O dinheiro da conta do utilizador deve ser maior ou igual ao dinheiro depositado\\
+\hline
+Passos &  Retirar o dinheiro da conta do utilizador e adicionar o item ao conjunto de items comprados do utilizador\\
+\hline
+Exceções & -\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ |p{2.5cm}|p{9cm}| }
+\hline
+ Cenário & Criar evento \\
+\hline
+Descrição & 	Criar um evento na plataforma\\
+\hline
+ Prés-condições &  Não pode haver outro evento igual na plataforma\\
+\hline
+Pós-condições & O evento tem que pertencer ao conjunto de eventos na plataforma\\
+\hline
+Passos &  -\\
+\hline
+Exceções & -\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ |p{2.5cm}|p{9cm}| }
+\hline
+ Cenário & Adicionar modelo \\
+\hline
+Descrição & 	Adicionar um novo modelo à plataforma\\
+\hline
+ Prés-condições &  Não pode haver outro modelo igual na plataforma\\
+\hline
+Pós-condições & O modelo tem que pertencer ao conjunto de modelos na plataforma\\
+\hline
+Passos &  -\\
+\hline
+Exceções & -\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ |p{2.5cm}|p{9cm}| }
+\hline
+ Cenário & Adicionar designer \\
+\hline
+Descrição & 	Criar um novo designer na plataforma\\
+\hline
+ Prés-condições &  Não pode haver outro designer igual na plataforma\\
+\hline
+Pós-condições & O designer tem que pertencer ao conjunto de designers na plataforma\\
+\hline
+Passos &  -\\
+\hline
+Exceções & -\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ |p{2.5cm}|p{9cm}| }
+\hline
+ Cenário & Apagar utilizador \\
+\hline
+Descrição & 	Apagar um utilizador da plataforma\\
+\hline
+ Prés-condições & O utilizador deve constar no conjunto de utilizadores da plataforma\\
+\hline
+Pós-condições & O utilizador não deve constar no conjunto de utilizadores da plataforma\\
+\hline
+Passos &  -\\
+\hline
+Exceções & -\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ |p{2.5cm}|p{9cm}| }
+\hline
+ Cenário & Apagar designer \\
+\hline
+Descrição & 	Apagar um designer da plataforma\\
+\hline
+ Prés-condições & O designer deve constar no conjunto de desginers da plataforma\\
+\hline
+Pós-condições & O designer não deve constar no conjunto de designers da plataforma\\
+\hline
+Passos &  Remover o designer de todos os eventos aos quais está associado e os itens que lhe pertencem e remover o desginer do conjunto de designers da plataforma\\
+\hline
+Exceções & -\\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tabular}{ |p{2.5cm}|p{9cm}| }
+\hline
+ Cenário & Apagar modelo \\
+\hline
+Descrição & 	Apagar um modelo da plataforma\\
+\hline
+ Prés-condições & O modelo deve constar no conjunto de modelos da plataforma\\
+\hline
+Pós-condições & O modelo não deve constar no conjunto de modelos da plataforma\\
+\hline
+Passos &  Remover o modelo de todos os eventos que vai participar  e remover o modelo do conjunto de modelos da plataforma\\
+\hline
+Exceções & -\\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tabular}{ |p{2.5cm}|p{9cm}| }
+\hline
+ Cenário & Adicionar item a um evento \\
+\hline
+Descrição & Adicionar um item de um designer que participe nesse evento\\
+\hline
+ Prés-condições & O item não deve constar nos items do evento\\
+\hline
+Pós-condições & O item deve constar nos items do evento\\
+\hline
+Passos &  - \\
+\hline
+Exceções & -\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ |p{2.5cm}|p{9cm}| }
+\hline
+ Cenário & Apagar item \\
+\hline
+Descrição & Apagar item da plataforma\\
+\hline
+ Prés-condições & O item  deve constar nos items da plataforma\\
+\hline
+Pós-condições & O item não deve constar nos items da plataforma\\
+\hline
+Passos &  - \\
+\hline
+Exceções & -\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ |p{2.5cm}|p{9cm}| }
+\hline
+ Cenário & Apagar utilizador \\
+\hline
+Descrição & Apagar utilizador da plataforma\\
+\hline
+ Prés-condições & O utilizador  deve constar nos utilizadores da plataforma\\
+\hline
+Pós-condições & O utilizador não deve constar nos utilizadores da plataforma\\
+\hline
+Passos &  - \\
+\hline
+Exceções & -\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{ |p{2.5cm}|p{9cm}| }
+\hline
+ Cenário & Adicionar designer a um evento \\
+\hline
+Descrição & Adicionar designer a um evento\\
+\hline
+ Prés-condições & O designer não deve constar nos designers desse evento\\
+\hline
+Pós-condições & O designer deve constar nos designers desse evento\\
+\hline
+Passos &  - \\
+\hline
+Exceções & -\\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tabular}{ |p{2.5cm}|p{9cm}| }
+\hline
+ Cenário & Adicionar modelo a um evento\\
+\hline
+Descrição & Adicionar modelo a um evento\\
+\hline
+ Prés-condições & O modelo não deve constar nos modelos do evento\\
+\hline
+Pós-condições & O modelo deve constar nos modelos do evento\\
+\hline
+Passos &  - \\
+\hline
+Exceções & -\\
+\hline
+\end{tabular}
+\end{center}
 \subsection{Diagrama de Classes}
 \begin{figure}[H]
 \centering
@@ -68,45 +380,138 @@ linkcolor=black}
 \end{figure}
 		
 \section{Modelo Formal VDM++}
-\subsection{Class Platform}
+\subsection{Classe Platform}
 
 \input{specification/Platform.vdmpp.tex}
-\subsection{Class User}
+\subsection{Classe User}
 
 \input{specification/User.vdmpp.tex}
-\subsection{Class Event}
+\subsection{Classe Event}
 
 \input{specification/Event.vdmpp.tex}
-\subsection{Class PrimpingSession}
+\subsection{Classe PrimpingSession}
 
 \input{specification/PrimpingSession.vdmpp.tex}
-\subsection{Class Presentation}
+\subsection{Classe Presentation}
 
 \input{specification/Presentation.vdmpp.tex}
-\subsection{Class Runway}
+\subsection{Classe Runway}
 
 \input{specification/Runway.vdmpp.tex}
-\subsection{Class Model}
+\subsection{Classe Model}
 
 \input{specification/Model.vdmpp.tex}
-\subsection{Class Designer}
+\subsection{Classe Designer}
 \input{specification/Designer.vdmpp.tex}
 \subsection{Class Item}
 
 \input{specification/Item.vdmpp.tex}
-\subsection{Class Utils}
+\subsection{Classe Utils}
 
 \input{specification/Utils.vdmpp.tex}
 
 \section{Modelo de Validação}
-\subsection{Class Test}
+\subsection{Classe Test}
 \input{specification/test.vdmpp.tex}
 
-\section{Modelo de Verificação}
+\subsection{Classe MyTestCase}
+\input{specification/MyTestCase.vdmpp.tex}
 
+\subsection{Classe TestPlatformClass}
+\input{specification/TestPlatformClass.vdmpp.tex}
+
+\subsection{Classe TestUserClass}
+\input{specification/TestUserClass.vdmpp.tex}
+
+\subsection{Classe TestEventClass}
+\input{specification/TestEventClass.vdmpp.tex}
+
+\subsection{Classe TestPrimpingSessionClass}
+\input{specification/TestPrimpingSessionClass.vdmpp.tex}
+
+\subsection{Classe TestPresentationClass}
+\input{specification/TestPresentationClass.vdmpp.tex}
+
+\subsection{Classe TestRunwayClass}
+\input{specification/TestRunwayClass.vdmpp.tex}
+
+\subsection{Classe TestModelClass}
+\input{specification/TestModelClass.vdmpp.tex}
+
+\subsection{Classe TestDesignerClass}
+\input{specification/TestDesignerClass.vdmpp.tex}
+
+\subsection{Classe TestItemClass}
+\input{specification/TestItemClass.vdmpp.tex}
+
+\subsection{Classe TestUtilsClass}
+\input{specification/TestUtilsClass.vdmpp.tex}
+
+\section{Modelo de Verificação}
+\subsection{Exemplo de Verificação do Domínio}
+Uma das \textit{proof obligations} gerada pelo Overture é:
+\begin{center}
+\begin{tabular}{ |p{2.5cm}|p{5cm}|p{5cm}| }
+\hline
+ No. & Nome da PO & Tipo\\
+\hline
+R10 & Adicionar item ao designer& legal map application\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{figure}[H]
+\centering
+\includegraphics{./images/domain.png}
+\caption{Verificação do domínio}
+\label{fig:method}
+\end{figure}
+A prova é trivial uma vez que o designer ao qual se vai adicionar um item num evento tem que pertencer ao domínio dos items expostos, assegurando-se de que o mapeamento apenas acede dentro do seu domínio.
+
+\subsection{Exemplo de Verificação de Invariante}
+Uma das \textit{proof obligations} gerada pelo Overture é:
+\begin{center}
+\begin{tabular}{ |p{2.5cm}|p{5cm}|p{5cm}| }
+\hline
+ No. & Nome da PO & Tipo\\
+\hline
+R2 & Comprar ticket para um evento& state invariant holds\\
+\hline
+\end{tabular}
+\end{center}
+
+O código em análise é o seguinte:
+\begin{figure}[H]
+\centering
+\includegraphics{./images/invariantproof.png}
+\caption{Verificação da invariante}
+\label{fig:method}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics{./images/invariant.png}
+\end{figure}
+
+Quando um utilizador compra um bilhete para um evento é verificado se esse evento já não atingiu o número máximo de pessoas a assistir ao evento,  havendo assim uma verifiação da invariante. 
 \section{Geração de código}
+A conversão do código VDM++ para java foi realizada sem a ocorrência de erros. Sendo necessário a adição de pontuais correções e adições de instruções de impressão para a linha de comandos para ajudar na construção da interface.
+\newline
+Foi construída uma pequena interface para o qual foram expostos as instruções principais para o utilizador interagir e conseguir gerir uma plataforma de eventos de moda. Nesta pequena interface é possível ao utilizador escolher no menú principal que categorias quer utilizar e depois escolher as intruções que pretende concretizar nos submenus.
+\begin{figure}[H]
+\centering
+\includegraphics[width=75mm,height=75mm]{./images/interface.png}
+\caption{Diagrama de classes}
+\label{fig:method}
+\end{figure}
+
 
 \section{Conclusões}
+Através do uso do Método de Desenvolvimento de Vienna (VDM) a criação da estrutura base do modelo de informação de gestão de um desfile de moda foi facilitado, tornando todo o desenvolvimento do código facilitado e mais rápido. A falta de documentação da sintaxe, por vezes, tornou a implementação de certos métodos mais complicada, havendo necessidade de se implementar mais exemplos para ultrapassar este problema.
+\newline
+Foi necessário pesquisar diferentes aplicações de desfiles de moda para perceber quais os requisitos principais a serem implementados. 
+\newline
+Em conclusão, a realização deste trabalho foi rápida na parte de desenvolvimento de código, no entanto, tornou-se demorada na parte de teste. A equilibrada participação por parte de todos os elementos do grupo acelerou todo o processo, tendo o resultado final sido satisfatório e de acordo com os requisitos propostos.
 \section{Referências}
 \subsection{Bibliografia}
 \noindent
